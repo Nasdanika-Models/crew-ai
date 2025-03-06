@@ -1,0 +1,24 @@
+{
+  "references/eClassifiers/Crew/load-specification.html": {
+    "path": "Crew/Load specification",
+    "link-uuid": "da99e556-75df-4f09-9176-de9dc41f244d",
+    "title": "Load specification",
+    "content": "Load documentation with code snippets: key: value"
+  },
+  "index.html": {
+    "link-uuid": "4c7f3006-4295-47da-b4b2-5bf0a370242f",
+    "title": "CrewAI Model",
+    "content": "Family model is used to demonstrate different Nasdanika technologies such as: Generating of metamodel (Ecore) documentation like this one Loading of models from MS Excel and Drawio diagrams Generation of HTML sites from loaded models The model was created to mimic the model from Eclipse Sirius Basic Family tutorial. This site uses fee icons from Icons8 and quotes Wikipedia articles. The diagram below is interactive: Hover the mouse pointer over the shapes and connections to see tooltips Click on the shapes and connections to navigate to the pages of the respective model elements. Click on the diagram to make it fullscreen. Then you may click on the pencil icon to edit it in the browser. Error loading resource crew-ai.drawio: java.lang.NullPointerException: ClassLoader resource not found: org/nasdanika/models/crewai/processors/ecore/crew-ai.drawio A model of CrewAI classes - Crew, Agent, Task, Tool."
+  },
+  "references/eClassifiers/Crew/index.html": {
+    "link-uuid": "0899a6bf-8b66-4bc7-bb94-ab101170f201",
+    "title": "Crew",
+    "content": "Family (from Latin: familia) is a group of people related either by consanguinity (by recognized birth) or affinity (by marriage or other relationship). It forms the basis for social order. The purpose of the family is to maintain the well-being of its members and of society. Ideally, families offer predictability, structure, and safety as members mature and learn to participate in the community. Historically, most human societies use family as the primary locus of attachment, nurturance, and socialization. Anthropologists classify most family organizations as matrifocal (a mother and her children), patrifocal (a father and his children), conjugal (a married couple with children, also called the nuclear family), avuncular (a man, his sister, and her children), or extended (in addition to parents and children, may include grandparents, aunts, uncles, or cousins). The field of genealogy aims to trace family lineages through history. The family is also an important economic unit studied in family economics. The word &ldquo;families&rdquo; can be used metaphorically to create more inclusive categories such as community, nationhood, and global village."
+  },
+  "references/eClassifiers/Crew/inheritance.html": {
+    "path": "Crew/Inheritance",
+    "link-uuid": "71f7920f-1463-4242-a9aa-f6377cae6f60",
+    "title": "Inheritance",
+    "content": "Supertypes "
+  }
+}

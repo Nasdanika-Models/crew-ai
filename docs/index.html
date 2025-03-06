@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="EN">
+  <head>
+    <title>CrewAI Model</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css" id="nsd-bootstrap-theme-stylesheet"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Nasdanika-Models/html-app@master/gen/web-resources/css/app.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jstree@3.3.16/dist/themes/default/style.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.5.0/github-markdown.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/default.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-vue@2.23.0/dist/bootstrap-vue.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/html-app@master/gen/web-resources/js/common.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/html-app@master/gen/web-resources/js/dark-head.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jstree@3.3.16/dist/jstree.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-vue@2.23.0/dist/bootstrap-vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/html-app@master/gen/web-resources/js/components/table.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/components/table.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js"></script><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9BRJVLK8CC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9BRJVLK8CC');
+</script>    
+</head>
+  <body>
+    <div class="container-fluid nsd-app-container">
+      <div class="row">
+        <div class="col nsd-app-header">
+          <a href="https://github.com/Nasdanika-Models" data-nsd-label-uuid="a999474d-3e5d-4fda-b984-fa3ddaf78bf4" class="nsd-app-header-title">
+            <img src="https://docs.nasdanika.org/images/nasdanika-logo.png" class="nsd-app-label-icon"/>Nasdanika Models</a>
+          <ul class="nav nsd-app-header-navs">
+            <li class="nav-item">
+              <a href="search.html" data-nsd-label-uuid="62816eaf-281d-4c50-8e78-a968ab78bd9f" class="nav-link"><span class="fas fa-search nsd-app-label-icon"></span>Search</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col nsd-app-navbar">
+          <ul class="navbar navbar-light navbar-expand-lg"><span title="A model of a family" data-nsd-label-uuid="4c7f3006-4295-47da-b4b2-5bf0a370242f" class="navbar-brand"><img src="https://img.icons8.com/officel/30/family--v2.png" class="nsd-app-label-icon"/>CrewAI Model</span>
+            <button type="button" data-toggle="collapse" data-target="#nsd_2e" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="nsd_2e" class="collapse navbar-collapse">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a href="classifiers.html" data-nsd-label-uuid="9b6c85b9-48fd-4ab1-8606-8be8e140c3da" class="nav-link">Classifiers</a>
+                </li>
+                <li class="nav-item">
+                  <a href="diagram.html" data-nsd-label-uuid="304972fb-a898-42b8-b013-1795c74faf0d" class="nav-link"><span class="fas fa-project-diagram nsd-app-label-icon"></span>Diagram</a>
+                </li>
+                <li class="nav-item">
+                  <li data-nsd-label-uuid="3cb65df2-096c-4383-ae61-e9e6bc624a81" class="dropdown">
+                    <a role="button" data-toggle="dropdown" class="nav-link dropdown-toggle">
+                      <img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/16/external-diagram-seo-media-dreamstale-lineal-dreamstale.png" class="nsd-app-label-icon"/>Graphs</a>
+                    <div class="dropdown-menu">
+                      <a href="default-graph.html" data-nsd-label-uuid="b7c5618a-c2c1-480e-b3af-0ac22e2f490e" class="dropdown-item">Default Graph</a>
+                      <a href="circular-layout-graph.html" data-nsd-label-uuid="f6e3b7fa-c706-4929-8971-ff2deee15af1" class="dropdown-item">Circular Graph</a>
+                      <a href="force-layout-graph.html" data-nsd-label-uuid="22b685f7-6a6c-46cd-a8c4-12c4763f114f" class="dropdown-item">Force Graph</a>
+                      <div title="With dependencies and sub-packages" class="dropdown-divider"></div>
+                      <a href="default-graph-with-dependencies-and-subpackages.html" data-nsd-label-uuid="0a2dd662-0e63-427c-ad67-739d1fcbf802" class="dropdown-item">Default Graph</a>
+                      <a href="circular-layout-graph-with-dependencies-and-subpackages.html" data-nsd-label-uuid="fb2cfacd-9b13-4586-830b-da55777a66ea" class="dropdown-item">Circular Graph</a>
+                      <a href="force-layout-graph-with-dependencies-and-subpackages.html" data-nsd-label-uuid="84e1edac-f8d2-4b97-89a2-f0cc5f91b35f" class="dropdown-item">Force Graph</a>
+                    </div>
+                  </li>
+                </li>
+              </ul>
+            </div>
+          </ul>
+        </div>
+      </div>
+      <div class="row nsd-app-content-row">
+        <div class="col nsd-app-navigation-panel">
+          <div class="list-group list-group-flush">
+            <a href="references/eClassifiers/Crew/index.html" title="Family is a group of related people" data-nsd-label-uuid="0899a6bf-8b66-4bc7-bb94-ab101170f201" class="list-group-item list-group-action">
+              <img src="https://docs.nasdanika.org/images/navy.svg" class="nsd-app-label-icon"/>Crew</a>
+          </div>
+        </div>
+        <div data-nsd-label-uuid="4c7f3006-4295-47da-b4b2-5bf0a370242f" data-nsd-action-uris="uuid:4c7f3006-4295-47da-b4b2-5bf0a370242f" class="col nsd-app-content-panel">
+          <div class="container-fluid">
+            <div class="row nsd-app-content-panel-content-row">
+              <div class="col">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col"><div class="markdown-body"><p>Family model is used to demonstrate different Nasdanika technologies such as:</p>
+<ul>
+<li>Generating of metamodel (Ecore) documentation like this one</li>
+<li>Loading of models from MS Excel and Drawio diagrams</li>
+<li>Generation of HTML sites from loaded models</li>
+</ul>
+<p>The model was created to mimic the model from <a href="https://wiki.eclipse.org/Sirius/Tutorials/BasicFamily">Eclipse Sirius Basic Family</a> tutorial. This site uses fee icons from <a href="https://icons8.com/">Icons8</a> and quotes <a href="https://www.wikipedia.org/">Wikipedia</a> articles.</p>
+<p>The diagram below is interactive:</p>
+<ul>
+<li>Hover the mouse pointer over the shapes and connections to see tooltips</li>
+<li>Click on the shapes and connections to navigate to the pages of the respective model elements.</li>
+</ul>
+<p>Click on the diagram to make it fullscreen. Then you may click on the pencil icon to edit it in the browser.</p>
+<div class="nsd-error">
+Error loading resource crew-ai.drawio: java.lang.NullPointerException: ClassLoader resource not found: org/nasdanika/models/crewai/processors/ecore/crew-ai.drawio
+</div>
+</div><div class="markdown-body"><p>A model of CrewAI classes - Crew, Agent, Task, Tool.</p>
+</div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col nsd-app-footer">
+          <ul class="nav nsd-app-footer-navs">
+            <li class="nav-item">
+              <a href="https://github.com/Nasdanika-Models/crew-ai" data-nsd-label-uuid="f3d2de4b-5063-49f8-94f6-30dc2b1c19d3" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
