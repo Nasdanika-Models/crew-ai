@@ -24,12 +24,12 @@ import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.html.bootstrap.Theme;
 import org.nasdanika.models.app.Action;
 import org.nasdanika.models.app.gen.AppSiteGenerator;
-import org.nasdanika.models.architecture.ArchitecturePackage;
+//import org.nasdanika.models.architecture.ArchitecturePackage;
 import org.nasdanika.models.crewai.CrewaiPackage;
 import org.nasdanika.models.crewai.processors.ecore.EcoreGenCrewAIProcessorsFactory;
 import org.nasdanika.models.ecore.graph.processors.EcoreHtmlAppGenerator;
 import org.nasdanika.models.ecore.graph.processors.EcoreNodeProcessorFactory;
-import org.nasdanika.models.party.PartyPackage;
+//import org.nasdanika.models.party.PartyPackage;
 import org.nasdanika.ncore.NcorePackage;
 
 /**
@@ -67,11 +67,11 @@ public class TestCrewAIModelDocGen {
 		
 		Map<EPackage, URI> packageURIMap = Map.ofEntries(
 				Map.entry(EcorePackage.eINSTANCE, URI.createURI("https://ecore.models.nasdanika.org/")),			
-				Map.entry(NcorePackage.eINSTANCE, URI.createURI("https://ncore.models.nasdanika.org/")),			
-				Map.entry(PartyPackage.eINSTANCE, URI.createURI("https://party.models.nasdanika.org/")),			
-				Map.entry(org.nasdanika.graph.model.ModelPackage.eINSTANCE, URI.createURI("https://graph.models.nasdanika.org/")),			
-				Map.entry(org.nasdanika.drawio.model.ModelPackage.eINSTANCE, URI.createURI("https://drawio.models.nasdanika.org/")),			
-				Map.entry(ArchitecturePackage.eINSTANCE, URI.createURI("https://architecture.models.nasdanika.org/"))
+				Map.entry(NcorePackage.eINSTANCE, URI.createURI("https://ncore.models.nasdanika.org/")) //,			
+//				Map.entry(PartyPackage.eINSTANCE, URI.createURI("https://party.models.nasdanika.org/")),			
+//				Map.entry(org.nasdanika.graph.model.ModelPackage.eINSTANCE, URI.createURI("https://graph.models.nasdanika.org/")),			
+//				Map.entry(org.nasdanika.drawio.model.ModelPackage.eINSTANCE, URI.createURI("https://drawio.models.nasdanika.org/")),			
+//				Map.entry(ArchitecturePackage.eINSTANCE, URI.createURI("https://architecture.models.nasdanika.org/"))
 			);
 			
 		EcoreHtmlAppGenerator eCoreHtmlAppGenerator = new EcoreHtmlAppGenerator(

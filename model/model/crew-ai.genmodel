@@ -1,14 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
-    modelDirectory="/org.nasdanika.models.crewai/src/main/java" creationIcons="false"
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.nasdanika.models.crewai/src/main/java" creationIcons="false"
     editorDirectory="" modelPluginID="org.nasdanika.models.crewai" modelName="CrewAI"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
     bundleManifest="false" featureDelegation="Dynamic" complianceLevel="17.0" suppressGenModelAnnotations="false"
-    copyrightFields="false" usedGenPackages="../../org.nasdanika.models.architecture/model/architecture.genmodel#//architecture ../../org.nasdanika.drawio.model/model/drawio.genmodel#//model ../../org.nasdanika.graph.model/model/graph.genmodel#//model ../../org.nasdanika.ncore/model/ncore.genmodel#//ncore ../../org.nasdanika.models.party/model/party.genmodel#//party"
+    copyrightFields="false" usedGenPackages="../../org.nasdanika.ncore/model/ncore.genmodel#//ncore"
     operationReflection="true" importOrganizing="true">
   <foreignModel>crew-ai.ecore</foreignModel>
   <genPackages prefix="Crewai" basePackage="org.nasdanika.models" disposableProviderFactory="true"
       ecorePackage="crew-ai.ecore#/">
-    <genClasses ecoreClass="crew-ai.ecore#//Crew"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="crew-ai.ecore#//Process">
+      <genEnumLiterals ecoreEnumLiteral="crew-ai.ecore#//Process/sequential"/>
+      <genEnumLiterals ecoreEnumLiteral="crew-ai.ecore#//Process/hierarchical"/>
+    </genEnums>
+    <genClasses ecoreClass="crew-ai.ecore#//Configurable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crew-ai.ecore#//Configurable/configuration"/>
+    </genClasses>
+    <genClasses ecoreClass="crew-ai.ecore#//Tool"/>
+    <genClasses ecoreClass="crew-ai.ecore#//Agent">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Agent/tools"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Agent/llm"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Agent/functionCallingLlm"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Agent/stepCallback"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Agent/knowledgeSources"/>
+    </genClasses>
+    <genClasses ecoreClass="crew-ai.ecore#//Crew">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Crew/tools"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Crew/agents"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Crew/tasks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Crew/beforeKickoff"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Crew/afterKickoff"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crew-ai.ecore#//Crew/process"/>
+    </genClasses>
+    <genClasses ecoreClass="crew-ai.ecore#//Task">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Task/guardrail"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Task/agent"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Task/tools"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Task/context"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Task/callback"/>
+    </genClasses>
+    <genClasses ecoreClass="crew-ai.ecore#//Function"/>
+    <genClasses ecoreClass="crew-ai.ecore#//Guardrail"/>
+    <genClasses ecoreClass="crew-ai.ecore#//Callback"/>
+    <genClasses ecoreClass="crew-ai.ecore#//Resource"/>
+    <genClasses ecoreClass="crew-ai.ecore#//Import">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crew-ai.ecore#//Import/module"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crew-ai.ecore#//Import/item"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crew-ai.ecore#//Import/name"/>
+    </genClasses>
+    <genClasses ecoreClass="crew-ai.ecore#//SourceElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crew-ai.ecore#//SourceElement/imports"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crew-ai.ecore#//SourceElement/code"/>
+    </genClasses>
+    <genClasses ecoreClass="crew-ai.ecore#//SourceUnit">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crew-ai.ecore#//SourceUnit/crews"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crew-ai.ecore#//SourceUnit/prolog"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crew-ai.ecore#//SourceUnit/epilog"/>
+    </genClasses>
+    <genClasses ecoreClass="crew-ai.ecore#//Container">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Container/resources"/>
+    </genClasses>
+    <genClasses ecoreClass="crew-ai.ecore#//LargeLangaugeModel"/>
+    <genClasses ecoreClass="crew-ai.ecore#//KnowledgeSource"/>
   </genPackages>
 </genmodel:GenModel>

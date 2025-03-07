@@ -63,8 +63,8 @@
 		    <version>2.38.0</version>
 		</dependency> 		
 		<dependency>
-		    <groupId>org.nasdanika.models.architecture</groupId>
-		    <artifactId>model</artifactId>
+		    <groupId>org.nasdanika.core</groupId>
+		    <artifactId>ncore</artifactId>
 		    <version>2025.2.0</version>
 		</dependency>
 	</dependencies>

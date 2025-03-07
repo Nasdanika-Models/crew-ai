@@ -59,6 +59,8 @@ public class CrewNodeProcessor extends EObjectNodeProcessor<Crew> {
 //		}
 //	}
 	
+	// A model of CrewAI classes - Crew, Agent, Task, Tool.
+	
 	@Override
 	public void configureLabel(Object source, Label label, ProgressMonitor progressMonitor) {
 		super.configureLabel(source, label, progressMonitor);

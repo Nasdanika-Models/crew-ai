@@ -2,10 +2,13 @@
  */
 package org.nasdanika.models.crewai;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 
-import org.nasdanika.models.architecture.ArchitecturePackage;
+import org.eclipse.emf.ecore.EReference;
+import org.nasdanika.ncore.NcorePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,9 +22,6 @@ import org.nasdanika.models.architecture.ArchitecturePackage;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * <!-- begin-model-doc -->
- * A model of CrewAI classes - Crew, Agent, Task, Tool.
- * <!-- end-model-doc -->
  * @see org.nasdanika.models.crewai.CrewaiFactory
  * @model kind="package"
  * @generated
@@ -60,32 +60,14 @@ public interface CrewaiPackage extends EPackage {
 	CrewaiPackage eINSTANCE = org.nasdanika.models.crewai.impl.CrewaiPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.nasdanika.models.crewai.impl.CrewImpl <em>Crew</em>}' class.
+	 * The meta object id for the '{@link org.nasdanika.models.crewai.impl.ConfigurableImpl <em>Configurable</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.models.crewai.impl.CrewImpl
-	 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getCrew()
+	 * @see org.nasdanika.models.crewai.impl.ConfigurableImpl
+	 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getConfigurable()
 	 * @generated
 	 */
-	int CREW = 0;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREW__ID = ArchitecturePackage.ARCHITECTURE_DESCRIPTION_ELEMENT__ID;
-
-	/**
-	 * The feature id for the '<em><b>Semantic Mappings</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREW__SEMANTIC_MAPPINGS = ArchitecturePackage.ARCHITECTURE_DESCRIPTION_ELEMENT__SEMANTIC_MAPPINGS;
+	int CONFIGURABLE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
@@ -94,7 +76,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREW__MARKERS = ArchitecturePackage.ARCHITECTURE_DESCRIPTION_ELEMENT__MARKERS;
+	int CONFIGURABLE__MARKERS = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY__MARKERS;
 
 	/**
 	 * The feature id for the '<em><b>Uris</b></em>' attribute list.
@@ -103,7 +85,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREW__URIS = ArchitecturePackage.ARCHITECTURE_DESCRIPTION_ELEMENT__URIS;
+	int CONFIGURABLE__URIS = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY__URIS;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -112,7 +94,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREW__DESCRIPTION = ArchitecturePackage.ARCHITECTURE_DESCRIPTION_ELEMENT__DESCRIPTION;
+	int CONFIGURABLE__DESCRIPTION = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -121,7 +103,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREW__UUID = ArchitecturePackage.ARCHITECTURE_DESCRIPTION_ELEMENT__UUID;
+	int CONFIGURABLE__UUID = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY__UUID;
 
 	/**
 	 * The feature id for the '<em><b>Label Prototype</b></em>' containment reference.
@@ -130,7 +112,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREW__LABEL_PROTOTYPE = ArchitecturePackage.ARCHITECTURE_DESCRIPTION_ELEMENT__LABEL_PROTOTYPE;
+	int CONFIGURABLE__LABEL_PROTOTYPE = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY__LABEL_PROTOTYPE;
 
 	/**
 	 * The feature id for the '<em><b>Representations</b></em>' map.
@@ -139,7 +121,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREW__REPRESENTATIONS = ArchitecturePackage.ARCHITECTURE_DESCRIPTION_ELEMENT__REPRESENTATIONS;
+	int CONFIGURABLE__REPRESENTATIONS = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY__REPRESENTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -148,7 +130,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREW__ANNOTATIONS = ArchitecturePackage.ARCHITECTURE_DESCRIPTION_ELEMENT__ANNOTATIONS;
+	int CONFIGURABLE__ANNOTATIONS = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -157,7 +139,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREW__NAME = ArchitecturePackage.ARCHITECTURE_DESCRIPTION_ELEMENT__NAME;
+	int CONFIGURABLE__NAME = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Documentation</b></em>' containment reference list.
@@ -166,7 +148,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREW__DOCUMENTATION = ArchitecturePackage.ARCHITECTURE_DESCRIPTION_ELEMENT__DOCUMENTATION;
+	int CONFIGURABLE__DOCUMENTATION = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY__DOCUMENTATION;
 
 	/**
 	 * The feature id for the '<em><b>Context Help</b></em>' containment reference list.
@@ -175,52 +157,415 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREW__CONTEXT_HELP = ArchitecturePackage.ARCHITECTURE_DESCRIPTION_ELEMENT__CONTEXT_HELP;
+	int CONFIGURABLE__CONTEXT_HELP = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY__CONTEXT_HELP;
 
 	/**
-	 * The feature id for the '<em><b>Start</b></em>' containment reference.
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREW__START = ArchitecturePackage.ARCHITECTURE_DESCRIPTION_ELEMENT__START;
+	int CONFIGURABLE__ID = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY__ID;
 
 	/**
-	 * The feature id for the '<em><b>End</b></em>' containment reference.
+	 * The feature id for the '<em><b>Configuration</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREW__END = ArchitecturePackage.ARCHITECTURE_DESCRIPTION_ELEMENT__END;
+	int CONFIGURABLE__CONFIGURATION = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Duration</b></em>' attribute.
+	 * The number of structural features of the '<em>Configurable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREW__DURATION = ArchitecturePackage.ARCHITECTURE_DESCRIPTION_ELEMENT__DURATION;
+	int CONFIGURABLE_FEATURE_COUNT = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * The number of operations of the '<em>Configurable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREW__ICON = ArchitecturePackage.ARCHITECTURE_DESCRIPTION_ELEMENT__ICON;
+	int CONFIGURABLE_OPERATION_COUNT = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
+	 * The meta object id for the '{@link org.nasdanika.models.crewai.impl.ToolImpl <em>Tool</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.models.crewai.impl.ToolImpl
+	 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getTool()
+	 * @generated
+	 */
+	int TOOL = 1;
+
+	/**
+	 * The number of structural features of the '<em>Tool</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREW__ROLES = ArchitecturePackage.ARCHITECTURE_DESCRIPTION_ELEMENT__ROLES;
+	int TOOL_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Tool</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOOL_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.models.crewai.impl.AgentImpl <em>Agent</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.models.crewai.impl.AgentImpl
+	 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getAgent()
+	 * @generated
+	 */
+	int AGENT = 2;
+
+	/**
+	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__MARKERS = CONFIGURABLE__MARKERS;
+
+	/**
+	 * The feature id for the '<em><b>Uris</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__URIS = CONFIGURABLE__URIS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__DESCRIPTION = CONFIGURABLE__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__UUID = CONFIGURABLE__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Label Prototype</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__LABEL_PROTOTYPE = CONFIGURABLE__LABEL_PROTOTYPE;
+
+	/**
+	 * The feature id for the '<em><b>Representations</b></em>' map.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__REPRESENTATIONS = CONFIGURABLE__REPRESENTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__ANNOTATIONS = CONFIGURABLE__ANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__NAME = CONFIGURABLE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__DOCUMENTATION = CONFIGURABLE__DOCUMENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Context Help</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__CONTEXT_HELP = CONFIGURABLE__CONTEXT_HELP;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__ID = CONFIGURABLE__ID;
+
+	/**
+	 * The feature id for the '<em><b>Configuration</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__CONFIGURATION = CONFIGURABLE__CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Tools</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__TOOLS = CONFIGURABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Llm</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__LLM = CONFIGURABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Function Calling Llm</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__FUNCTION_CALLING_LLM = CONFIGURABLE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Step Callback</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__STEP_CALLBACK = CONFIGURABLE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Knowledge Sources</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__KNOWLEDGE_SOURCES = CONFIGURABLE_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of structural features of the '<em>Agent</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_FEATURE_COUNT = CONFIGURABLE_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of operations of the '<em>Agent</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_OPERATION_COUNT = CONFIGURABLE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.models.crewai.impl.CrewImpl <em>Crew</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.models.crewai.impl.CrewImpl
+	 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getCrew()
+	 * @generated
+	 */
+	int CREW = 3;
+
+	/**
+	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREW__MARKERS = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY__MARKERS;
+
+	/**
+	 * The feature id for the '<em><b>Uris</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREW__URIS = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY__URIS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREW__DESCRIPTION = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREW__UUID = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Label Prototype</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREW__LABEL_PROTOTYPE = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY__LABEL_PROTOTYPE;
+
+	/**
+	 * The feature id for the '<em><b>Representations</b></em>' map.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREW__REPRESENTATIONS = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY__REPRESENTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREW__ANNOTATIONS = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY__ANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREW__NAME = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREW__DOCUMENTATION = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY__DOCUMENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Context Help</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREW__CONTEXT_HELP = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY__CONTEXT_HELP;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREW__ID = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY__ID;
+
+	/**
+	 * The feature id for the '<em><b>Tools</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREW__TOOLS = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Agents</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREW__AGENTS = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Tasks</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREW__TASKS = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Before Kickoff</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREW__BEFORE_KICKOFF = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>After Kickoff</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREW__AFTER_KICKOFF = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Process</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREW__PROCESS = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Crew</em>' class.
@@ -229,7 +574,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREW_FEATURE_COUNT = ArchitecturePackage.ARCHITECTURE_DESCRIPTION_ELEMENT_FEATURE_COUNT + 0;
+	int CREW_FEATURE_COUNT = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Crew</em>' class.
@@ -238,8 +583,1323 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREW_OPERATION_COUNT = ArchitecturePackage.ARCHITECTURE_DESCRIPTION_ELEMENT_OPERATION_COUNT + 0;
+	int CREW_OPERATION_COUNT = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_OPERATION_COUNT + 0;
 
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.models.crewai.impl.TaskImpl <em>Task</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.models.crewai.impl.TaskImpl
+	 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getTask()
+	 * @generated
+	 */
+	int TASK = 4;
+
+	/**
+	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__MARKERS = CONFIGURABLE__MARKERS;
+
+	/**
+	 * The feature id for the '<em><b>Uris</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__URIS = CONFIGURABLE__URIS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__DESCRIPTION = CONFIGURABLE__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__UUID = CONFIGURABLE__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Label Prototype</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__LABEL_PROTOTYPE = CONFIGURABLE__LABEL_PROTOTYPE;
+
+	/**
+	 * The feature id for the '<em><b>Representations</b></em>' map.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__REPRESENTATIONS = CONFIGURABLE__REPRESENTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__ANNOTATIONS = CONFIGURABLE__ANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__NAME = CONFIGURABLE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__DOCUMENTATION = CONFIGURABLE__DOCUMENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Context Help</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__CONTEXT_HELP = CONFIGURABLE__CONTEXT_HELP;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__ID = CONFIGURABLE__ID;
+
+	/**
+	 * The feature id for the '<em><b>Configuration</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__CONFIGURATION = CONFIGURABLE__CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Guardrail</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__GUARDRAIL = CONFIGURABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Agent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__AGENT = CONFIGURABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Tools</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__TOOLS = CONFIGURABLE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Context</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__CONTEXT = CONFIGURABLE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Callback</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__CALLBACK = CONFIGURABLE_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of structural features of the '<em>Task</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK_FEATURE_COUNT = CONFIGURABLE_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of operations of the '<em>Task</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK_OPERATION_COUNT = CONFIGURABLE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.models.crewai.impl.SourceElementImpl <em>Source Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.models.crewai.impl.SourceElementImpl
+	 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getSourceElement()
+	 * @generated
+	 */
+	int SOURCE_ELEMENT = 10;
+
+	/**
+	 * The feature id for the '<em><b>Imports</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_ELEMENT__IMPORTS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_ELEMENT__CODE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Source Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_ELEMENT_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Source Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_ELEMENT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.models.crewai.impl.FunctionImpl <em>Function</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.models.crewai.impl.FunctionImpl
+	 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getFunction()
+	 * @generated
+	 */
+	int FUNCTION = 5;
+
+	/**
+	 * The feature id for the '<em><b>Imports</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION__IMPORTS = SOURCE_ELEMENT__IMPORTS;
+
+	/**
+	 * The feature id for the '<em><b>Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION__CODE = SOURCE_ELEMENT__CODE;
+
+	/**
+	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION__MARKERS = SOURCE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Uris</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION__URIS = SOURCE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION__DESCRIPTION = SOURCE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION__UUID = SOURCE_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Label Prototype</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION__LABEL_PROTOTYPE = SOURCE_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Representations</b></em>' map.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION__REPRESENTATIONS = SOURCE_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION__ANNOTATIONS = SOURCE_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION__NAME = SOURCE_ELEMENT_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION__DOCUMENTATION = SOURCE_ELEMENT_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Context Help</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION__CONTEXT_HELP = SOURCE_ELEMENT_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION__ID = SOURCE_ELEMENT_FEATURE_COUNT + 10;
+
+	/**
+	 * The number of structural features of the '<em>Function</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_FEATURE_COUNT = SOURCE_ELEMENT_FEATURE_COUNT + 11;
+
+	/**
+	 * The number of operations of the '<em>Function</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_OPERATION_COUNT = SOURCE_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.models.crewai.impl.GuardrailImpl <em>Guardrail</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.models.crewai.impl.GuardrailImpl
+	 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getGuardrail()
+	 * @generated
+	 */
+	int GUARDRAIL = 6;
+
+	/**
+	 * The feature id for the '<em><b>Imports</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUARDRAIL__IMPORTS = FUNCTION__IMPORTS;
+
+	/**
+	 * The feature id for the '<em><b>Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUARDRAIL__CODE = FUNCTION__CODE;
+
+	/**
+	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUARDRAIL__MARKERS = FUNCTION__MARKERS;
+
+	/**
+	 * The feature id for the '<em><b>Uris</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUARDRAIL__URIS = FUNCTION__URIS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUARDRAIL__DESCRIPTION = FUNCTION__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUARDRAIL__UUID = FUNCTION__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Label Prototype</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUARDRAIL__LABEL_PROTOTYPE = FUNCTION__LABEL_PROTOTYPE;
+
+	/**
+	 * The feature id for the '<em><b>Representations</b></em>' map.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUARDRAIL__REPRESENTATIONS = FUNCTION__REPRESENTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUARDRAIL__ANNOTATIONS = FUNCTION__ANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUARDRAIL__NAME = FUNCTION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUARDRAIL__DOCUMENTATION = FUNCTION__DOCUMENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Context Help</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUARDRAIL__CONTEXT_HELP = FUNCTION__CONTEXT_HELP;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUARDRAIL__ID = FUNCTION__ID;
+
+	/**
+	 * The number of structural features of the '<em>Guardrail</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUARDRAIL_FEATURE_COUNT = FUNCTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Guardrail</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUARDRAIL_OPERATION_COUNT = FUNCTION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.models.crewai.impl.CallbackImpl <em>Callback</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.models.crewai.impl.CallbackImpl
+	 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getCallback()
+	 * @generated
+	 */
+	int CALLBACK = 7;
+
+	/**
+	 * The feature id for the '<em><b>Imports</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLBACK__IMPORTS = FUNCTION__IMPORTS;
+
+	/**
+	 * The feature id for the '<em><b>Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLBACK__CODE = FUNCTION__CODE;
+
+	/**
+	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLBACK__MARKERS = FUNCTION__MARKERS;
+
+	/**
+	 * The feature id for the '<em><b>Uris</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLBACK__URIS = FUNCTION__URIS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLBACK__DESCRIPTION = FUNCTION__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLBACK__UUID = FUNCTION__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Label Prototype</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLBACK__LABEL_PROTOTYPE = FUNCTION__LABEL_PROTOTYPE;
+
+	/**
+	 * The feature id for the '<em><b>Representations</b></em>' map.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLBACK__REPRESENTATIONS = FUNCTION__REPRESENTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLBACK__ANNOTATIONS = FUNCTION__ANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLBACK__NAME = FUNCTION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLBACK__DOCUMENTATION = FUNCTION__DOCUMENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Context Help</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLBACK__CONTEXT_HELP = FUNCTION__CONTEXT_HELP;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLBACK__ID = FUNCTION__ID;
+
+	/**
+	 * The number of structural features of the '<em>Callback</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLBACK_FEATURE_COUNT = FUNCTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Callback</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLBACK_OPERATION_COUNT = FUNCTION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.models.crewai.impl.ResourceImpl <em>Resource</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.models.crewai.impl.ResourceImpl
+	 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getResource()
+	 * @generated
+	 */
+	int RESOURCE = 8;
+
+	/**
+	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__MARKERS = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY__MARKERS;
+
+	/**
+	 * The feature id for the '<em><b>Uris</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__URIS = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY__URIS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__DESCRIPTION = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__UUID = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Label Prototype</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__LABEL_PROTOTYPE = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY__LABEL_PROTOTYPE;
+
+	/**
+	 * The feature id for the '<em><b>Representations</b></em>' map.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__REPRESENTATIONS = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY__REPRESENTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__ANNOTATIONS = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY__ANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__NAME = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__DOCUMENTATION = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY__DOCUMENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Context Help</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__CONTEXT_HELP = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY__CONTEXT_HELP;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__ID = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY__ID;
+
+	/**
+	 * The number of structural features of the '<em>Resource</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_FEATURE_COUNT = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Resource</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_OPERATION_COUNT = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.models.crewai.impl.ImportImpl <em>Import</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.models.crewai.impl.ImportImpl
+	 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getImport()
+	 * @generated
+	 */
+	int IMPORT = 9;
+
+	/**
+	 * The feature id for the '<em><b>Module</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPORT__MODULE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Item</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPORT__ITEM = 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPORT__NAME = 2;
+
+	/**
+	 * The number of structural features of the '<em>Import</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPORT_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Import</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPORT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.models.crewai.impl.SourceUnitImpl <em>Source Unit</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.models.crewai.impl.SourceUnitImpl
+	 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getSourceUnit()
+	 * @generated
+	 */
+	int SOURCE_UNIT = 11;
+
+	/**
+	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_UNIT__MARKERS = RESOURCE__MARKERS;
+
+	/**
+	 * The feature id for the '<em><b>Uris</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_UNIT__URIS = RESOURCE__URIS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_UNIT__DESCRIPTION = RESOURCE__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_UNIT__UUID = RESOURCE__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Label Prototype</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_UNIT__LABEL_PROTOTYPE = RESOURCE__LABEL_PROTOTYPE;
+
+	/**
+	 * The feature id for the '<em><b>Representations</b></em>' map.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_UNIT__REPRESENTATIONS = RESOURCE__REPRESENTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_UNIT__ANNOTATIONS = RESOURCE__ANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_UNIT__NAME = RESOURCE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_UNIT__DOCUMENTATION = RESOURCE__DOCUMENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Context Help</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_UNIT__CONTEXT_HELP = RESOURCE__CONTEXT_HELP;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_UNIT__ID = RESOURCE__ID;
+
+	/**
+	 * The feature id for the '<em><b>Imports</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_UNIT__IMPORTS = RESOURCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_UNIT__CODE = RESOURCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Crews</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_UNIT__CREWS = RESOURCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Prolog</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_UNIT__PROLOG = RESOURCE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Epilog</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_UNIT__EPILOG = RESOURCE_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of structural features of the '<em>Source Unit</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_UNIT_FEATURE_COUNT = RESOURCE_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of operations of the '<em>Source Unit</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_UNIT_OPERATION_COUNT = RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.models.crewai.impl.ContainerImpl <em>Container</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.models.crewai.impl.ContainerImpl
+	 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getContainer()
+	 * @generated
+	 */
+	int CONTAINER = 12;
+
+	/**
+	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__MARKERS = RESOURCE__MARKERS;
+
+	/**
+	 * The feature id for the '<em><b>Uris</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__URIS = RESOURCE__URIS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__DESCRIPTION = RESOURCE__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__UUID = RESOURCE__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Label Prototype</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__LABEL_PROTOTYPE = RESOURCE__LABEL_PROTOTYPE;
+
+	/**
+	 * The feature id for the '<em><b>Representations</b></em>' map.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__REPRESENTATIONS = RESOURCE__REPRESENTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__ANNOTATIONS = RESOURCE__ANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__NAME = RESOURCE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__DOCUMENTATION = RESOURCE__DOCUMENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Context Help</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__CONTEXT_HELP = RESOURCE__CONTEXT_HELP;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__ID = RESOURCE__ID;
+
+	/**
+	 * The feature id for the '<em><b>Resources</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__RESOURCES = RESOURCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Container</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_FEATURE_COUNT = RESOURCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Container</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_OPERATION_COUNT = RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.models.crewai.impl.LargeLangaugeModelImpl <em>Large Langauge Model</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.models.crewai.impl.LargeLangaugeModelImpl
+	 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getLargeLangaugeModel()
+	 * @generated
+	 */
+	int LARGE_LANGAUGE_MODEL = 13;
+
+	/**
+	 * The number of structural features of the '<em>Large Langauge Model</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LARGE_LANGAUGE_MODEL_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Large Langauge Model</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LARGE_LANGAUGE_MODEL_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.models.crewai.impl.KnowledgeSourceImpl <em>Knowledge Source</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.models.crewai.impl.KnowledgeSourceImpl
+	 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getKnowledgeSource()
+	 * @generated
+	 */
+	int KNOWLEDGE_SOURCE = 14;
+
+	/**
+	 * The number of structural features of the '<em>Knowledge Source</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KNOWLEDGE_SOURCE_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Knowledge Source</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KNOWLEDGE_SOURCE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.models.crewai.Process <em>Process</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.models.crewai.Process
+	 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getProcess()
+	 * @generated
+	 */
+	int PROCESS = 15;
+
+
+	/**
+	 * Returns the meta object for class '{@link org.nasdanika.models.crewai.Configurable <em>Configurable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Configurable</em>'.
+	 * @see org.nasdanika.models.crewai.Configurable
+	 * @generated
+	 */
+	EClass getConfigurable();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.models.crewai.Configurable#getConfiguration <em>Configuration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Configuration</em>'.
+	 * @see org.nasdanika.models.crewai.Configurable#getConfiguration()
+	 * @see #getConfigurable()
+	 * @generated
+	 */
+	EAttribute getConfigurable_Configuration();
+
+	/**
+	 * Returns the meta object for class '{@link org.nasdanika.models.crewai.Tool <em>Tool</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Tool</em>'.
+	 * @see org.nasdanika.models.crewai.Tool
+	 * @generated
+	 */
+	EClass getTool();
+
+	/**
+	 * Returns the meta object for class '{@link org.nasdanika.models.crewai.Agent <em>Agent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Agent</em>'.
+	 * @see org.nasdanika.models.crewai.Agent
+	 * @generated
+	 */
+	EClass getAgent();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.nasdanika.models.crewai.Agent#getTools <em>Tools</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Tools</em>'.
+	 * @see org.nasdanika.models.crewai.Agent#getTools()
+	 * @see #getAgent()
+	 * @generated
+	 */
+	EReference getAgent_Tools();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.nasdanika.models.crewai.Agent#getLlm <em>Llm</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Llm</em>'.
+	 * @see org.nasdanika.models.crewai.Agent#getLlm()
+	 * @see #getAgent()
+	 * @generated
+	 */
+	EReference getAgent_Llm();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.nasdanika.models.crewai.Agent#getFunctionCallingLlm <em>Function Calling Llm</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Function Calling Llm</em>'.
+	 * @see org.nasdanika.models.crewai.Agent#getFunctionCallingLlm()
+	 * @see #getAgent()
+	 * @generated
+	 */
+	EReference getAgent_FunctionCallingLlm();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.nasdanika.models.crewai.Agent#getStepCallback <em>Step Callback</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Step Callback</em>'.
+	 * @see org.nasdanika.models.crewai.Agent#getStepCallback()
+	 * @see #getAgent()
+	 * @generated
+	 */
+	EReference getAgent_StepCallback();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.nasdanika.models.crewai.Agent#getKnowledgeSources <em>Knowledge Sources</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Knowledge Sources</em>'.
+	 * @see org.nasdanika.models.crewai.Agent#getKnowledgeSources()
+	 * @see #getAgent()
+	 * @generated
+	 */
+	EReference getAgent_KnowledgeSources();
 
 	/**
 	 * Returns the meta object for class '{@link org.nasdanika.models.crewai.Crew <em>Crew</em>}'.
@@ -250,6 +1910,346 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getCrew();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.nasdanika.models.crewai.Crew#getTools <em>Tools</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Tools</em>'.
+	 * @see org.nasdanika.models.crewai.Crew#getTools()
+	 * @see #getCrew()
+	 * @generated
+	 */
+	EReference getCrew_Tools();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.nasdanika.models.crewai.Crew#getAgents <em>Agents</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Agents</em>'.
+	 * @see org.nasdanika.models.crewai.Crew#getAgents()
+	 * @see #getCrew()
+	 * @generated
+	 */
+	EReference getCrew_Agents();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.nasdanika.models.crewai.Crew#getTasks <em>Tasks</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Tasks</em>'.
+	 * @see org.nasdanika.models.crewai.Crew#getTasks()
+	 * @see #getCrew()
+	 * @generated
+	 */
+	EReference getCrew_Tasks();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.nasdanika.models.crewai.Crew#getBeforeKickoff <em>Before Kickoff</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Before Kickoff</em>'.
+	 * @see org.nasdanika.models.crewai.Crew#getBeforeKickoff()
+	 * @see #getCrew()
+	 * @generated
+	 */
+	EReference getCrew_BeforeKickoff();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.nasdanika.models.crewai.Crew#getAfterKickoff <em>After Kickoff</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>After Kickoff</em>'.
+	 * @see org.nasdanika.models.crewai.Crew#getAfterKickoff()
+	 * @see #getCrew()
+	 * @generated
+	 */
+	EReference getCrew_AfterKickoff();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.models.crewai.Crew#getProcess <em>Process</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Process</em>'.
+	 * @see org.nasdanika.models.crewai.Crew#getProcess()
+	 * @see #getCrew()
+	 * @generated
+	 */
+	EAttribute getCrew_Process();
+
+	/**
+	 * Returns the meta object for class '{@link org.nasdanika.models.crewai.Task <em>Task</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Task</em>'.
+	 * @see org.nasdanika.models.crewai.Task
+	 * @generated
+	 */
+	EClass getTask();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.nasdanika.models.crewai.Task#getGuardrail <em>Guardrail</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Guardrail</em>'.
+	 * @see org.nasdanika.models.crewai.Task#getGuardrail()
+	 * @see #getTask()
+	 * @generated
+	 */
+	EReference getTask_Guardrail();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.nasdanika.models.crewai.Task#getAgent <em>Agent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Agent</em>'.
+	 * @see org.nasdanika.models.crewai.Task#getAgent()
+	 * @see #getTask()
+	 * @generated
+	 */
+	EReference getTask_Agent();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.nasdanika.models.crewai.Task#getTools <em>Tools</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Tools</em>'.
+	 * @see org.nasdanika.models.crewai.Task#getTools()
+	 * @see #getTask()
+	 * @generated
+	 */
+	EReference getTask_Tools();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.nasdanika.models.crewai.Task#getContext <em>Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Context</em>'.
+	 * @see org.nasdanika.models.crewai.Task#getContext()
+	 * @see #getTask()
+	 * @generated
+	 */
+	EReference getTask_Context();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.nasdanika.models.crewai.Task#getCallback <em>Callback</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Callback</em>'.
+	 * @see org.nasdanika.models.crewai.Task#getCallback()
+	 * @see #getTask()
+	 * @generated
+	 */
+	EReference getTask_Callback();
+
+	/**
+	 * Returns the meta object for class '{@link org.nasdanika.models.crewai.Function <em>Function</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Function</em>'.
+	 * @see org.nasdanika.models.crewai.Function
+	 * @generated
+	 */
+	EClass getFunction();
+
+	/**
+	 * Returns the meta object for class '{@link org.nasdanika.models.crewai.Guardrail <em>Guardrail</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Guardrail</em>'.
+	 * @see org.nasdanika.models.crewai.Guardrail
+	 * @generated
+	 */
+	EClass getGuardrail();
+
+	/**
+	 * Returns the meta object for class '{@link org.nasdanika.models.crewai.Callback <em>Callback</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Callback</em>'.
+	 * @see org.nasdanika.models.crewai.Callback
+	 * @generated
+	 */
+	EClass getCallback();
+
+	/**
+	 * Returns the meta object for class '{@link org.nasdanika.models.crewai.Resource <em>Resource</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Resource</em>'.
+	 * @see org.nasdanika.models.crewai.Resource
+	 * @generated
+	 */
+	EClass getResource();
+
+	/**
+	 * Returns the meta object for class '{@link org.nasdanika.models.crewai.Import <em>Import</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Import</em>'.
+	 * @see org.nasdanika.models.crewai.Import
+	 * @generated
+	 */
+	EClass getImport();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.models.crewai.Import#getModule <em>Module</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Module</em>'.
+	 * @see org.nasdanika.models.crewai.Import#getModule()
+	 * @see #getImport()
+	 * @generated
+	 */
+	EAttribute getImport_Module();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.models.crewai.Import#getItem <em>Item</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Item</em>'.
+	 * @see org.nasdanika.models.crewai.Import#getItem()
+	 * @see #getImport()
+	 * @generated
+	 */
+	EAttribute getImport_Item();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.models.crewai.Import#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.nasdanika.models.crewai.Import#getName()
+	 * @see #getImport()
+	 * @generated
+	 */
+	EAttribute getImport_Name();
+
+	/**
+	 * Returns the meta object for class '{@link org.nasdanika.models.crewai.SourceElement <em>Source Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Source Element</em>'.
+	 * @see org.nasdanika.models.crewai.SourceElement
+	 * @generated
+	 */
+	EClass getSourceElement();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.nasdanika.models.crewai.SourceElement#getImports <em>Imports</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Imports</em>'.
+	 * @see org.nasdanika.models.crewai.SourceElement#getImports()
+	 * @see #getSourceElement()
+	 * @generated
+	 */
+	EReference getSourceElement_Imports();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.models.crewai.SourceElement#getCode <em>Code</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Code</em>'.
+	 * @see org.nasdanika.models.crewai.SourceElement#getCode()
+	 * @see #getSourceElement()
+	 * @generated
+	 */
+	EAttribute getSourceElement_Code();
+
+	/**
+	 * Returns the meta object for class '{@link org.nasdanika.models.crewai.SourceUnit <em>Source Unit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Source Unit</em>'.
+	 * @see org.nasdanika.models.crewai.SourceUnit
+	 * @generated
+	 */
+	EClass getSourceUnit();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.nasdanika.models.crewai.SourceUnit#getCrews <em>Crews</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Crews</em>'.
+	 * @see org.nasdanika.models.crewai.SourceUnit#getCrews()
+	 * @see #getSourceUnit()
+	 * @generated
+	 */
+	EReference getSourceUnit_Crews();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.nasdanika.models.crewai.SourceUnit#getProlog <em>Prolog</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Prolog</em>'.
+	 * @see org.nasdanika.models.crewai.SourceUnit#getProlog()
+	 * @see #getSourceUnit()
+	 * @generated
+	 */
+	EReference getSourceUnit_Prolog();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.nasdanika.models.crewai.SourceUnit#getEpilog <em>Epilog</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Epilog</em>'.
+	 * @see org.nasdanika.models.crewai.SourceUnit#getEpilog()
+	 * @see #getSourceUnit()
+	 * @generated
+	 */
+	EReference getSourceUnit_Epilog();
+
+	/**
+	 * Returns the meta object for class '{@link org.nasdanika.models.crewai.Container <em>Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Container</em>'.
+	 * @see org.nasdanika.models.crewai.Container
+	 * @generated
+	 */
+	EClass getContainer();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.nasdanika.models.crewai.Container#getResources <em>Resources</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Resources</em>'.
+	 * @see org.nasdanika.models.crewai.Container#getResources()
+	 * @see #getContainer()
+	 * @generated
+	 */
+	EReference getContainer_Resources();
+
+	/**
+	 * Returns the meta object for class '{@link org.nasdanika.models.crewai.LargeLangaugeModel <em>Large Langauge Model</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Large Langauge Model</em>'.
+	 * @see org.nasdanika.models.crewai.LargeLangaugeModel
+	 * @generated
+	 */
+	EClass getLargeLangaugeModel();
+
+	/**
+	 * Returns the meta object for class '{@link org.nasdanika.models.crewai.KnowledgeSource <em>Knowledge Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Knowledge Source</em>'.
+	 * @see org.nasdanika.models.crewai.KnowledgeSource
+	 * @generated
+	 */
+	EClass getKnowledgeSource();
+
+	/**
+	 * Returns the meta object for enum '{@link org.nasdanika.models.crewai.Process <em>Process</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Process</em>'.
+	 * @see org.nasdanika.models.crewai.Process
+	 * @generated
+	 */
+	EEnum getProcess();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -275,6 +2275,75 @@ public interface CrewaiPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
+		 * The meta object literal for the '{@link org.nasdanika.models.crewai.impl.ConfigurableImpl <em>Configurable</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nasdanika.models.crewai.impl.ConfigurableImpl
+		 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getConfigurable()
+		 * @generated
+		 */
+		EClass CONFIGURABLE = eINSTANCE.getConfigurable();
+		/**
+		 * The meta object literal for the '<em><b>Configuration</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONFIGURABLE__CONFIGURATION = eINSTANCE.getConfigurable_Configuration();
+		/**
+		 * The meta object literal for the '{@link org.nasdanika.models.crewai.impl.ToolImpl <em>Tool</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nasdanika.models.crewai.impl.ToolImpl
+		 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getTool()
+		 * @generated
+		 */
+		EClass TOOL = eINSTANCE.getTool();
+		/**
+		 * The meta object literal for the '{@link org.nasdanika.models.crewai.impl.AgentImpl <em>Agent</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nasdanika.models.crewai.impl.AgentImpl
+		 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getAgent()
+		 * @generated
+		 */
+		EClass AGENT = eINSTANCE.getAgent();
+		/**
+		 * The meta object literal for the '<em><b>Tools</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AGENT__TOOLS = eINSTANCE.getAgent_Tools();
+		/**
+		 * The meta object literal for the '<em><b>Llm</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AGENT__LLM = eINSTANCE.getAgent_Llm();
+		/**
+		 * The meta object literal for the '<em><b>Function Calling Llm</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AGENT__FUNCTION_CALLING_LLM = eINSTANCE.getAgent_FunctionCallingLlm();
+		/**
+		 * The meta object literal for the '<em><b>Step Callback</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AGENT__STEP_CALLBACK = eINSTANCE.getAgent_StepCallback();
+		/**
+		 * The meta object literal for the '<em><b>Knowledge Sources</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AGENT__KNOWLEDGE_SOURCES = eINSTANCE.getAgent_KnowledgeSources();
+		/**
 		 * The meta object literal for the '{@link org.nasdanika.models.crewai.impl.CrewImpl <em>Crew</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -283,6 +2352,254 @@ public interface CrewaiPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CREW = eINSTANCE.getCrew();
+		/**
+		 * The meta object literal for the '<em><b>Tools</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CREW__TOOLS = eINSTANCE.getCrew_Tools();
+		/**
+		 * The meta object literal for the '<em><b>Agents</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CREW__AGENTS = eINSTANCE.getCrew_Agents();
+		/**
+		 * The meta object literal for the '<em><b>Tasks</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CREW__TASKS = eINSTANCE.getCrew_Tasks();
+		/**
+		 * The meta object literal for the '<em><b>Before Kickoff</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CREW__BEFORE_KICKOFF = eINSTANCE.getCrew_BeforeKickoff();
+		/**
+		 * The meta object literal for the '<em><b>After Kickoff</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CREW__AFTER_KICKOFF = eINSTANCE.getCrew_AfterKickoff();
+		/**
+		 * The meta object literal for the '<em><b>Process</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CREW__PROCESS = eINSTANCE.getCrew_Process();
+		/**
+		 * The meta object literal for the '{@link org.nasdanika.models.crewai.impl.TaskImpl <em>Task</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nasdanika.models.crewai.impl.TaskImpl
+		 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getTask()
+		 * @generated
+		 */
+		EClass TASK = eINSTANCE.getTask();
+		/**
+		 * The meta object literal for the '<em><b>Guardrail</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TASK__GUARDRAIL = eINSTANCE.getTask_Guardrail();
+		/**
+		 * The meta object literal for the '<em><b>Agent</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TASK__AGENT = eINSTANCE.getTask_Agent();
+		/**
+		 * The meta object literal for the '<em><b>Tools</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TASK__TOOLS = eINSTANCE.getTask_Tools();
+		/**
+		 * The meta object literal for the '<em><b>Context</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TASK__CONTEXT = eINSTANCE.getTask_Context();
+		/**
+		 * The meta object literal for the '<em><b>Callback</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TASK__CALLBACK = eINSTANCE.getTask_Callback();
+		/**
+		 * The meta object literal for the '{@link org.nasdanika.models.crewai.impl.FunctionImpl <em>Function</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nasdanika.models.crewai.impl.FunctionImpl
+		 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getFunction()
+		 * @generated
+		 */
+		EClass FUNCTION = eINSTANCE.getFunction();
+		/**
+		 * The meta object literal for the '{@link org.nasdanika.models.crewai.impl.GuardrailImpl <em>Guardrail</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nasdanika.models.crewai.impl.GuardrailImpl
+		 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getGuardrail()
+		 * @generated
+		 */
+		EClass GUARDRAIL = eINSTANCE.getGuardrail();
+		/**
+		 * The meta object literal for the '{@link org.nasdanika.models.crewai.impl.CallbackImpl <em>Callback</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nasdanika.models.crewai.impl.CallbackImpl
+		 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getCallback()
+		 * @generated
+		 */
+		EClass CALLBACK = eINSTANCE.getCallback();
+		/**
+		 * The meta object literal for the '{@link org.nasdanika.models.crewai.impl.ResourceImpl <em>Resource</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nasdanika.models.crewai.impl.ResourceImpl
+		 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getResource()
+		 * @generated
+		 */
+		EClass RESOURCE = eINSTANCE.getResource();
+		/**
+		 * The meta object literal for the '{@link org.nasdanika.models.crewai.impl.ImportImpl <em>Import</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nasdanika.models.crewai.impl.ImportImpl
+		 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getImport()
+		 * @generated
+		 */
+		EClass IMPORT = eINSTANCE.getImport();
+		/**
+		 * The meta object literal for the '<em><b>Module</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IMPORT__MODULE = eINSTANCE.getImport_Module();
+		/**
+		 * The meta object literal for the '<em><b>Item</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IMPORT__ITEM = eINSTANCE.getImport_Item();
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IMPORT__NAME = eINSTANCE.getImport_Name();
+		/**
+		 * The meta object literal for the '{@link org.nasdanika.models.crewai.impl.SourceElementImpl <em>Source Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nasdanika.models.crewai.impl.SourceElementImpl
+		 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getSourceElement()
+		 * @generated
+		 */
+		EClass SOURCE_ELEMENT = eINSTANCE.getSourceElement();
+		/**
+		 * The meta object literal for the '<em><b>Imports</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SOURCE_ELEMENT__IMPORTS = eINSTANCE.getSourceElement_Imports();
+		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SOURCE_ELEMENT__CODE = eINSTANCE.getSourceElement_Code();
+		/**
+		 * The meta object literal for the '{@link org.nasdanika.models.crewai.impl.SourceUnitImpl <em>Source Unit</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nasdanika.models.crewai.impl.SourceUnitImpl
+		 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getSourceUnit()
+		 * @generated
+		 */
+		EClass SOURCE_UNIT = eINSTANCE.getSourceUnit();
+		/**
+		 * The meta object literal for the '<em><b>Crews</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SOURCE_UNIT__CREWS = eINSTANCE.getSourceUnit_Crews();
+		/**
+		 * The meta object literal for the '<em><b>Prolog</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SOURCE_UNIT__PROLOG = eINSTANCE.getSourceUnit_Prolog();
+		/**
+		 * The meta object literal for the '<em><b>Epilog</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SOURCE_UNIT__EPILOG = eINSTANCE.getSourceUnit_Epilog();
+		/**
+		 * The meta object literal for the '{@link org.nasdanika.models.crewai.impl.ContainerImpl <em>Container</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nasdanika.models.crewai.impl.ContainerImpl
+		 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getContainer()
+		 * @generated
+		 */
+		EClass CONTAINER = eINSTANCE.getContainer();
+		/**
+		 * The meta object literal for the '<em><b>Resources</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTAINER__RESOURCES = eINSTANCE.getContainer_Resources();
+		/**
+		 * The meta object literal for the '{@link org.nasdanika.models.crewai.impl.LargeLangaugeModelImpl <em>Large Langauge Model</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nasdanika.models.crewai.impl.LargeLangaugeModelImpl
+		 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getLargeLangaugeModel()
+		 * @generated
+		 */
+		EClass LARGE_LANGAUGE_MODEL = eINSTANCE.getLargeLangaugeModel();
+		/**
+		 * The meta object literal for the '{@link org.nasdanika.models.crewai.impl.KnowledgeSourceImpl <em>Knowledge Source</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nasdanika.models.crewai.impl.KnowledgeSourceImpl
+		 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getKnowledgeSource()
+		 * @generated
+		 */
+		EClass KNOWLEDGE_SOURCE = eINSTANCE.getKnowledgeSource();
+		/**
+		 * The meta object literal for the '{@link org.nasdanika.models.crewai.Process <em>Process</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nasdanika.models.crewai.Process
+		 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getProcess()
+		 * @generated
+		 */
+		EEnum PROCESS = eINSTANCE.getProcess();
 
 	}
 

@@ -10,16 +10,22 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
 import org.nasdanika.common.Adaptable;
-
-import org.nasdanika.drawio.model.SemanticElement;
-
-import org.nasdanika.graph.model.DocumentedNamedGraphElement;
-import org.nasdanika.graph.model.GraphElement;
-
-import org.nasdanika.models.architecture.ArchitectureDescriptionElement;
-import org.nasdanika.models.architecture.ArchitectureElement;
-import org.nasdanika.models.architecture.Undergoer;
-
+import org.nasdanika.models.crewai.Agent;
+import org.nasdanika.models.crewai.Callback;
+import org.nasdanika.models.crewai.Configurable;
+import org.nasdanika.models.crewai.Container;
+import org.nasdanika.models.crewai.Crew;
+import org.nasdanika.models.crewai.CrewaiPackage;
+import org.nasdanika.models.crewai.Function;
+import org.nasdanika.models.crewai.Guardrail;
+import org.nasdanika.models.crewai.Import;
+import org.nasdanika.models.crewai.KnowledgeSource;
+import org.nasdanika.models.crewai.LargeLangaugeModel;
+import org.nasdanika.models.crewai.Resource;
+import org.nasdanika.models.crewai.SourceElement;
+import org.nasdanika.models.crewai.SourceUnit;
+import org.nasdanika.models.crewai.Task;
+import org.nasdanika.models.crewai.Tool;
 import org.nasdanika.models.crewai.*;
 
 import org.nasdanika.ncore.Documented;
@@ -27,7 +33,6 @@ import org.nasdanika.ncore.DocumentedNamedElement;
 import org.nasdanika.ncore.DocumentedNamedStringIdentity;
 import org.nasdanika.ncore.ModelElement;
 import org.nasdanika.ncore.NamedElement;
-import org.nasdanika.ncore.Period;
 import org.nasdanika.ncore.StringIdentity;
 
 import org.nasdanika.persistence.Marked;
@@ -89,20 +94,64 @@ public class CrewaiAdapterFactory extends AdapterFactoryImpl {
 	protected CrewaiSwitch<Adapter> modelSwitch =
 		new CrewaiSwitch<Adapter>() {
 			@Override
+			public Adapter caseConfigurable(Configurable object) {
+				return createConfigurableAdapter();
+			}
+			@Override
+			public Adapter caseTool(Tool object) {
+				return createToolAdapter();
+			}
+			@Override
+			public Adapter caseAgent(Agent object) {
+				return createAgentAdapter();
+			}
+			@Override
 			public Adapter caseCrew(Crew object) {
 				return createCrewAdapter();
 			}
 			@Override
-			public Adapter caseStringIdentity(StringIdentity object) {
-				return createStringIdentityAdapter();
+			public Adapter caseTask(Task object) {
+				return createTaskAdapter();
 			}
 			@Override
-			public Adapter caseSemanticElement(SemanticElement object) {
-				return createSemanticElementAdapter();
+			public Adapter caseFunction(Function object) {
+				return createFunctionAdapter();
 			}
 			@Override
-			public Adapter caseGraphElement(GraphElement object) {
-				return createGraphElementAdapter();
+			public Adapter caseGuardrail(Guardrail object) {
+				return createGuardrailAdapter();
+			}
+			@Override
+			public Adapter caseCallback(Callback object) {
+				return createCallbackAdapter();
+			}
+			@Override
+			public Adapter caseResource(Resource object) {
+				return createResourceAdapter();
+			}
+			@Override
+			public Adapter caseImport(Import object) {
+				return createImportAdapter();
+			}
+			@Override
+			public Adapter caseSourceElement(SourceElement object) {
+				return createSourceElementAdapter();
+			}
+			@Override
+			public Adapter caseSourceUnit(SourceUnit object) {
+				return createSourceUnitAdapter();
+			}
+			@Override
+			public Adapter caseContainer(Container object) {
+				return createContainerAdapter();
+			}
+			@Override
+			public Adapter caseLargeLangaugeModel(LargeLangaugeModel object) {
+				return createLargeLangaugeModelAdapter();
+			}
+			@Override
+			public Adapter caseKnowledgeSource(KnowledgeSource object) {
+				return createKnowledgeSourceAdapter();
 			}
 			@Override
 			public Adapter caseIMarked(Marked object) {
@@ -133,28 +182,12 @@ public class CrewaiAdapterFactory extends AdapterFactoryImpl {
 				return createDocumentedNamedElementAdapter();
 			}
 			@Override
+			public Adapter caseStringIdentity(StringIdentity object) {
+				return createStringIdentityAdapter();
+			}
+			@Override
 			public Adapter caseDocumentedNamedStringIdentity(DocumentedNamedStringIdentity object) {
 				return createDocumentedNamedStringIdentityAdapter();
-			}
-			@Override
-			public Adapter caseDocumentedNamedGraphElement(DocumentedNamedGraphElement object) {
-				return createDocumentedNamedGraphElementAdapter();
-			}
-			@Override
-			public Adapter casePeriod(Period object) {
-				return createPeriodAdapter();
-			}
-			@Override
-			public Adapter caseArchitectureElement(ArchitectureElement object) {
-				return createArchitectureElementAdapter();
-			}
-			@Override
-			public Adapter caseUndergoer(Undergoer object) {
-				return createUndergoerAdapter();
-			}
-			@Override
-			public Adapter caseArchitectureDescriptionElement(ArchitectureDescriptionElement object) {
-				return createArchitectureDescriptionElementAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -177,6 +210,48 @@ public class CrewaiAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.crewai.Configurable <em>Configurable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.crewai.Configurable
+	 * @generated
+	 */
+	public Adapter createConfigurableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.crewai.Tool <em>Tool</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.crewai.Tool
+	 * @generated
+	 */
+	public Adapter createToolAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.crewai.Agent <em>Agent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.crewai.Agent
+	 * @generated
+	 */
+	public Adapter createAgentAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.crewai.Crew <em>Crew</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -191,6 +266,160 @@ public class CrewaiAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.crewai.Task <em>Task</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.crewai.Task
+	 * @generated
+	 */
+	public Adapter createTaskAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.crewai.Function <em>Function</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.crewai.Function
+	 * @generated
+	 */
+	public Adapter createFunctionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.crewai.Guardrail <em>Guardrail</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.crewai.Guardrail
+	 * @generated
+	 */
+	public Adapter createGuardrailAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.crewai.Callback <em>Callback</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.crewai.Callback
+	 * @generated
+	 */
+	public Adapter createCallbackAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.crewai.Resource <em>Resource</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.crewai.Resource
+	 * @generated
+	 */
+	public Adapter createResourceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.crewai.Import <em>Import</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.crewai.Import
+	 * @generated
+	 */
+	public Adapter createImportAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.crewai.SourceElement <em>Source Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.crewai.SourceElement
+	 * @generated
+	 */
+	public Adapter createSourceElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.crewai.SourceUnit <em>Source Unit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.crewai.SourceUnit
+	 * @generated
+	 */
+	public Adapter createSourceUnitAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.crewai.Container <em>Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.crewai.Container
+	 * @generated
+	 */
+	public Adapter createContainerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.crewai.LargeLangaugeModel <em>Large Langauge Model</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.crewai.LargeLangaugeModel
+	 * @generated
+	 */
+	public Adapter createLargeLangaugeModelAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.crewai.KnowledgeSource <em>Knowledge Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.crewai.KnowledgeSource
+	 * @generated
+	 */
+	public Adapter createKnowledgeSourceAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.nasdanika.ncore.StringIdentity <em>String Identity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -201,34 +430,6 @@ public class CrewaiAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createStringIdentityAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.drawio.model.SemanticElement <em>Semantic Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.nasdanika.drawio.model.SemanticElement
-	 * @generated
-	 */
-	public Adapter createSemanticElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.graph.model.GraphElement <em>Graph Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.nasdanika.graph.model.GraphElement
-	 * @generated
-	 */
-	public Adapter createGraphElementAdapter() {
 		return null;
 	}
 
@@ -341,76 +542,6 @@ public class CrewaiAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDocumentedNamedStringIdentityAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.graph.model.DocumentedNamedGraphElement <em>Documented Named Graph Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.nasdanika.graph.model.DocumentedNamedGraphElement
-	 * @generated
-	 */
-	public Adapter createDocumentedNamedGraphElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.ncore.Period <em>Period</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.nasdanika.ncore.Period
-	 * @generated
-	 */
-	public Adapter createPeriodAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.architecture.ArchitectureElement <em>Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.nasdanika.models.architecture.ArchitectureElement
-	 * @generated
-	 */
-	public Adapter createArchitectureElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.architecture.Undergoer <em>Undergoer</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.nasdanika.models.architecture.Undergoer
-	 * @generated
-	 */
-	public Adapter createUndergoerAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.architecture.ArchitectureDescriptionElement <em>Description Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.nasdanika.models.architecture.ArchitectureDescriptionElement
-	 * @generated
-	 */
-	public Adapter createArchitectureDescriptionElementAdapter() {
 		return null;
 	}
 

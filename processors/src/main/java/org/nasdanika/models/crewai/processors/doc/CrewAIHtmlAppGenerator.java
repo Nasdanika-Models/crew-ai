@@ -12,8 +12,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.nasdanika.common.Context;
 import org.nasdanika.models.app.graph.emf.HtmlAppGenerator;
-import org.nasdanika.models.architecture.ArchitecturePackage;
-import org.nasdanika.models.party.PartyPackage;
+//import org.nasdanika.models.architecture.ArchitecturePackage;
+//import org.nasdanika.models.party.PartyPackage;
 import org.nasdanika.ncore.NcorePackage;
 
 public class CrewAIHtmlAppGenerator extends HtmlAppGenerator {
@@ -28,11 +28,11 @@ public class CrewAIHtmlAppGenerator extends HtmlAppGenerator {
 	
 	private static Map<EPackage, URI> REFERENCES = Map.ofEntries(
 			Map.entry(EcorePackage.eINSTANCE, URI.createURI("https://ecore.models.nasdanika.org/")),			
-			Map.entry(NcorePackage.eINSTANCE, URI.createURI("https://ncore.models.nasdanika.org/")),			
-			Map.entry(PartyPackage.eINSTANCE, URI.createURI("https://party.models.nasdanika.org/")),			
-			Map.entry(org.nasdanika.graph.model.ModelPackage.eINSTANCE, URI.createURI("https://graph.models.nasdanika.org/")),			
-			Map.entry(org.nasdanika.drawio.model.ModelPackage.eINSTANCE, URI.createURI("https://drawio.models.nasdanika.org/")),			
-			Map.entry(ArchitecturePackage.eINSTANCE, URI.createURI("https://architecture.models.nasdanika.org/")));
+			Map.entry(NcorePackage.eINSTANCE, URI.createURI("https://ncore.models.nasdanika.org/")));			
+//			Map.entry(PartyPackage.eINSTANCE, URI.createURI("https://party.models.nasdanika.org/")),			
+//			Map.entry(org.nasdanika.graph.model.ModelPackage.eINSTANCE, URI.createURI("https://graph.models.nasdanika.org/")),			
+//			Map.entry(org.nasdanika.drawio.model.ModelPackage.eINSTANCE, URI.createURI("https://drawio.models.nasdanika.org/")),			
+//			Map.entry(ArchitecturePackage.eINSTANCE, URI.createURI("https://architecture.models.nasdanika.org/")));
 		
 	public CrewAIHtmlAppGenerator(
 			EObject source,
