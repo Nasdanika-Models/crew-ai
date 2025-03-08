@@ -18,6 +18,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.nasdanika.models.crewai.Agent#getFunctionCallingLlm <em>Function Calling Llm</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.Agent#getStepCallback <em>Step Callback</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.Agent#getKnowledgeSources <em>Knowledge Sources</em>}</li>
+ *   <li>{@link org.nasdanika.models.crewai.Agent#getEmbedder <em>Embedder</em>}</li>
  * </ul>
  *
  * @see org.nasdanika.models.crewai.CrewaiPackage#getAgent()
@@ -114,5 +115,27 @@ public interface Agent extends Configurable {
 	 * @generated
 	 */
 	EList<KnowledgeSource> getKnowledgeSources();
+
+	/**
+	 * Returns the value of the '<em><b>Embedder</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Embedder</em>' reference.
+	 * @see #setEmbedder(Code)
+	 * @see org.nasdanika.models.crewai.CrewaiPackage#getAgent_Embedder()
+	 * @model
+	 * @generated
+	 */
+	Code getEmbedder();
+
+	/**
+	 * Sets the value of the '{@link org.nasdanika.models.crewai.Agent#getEmbedder <em>Embedder</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Embedder</em>' reference.
+	 * @see #getEmbedder()
+	 * @generated
+	 */
+	void setEmbedder(Code value);
 
 } // Agent

@@ -12,7 +12,9 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import org.nasdanika.models.crewai.Agent;
+import org.nasdanika.models.crewai.Assignment;
 import org.nasdanika.models.crewai.Callback;
+import org.nasdanika.models.crewai.Code;
 import org.nasdanika.models.crewai.Configurable;
 import org.nasdanika.models.crewai.Crew;
 import org.nasdanika.models.crewai.CrewaiFactory;
@@ -73,19 +75,21 @@ public class CrewaiFactoryImpl extends EFactoryImpl implements CrewaiFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case CrewaiPackage.RESOURCE: return createResource();
+			case CrewaiPackage.SOURCE_UNIT: return createSourceUnit();
+			case CrewaiPackage.CONTAINER: return createContainer();
+			case CrewaiPackage.IMPORT: return createImport();
+			case CrewaiPackage.SOURCE_ELEMENT: return createSourceElement();
+			case CrewaiPackage.CODE: return createCode();
+			case CrewaiPackage.FUNCTION: return createFunction();
+			case CrewaiPackage.ASSIGNMENT: return createAssignment();
+			case CrewaiPackage.GUARDRAIL: return createGuardrail();
+			case CrewaiPackage.CALLBACK: return createCallback();
 			case CrewaiPackage.CONFIGURABLE: return createConfigurable();
 			case CrewaiPackage.TOOL: return createTool();
 			case CrewaiPackage.AGENT: return createAgent();
 			case CrewaiPackage.CREW: return createCrew();
 			case CrewaiPackage.TASK: return createTask();
-			case CrewaiPackage.FUNCTION: return createFunction();
-			case CrewaiPackage.GUARDRAIL: return createGuardrail();
-			case CrewaiPackage.CALLBACK: return createCallback();
-			case CrewaiPackage.RESOURCE: return createResource();
-			case CrewaiPackage.IMPORT: return createImport();
-			case CrewaiPackage.SOURCE_ELEMENT: return createSourceElement();
-			case CrewaiPackage.SOURCE_UNIT: return createSourceUnit();
-			case CrewaiPackage.CONTAINER: return createContainer();
 			case CrewaiPackage.LARGE_LANGAUGE_MODEL: return createLargeLangaugeModel();
 			case CrewaiPackage.KNOWLEDGE_SOURCE: return createKnowledgeSource();
 			default:
@@ -195,6 +199,17 @@ public class CrewaiFactoryImpl extends EFactoryImpl implements CrewaiFactory {
 	 * @generated
 	 */
 	@Override
+	public Assignment createAssignment() {
+		AssignmentImpl assignment = new AssignmentImpl();
+		return assignment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Guardrail createGuardrail() {
 		GuardrailImpl guardrail = new GuardrailImpl();
 		return guardrail;
@@ -242,6 +257,17 @@ public class CrewaiFactoryImpl extends EFactoryImpl implements CrewaiFactory {
 	public SourceElement createSourceElement() {
 		SourceElementImpl sourceElement = new SourceElementImpl();
 		return sourceElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Code createCode() {
+		CodeImpl code = new CodeImpl();
+		return code;
 	}
 
 	/**

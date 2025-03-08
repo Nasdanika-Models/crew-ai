@@ -76,6 +76,15 @@ public interface CrewaiFactory extends EFactory {
 	Function createFunction();
 
 	/**
+	 * Returns a new object of class '<em>Assignment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Assignment</em>'.
+	 * @generated
+	 */
+	Assignment createAssignment();
+
+	/**
 	 * Returns a new object of class '<em>Guardrail</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -119,6 +128,15 @@ public interface CrewaiFactory extends EFactory {
 	 * @generated
 	 */
 	SourceElement createSourceElement();
+
+	/**
+	 * Returns a new object of class '<em>Code</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Code</em>'.
+	 * @generated
+	 */
+	Code createCode();
 
 	/**
 	 * Returns a new object of class '<em>Source Unit</em>'.

@@ -20,13 +20,18 @@ import org.nasdanika.ncore.DocumentedNamedStringIdentity;
  *   <li>{@link org.nasdanika.models.crewai.Crew#getBeforeKickoff <em>Before Kickoff</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.Crew#getAfterKickoff <em>After Kickoff</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.Crew#getProcess <em>Process</em>}</li>
+ *   <li>{@link org.nasdanika.models.crewai.Crew#getKnowledgeSources <em>Knowledge Sources</em>}</li>
+ *   <li>{@link org.nasdanika.models.crewai.Crew#getManagerLlm <em>Manager Llm</em>}</li>
+ *   <li>{@link org.nasdanika.models.crewai.Crew#getFunctionCallingLlm <em>Function Calling Llm</em>}</li>
+ *   <li>{@link org.nasdanika.models.crewai.Crew#getPlanningLlm <em>Planning Llm</em>}</li>
+ *   <li>{@link org.nasdanika.models.crewai.Crew#getEmbedder <em>Embedder</em>}</li>
  * </ul>
  *
  * @see org.nasdanika.models.crewai.CrewaiPackage#getCrew()
  * @model
  * @generated
  */
-public interface Crew extends DocumentedNamedStringIdentity {
+public interface Crew extends SourceElement, DocumentedNamedStringIdentity {
 
 	/**
 	 * Returns the value of the '<em><b>Tools</b></em>' containment reference list.
@@ -132,4 +137,104 @@ public interface Crew extends DocumentedNamedStringIdentity {
 	 * @generated
 	 */
 	void setProcess(org.nasdanika.models.crewai.Process value);
+
+	/**
+	 * Returns the value of the '<em><b>Knowledge Sources</b></em>' reference list.
+	 * The list contents are of type {@link org.nasdanika.models.crewai.KnowledgeSource}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Knowledge Sources</em>' reference list.
+	 * @see org.nasdanika.models.crewai.CrewaiPackage#getCrew_KnowledgeSources()
+	 * @model
+	 * @generated
+	 */
+	EList<KnowledgeSource> getKnowledgeSources();
+
+	/**
+	 * Returns the value of the '<em><b>Manager Llm</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Manager Llm</em>' reference.
+	 * @see #setManagerLlm(LargeLangaugeModel)
+	 * @see org.nasdanika.models.crewai.CrewaiPackage#getCrew_ManagerLlm()
+	 * @model
+	 * @generated
+	 */
+	LargeLangaugeModel getManagerLlm();
+
+	/**
+	 * Sets the value of the '{@link org.nasdanika.models.crewai.Crew#getManagerLlm <em>Manager Llm</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Manager Llm</em>' reference.
+	 * @see #getManagerLlm()
+	 * @generated
+	 */
+	void setManagerLlm(LargeLangaugeModel value);
+
+	/**
+	 * Returns the value of the '<em><b>Function Calling Llm</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Function Calling Llm</em>' reference.
+	 * @see #setFunctionCallingLlm(LargeLangaugeModel)
+	 * @see org.nasdanika.models.crewai.CrewaiPackage#getCrew_FunctionCallingLlm()
+	 * @model
+	 * @generated
+	 */
+	LargeLangaugeModel getFunctionCallingLlm();
+
+	/**
+	 * Sets the value of the '{@link org.nasdanika.models.crewai.Crew#getFunctionCallingLlm <em>Function Calling Llm</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Function Calling Llm</em>' reference.
+	 * @see #getFunctionCallingLlm()
+	 * @generated
+	 */
+	void setFunctionCallingLlm(LargeLangaugeModel value);
+
+	/**
+	 * Returns the value of the '<em><b>Planning Llm</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Planning Llm</em>' reference.
+	 * @see #setPlanningLlm(LargeLangaugeModel)
+	 * @see org.nasdanika.models.crewai.CrewaiPackage#getCrew_PlanningLlm()
+	 * @model
+	 * @generated
+	 */
+	LargeLangaugeModel getPlanningLlm();
+
+	/**
+	 * Sets the value of the '{@link org.nasdanika.models.crewai.Crew#getPlanningLlm <em>Planning Llm</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Planning Llm</em>' reference.
+	 * @see #getPlanningLlm()
+	 * @generated
+	 */
+	void setPlanningLlm(LargeLangaugeModel value);
+
+	/**
+	 * Returns the value of the '<em><b>Embedder</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Embedder</em>' reference.
+	 * @see #setEmbedder(Code)
+	 * @see org.nasdanika.models.crewai.CrewaiPackage#getCrew_Embedder()
+	 * @model
+	 * @generated
+	 */
+	Code getEmbedder();
+
+	/**
+	 * Sets the value of the '{@link org.nasdanika.models.crewai.Crew#getEmbedder <em>Embedder</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Embedder</em>' reference.
+	 * @see #getEmbedder()
+	 * @generated
+	 */
+	void setEmbedder(Code value);
 } // Crew

@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.nasdanika.models.crewai.Agent;
 import org.nasdanika.models.crewai.Callback;
+import org.nasdanika.models.crewai.Code;
 import org.nasdanika.models.crewai.CrewaiPackage;
 import org.nasdanika.models.crewai.KnowledgeSource;
 import org.nasdanika.models.crewai.LargeLangaugeModel;
@@ -28,6 +29,7 @@ import org.nasdanika.models.crewai.Tool;
  *   <li>{@link org.nasdanika.models.crewai.impl.AgentImpl#getFunctionCallingLlm <em>Function Calling Llm</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.AgentImpl#getStepCallback <em>Step Callback</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.AgentImpl#getKnowledgeSources <em>Knowledge Sources</em>}</li>
+ *   <li>{@link org.nasdanika.models.crewai.impl.AgentImpl#getEmbedder <em>Embedder</em>}</li>
  * </ul>
  *
  * @generated
@@ -167,6 +169,35 @@ public class AgentImpl extends ConfigurableImpl implements Agent {
 	 * @generated
 	 */
 	@Override
+	public Code getEmbedder() {
+		return (Code)eDynamicGet(CrewaiPackage.AGENT__EMBEDDER, CrewaiPackage.Literals.AGENT__EMBEDDER, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Code basicGetEmbedder() {
+		return (Code)eDynamicGet(CrewaiPackage.AGENT__EMBEDDER, CrewaiPackage.Literals.AGENT__EMBEDDER, false, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setEmbedder(Code newEmbedder) {
+		eDynamicSet(CrewaiPackage.AGENT__EMBEDDER, CrewaiPackage.Literals.AGENT__EMBEDDER, newEmbedder);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CrewaiPackage.AGENT__TOOLS:
@@ -182,6 +213,9 @@ public class AgentImpl extends ConfigurableImpl implements Agent {
 				return basicGetStepCallback();
 			case CrewaiPackage.AGENT__KNOWLEDGE_SOURCES:
 				return getKnowledgeSources();
+			case CrewaiPackage.AGENT__EMBEDDER:
+				if (resolve) return getEmbedder();
+				return basicGetEmbedder();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -212,6 +246,9 @@ public class AgentImpl extends ConfigurableImpl implements Agent {
 				getKnowledgeSources().clear();
 				getKnowledgeSources().addAll((Collection<? extends KnowledgeSource>)newValue);
 				return;
+			case CrewaiPackage.AGENT__EMBEDDER:
+				setEmbedder((Code)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -239,6 +276,9 @@ public class AgentImpl extends ConfigurableImpl implements Agent {
 			case CrewaiPackage.AGENT__KNOWLEDGE_SOURCES:
 				getKnowledgeSources().clear();
 				return;
+			case CrewaiPackage.AGENT__EMBEDDER:
+				setEmbedder((Code)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -261,6 +301,8 @@ public class AgentImpl extends ConfigurableImpl implements Agent {
 				return basicGetStepCallback() != null;
 			case CrewaiPackage.AGENT__KNOWLEDGE_SOURCES:
 				return !getKnowledgeSources().isEmpty();
+			case CrewaiPackage.AGENT__EMBEDDER:
+				return basicGetEmbedder() != null;
 		}
 		return super.eIsSet(featureID);
 	}

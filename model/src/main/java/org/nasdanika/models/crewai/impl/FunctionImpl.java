@@ -52,11 +52,12 @@ import org.nasdanika.persistence.Marked;
  *   <li>{@link org.nasdanika.models.crewai.impl.FunctionImpl#getDocumentation <em>Documentation</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.FunctionImpl#getContextHelp <em>Context Help</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.FunctionImpl#getId <em>Id</em>}</li>
+ *   <li>{@link org.nasdanika.models.crewai.impl.FunctionImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class FunctionImpl extends SourceElementImpl implements Function {
+public class FunctionImpl extends CodeImpl implements Function {
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -297,6 +298,17 @@ public class FunctionImpl extends SourceElementImpl implements Function {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EList<String> getParameters() {
+		return (EList<String>)eDynamicGet(CrewaiPackage.FUNCTION__PARAMETERS, CrewaiPackage.Literals.FUNCTION__PARAMETERS, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -347,6 +359,8 @@ public class FunctionImpl extends SourceElementImpl implements Function {
 				return getContextHelp();
 			case CrewaiPackage.FUNCTION__ID:
 				return getId();
+			case CrewaiPackage.FUNCTION__PARAMETERS:
+				return getParameters();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -398,6 +412,10 @@ public class FunctionImpl extends SourceElementImpl implements Function {
 			case CrewaiPackage.FUNCTION__ID:
 				setId((String)newValue);
 				return;
+			case CrewaiPackage.FUNCTION__PARAMETERS:
+				getParameters().clear();
+				getParameters().addAll((Collection<? extends String>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -443,6 +461,9 @@ public class FunctionImpl extends SourceElementImpl implements Function {
 			case CrewaiPackage.FUNCTION__ID:
 				setId(ID_EDEFAULT);
 				return;
+			case CrewaiPackage.FUNCTION__PARAMETERS:
+				getParameters().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -477,6 +498,8 @@ public class FunctionImpl extends SourceElementImpl implements Function {
 				return !getContextHelp().isEmpty();
 			case CrewaiPackage.FUNCTION__ID:
 				return ID_EDEFAULT == null ? getId() != null : !ID_EDEFAULT.equals(getId());
+			case CrewaiPackage.FUNCTION__PARAMETERS:
+				return !getParameters().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -9,7 +9,9 @@ import org.eclipse.emf.ecore.util.Switch;
 
 import org.nasdanika.common.Adaptable;
 import org.nasdanika.models.crewai.Agent;
+import org.nasdanika.models.crewai.Assignment;
 import org.nasdanika.models.crewai.Callback;
+import org.nasdanika.models.crewai.Code;
 import org.nasdanika.models.crewai.Configurable;
 import org.nasdanika.models.crewai.Container;
 import org.nasdanika.models.crewai.Crew;
@@ -92,124 +94,6 @@ public class CrewaiSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case CrewaiPackage.CONFIGURABLE: {
-				Configurable configurable = (Configurable)theEObject;
-				T result = caseConfigurable(configurable);
-				if (result == null) result = caseDocumentedNamedStringIdentity(configurable);
-				if (result == null) result = caseDocumentedNamedElement(configurable);
-				if (result == null) result = caseStringIdentity(configurable);
-				if (result == null) result = caseNamedElement(configurable);
-				if (result == null) result = caseDocumented(configurable);
-				if (result == null) result = caseModelElement(configurable);
-				if (result == null) result = caseMarked(configurable);
-				if (result == null) result = caseAdaptable(configurable);
-				if (result == null) result = caseIMarked(configurable);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CrewaiPackage.TOOL: {
-				Tool tool = (Tool)theEObject;
-				T result = caseTool(tool);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CrewaiPackage.AGENT: {
-				Agent agent = (Agent)theEObject;
-				T result = caseAgent(agent);
-				if (result == null) result = caseConfigurable(agent);
-				if (result == null) result = caseDocumentedNamedStringIdentity(agent);
-				if (result == null) result = caseDocumentedNamedElement(agent);
-				if (result == null) result = caseStringIdentity(agent);
-				if (result == null) result = caseNamedElement(agent);
-				if (result == null) result = caseDocumented(agent);
-				if (result == null) result = caseModelElement(agent);
-				if (result == null) result = caseMarked(agent);
-				if (result == null) result = caseAdaptable(agent);
-				if (result == null) result = caseIMarked(agent);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CrewaiPackage.CREW: {
-				Crew crew = (Crew)theEObject;
-				T result = caseCrew(crew);
-				if (result == null) result = caseDocumentedNamedStringIdentity(crew);
-				if (result == null) result = caseDocumentedNamedElement(crew);
-				if (result == null) result = caseStringIdentity(crew);
-				if (result == null) result = caseNamedElement(crew);
-				if (result == null) result = caseDocumented(crew);
-				if (result == null) result = caseModelElement(crew);
-				if (result == null) result = caseMarked(crew);
-				if (result == null) result = caseAdaptable(crew);
-				if (result == null) result = caseIMarked(crew);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CrewaiPackage.TASK: {
-				Task task = (Task)theEObject;
-				T result = caseTask(task);
-				if (result == null) result = caseConfigurable(task);
-				if (result == null) result = caseDocumentedNamedStringIdentity(task);
-				if (result == null) result = caseDocumentedNamedElement(task);
-				if (result == null) result = caseStringIdentity(task);
-				if (result == null) result = caseNamedElement(task);
-				if (result == null) result = caseDocumented(task);
-				if (result == null) result = caseModelElement(task);
-				if (result == null) result = caseMarked(task);
-				if (result == null) result = caseAdaptable(task);
-				if (result == null) result = caseIMarked(task);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CrewaiPackage.FUNCTION: {
-				Function function = (Function)theEObject;
-				T result = caseFunction(function);
-				if (result == null) result = caseSourceElement(function);
-				if (result == null) result = caseDocumentedNamedStringIdentity(function);
-				if (result == null) result = caseDocumentedNamedElement(function);
-				if (result == null) result = caseStringIdentity(function);
-				if (result == null) result = caseNamedElement(function);
-				if (result == null) result = caseDocumented(function);
-				if (result == null) result = caseModelElement(function);
-				if (result == null) result = caseMarked(function);
-				if (result == null) result = caseAdaptable(function);
-				if (result == null) result = caseIMarked(function);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CrewaiPackage.GUARDRAIL: {
-				Guardrail guardrail = (Guardrail)theEObject;
-				T result = caseGuardrail(guardrail);
-				if (result == null) result = caseFunction(guardrail);
-				if (result == null) result = caseSourceElement(guardrail);
-				if (result == null) result = caseDocumentedNamedStringIdentity(guardrail);
-				if (result == null) result = caseDocumentedNamedElement(guardrail);
-				if (result == null) result = caseStringIdentity(guardrail);
-				if (result == null) result = caseNamedElement(guardrail);
-				if (result == null) result = caseDocumented(guardrail);
-				if (result == null) result = caseModelElement(guardrail);
-				if (result == null) result = caseMarked(guardrail);
-				if (result == null) result = caseAdaptable(guardrail);
-				if (result == null) result = caseIMarked(guardrail);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CrewaiPackage.CALLBACK: {
-				Callback callback = (Callback)theEObject;
-				T result = caseCallback(callback);
-				if (result == null) result = caseFunction(callback);
-				if (result == null) result = caseSourceElement(callback);
-				if (result == null) result = caseDocumentedNamedStringIdentity(callback);
-				if (result == null) result = caseDocumentedNamedElement(callback);
-				if (result == null) result = caseStringIdentity(callback);
-				if (result == null) result = caseNamedElement(callback);
-				if (result == null) result = caseDocumented(callback);
-				if (result == null) result = caseModelElement(callback);
-				if (result == null) result = caseMarked(callback);
-				if (result == null) result = caseAdaptable(callback);
-				if (result == null) result = caseIMarked(callback);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case CrewaiPackage.RESOURCE: {
 				Resource resource = (Resource)theEObject;
 				T result = caseResource(resource);
@@ -222,18 +106,6 @@ public class CrewaiSwitch<T> extends Switch<T> {
 				if (result == null) result = caseMarked(resource);
 				if (result == null) result = caseAdaptable(resource);
 				if (result == null) result = caseIMarked(resource);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CrewaiPackage.IMPORT: {
-				Import import_ = (Import)theEObject;
-				T result = caseImport(import_);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CrewaiPackage.SOURCE_ELEMENT: {
-				SourceElement sourceElement = (SourceElement)theEObject;
-				T result = caseSourceElement(sourceElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -267,6 +139,166 @@ public class CrewaiSwitch<T> extends Switch<T> {
 				if (result == null) result = caseMarked(container);
 				if (result == null) result = caseAdaptable(container);
 				if (result == null) result = caseIMarked(container);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CrewaiPackage.IMPORT: {
+				Import import_ = (Import)theEObject;
+				T result = caseImport(import_);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CrewaiPackage.SOURCE_ELEMENT: {
+				SourceElement sourceElement = (SourceElement)theEObject;
+				T result = caseSourceElement(sourceElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CrewaiPackage.CODE: {
+				Code code = (Code)theEObject;
+				T result = caseCode(code);
+				if (result == null) result = caseSourceElement(code);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CrewaiPackage.FUNCTION: {
+				Function function = (Function)theEObject;
+				T result = caseFunction(function);
+				if (result == null) result = caseCode(function);
+				if (result == null) result = caseDocumentedNamedStringIdentity(function);
+				if (result == null) result = caseSourceElement(function);
+				if (result == null) result = caseDocumentedNamedElement(function);
+				if (result == null) result = caseStringIdentity(function);
+				if (result == null) result = caseNamedElement(function);
+				if (result == null) result = caseDocumented(function);
+				if (result == null) result = caseModelElement(function);
+				if (result == null) result = caseMarked(function);
+				if (result == null) result = caseAdaptable(function);
+				if (result == null) result = caseIMarked(function);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CrewaiPackage.ASSIGNMENT: {
+				Assignment assignment = (Assignment)theEObject;
+				T result = caseAssignment(assignment);
+				if (result == null) result = caseCode(assignment);
+				if (result == null) result = caseDocumentedNamedStringIdentity(assignment);
+				if (result == null) result = caseSourceElement(assignment);
+				if (result == null) result = caseDocumentedNamedElement(assignment);
+				if (result == null) result = caseStringIdentity(assignment);
+				if (result == null) result = caseNamedElement(assignment);
+				if (result == null) result = caseDocumented(assignment);
+				if (result == null) result = caseModelElement(assignment);
+				if (result == null) result = caseMarked(assignment);
+				if (result == null) result = caseAdaptable(assignment);
+				if (result == null) result = caseIMarked(assignment);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CrewaiPackage.GUARDRAIL: {
+				Guardrail guardrail = (Guardrail)theEObject;
+				T result = caseGuardrail(guardrail);
+				if (result == null) result = caseFunction(guardrail);
+				if (result == null) result = caseCode(guardrail);
+				if (result == null) result = caseDocumentedNamedStringIdentity(guardrail);
+				if (result == null) result = caseSourceElement(guardrail);
+				if (result == null) result = caseDocumentedNamedElement(guardrail);
+				if (result == null) result = caseStringIdentity(guardrail);
+				if (result == null) result = caseNamedElement(guardrail);
+				if (result == null) result = caseDocumented(guardrail);
+				if (result == null) result = caseModelElement(guardrail);
+				if (result == null) result = caseMarked(guardrail);
+				if (result == null) result = caseAdaptable(guardrail);
+				if (result == null) result = caseIMarked(guardrail);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CrewaiPackage.CALLBACK: {
+				Callback callback = (Callback)theEObject;
+				T result = caseCallback(callback);
+				if (result == null) result = caseFunction(callback);
+				if (result == null) result = caseCode(callback);
+				if (result == null) result = caseDocumentedNamedStringIdentity(callback);
+				if (result == null) result = caseSourceElement(callback);
+				if (result == null) result = caseDocumentedNamedElement(callback);
+				if (result == null) result = caseStringIdentity(callback);
+				if (result == null) result = caseNamedElement(callback);
+				if (result == null) result = caseDocumented(callback);
+				if (result == null) result = caseModelElement(callback);
+				if (result == null) result = caseMarked(callback);
+				if (result == null) result = caseAdaptable(callback);
+				if (result == null) result = caseIMarked(callback);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CrewaiPackage.CONFIGURABLE: {
+				Configurable configurable = (Configurable)theEObject;
+				T result = caseConfigurable(configurable);
+				if (result == null) result = caseDocumentedNamedStringIdentity(configurable);
+				if (result == null) result = caseDocumentedNamedElement(configurable);
+				if (result == null) result = caseStringIdentity(configurable);
+				if (result == null) result = caseNamedElement(configurable);
+				if (result == null) result = caseDocumented(configurable);
+				if (result == null) result = caseModelElement(configurable);
+				if (result == null) result = caseMarked(configurable);
+				if (result == null) result = caseAdaptable(configurable);
+				if (result == null) result = caseIMarked(configurable);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CrewaiPackage.TOOL: {
+				Tool tool = (Tool)theEObject;
+				T result = caseTool(tool);
+				if (result == null) result = caseCode(tool);
+				if (result == null) result = caseSourceElement(tool);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CrewaiPackage.AGENT: {
+				Agent agent = (Agent)theEObject;
+				T result = caseAgent(agent);
+				if (result == null) result = caseConfigurable(agent);
+				if (result == null) result = caseDocumentedNamedStringIdentity(agent);
+				if (result == null) result = caseDocumentedNamedElement(agent);
+				if (result == null) result = caseStringIdentity(agent);
+				if (result == null) result = caseNamedElement(agent);
+				if (result == null) result = caseDocumented(agent);
+				if (result == null) result = caseModelElement(agent);
+				if (result == null) result = caseMarked(agent);
+				if (result == null) result = caseAdaptable(agent);
+				if (result == null) result = caseIMarked(agent);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CrewaiPackage.CREW: {
+				Crew crew = (Crew)theEObject;
+				T result = caseCrew(crew);
+				if (result == null) result = caseSourceElement(crew);
+				if (result == null) result = caseDocumentedNamedStringIdentity(crew);
+				if (result == null) result = caseDocumentedNamedElement(crew);
+				if (result == null) result = caseStringIdentity(crew);
+				if (result == null) result = caseNamedElement(crew);
+				if (result == null) result = caseDocumented(crew);
+				if (result == null) result = caseModelElement(crew);
+				if (result == null) result = caseMarked(crew);
+				if (result == null) result = caseAdaptable(crew);
+				if (result == null) result = caseIMarked(crew);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CrewaiPackage.TASK: {
+				Task task = (Task)theEObject;
+				T result = caseTask(task);
+				if (result == null) result = caseConfigurable(task);
+				if (result == null) result = caseDocumentedNamedStringIdentity(task);
+				if (result == null) result = caseDocumentedNamedElement(task);
+				if (result == null) result = caseStringIdentity(task);
+				if (result == null) result = caseNamedElement(task);
+				if (result == null) result = caseDocumented(task);
+				if (result == null) result = caseModelElement(task);
+				if (result == null) result = caseMarked(task);
+				if (result == null) result = caseAdaptable(task);
+				if (result == null) result = caseIMarked(task);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -377,6 +409,21 @@ public class CrewaiSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Assignment</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Assignment</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAssignment(Assignment object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Guardrail</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -448,6 +495,21 @@ public class CrewaiSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSourceElement(SourceElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Code</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Code</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCode(Code object) {
 		return null;
 	}
 

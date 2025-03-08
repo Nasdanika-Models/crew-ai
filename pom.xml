@@ -174,10 +174,10 @@
 
 	<modules>
 		<module>model</module>
-		<!--
-		<module>processors</module>
-		<module>generator</module>
-		-->
+		<module>drawio</module>
+		<module>ecore</module>
+		<module>doc</module>
+		<module>cli</module>
 	</modules>
 
 	 <profiles>

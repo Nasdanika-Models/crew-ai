@@ -2,8 +2,6 @@
  */
 package org.nasdanika.models.crewai;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Tool</b></em>'.
@@ -14,5 +12,5 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Tool extends EObject {
+public interface Tool extends Code {
 } // Tool

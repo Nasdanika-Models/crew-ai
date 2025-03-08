@@ -11,7 +11,9 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.nasdanika.common.Adaptable;
 import org.nasdanika.models.crewai.Agent;
+import org.nasdanika.models.crewai.Assignment;
 import org.nasdanika.models.crewai.Callback;
+import org.nasdanika.models.crewai.Code;
 import org.nasdanika.models.crewai.Configurable;
 import org.nasdanika.models.crewai.Container;
 import org.nasdanika.models.crewai.Crew;
@@ -94,6 +96,46 @@ public class CrewaiAdapterFactory extends AdapterFactoryImpl {
 	protected CrewaiSwitch<Adapter> modelSwitch =
 		new CrewaiSwitch<Adapter>() {
 			@Override
+			public Adapter caseResource(Resource object) {
+				return createResourceAdapter();
+			}
+			@Override
+			public Adapter caseSourceUnit(SourceUnit object) {
+				return createSourceUnitAdapter();
+			}
+			@Override
+			public Adapter caseContainer(Container object) {
+				return createContainerAdapter();
+			}
+			@Override
+			public Adapter caseImport(Import object) {
+				return createImportAdapter();
+			}
+			@Override
+			public Adapter caseSourceElement(SourceElement object) {
+				return createSourceElementAdapter();
+			}
+			@Override
+			public Adapter caseCode(Code object) {
+				return createCodeAdapter();
+			}
+			@Override
+			public Adapter caseFunction(Function object) {
+				return createFunctionAdapter();
+			}
+			@Override
+			public Adapter caseAssignment(Assignment object) {
+				return createAssignmentAdapter();
+			}
+			@Override
+			public Adapter caseGuardrail(Guardrail object) {
+				return createGuardrailAdapter();
+			}
+			@Override
+			public Adapter caseCallback(Callback object) {
+				return createCallbackAdapter();
+			}
+			@Override
 			public Adapter caseConfigurable(Configurable object) {
 				return createConfigurableAdapter();
 			}
@@ -112,38 +154,6 @@ public class CrewaiAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseTask(Task object) {
 				return createTaskAdapter();
-			}
-			@Override
-			public Adapter caseFunction(Function object) {
-				return createFunctionAdapter();
-			}
-			@Override
-			public Adapter caseGuardrail(Guardrail object) {
-				return createGuardrailAdapter();
-			}
-			@Override
-			public Adapter caseCallback(Callback object) {
-				return createCallbackAdapter();
-			}
-			@Override
-			public Adapter caseResource(Resource object) {
-				return createResourceAdapter();
-			}
-			@Override
-			public Adapter caseImport(Import object) {
-				return createImportAdapter();
-			}
-			@Override
-			public Adapter caseSourceElement(SourceElement object) {
-				return createSourceElementAdapter();
-			}
-			@Override
-			public Adapter caseSourceUnit(SourceUnit object) {
-				return createSourceUnitAdapter();
-			}
-			@Override
-			public Adapter caseContainer(Container object) {
-				return createContainerAdapter();
 			}
 			@Override
 			public Adapter caseLargeLangaugeModel(LargeLangaugeModel object) {
@@ -294,6 +304,20 @@ public class CrewaiAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.crewai.Assignment <em>Assignment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.crewai.Assignment
+	 * @generated
+	 */
+	public Adapter createAssignmentAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.crewai.Guardrail <em>Guardrail</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -360,6 +384,20 @@ public class CrewaiAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSourceElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.crewai.Code <em>Code</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.crewai.Code
+	 * @generated
+	 */
+	public Adapter createCodeAdapter() {
 		return null;
 	}
 
