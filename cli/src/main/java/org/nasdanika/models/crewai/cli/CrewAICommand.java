@@ -46,7 +46,7 @@ public class CrewAICommand extends CommandGroup implements EObjectSupplier<EObje
 			"Defaults to ${DEFAULT-VALUE}"
 		},
 		defaultValue = "processor")
-	@Description
+//	@Description
 	private String processorProperty;
 		
 //	@Option(

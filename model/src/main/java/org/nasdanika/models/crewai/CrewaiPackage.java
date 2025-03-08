@@ -2092,32 +2092,32 @@ public interface CrewaiPackage extends EPackage {
 	int TASK_OPERATION_COUNT = CONFIGURABLE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.nasdanika.models.crewai.impl.LargeLangaugeModelImpl <em>Large Langauge Model</em>}' class.
+	 * The meta object id for the '{@link org.nasdanika.models.crewai.impl.LargeLanguageModelImpl <em>Large Language Model</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.models.crewai.impl.LargeLangaugeModelImpl
-	 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getLargeLangaugeModel()
+	 * @see org.nasdanika.models.crewai.impl.LargeLanguageModelImpl
+	 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getLargeLanguageModel()
 	 * @generated
 	 */
-	int LARGE_LANGAUGE_MODEL = 15;
+	int LARGE_LANGUAGE_MODEL = 15;
 
 	/**
-	 * The number of structural features of the '<em>Large Langauge Model</em>' class.
+	 * The number of structural features of the '<em>Large Language Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LARGE_LANGAUGE_MODEL_FEATURE_COUNT = 0;
+	int LARGE_LANGUAGE_MODEL_FEATURE_COUNT = 0;
 
 	/**
-	 * The number of operations of the '<em>Large Langauge Model</em>' class.
+	 * The number of operations of the '<em>Large Language Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LARGE_LANGAUGE_MODEL_OPERATION_COUNT = 0;
+	int LARGE_LANGUAGE_MODEL_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.models.crewai.impl.KnowledgeSourceImpl <em>Knowledge Source</em>}' class.
@@ -2462,6 +2462,16 @@ public interface CrewaiPackage extends EPackage {
 	EReference getTask_Callback();
 
 	/**
+	 * Returns the meta object for class '{@link org.nasdanika.models.crewai.LargeLanguageModel <em>Large Language Model</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Large Language Model</em>'.
+	 * @see org.nasdanika.models.crewai.LargeLanguageModel
+	 * @generated
+	 */
+	EClass getLargeLanguageModel();
+
+	/**
 	 * Returns the meta object for class '{@link org.nasdanika.models.crewai.Function <em>Function</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2668,16 +2678,6 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getContainer_Resources();
-
-	/**
-	 * Returns the meta object for class '{@link org.nasdanika.models.crewai.LargeLangaugeModel <em>Large Langauge Model</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Large Langauge Model</em>'.
-	 * @see org.nasdanika.models.crewai.LargeLangaugeModel
-	 * @generated
-	 */
-	EClass getLargeLangaugeModel();
 
 	/**
 	 * Returns the meta object for class '{@link org.nasdanika.models.crewai.KnowledgeSource <em>Knowledge Source</em>}'.
@@ -2929,6 +2929,15 @@ public interface CrewaiPackage extends EPackage {
 		 */
 		EReference TASK__CALLBACK = eINSTANCE.getTask_Callback();
 		/**
+		 * The meta object literal for the '{@link org.nasdanika.models.crewai.impl.LargeLanguageModelImpl <em>Large Language Model</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nasdanika.models.crewai.impl.LargeLanguageModelImpl
+		 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getLargeLanguageModel()
+		 * @generated
+		 */
+		EClass LARGE_LANGUAGE_MODEL = eINSTANCE.getLargeLanguageModel();
+		/**
 		 * The meta object literal for the '{@link org.nasdanika.models.crewai.impl.FunctionImpl <em>Function</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3088,15 +3097,6 @@ public interface CrewaiPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONTAINER__RESOURCES = eINSTANCE.getContainer_Resources();
-		/**
-		 * The meta object literal for the '{@link org.nasdanika.models.crewai.impl.LargeLangaugeModelImpl <em>Large Langauge Model</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.nasdanika.models.crewai.impl.LargeLangaugeModelImpl
-		 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getLargeLangaugeModel()
-		 * @generated
-		 */
-		EClass LARGE_LANGAUGE_MODEL = eINSTANCE.getLargeLangaugeModel();
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.models.crewai.impl.KnowledgeSourceImpl <em>Knowledge Source</em>}' class.
 		 * <!-- begin-user-doc -->

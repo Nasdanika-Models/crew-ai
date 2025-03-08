@@ -10,24 +10,6 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
 import org.nasdanika.common.Adaptable;
-import org.nasdanika.models.crewai.Agent;
-import org.nasdanika.models.crewai.Assignment;
-import org.nasdanika.models.crewai.Callback;
-import org.nasdanika.models.crewai.Code;
-import org.nasdanika.models.crewai.Configurable;
-import org.nasdanika.models.crewai.Container;
-import org.nasdanika.models.crewai.Crew;
-import org.nasdanika.models.crewai.CrewaiPackage;
-import org.nasdanika.models.crewai.Function;
-import org.nasdanika.models.crewai.Guardrail;
-import org.nasdanika.models.crewai.Import;
-import org.nasdanika.models.crewai.KnowledgeSource;
-import org.nasdanika.models.crewai.LargeLangaugeModel;
-import org.nasdanika.models.crewai.Resource;
-import org.nasdanika.models.crewai.SourceElement;
-import org.nasdanika.models.crewai.SourceUnit;
-import org.nasdanika.models.crewai.Task;
-import org.nasdanika.models.crewai.Tool;
 import org.nasdanika.models.crewai.*;
 
 import org.nasdanika.ncore.Documented;
@@ -156,8 +138,8 @@ public class CrewaiAdapterFactory extends AdapterFactoryImpl {
 				return createTaskAdapter();
 			}
 			@Override
-			public Adapter caseLargeLangaugeModel(LargeLangaugeModel object) {
-				return createLargeLangaugeModelAdapter();
+			public Adapter caseLargeLanguageModel(LargeLanguageModel object) {
+				return createLargeLanguageModelAdapter();
 			}
 			@Override
 			public Adapter caseKnowledgeSource(KnowledgeSource object) {
@@ -286,6 +268,20 @@ public class CrewaiAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTaskAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.crewai.LargeLanguageModel <em>Large Language Model</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.crewai.LargeLanguageModel
+	 * @generated
+	 */
+	public Adapter createLargeLanguageModelAdapter() {
 		return null;
 	}
 
@@ -426,20 +422,6 @@ public class CrewaiAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createContainerAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.crewai.LargeLangaugeModel <em>Large Langauge Model</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.nasdanika.models.crewai.LargeLangaugeModel
-	 * @generated
-	 */
-	public Adapter createLargeLangaugeModelAdapter() {
 		return null;
 	}
 

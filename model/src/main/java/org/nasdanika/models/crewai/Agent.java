@@ -43,12 +43,12 @@ public interface Agent extends Configurable {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Llm</em>' reference.
-	 * @see #setLlm(LargeLangaugeModel)
+	 * @see #setLlm(LargeLanguageModel)
 	 * @see org.nasdanika.models.crewai.CrewaiPackage#getAgent_Llm()
 	 * @model
 	 * @generated
 	 */
-	LargeLangaugeModel getLlm();
+	LargeLanguageModel getLlm();
 
 	/**
 	 * Sets the value of the '{@link org.nasdanika.models.crewai.Agent#getLlm <em>Llm</em>}' reference.
@@ -58,19 +58,19 @@ public interface Agent extends Configurable {
 	 * @see #getLlm()
 	 * @generated
 	 */
-	void setLlm(LargeLangaugeModel value);
+	void setLlm(LargeLanguageModel value);
 
 	/**
 	 * Returns the value of the '<em><b>Function Calling Llm</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Function Calling Llm</em>' reference.
-	 * @see #setFunctionCallingLlm(LargeLangaugeModel)
+	 * @see #setFunctionCallingLlm(LargeLanguageModel)
 	 * @see org.nasdanika.models.crewai.CrewaiPackage#getAgent_FunctionCallingLlm()
 	 * @model
 	 * @generated
 	 */
-	LargeLangaugeModel getFunctionCallingLlm();
+	LargeLanguageModel getFunctionCallingLlm();
 
 	/**
 	 * Sets the value of the '{@link org.nasdanika.models.crewai.Agent#getFunctionCallingLlm <em>Function Calling Llm</em>}' reference.
@@ -80,7 +80,7 @@ public interface Agent extends Configurable {
 	 * @see #getFunctionCallingLlm()
 	 * @generated
 	 */
-	void setFunctionCallingLlm(LargeLangaugeModel value);
+	void setFunctionCallingLlm(LargeLanguageModel value);
 
 	/**
 	 * Returns the value of the '<em><b>Step Callback</b></em>' reference.

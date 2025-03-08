@@ -40,8 +40,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Agent" eSuperTypes="#//Configurable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="tools" upperBound="-1"
         eType="#//Tool"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="llm" eType="#//LargeLangaugeModel"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="functionCallingLlm" eType="#//LargeLangaugeModel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="llm" eType="#//LargeLanguageModel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="functionCallingLlm" eType="#//LargeLanguageModel"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="stepCallback" eType="#//Callback"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="knowledgeSources" upperBound="-1"
         eType="#//KnowledgeSource"/>
@@ -65,9 +65,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="process" eType="#//Process"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="knowledgeSources" upperBound="-1"
         eType="#//KnowledgeSource"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="managerLlm" eType="#//LargeLangaugeModel"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="functionCallingLlm" eType="#//LargeLangaugeModel"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="planningLlm" eType="#//LargeLangaugeModel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="managerLlm" eType="#//LargeLanguageModel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="functionCallingLlm" eType="#//LargeLanguageModel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="planningLlm" eType="#//LargeLanguageModel"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="embedder" eType="#//Code"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Task" eSuperTypes="#//Configurable">
@@ -79,6 +79,6 @@
         eType="#//Task"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="callback" eType="#//Callback"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LargeLangaugeModel"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LargeLanguageModel"/>
   <eClassifiers xsi:type="ecore:EClass" name="KnowledgeSource"/>
 </ecore:EPackage>

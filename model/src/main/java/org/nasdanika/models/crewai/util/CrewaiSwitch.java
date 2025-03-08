@@ -8,24 +8,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
 import org.nasdanika.common.Adaptable;
-import org.nasdanika.models.crewai.Agent;
-import org.nasdanika.models.crewai.Assignment;
-import org.nasdanika.models.crewai.Callback;
-import org.nasdanika.models.crewai.Code;
-import org.nasdanika.models.crewai.Configurable;
-import org.nasdanika.models.crewai.Container;
-import org.nasdanika.models.crewai.Crew;
-import org.nasdanika.models.crewai.CrewaiPackage;
-import org.nasdanika.models.crewai.Function;
-import org.nasdanika.models.crewai.Guardrail;
-import org.nasdanika.models.crewai.Import;
-import org.nasdanika.models.crewai.KnowledgeSource;
-import org.nasdanika.models.crewai.LargeLangaugeModel;
-import org.nasdanika.models.crewai.Resource;
-import org.nasdanika.models.crewai.SourceElement;
-import org.nasdanika.models.crewai.SourceUnit;
-import org.nasdanika.models.crewai.Task;
-import org.nasdanika.models.crewai.Tool;
 import org.nasdanika.models.crewai.*;
 
 import org.nasdanika.ncore.Documented;
@@ -302,9 +284,9 @@ public class CrewaiSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CrewaiPackage.LARGE_LANGAUGE_MODEL: {
-				LargeLangaugeModel largeLangaugeModel = (LargeLangaugeModel)theEObject;
-				T result = caseLargeLangaugeModel(largeLangaugeModel);
+			case CrewaiPackage.LARGE_LANGUAGE_MODEL: {
+				LargeLanguageModel largeLanguageModel = (LargeLanguageModel)theEObject;
+				T result = caseLargeLanguageModel(largeLanguageModel);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -390,6 +372,21 @@ public class CrewaiSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTask(Task object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Large Language Model</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Large Language Model</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLargeLanguageModel(LargeLanguageModel object) {
 		return null;
 	}
 
@@ -540,21 +537,6 @@ public class CrewaiSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseContainer(Container object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Large Langauge Model</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Large Langauge Model</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseLargeLangaugeModel(LargeLangaugeModel object) {
 		return null;
 	}
 

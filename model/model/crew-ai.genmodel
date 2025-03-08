@@ -73,7 +73,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Task/context"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Task/callback"/>
     </genClasses>
-    <genClasses ecoreClass="crew-ai.ecore#//LargeLangaugeModel"/>
+    <genClasses ecoreClass="crew-ai.ecore#//LargeLanguageModel"/>
     <genClasses ecoreClass="crew-ai.ecore#//KnowledgeSource"/>
   </genPackages>
 </genmodel:GenModel>

@@ -10,25 +10,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.nasdanika.models.crewai.Agent;
-import org.nasdanika.models.crewai.Assignment;
-import org.nasdanika.models.crewai.Callback;
-import org.nasdanika.models.crewai.Code;
-import org.nasdanika.models.crewai.Configurable;
-import org.nasdanika.models.crewai.Crew;
-import org.nasdanika.models.crewai.CrewaiFactory;
-import org.nasdanika.models.crewai.CrewaiPackage;
-import org.nasdanika.models.crewai.Function;
-import org.nasdanika.models.crewai.Guardrail;
-import org.nasdanika.models.crewai.Import;
-import org.nasdanika.models.crewai.KnowledgeSource;
-import org.nasdanika.models.crewai.LargeLangaugeModel;
-import org.nasdanika.models.crewai.Resource;
-import org.nasdanika.models.crewai.SourceElement;
-import org.nasdanika.models.crewai.SourceUnit;
-import org.nasdanika.models.crewai.Task;
-import org.nasdanika.models.crewai.Tool;
 import org.nasdanika.models.crewai.*;
 
 /**
@@ -90,7 +71,7 @@ public class CrewaiFactoryImpl extends EFactoryImpl implements CrewaiFactory {
 			case CrewaiPackage.AGENT: return createAgent();
 			case CrewaiPackage.CREW: return createCrew();
 			case CrewaiPackage.TASK: return createTask();
-			case CrewaiPackage.LARGE_LANGAUGE_MODEL: return createLargeLangaugeModel();
+			case CrewaiPackage.LARGE_LANGUAGE_MODEL: return createLargeLanguageModel();
 			case CrewaiPackage.KNOWLEDGE_SOURCE: return createKnowledgeSource();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -180,6 +161,17 @@ public class CrewaiFactoryImpl extends EFactoryImpl implements CrewaiFactory {
 	public Task createTask() {
 		TaskImpl task = new TaskImpl();
 		return task;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public LargeLanguageModel createLargeLanguageModel() {
+		LargeLanguageModelImpl largeLanguageModel = new LargeLanguageModelImpl();
+		return largeLanguageModel;
 	}
 
 	/**
@@ -290,17 +282,6 @@ public class CrewaiFactoryImpl extends EFactoryImpl implements CrewaiFactory {
 	public org.nasdanika.models.crewai.Container createContainer() {
 		ContainerImpl container = new ContainerImpl();
 		return container;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public LargeLangaugeModel createLargeLangaugeModel() {
-		LargeLangaugeModelImpl largeLangaugeModel = new LargeLangaugeModelImpl();
-		return largeLangaugeModel;
 	}
 
 	/**

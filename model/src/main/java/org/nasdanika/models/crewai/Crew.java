@@ -155,12 +155,12 @@ public interface Crew extends SourceElement, DocumentedNamedStringIdentity {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Manager Llm</em>' reference.
-	 * @see #setManagerLlm(LargeLangaugeModel)
+	 * @see #setManagerLlm(LargeLanguageModel)
 	 * @see org.nasdanika.models.crewai.CrewaiPackage#getCrew_ManagerLlm()
 	 * @model
 	 * @generated
 	 */
-	LargeLangaugeModel getManagerLlm();
+	LargeLanguageModel getManagerLlm();
 
 	/**
 	 * Sets the value of the '{@link org.nasdanika.models.crewai.Crew#getManagerLlm <em>Manager Llm</em>}' reference.
@@ -170,19 +170,19 @@ public interface Crew extends SourceElement, DocumentedNamedStringIdentity {
 	 * @see #getManagerLlm()
 	 * @generated
 	 */
-	void setManagerLlm(LargeLangaugeModel value);
+	void setManagerLlm(LargeLanguageModel value);
 
 	/**
 	 * Returns the value of the '<em><b>Function Calling Llm</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Function Calling Llm</em>' reference.
-	 * @see #setFunctionCallingLlm(LargeLangaugeModel)
+	 * @see #setFunctionCallingLlm(LargeLanguageModel)
 	 * @see org.nasdanika.models.crewai.CrewaiPackage#getCrew_FunctionCallingLlm()
 	 * @model
 	 * @generated
 	 */
-	LargeLangaugeModel getFunctionCallingLlm();
+	LargeLanguageModel getFunctionCallingLlm();
 
 	/**
 	 * Sets the value of the '{@link org.nasdanika.models.crewai.Crew#getFunctionCallingLlm <em>Function Calling Llm</em>}' reference.
@@ -192,19 +192,19 @@ public interface Crew extends SourceElement, DocumentedNamedStringIdentity {
 	 * @see #getFunctionCallingLlm()
 	 * @generated
 	 */
-	void setFunctionCallingLlm(LargeLangaugeModel value);
+	void setFunctionCallingLlm(LargeLanguageModel value);
 
 	/**
 	 * Returns the value of the '<em><b>Planning Llm</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Planning Llm</em>' reference.
-	 * @see #setPlanningLlm(LargeLangaugeModel)
+	 * @see #setPlanningLlm(LargeLanguageModel)
 	 * @see org.nasdanika.models.crewai.CrewaiPackage#getCrew_PlanningLlm()
 	 * @model
 	 * @generated
 	 */
-	LargeLangaugeModel getPlanningLlm();
+	LargeLanguageModel getPlanningLlm();
 
 	/**
 	 * Sets the value of the '{@link org.nasdanika.models.crewai.Crew#getPlanningLlm <em>Planning Llm</em>}' reference.
@@ -214,7 +214,7 @@ public interface Crew extends SourceElement, DocumentedNamedStringIdentity {
 	 * @see #getPlanningLlm()
 	 * @generated
 	 */
-	void setPlanningLlm(LargeLangaugeModel value);
+	void setPlanningLlm(LargeLanguageModel value);
 
 	/**
 	 * Returns the value of the '<em><b>Embedder</b></em>' reference.

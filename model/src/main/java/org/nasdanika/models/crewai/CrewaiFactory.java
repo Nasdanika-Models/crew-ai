@@ -67,6 +67,15 @@ public interface CrewaiFactory extends EFactory {
 	Task createTask();
 
 	/**
+	 * Returns a new object of class '<em>Large Language Model</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Large Language Model</em>'.
+	 * @generated
+	 */
+	LargeLanguageModel createLargeLanguageModel();
+
+	/**
 	 * Returns a new object of class '<em>Function</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -155,15 +164,6 @@ public interface CrewaiFactory extends EFactory {
 	 * @generated
 	 */
 	Container createContainer();
-
-	/**
-	 * Returns a new object of class '<em>Large Langauge Model</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Large Langauge Model</em>'.
-	 * @generated
-	 */
-	LargeLangaugeModel createLargeLangaugeModel();
 
 	/**
 	 * Returns a new object of class '<em>Knowledge Source</em>'.

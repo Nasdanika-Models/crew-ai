@@ -28,7 +28,7 @@ public interface Container extends Resource {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Resources</em>' containment reference list.
 	 * @see org.nasdanika.models.crewai.CrewaiPackage#getContainer_Resources()
-	 * @model containment="true"
+	 * @model containment="true" keys="id"
 	 * @generated
 	 */
 	EList<Resource> getResources();

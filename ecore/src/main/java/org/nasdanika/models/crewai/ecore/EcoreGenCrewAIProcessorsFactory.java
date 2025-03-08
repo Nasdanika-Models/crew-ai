@@ -41,8 +41,8 @@ public class EcoreGenCrewAIProcessorsFactory {
 //                        text: Param
 //                        icon: fas fa-user					
 //					""",
-			icon = "https://img.icons8.com/officel/30/family--v2.png",
-			description = "A model of a family",
+			icon = "https://cdn.jsdelivr.net/gh/Nasdanika-Models/crew-ai@main/cli/web-resources/crewai.svg",
+			description = "A model of a CrewAI concepts for the purposes of modeling and code generation",
 			documentation =  """
 				Family model is used to demonstrate different Nasdanika technologies such as:
 				

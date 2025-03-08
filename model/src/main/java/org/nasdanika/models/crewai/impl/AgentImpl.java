@@ -13,7 +13,7 @@ import org.nasdanika.models.crewai.Callback;
 import org.nasdanika.models.crewai.Code;
 import org.nasdanika.models.crewai.CrewaiPackage;
 import org.nasdanika.models.crewai.KnowledgeSource;
-import org.nasdanika.models.crewai.LargeLangaugeModel;
+import org.nasdanika.models.crewai.LargeLanguageModel;
 import org.nasdanika.models.crewai.Tool;
 
 /**
@@ -71,8 +71,8 @@ public class AgentImpl extends ConfigurableImpl implements Agent {
 	 * @generated
 	 */
 	@Override
-	public LargeLangaugeModel getLlm() {
-		return (LargeLangaugeModel)eDynamicGet(CrewaiPackage.AGENT__LLM, CrewaiPackage.Literals.AGENT__LLM, true, true);
+	public LargeLanguageModel getLlm() {
+		return (LargeLanguageModel)eDynamicGet(CrewaiPackage.AGENT__LLM, CrewaiPackage.Literals.AGENT__LLM, true, true);
 	}
 
 	/**
@@ -80,8 +80,8 @@ public class AgentImpl extends ConfigurableImpl implements Agent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public LargeLangaugeModel basicGetLlm() {
-		return (LargeLangaugeModel)eDynamicGet(CrewaiPackage.AGENT__LLM, CrewaiPackage.Literals.AGENT__LLM, false, true);
+	public LargeLanguageModel basicGetLlm() {
+		return (LargeLanguageModel)eDynamicGet(CrewaiPackage.AGENT__LLM, CrewaiPackage.Literals.AGENT__LLM, false, true);
 	}
 
 	/**
@@ -90,7 +90,7 @@ public class AgentImpl extends ConfigurableImpl implements Agent {
 	 * @generated
 	 */
 	@Override
-	public void setLlm(LargeLangaugeModel newLlm) {
+	public void setLlm(LargeLanguageModel newLlm) {
 		eDynamicSet(CrewaiPackage.AGENT__LLM, CrewaiPackage.Literals.AGENT__LLM, newLlm);
 	}
 
@@ -100,8 +100,8 @@ public class AgentImpl extends ConfigurableImpl implements Agent {
 	 * @generated
 	 */
 	@Override
-	public LargeLangaugeModel getFunctionCallingLlm() {
-		return (LargeLangaugeModel)eDynamicGet(CrewaiPackage.AGENT__FUNCTION_CALLING_LLM, CrewaiPackage.Literals.AGENT__FUNCTION_CALLING_LLM, true, true);
+	public LargeLanguageModel getFunctionCallingLlm() {
+		return (LargeLanguageModel)eDynamicGet(CrewaiPackage.AGENT__FUNCTION_CALLING_LLM, CrewaiPackage.Literals.AGENT__FUNCTION_CALLING_LLM, true, true);
 	}
 
 	/**
@@ -109,8 +109,8 @@ public class AgentImpl extends ConfigurableImpl implements Agent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public LargeLangaugeModel basicGetFunctionCallingLlm() {
-		return (LargeLangaugeModel)eDynamicGet(CrewaiPackage.AGENT__FUNCTION_CALLING_LLM, CrewaiPackage.Literals.AGENT__FUNCTION_CALLING_LLM, false, true);
+	public LargeLanguageModel basicGetFunctionCallingLlm() {
+		return (LargeLanguageModel)eDynamicGet(CrewaiPackage.AGENT__FUNCTION_CALLING_LLM, CrewaiPackage.Literals.AGENT__FUNCTION_CALLING_LLM, false, true);
 	}
 
 	/**
@@ -119,7 +119,7 @@ public class AgentImpl extends ConfigurableImpl implements Agent {
 	 * @generated
 	 */
 	@Override
-	public void setFunctionCallingLlm(LargeLangaugeModel newFunctionCallingLlm) {
+	public void setFunctionCallingLlm(LargeLanguageModel newFunctionCallingLlm) {
 		eDynamicSet(CrewaiPackage.AGENT__FUNCTION_CALLING_LLM, CrewaiPackage.Literals.AGENT__FUNCTION_CALLING_LLM, newFunctionCallingLlm);
 	}
 
@@ -234,10 +234,10 @@ public class AgentImpl extends ConfigurableImpl implements Agent {
 				getTools().addAll((Collection<? extends Tool>)newValue);
 				return;
 			case CrewaiPackage.AGENT__LLM:
-				setLlm((LargeLangaugeModel)newValue);
+				setLlm((LargeLanguageModel)newValue);
 				return;
 			case CrewaiPackage.AGENT__FUNCTION_CALLING_LLM:
-				setFunctionCallingLlm((LargeLangaugeModel)newValue);
+				setFunctionCallingLlm((LargeLanguageModel)newValue);
 				return;
 			case CrewaiPackage.AGENT__STEP_CALLBACK:
 				setStepCallback((Callback)newValue);
@@ -265,10 +265,10 @@ public class AgentImpl extends ConfigurableImpl implements Agent {
 				getTools().clear();
 				return;
 			case CrewaiPackage.AGENT__LLM:
-				setLlm((LargeLangaugeModel)null);
+				setLlm((LargeLanguageModel)null);
 				return;
 			case CrewaiPackage.AGENT__FUNCTION_CALLING_LLM:
-				setFunctionCallingLlm((LargeLangaugeModel)null);
+				setFunctionCallingLlm((LargeLanguageModel)null);
 				return;
 			case CrewaiPackage.AGENT__STEP_CALLBACK:
 				setStepCallback((Callback)null);

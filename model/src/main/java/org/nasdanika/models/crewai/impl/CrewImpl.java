@@ -19,7 +19,7 @@ import org.nasdanika.models.crewai.Crew;
 import org.nasdanika.models.crewai.CrewaiPackage;
 import org.nasdanika.models.crewai.Function;
 import org.nasdanika.models.crewai.KnowledgeSource;
-import org.nasdanika.models.crewai.LargeLangaugeModel;
+import org.nasdanika.models.crewai.LargeLanguageModel;
 import org.nasdanika.models.crewai.Task;
 import org.nasdanika.models.crewai.Tool;
 import org.nasdanika.ncore.Documented;
@@ -439,8 +439,8 @@ public class CrewImpl extends SourceElementImpl implements Crew {
 	 * @generated
 	 */
 	@Override
-	public LargeLangaugeModel getManagerLlm() {
-		return (LargeLangaugeModel)eDynamicGet(CrewaiPackage.CREW__MANAGER_LLM, CrewaiPackage.Literals.CREW__MANAGER_LLM, true, true);
+	public LargeLanguageModel getManagerLlm() {
+		return (LargeLanguageModel)eDynamicGet(CrewaiPackage.CREW__MANAGER_LLM, CrewaiPackage.Literals.CREW__MANAGER_LLM, true, true);
 	}
 
 	/**
@@ -448,8 +448,8 @@ public class CrewImpl extends SourceElementImpl implements Crew {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public LargeLangaugeModel basicGetManagerLlm() {
-		return (LargeLangaugeModel)eDynamicGet(CrewaiPackage.CREW__MANAGER_LLM, CrewaiPackage.Literals.CREW__MANAGER_LLM, false, true);
+	public LargeLanguageModel basicGetManagerLlm() {
+		return (LargeLanguageModel)eDynamicGet(CrewaiPackage.CREW__MANAGER_LLM, CrewaiPackage.Literals.CREW__MANAGER_LLM, false, true);
 	}
 
 	/**
@@ -458,7 +458,7 @@ public class CrewImpl extends SourceElementImpl implements Crew {
 	 * @generated
 	 */
 	@Override
-	public void setManagerLlm(LargeLangaugeModel newManagerLlm) {
+	public void setManagerLlm(LargeLanguageModel newManagerLlm) {
 		eDynamicSet(CrewaiPackage.CREW__MANAGER_LLM, CrewaiPackage.Literals.CREW__MANAGER_LLM, newManagerLlm);
 	}
 
@@ -468,8 +468,8 @@ public class CrewImpl extends SourceElementImpl implements Crew {
 	 * @generated
 	 */
 	@Override
-	public LargeLangaugeModel getFunctionCallingLlm() {
-		return (LargeLangaugeModel)eDynamicGet(CrewaiPackage.CREW__FUNCTION_CALLING_LLM, CrewaiPackage.Literals.CREW__FUNCTION_CALLING_LLM, true, true);
+	public LargeLanguageModel getFunctionCallingLlm() {
+		return (LargeLanguageModel)eDynamicGet(CrewaiPackage.CREW__FUNCTION_CALLING_LLM, CrewaiPackage.Literals.CREW__FUNCTION_CALLING_LLM, true, true);
 	}
 
 	/**
@@ -477,8 +477,8 @@ public class CrewImpl extends SourceElementImpl implements Crew {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public LargeLangaugeModel basicGetFunctionCallingLlm() {
-		return (LargeLangaugeModel)eDynamicGet(CrewaiPackage.CREW__FUNCTION_CALLING_LLM, CrewaiPackage.Literals.CREW__FUNCTION_CALLING_LLM, false, true);
+	public LargeLanguageModel basicGetFunctionCallingLlm() {
+		return (LargeLanguageModel)eDynamicGet(CrewaiPackage.CREW__FUNCTION_CALLING_LLM, CrewaiPackage.Literals.CREW__FUNCTION_CALLING_LLM, false, true);
 	}
 
 	/**
@@ -487,7 +487,7 @@ public class CrewImpl extends SourceElementImpl implements Crew {
 	 * @generated
 	 */
 	@Override
-	public void setFunctionCallingLlm(LargeLangaugeModel newFunctionCallingLlm) {
+	public void setFunctionCallingLlm(LargeLanguageModel newFunctionCallingLlm) {
 		eDynamicSet(CrewaiPackage.CREW__FUNCTION_CALLING_LLM, CrewaiPackage.Literals.CREW__FUNCTION_CALLING_LLM, newFunctionCallingLlm);
 	}
 
@@ -497,8 +497,8 @@ public class CrewImpl extends SourceElementImpl implements Crew {
 	 * @generated
 	 */
 	@Override
-	public LargeLangaugeModel getPlanningLlm() {
-		return (LargeLangaugeModel)eDynamicGet(CrewaiPackage.CREW__PLANNING_LLM, CrewaiPackage.Literals.CREW__PLANNING_LLM, true, true);
+	public LargeLanguageModel getPlanningLlm() {
+		return (LargeLanguageModel)eDynamicGet(CrewaiPackage.CREW__PLANNING_LLM, CrewaiPackage.Literals.CREW__PLANNING_LLM, true, true);
 	}
 
 	/**
@@ -506,8 +506,8 @@ public class CrewImpl extends SourceElementImpl implements Crew {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public LargeLangaugeModel basicGetPlanningLlm() {
-		return (LargeLangaugeModel)eDynamicGet(CrewaiPackage.CREW__PLANNING_LLM, CrewaiPackage.Literals.CREW__PLANNING_LLM, false, true);
+	public LargeLanguageModel basicGetPlanningLlm() {
+		return (LargeLanguageModel)eDynamicGet(CrewaiPackage.CREW__PLANNING_LLM, CrewaiPackage.Literals.CREW__PLANNING_LLM, false, true);
 	}
 
 	/**
@@ -516,7 +516,7 @@ public class CrewImpl extends SourceElementImpl implements Crew {
 	 * @generated
 	 */
 	@Override
-	public void setPlanningLlm(LargeLangaugeModel newPlanningLlm) {
+	public void setPlanningLlm(LargeLanguageModel newPlanningLlm) {
 		eDynamicSet(CrewaiPackage.CREW__PLANNING_LLM, CrewaiPackage.Literals.CREW__PLANNING_LLM, newPlanningLlm);
 	}
 
@@ -717,13 +717,13 @@ public class CrewImpl extends SourceElementImpl implements Crew {
 				getKnowledgeSources().addAll((Collection<? extends KnowledgeSource>)newValue);
 				return;
 			case CrewaiPackage.CREW__MANAGER_LLM:
-				setManagerLlm((LargeLangaugeModel)newValue);
+				setManagerLlm((LargeLanguageModel)newValue);
 				return;
 			case CrewaiPackage.CREW__FUNCTION_CALLING_LLM:
-				setFunctionCallingLlm((LargeLangaugeModel)newValue);
+				setFunctionCallingLlm((LargeLanguageModel)newValue);
 				return;
 			case CrewaiPackage.CREW__PLANNING_LLM:
-				setPlanningLlm((LargeLangaugeModel)newValue);
+				setPlanningLlm((LargeLanguageModel)newValue);
 				return;
 			case CrewaiPackage.CREW__EMBEDDER:
 				setEmbedder((Code)newValue);
@@ -795,13 +795,13 @@ public class CrewImpl extends SourceElementImpl implements Crew {
 				getKnowledgeSources().clear();
 				return;
 			case CrewaiPackage.CREW__MANAGER_LLM:
-				setManagerLlm((LargeLangaugeModel)null);
+				setManagerLlm((LargeLanguageModel)null);
 				return;
 			case CrewaiPackage.CREW__FUNCTION_CALLING_LLM:
-				setFunctionCallingLlm((LargeLangaugeModel)null);
+				setFunctionCallingLlm((LargeLanguageModel)null);
 				return;
 			case CrewaiPackage.CREW__PLANNING_LLM:
-				setPlanningLlm((LargeLangaugeModel)null);
+				setPlanningLlm((LargeLanguageModel)null);
 				return;
 			case CrewaiPackage.CREW__EMBEDDER:
 				setEmbedder((Code)null);

@@ -1,101 +1,101 @@
 {
   "references/eClassifiers/Task/inheritance.html": {
     "path": "Task/Inheritance",
-    "link-uuid": "64bf1f5b-4281-4534-aaed-8eaeafd3cb1f",
+    "link-uuid": "f323847d-53b3-4ba0-9995-6956baeeb838",
     "title": "Inheritance",
     "content": "Supertypes "
   },
   "references/eClassifiers/Function/inheritance.html": {
     "path": "Function/Inheritance",
-    "link-uuid": "8f818e19-055f-4eac-abce-6d1c6d75925b",
+    "link-uuid": "c3046b59-e715-4ea0-b6fd-cd1c49511f3c",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  "
   },
   "references/eClassifiers/Crew/load-specification.html": {
     "path": "Crew/Load specification",
-    "link-uuid": "d3eb5d0f-6468-4246-80bb-25ab2ead299d",
+    "link-uuid": "eba51b2d-aad7-44e5-8bee-8ac17ab84674",
     "title": "Load specification",
     "content": "Load documentation with code snippets: key: value"
   },
   "references/eClassifiers/Agent/inheritance.html": {
     "path": "Agent/Inheritance",
-    "link-uuid": "4a3f45a1-b5c3-490d-a290-c223afbe531e",
+    "link-uuid": "e5e837b8-2e19-490c-9400-b94a24fffdf0",
     "title": "Inheritance",
     "content": "Supertypes "
   },
   "references/eClassifiers/SourceUnit/inheritance.html": {
     "path": "SourceUnit/Inheritance",
-    "link-uuid": "cd8802a7-7bbb-4e06-8718-e8b02a9a0027",
+    "link-uuid": "9a74fc94-cc1e-4c22-83e0-3579353fa5fa",
     "title": "Inheritance",
     "content": "Supertypes "
   },
   "references/eClassifiers/Tool/inheritance.html": {
     "path": "Tool/Inheritance",
-    "link-uuid": "43db9471-7134-4f4d-8727-a8f7e5d746d4",
+    "link-uuid": "534d3bfa-3d1e-4740-8643-c83e3f2f3a86",
     "title": "Inheritance",
     "content": "Supertypes "
   },
   "references/eClassifiers/Resource/inheritance.html": {
     "path": "Resource/Inheritance",
-    "link-uuid": "466e0c38-e8e5-4a00-8c93-b6671e446f06",
+    "link-uuid": "99f4857e-5457-4325-9ff7-a0b94bcc90dd",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  "
   },
   "references/eClassifiers/Assignment/inheritance.html": {
     "path": "Assignment/Inheritance",
-    "link-uuid": "aeb94c53-1965-4d6b-bc93-394805083985",
+    "link-uuid": "f8ea3b32-ed36-4d0d-ac56-9f8856bcb6bc",
     "title": "Inheritance",
     "content": "Supertypes "
   },
   "references/eClassifiers/SourceElement/inheritance.html": {
     "path": "SourceElement/Inheritance",
-    "link-uuid": "850b78a0-afb6-42c1-85ec-ec297d35f2c9",
+    "link-uuid": "ccc696ff-2e2a-4d55-9363-03fce51fd80e",
     "title": "Inheritance",
     "content": "Subtypes "
   },
   "references/eClassifiers/Container/inheritance.html": {
     "path": "Container/Inheritance",
-    "link-uuid": "51ea261e-b137-4fff-acf6-b18d34e8d0f1",
+    "link-uuid": "6b9e1f71-b7ab-4f76-b2f2-cad6f6efff38",
     "title": "Inheritance",
     "content": "Supertypes "
   },
   "references/eClassifiers/Configurable/inheritance.html": {
     "path": "Configurable/Inheritance",
-    "link-uuid": "d50b679c-e96b-4c5d-aa71-0f61edb8fcec",
+    "link-uuid": "017156d9-395e-4b24-bccd-754750c9c963",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  "
   },
   "references/eClassifiers/Guardrail/inheritance.html": {
     "path": "Guardrail/Inheritance",
-    "link-uuid": "958c2aab-ce3d-4077-9c40-a50819a17924",
+    "link-uuid": "cef59adc-eee8-476c-b77e-05c44e67fdbe",
     "title": "Inheritance",
     "content": "Supertypes "
   },
   "index.html": {
-    "link-uuid": "ef33bfb5-52ed-4705-8647-3bba955b718e",
+    "link-uuid": "99a6508f-7a07-4363-8da1-cd577ff913f3",
     "title": "CrewAI Model",
-    "content": "Family model is used to demonstrate different Nasdanika technologies such as: Generating of metamodel (Ecore) documentation like this one Loading of models from MS Excel and Drawio diagrams Generation of HTML sites from loaded models The model was created to mimic the model from Eclipse Sirius Basic Family tutorial. This site uses fee icons from Icons8 and quotes Wikipedia articles. The diagram below is interactive: Hover the mouse pointer over the shapes and connections to see tooltips Click on the shapes and connections to navigate to the pages of the respective model elements. Click on the diagram to make it fullscreen. Then you may click on the pencil icon to edit it in the browser. Error loading resource crew-ai.drawio: java.lang.NullPointerException: ClassLoader resource not found: org/nasdanika/models/crewai/ecore/crew-ai.drawio"
+    "content": "Family model is used to demonstrate different Nasdanika technologies such as: Generating of metamodel (Ecore) documentation like this one Loading of models from MS Excel and Drawio diagrams Generation of HTML sites from loaded models The model was created to mimic the model from Eclipse Sirius Basic Family tutorial. This site uses fee icons from Icons8 and quotes Wikipedia articles. The diagram below is interactive: Hover the mouse pointer over the shapes and connections to see tooltips Click on the shapes and connections to navigate to the pages of the respective model elements. Click on the diagram to make it fullscreen. Then you may click on the pencil icon to edit it in the browser. Step callback Agent You can think of an agent as a specialized team member with specific skills, expertise, and responsibilities. Task Tool Guardrail A crew may use multiple LLMs: * Function calling LLM * Manager LLM * Planning LLM Crew A group of agents working together to complete a set of tasks Large Language Model (LLM) Knowledge Source Callback Context Family"
   },
   "references/eClassifiers/Crew/index.html": {
-    "link-uuid": "925f728f-abc0-4b49-b798-c6ca6708e9fe",
+    "link-uuid": "3e9780ec-2f00-4442-99dd-6059b81b0cd1",
     "title": "Crew",
     "content": "Family (from Latin: familia) is a group of people related either by consanguinity (by recognized birth) or affinity (by marriage or other relationship). It forms the basis for social order. The purpose of the family is to maintain the well-being of its members and of society. Ideally, families offer predictability, structure, and safety as members mature and learn to participate in the community. Historically, most human societies use family as the primary locus of attachment, nurturance, and socialization. Anthropologists classify most family organizations as matrifocal (a mother and her children), patrifocal (a father and his children), conjugal (a married couple with children, also called the nuclear family), avuncular (a man, his sister, and her children), or extended (in addition to parents and children, may include grandparents, aunts, uncles, or cousins). The field of genealogy aims to trace family lineages through history. The family is also an important economic unit studied in family economics. The word &ldquo;families&rdquo; can be used metaphorically to create more inclusive categories such as community, nationhood, and global village."
   },
   "references/eClassifiers/Callback/inheritance.html": {
     "path": "Callback/Inheritance",
-    "link-uuid": "86ff43f2-861c-47ca-9480-87e4fea3cfd2",
+    "link-uuid": "b0b436d6-d2ca-4810-98ad-e70144a6e676",
     "title": "Inheritance",
     "content": "Supertypes "
   },
   "references/eClassifiers/Crew/inheritance.html": {
     "path": "Crew/Inheritance",
-    "link-uuid": "f71a2776-1487-45e6-a2c2-a27a48b52c31",
+    "link-uuid": "7f1cc56a-b834-4e23-8571-ccdc52635ae6",
     "title": "Inheritance",
     "content": "Supertypes "
   },
   "references/eClassifiers/Code/inheritance.html": {
     "path": "Code/Inheritance",
-    "link-uuid": "f3c435d7-e6ae-4ae7-b456-65bc7c783421",
+    "link-uuid": "faff306f-a69a-4223-b920-e216fcee49b8",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  "
   }
