@@ -1,0 +1,1 @@
+creawi.svg is a resized https://github.com/crewAIInc/crewAI/blob/v0.83.0/docs/favicon.svg?plain=1
