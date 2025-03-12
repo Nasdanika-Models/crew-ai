@@ -64,7 +64,7 @@
 		</dependency> 		
 		<dependency>
 		    <groupId>org.nasdanika.core</groupId>
-		    <artifactId>ncore</artifactId>
+		    <artifactId>exec</artifactId>
 		    <version>2025.2.0</version>
 		</dependency>
 	</dependencies>

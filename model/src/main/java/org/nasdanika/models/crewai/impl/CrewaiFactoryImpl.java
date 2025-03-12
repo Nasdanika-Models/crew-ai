@@ -10,7 +10,23 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.nasdanika.models.crewai.*;
+import org.nasdanika.models.crewai.Agent;
+import org.nasdanika.models.crewai.Assignment;
+import org.nasdanika.models.crewai.Callback;
+import org.nasdanika.models.crewai.Code;
+import org.nasdanika.models.crewai.Configurable;
+import org.nasdanika.models.crewai.Crew;
+import org.nasdanika.models.crewai.CrewaiFactory;
+import org.nasdanika.models.crewai.CrewaiPackage;
+import org.nasdanika.models.crewai.Function;
+import org.nasdanika.models.crewai.Guardrail;
+import org.nasdanika.models.crewai.Import;
+import org.nasdanika.models.crewai.KnowledgeSource;
+import org.nasdanika.models.crewai.LargeLanguageModel;
+import org.nasdanika.models.crewai.SourceElement;
+import org.nasdanika.models.crewai.SourceUnit;
+import org.nasdanika.models.crewai.Task;
+import org.nasdanika.models.crewai.Tool;
 
 /**
  * <!-- begin-user-doc -->
@@ -56,9 +72,7 @@ public class CrewaiFactoryImpl extends EFactoryImpl implements CrewaiFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case CrewaiPackage.RESOURCE: return createResource();
 			case CrewaiPackage.SOURCE_UNIT: return createSourceUnit();
-			case CrewaiPackage.CONTAINER: return createContainer();
 			case CrewaiPackage.IMPORT: return createImport();
 			case CrewaiPackage.SOURCE_ELEMENT: return createSourceElement();
 			case CrewaiPackage.CODE: return createCode();
@@ -224,17 +238,6 @@ public class CrewaiFactoryImpl extends EFactoryImpl implements CrewaiFactory {
 	 * @generated
 	 */
 	@Override
-	public Resource createResource() {
-		ResourceImpl resource = new ResourceImpl();
-		return resource;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Import createImport() {
 		ImportImpl import_ = new ImportImpl();
 		return import_;
@@ -271,17 +274,6 @@ public class CrewaiFactoryImpl extends EFactoryImpl implements CrewaiFactory {
 	public SourceUnit createSourceUnit() {
 		SourceUnitImpl sourceUnit = new SourceUnitImpl();
 		return sourceUnit;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public org.nasdanika.models.crewai.Container createContainer() {
-		ContainerImpl container = new ContainerImpl();
-		return container;
 	}
 
 	/**

@@ -112,15 +112,6 @@ public interface CrewaiFactory extends EFactory {
 	Callback createCallback();
 
 	/**
-	 * Returns a new object of class '<em>Resource</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Resource</em>'.
-	 * @generated
-	 */
-	Resource createResource();
-
-	/**
 	 * Returns a new object of class '<em>Import</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -155,15 +146,6 @@ public interface CrewaiFactory extends EFactory {
 	 * @generated
 	 */
 	SourceUnit createSourceUnit();
-
-	/**
-	 * Returns a new object of class '<em>Container</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Container</em>'.
-	 * @generated
-	 */
-	Container createContainer();
 
 	/**
 	 * Returns a new object of class '<em>Knowledge Source</em>'.

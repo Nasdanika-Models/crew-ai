@@ -8,8 +8,22 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
 import org.nasdanika.common.Adaptable;
-import org.nasdanika.models.crewai.*;
-
+import org.nasdanika.models.crewai.Agent;
+import org.nasdanika.models.crewai.Assignment;
+import org.nasdanika.models.crewai.Callback;
+import org.nasdanika.models.crewai.Code;
+import org.nasdanika.models.crewai.Configurable;
+import org.nasdanika.models.crewai.Crew;
+import org.nasdanika.models.crewai.CrewaiPackage;
+import org.nasdanika.models.crewai.Function;
+import org.nasdanika.models.crewai.Guardrail;
+import org.nasdanika.models.crewai.Import;
+import org.nasdanika.models.crewai.KnowledgeSource;
+import org.nasdanika.models.crewai.LargeLanguageModel;
+import org.nasdanika.models.crewai.SourceElement;
+import org.nasdanika.models.crewai.SourceUnit;
+import org.nasdanika.models.crewai.Task;
+import org.nasdanika.models.crewai.Tool;
 import org.nasdanika.ncore.Documented;
 import org.nasdanika.ncore.DocumentedNamedElement;
 import org.nasdanika.ncore.DocumentedNamedStringIdentity;
@@ -76,51 +90,10 @@ public class CrewaiSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case CrewaiPackage.RESOURCE: {
-				Resource resource = (Resource)theEObject;
-				T result = caseResource(resource);
-				if (result == null) result = caseDocumentedNamedStringIdentity(resource);
-				if (result == null) result = caseDocumentedNamedElement(resource);
-				if (result == null) result = caseStringIdentity(resource);
-				if (result == null) result = caseNamedElement(resource);
-				if (result == null) result = caseDocumented(resource);
-				if (result == null) result = caseModelElement(resource);
-				if (result == null) result = caseMarked(resource);
-				if (result == null) result = caseAdaptable(resource);
-				if (result == null) result = caseIMarked(resource);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case CrewaiPackage.SOURCE_UNIT: {
 				SourceUnit sourceUnit = (SourceUnit)theEObject;
 				T result = caseSourceUnit(sourceUnit);
-				if (result == null) result = caseResource(sourceUnit);
 				if (result == null) result = caseSourceElement(sourceUnit);
-				if (result == null) result = caseDocumentedNamedStringIdentity(sourceUnit);
-				if (result == null) result = caseDocumentedNamedElement(sourceUnit);
-				if (result == null) result = caseStringIdentity(sourceUnit);
-				if (result == null) result = caseNamedElement(sourceUnit);
-				if (result == null) result = caseDocumented(sourceUnit);
-				if (result == null) result = caseModelElement(sourceUnit);
-				if (result == null) result = caseMarked(sourceUnit);
-				if (result == null) result = caseAdaptable(sourceUnit);
-				if (result == null) result = caseIMarked(sourceUnit);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CrewaiPackage.CONTAINER: {
-				Container container = (Container)theEObject;
-				T result = caseContainer(container);
-				if (result == null) result = caseResource(container);
-				if (result == null) result = caseDocumentedNamedStringIdentity(container);
-				if (result == null) result = caseDocumentedNamedElement(container);
-				if (result == null) result = caseStringIdentity(container);
-				if (result == null) result = caseNamedElement(container);
-				if (result == null) result = caseDocumented(container);
-				if (result == null) result = caseModelElement(container);
-				if (result == null) result = caseMarked(container);
-				if (result == null) result = caseAdaptable(container);
-				if (result == null) result = caseIMarked(container);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -451,21 +424,6 @@ public class CrewaiSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Resource</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Resource</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseResource(Resource object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Import</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -522,21 +480,6 @@ public class CrewaiSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSourceUnit(SourceUnit object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Container</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Container</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseContainer(Container object) {
 		return null;
 	}
 

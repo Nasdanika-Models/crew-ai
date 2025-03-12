@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.nasdanika.exec.resources.ReconcileAction;
 import org.nasdanika.models.crewai.CrewaiPackage;
 import org.nasdanika.models.crewai.Import;
 import org.nasdanika.models.crewai.SourceElement;
@@ -29,11 +30,22 @@ import org.nasdanika.models.crewai.SourceElement;
  * </p>
  * <ul>
  *   <li>{@link org.nasdanika.models.crewai.impl.SourceElementImpl#getImports <em>Imports</em>}</li>
+ *   <li>{@link org.nasdanika.models.crewai.impl.SourceElementImpl#getReconcileAction <em>Reconcile Action</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class SourceElementImpl extends MinimalEObjectImpl.Container implements SourceElement {
+	/**
+	 * The default value of the '{@link #getReconcileAction() <em>Reconcile Action</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReconcileAction()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final ReconcileAction RECONCILE_ACTION_EDEFAULT = ReconcileAction.APPEND;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -80,6 +92,26 @@ public class SourceElementImpl extends MinimalEObjectImpl.Container implements S
 	 * @generated
 	 */
 	@Override
+	public ReconcileAction getReconcileAction() {
+		return (ReconcileAction)eDynamicGet(CrewaiPackage.SOURCE_ELEMENT__RECONCILE_ACTION, CrewaiPackage.Literals.SOURCE_ELEMENT__RECONCILE_ACTION, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setReconcileAction(ReconcileAction newReconcileAction) {
+		eDynamicSet(CrewaiPackage.SOURCE_ELEMENT__RECONCILE_ACTION, CrewaiPackage.Literals.SOURCE_ELEMENT__RECONCILE_ACTION, newReconcileAction);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String generate(String indent) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -110,6 +142,8 @@ public class SourceElementImpl extends MinimalEObjectImpl.Container implements S
 		switch (featureID) {
 			case CrewaiPackage.SOURCE_ELEMENT__IMPORTS:
 				return getImports();
+			case CrewaiPackage.SOURCE_ELEMENT__RECONCILE_ACTION:
+				return getReconcileAction();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -127,6 +161,9 @@ public class SourceElementImpl extends MinimalEObjectImpl.Container implements S
 				getImports().clear();
 				getImports().addAll((Collection<? extends Import>)newValue);
 				return;
+			case CrewaiPackage.SOURCE_ELEMENT__RECONCILE_ACTION:
+				setReconcileAction((ReconcileAction)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -142,6 +179,9 @@ public class SourceElementImpl extends MinimalEObjectImpl.Container implements S
 			case CrewaiPackage.SOURCE_ELEMENT__IMPORTS:
 				getImports().clear();
 				return;
+			case CrewaiPackage.SOURCE_ELEMENT__RECONCILE_ACTION:
+				setReconcileAction(RECONCILE_ACTION_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -156,6 +196,8 @@ public class SourceElementImpl extends MinimalEObjectImpl.Container implements S
 		switch (featureID) {
 			case CrewaiPackage.SOURCE_ELEMENT__IMPORTS:
 				return !getImports().isEmpty();
+			case CrewaiPackage.SOURCE_ELEMENT__RECONCILE_ACTION:
+				return getReconcileAction() != RECONCILE_ACTION_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

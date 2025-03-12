@@ -5,6 +5,7 @@ package org.nasdanika.models.crewai;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
+import org.nasdanika.exec.resources.ReconcileAction;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.nasdanika.models.crewai.SourceElement#getImports <em>Imports</em>}</li>
+ *   <li>{@link org.nasdanika.models.crewai.SourceElement#getReconcileAction <em>Reconcile Action</em>}</li>
  * </ul>
  *
  * @see org.nasdanika.models.crewai.CrewaiPackage#getSourceElement()
@@ -34,6 +36,31 @@ public interface SourceElement extends EObject {
 	 * @generated
 	 */
 	EList<Import> getImports();
+
+	/**
+	 * Returns the value of the '<em><b>Reconcile Action</b></em>' attribute.
+	 * The literals are from the enumeration {@link org.nasdanika.exec.resources.ReconcileAction}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Reconcile Action</em>' attribute.
+	 * @see org.nasdanika.exec.resources.ReconcileAction
+	 * @see #setReconcileAction(ReconcileAction)
+	 * @see org.nasdanika.models.crewai.CrewaiPackage#getSourceElement_ReconcileAction()
+	 * @model
+	 * @generated
+	 */
+	ReconcileAction getReconcileAction();
+
+	/**
+	 * Sets the value of the '{@link org.nasdanika.models.crewai.SourceElement#getReconcileAction <em>Reconcile Action</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Reconcile Action</em>' attribute.
+	 * @see org.nasdanika.exec.resources.ReconcileAction
+	 * @see #getReconcileAction()
+	 * @generated
+	 */
+	void setReconcileAction(ReconcileAction value);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -10,8 +10,22 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
 import org.nasdanika.common.Adaptable;
-import org.nasdanika.models.crewai.*;
-
+import org.nasdanika.models.crewai.Agent;
+import org.nasdanika.models.crewai.Assignment;
+import org.nasdanika.models.crewai.Callback;
+import org.nasdanika.models.crewai.Code;
+import org.nasdanika.models.crewai.Configurable;
+import org.nasdanika.models.crewai.Crew;
+import org.nasdanika.models.crewai.CrewaiPackage;
+import org.nasdanika.models.crewai.Function;
+import org.nasdanika.models.crewai.Guardrail;
+import org.nasdanika.models.crewai.Import;
+import org.nasdanika.models.crewai.KnowledgeSource;
+import org.nasdanika.models.crewai.LargeLanguageModel;
+import org.nasdanika.models.crewai.SourceElement;
+import org.nasdanika.models.crewai.SourceUnit;
+import org.nasdanika.models.crewai.Task;
+import org.nasdanika.models.crewai.Tool;
 import org.nasdanika.ncore.Documented;
 import org.nasdanika.ncore.DocumentedNamedElement;
 import org.nasdanika.ncore.DocumentedNamedStringIdentity;
@@ -78,16 +92,8 @@ public class CrewaiAdapterFactory extends AdapterFactoryImpl {
 	protected CrewaiSwitch<Adapter> modelSwitch =
 		new CrewaiSwitch<Adapter>() {
 			@Override
-			public Adapter caseResource(Resource object) {
-				return createResourceAdapter();
-			}
-			@Override
 			public Adapter caseSourceUnit(SourceUnit object) {
 				return createSourceUnitAdapter();
-			}
-			@Override
-			public Adapter caseContainer(Container object) {
-				return createContainerAdapter();
 			}
 			@Override
 			public Adapter caseImport(Import object) {
@@ -342,20 +348,6 @@ public class CrewaiAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.crewai.Resource <em>Resource</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.nasdanika.models.crewai.Resource
-	 * @generated
-	 */
-	public Adapter createResourceAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.crewai.Import <em>Import</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -408,20 +400,6 @@ public class CrewaiAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSourceUnitAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.crewai.Container <em>Container</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.nasdanika.models.crewai.Container
-	 * @generated
-	 */
-	public Adapter createContainerAdapter() {
 		return null;
 	}
 

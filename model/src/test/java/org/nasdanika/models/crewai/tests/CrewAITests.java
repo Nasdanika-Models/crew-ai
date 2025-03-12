@@ -1,4 +1,4 @@
-package org.nasdanika.models.family.tests;
+package org.nasdanika.models.crewai.tests;
 
 public class CrewAITests {
 	
