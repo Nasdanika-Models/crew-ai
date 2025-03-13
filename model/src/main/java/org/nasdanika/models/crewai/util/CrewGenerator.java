@@ -1,8 +1,11 @@
 package org.nasdanika.models.crewai.util;
 
 import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -28,6 +31,8 @@ import org.nasdanika.models.python.PythonFactory;
 import org.nasdanika.models.python.PythonPackage;
 import org.nasdanika.models.python.Variable;
 import org.nasdanika.models.source.Source;
+import org.yaml.snakeyaml.DumperOptions;
+import org.yaml.snakeyaml.DumperOptions.FlowStyle;
 import org.yaml.snakeyaml.Yaml;
 
 /**
@@ -99,6 +104,9 @@ public class CrewGenerator {
 			}
 		}
 		
+		Yaml yaml = getYaml();
+		
+		Map<String,Object> agentConfigs = new LinkedHashMap<>();
 		for (Agent agent: crew.getAgents()) {			
 			Function agentMethod = pythonFactory.createFunction();
 			agentMethod.getBody().add(createAgentFunctionBody(agent, progressMonitor));
@@ -108,8 +116,14 @@ public class CrewGenerator {
 			agentMethod.getDecorators().add("agent");
 			addComment(agent, crewClassBody::add);
 			crewClassBody.add(agentMethod);		
+			String agentConfig = agent.getConfiguration();
+			if (!Util.isBlank(agentConfig)) {
+				Map<String, Object> agentConfigObj = yaml.load(agentConfig);
+				agentConfigs.put(getAgentConfigKey(agent), agentConfigObj);
+			}
 		}
 		
+		Map<String,Object> taskConfigs = new LinkedHashMap<>();
 		for (Task task: crew.getTasks()) {			
 			Function taskMethod = pythonFactory.createFunction();
 			taskMethod.getBody().add(createTaskFunctionBody(task, progressMonitor));
@@ -119,6 +133,15 @@ public class CrewGenerator {
 			taskMethod.getDecorators().add("task");
 			addComment(task, crewClassBody::add);
 			crewClassBody.add(taskMethod);		
+			String taskConfig = task.getConfiguration();
+			if (!Util.isBlank(taskConfig)) {
+				Map<String, Object> taskConfigObj = yaml.load(taskConfig);
+				Agent taskAgent = task.getAgent();
+				if (taskAgent != null) {
+					taskConfigObj.put("agent", getAgentConfigKey(taskAgent));
+				}
+				taskConfigs.put(getTaskConfigKey(task), taskConfigObj);
+			}
 		}
 		
 		Function crewMethod = pythonFactory.createFunction();
@@ -141,10 +164,26 @@ public class CrewGenerator {
 		});
 		pythonResource.save(null);
 		
-		// Generating and saving configs, adding agents to tasks, context, ...
+		if (!agentConfigs.isEmpty()) {
+			URI agentConfigsURI = URI.createURI(agentsConfig).resolve(crewSourceURI);
+			try (Writer writer = new OutputStreamWriter(resourceSet.getURIConverter().createOutputStream(agentConfigsURI))) {
+				yaml.dump(agentConfigs, writer);
+			}
+		}
 		
+		if (!taskConfigs.isEmpty()) {
+			URI taskConfigsURI = URI.createURI(tasksConfig).resolve(crewSourceURI);
+			try (Writer writer = new OutputStreamWriter(resourceSet.getURIConverter().createOutputStream(taskConfigsURI))) {
+				yaml.dump(taskConfigs, writer);
+			}
+		}
 		
-		
+	}
+
+	protected Yaml getYaml() {
+		DumperOptions dumperOptions = new DumperOptions();
+		dumperOptions.setDefaultFlowStyle(FlowStyle.BLOCK); dumperOptions.setIndent(4); 
+		return new Yaml(dumperOptions);
 	}
 	
 	protected String getIndent(Crew crew) {
@@ -163,7 +202,7 @@ public class CrewGenerator {
 			}
 		}
 		
-		Yaml yaml = new Yaml();
+		Yaml yaml = getYaml();
 		for (String toImport: allImports) {
 			if (!Util.isBlank(toImport)) {
 				Object toImportObj = yaml.load(toImport);
