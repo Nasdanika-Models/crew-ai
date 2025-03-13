@@ -13,7 +13,6 @@ import org.nasdanika.common.Adaptable;
 import org.nasdanika.models.crewai.Agent;
 import org.nasdanika.models.crewai.Callback;
 import org.nasdanika.models.crewai.Code;
-import org.nasdanika.models.crewai.Commented;
 import org.nasdanika.models.crewai.Configurable;
 import org.nasdanika.models.crewai.Crew;
 import org.nasdanika.models.crewai.CrewaiPackage;
@@ -88,10 +87,6 @@ public class CrewaiAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected CrewaiSwitch<Adapter> modelSwitch =
 		new CrewaiSwitch<Adapter>() {
-			@Override
-			public Adapter caseCommented(Commented object) {
-				return createCommentedAdapter();
-			}
 			@Override
 			public Adapter caseCode(Code object) {
 				return createCodeAdapter();
@@ -191,20 +186,6 @@ public class CrewaiAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.crewai.Commented <em>Commented</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.nasdanika.models.crewai.Commented
-	 * @generated
-	 */
-	public Adapter createCommentedAdapter() {
-		return null;
-	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.crewai.Configurable <em>Configurable</em>}'.

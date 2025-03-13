@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Task extends Configurable, Commented {
+public interface Task extends Configurable {
 	/**
 	 * Returns the value of the '<em><b>Guardrail</b></em>' reference.
 	 * <!-- begin-user-doc -->

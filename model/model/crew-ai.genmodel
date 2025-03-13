@@ -13,12 +13,10 @@
       <genEnumLiterals ecoreEnumLiteral="crew-ai.ecore#//Process/sequential"/>
       <genEnumLiterals ecoreEnumLiteral="crew-ai.ecore#//Process/hierarchical"/>
     </genEnums>
-    <genClasses ecoreClass="crew-ai.ecore#//Commented">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crew-ai.ecore#//Commented/comment"/>
-    </genClasses>
     <genClasses ecoreClass="crew-ai.ecore#//Code">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crew-ai.ecore#//Code/code"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crew-ai.ecore#//Code/imports"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crew-ai.ecore#//Code/comment"/>
     </genClasses>
     <genClasses ecoreClass="crew-ai.ecore#//Function">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crew-ai.ecore#//Function/parameters"/>

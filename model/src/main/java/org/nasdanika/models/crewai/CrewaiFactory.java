@@ -22,15 +22,6 @@ public interface CrewaiFactory extends EFactory {
 	CrewaiFactory eINSTANCE = org.nasdanika.models.crewai.impl.CrewaiFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Commented</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Commented</em>'.
-	 * @generated
-	 */
-	Commented createCommented();
-
-	/**
 	 * Returns a new object of class '<em>Configurable</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

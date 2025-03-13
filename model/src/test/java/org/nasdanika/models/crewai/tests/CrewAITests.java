@@ -121,6 +121,11 @@ public class CrewAITests {
 		// Tools
 		Tool serper = crewaiFactory.createTool();
 		serper.setCode("SerperDevTool()");		
+		serper.setImports(
+				"""
+				module: crewai_tools
+				item: SerperDevTool
+				""");
 		
 		// Agents
 		Agent researcher = crewaiFactory.createAgent();
@@ -158,7 +163,7 @@ public class CrewAITests {
 			  your ability to turn complex data into clear and concise reports, making
 			  it easy for others to understand and act on the information you provide.
     		""");
-		
+				
 		// Tasks		
 		Task researchTask = crewaiFactory.createTask();
 		researchTask.setId("research_task");

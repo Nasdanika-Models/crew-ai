@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.nasdanika.models.crewai.Agent;
 import org.nasdanika.models.crewai.Callback;
 import org.nasdanika.models.crewai.Code;
-import org.nasdanika.models.crewai.Commented;
 import org.nasdanika.models.crewai.Configurable;
 import org.nasdanika.models.crewai.Crew;
 import org.nasdanika.models.crewai.CrewaiFactory;
@@ -31,12 +30,6 @@ import org.nasdanika.ncore.NcorePackage;
  * @generated
  */
 public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass commentedEClass = null;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -172,26 +165,6 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(CrewaiPackage.eNS_URI, theCrewaiPackage);
 		return theCrewaiPackage;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getCommented() {
-		return commentedEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getCommented_Comment() {
-		return (EAttribute)commentedEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -570,6 +543,16 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getCode_Comment() {
+		return (EAttribute)codeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getKnowledgeSource() {
 		return knowledgeSourceEClass;
 	}
@@ -613,12 +596,10 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		commentedEClass = createEClass(COMMENTED);
-		createEAttribute(commentedEClass, COMMENTED__COMMENT);
-
 		codeEClass = createEClass(CODE);
 		createEAttribute(codeEClass, CODE__CODE);
 		createEAttribute(codeEClass, CODE__IMPORTS);
+		createEAttribute(codeEClass, CODE__COMMENT);
 
 		functionEClass = createEClass(FUNCTION);
 		createEAttribute(functionEClass, FUNCTION__PARAMETERS);
@@ -700,28 +681,24 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		codeEClass.getESuperTypes().add(this.getCommented());
 		functionEClass.getESuperTypes().add(this.getCode());
 		functionEClass.getESuperTypes().add(theNcorePackage.getDocumentedNamedStringIdentity());
 		guardrailEClass.getESuperTypes().add(this.getFunction());
 		callbackEClass.getESuperTypes().add(this.getFunction());
 		configurableEClass.getESuperTypes().add(theNcorePackage.getDocumentedNamedStringIdentity());
+		configurableEClass.getESuperTypes().add(this.getCode());
 		toolEClass.getESuperTypes().add(this.getCode());
 		toolEClass.getESuperTypes().add(theNcorePackage.getDocumentedNamedStringIdentity());
 		agentEClass.getESuperTypes().add(this.getConfigurable());
-		agentEClass.getESuperTypes().add(this.getCommented());
 		crewEClass.getESuperTypes().add(theNcorePackage.getDocumentedNamedStringIdentity());
 		crewEClass.getESuperTypes().add(this.getCode());
 		taskEClass.getESuperTypes().add(this.getConfigurable());
-		taskEClass.getESuperTypes().add(this.getCommented());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(commentedEClass, Commented.class, "Commented", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCommented_Comment(), ecorePackage.getEString(), "comment", null, 0, 1, Commented.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(codeEClass, Code.class, "Code", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCode_Code(), ecorePackage.getEString(), "code", null, 0, 1, Code.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCode_Imports(), ecorePackage.getEString(), "imports", null, 0, 1, Code.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCode_Comment(), ecorePackage.getEString(), "comment", null, 0, 1, Code.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(functionEClass, Function.class, "Function", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFunction_Parameters(), ecorePackage.getEString(), "parameters", null, 0, -1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

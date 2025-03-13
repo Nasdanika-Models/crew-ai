@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="crewai" nsURI="ecore://nasdanika.org/models/crew-ai" nsPrefix="org.nasdanika.models.crew-ai">
-  <eClassifiers xsi:type="ecore:EClass" name="Commented">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Code" eSuperTypes="#//Commented">
+  <eClassifiers xsi:type="ecore:EClass" name="Code">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="imports" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Function" eSuperTypes="#//Code ../../org.nasdanika.ncore/model/ncore.ecore#//DocumentedNamedStringIdentity">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameters" upperBound="-1"
@@ -14,13 +12,13 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Guardrail" eSuperTypes="#//Function"/>
   <eClassifiers xsi:type="ecore:EClass" name="Callback" eSuperTypes="#//Function"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Configurable" eSuperTypes="../../org.nasdanika.ncore/model/ncore.ecore#//DocumentedNamedStringIdentity">
+  <eClassifiers xsi:type="ecore:EClass" name="Configurable" eSuperTypes="../../org.nasdanika.ncore/model/ncore.ecore#//DocumentedNamedStringIdentity #//Code">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="configuration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Tool" eSuperTypes="#//Code ../../org.nasdanika.ncore/model/ncore.ecore#//DocumentedNamedStringIdentity">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="declarations" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Agent" eSuperTypes="#//Configurable #//Commented">
+  <eClassifiers xsi:type="ecore:EClass" name="Agent" eSuperTypes="#//Configurable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="tools" upperBound="-1"
         eType="#//Tool"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="llm" eType="#//LargeLanguageModel"/>
@@ -53,7 +51,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="planningLlm" eType="#//LargeLanguageModel"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="embedder" eType="#//Code"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Task" eSuperTypes="#//Configurable #//Commented">
+  <eClassifiers xsi:type="ecore:EClass" name="Task" eSuperTypes="#//Configurable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="guardrail" eType="#//Guardrail"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="agent" eType="#//Agent"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tools" upperBound="-1"

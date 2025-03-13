@@ -2,7 +2,9 @@ package org.nasdanika.models.crewai.util;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Consumer;
 
 import org.eclipse.emf.common.util.EList;
@@ -16,15 +18,17 @@ import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.common.Util;
 import org.nasdanika.models.crewai.Agent;
 import org.nasdanika.models.crewai.Code;
-import org.nasdanika.models.crewai.Commented;
 import org.nasdanika.models.crewai.Crew;
 import org.nasdanika.models.crewai.Task;
 import org.nasdanika.models.crewai.Tool;
 import org.nasdanika.models.python.Class;
 import org.nasdanika.models.python.Function;
+import org.nasdanika.models.python.Import;
 import org.nasdanika.models.python.PythonFactory;
+import org.nasdanika.models.python.PythonPackage;
 import org.nasdanika.models.python.Variable;
 import org.nasdanika.models.source.Source;
+import org.yaml.snakeyaml.Yaml;
 
 /**
  * Generates a crew python file and configuration files.
@@ -35,7 +39,7 @@ public class CrewGenerator {
 	 * Agents config relative to the crew source file
 	 * @return
 	 */
-	protected String getAgentsConfig() {
+	protected String getAgentsConfig(Crew crew) {
 		return "config/agents.yaml";
 	}
 	
@@ -43,12 +47,12 @@ public class CrewGenerator {
 	 * Tasks config relative to the crew source file
 	 * @return
 	 */
-	protected String getTasksConfig() {
+	protected String getTasksConfig(Crew crew) {
 		return "config/tasks.yaml";
 	}
 	
-	protected void addComment(Commented commented, Consumer<? super Source> consumer) {
-		String comment = commented.getComment();
+	protected void addComment(Code code, Consumer<? super Source> consumer) {
+		String comment = code.getComment();
 		if (!Util.isBlank(comment)) {
 			Source commentSource = Source.create("\"\"\"" + System.lineSeparator() + comment + System.lineSeparator() +  "\"\"\"");
 			consumer.accept(commentSource);
@@ -78,10 +82,10 @@ public class CrewGenerator {
 			crewClassBody.add(Source.create(crewCode));			
 		}
 		
-		String agentsConfig = getAgentsConfig();
+		String agentsConfig = getAgentsConfig(crew);
 		crewClassBody.add(Variable.createVariable(getAgentsConfigVariableName(), "'" + agentsConfig + "'"));
 		
-		String tasksConfig = getAgentsConfig();
+		String tasksConfig = getTasksConfig(crew);
 		String taskConfigVariableName = getTasksConfigVariableName();
 		crewClassBody.add(Variable.createVariable(taskConfigVariableName, "'" + tasksConfig + "'"));
 
@@ -129,28 +133,58 @@ public class CrewGenerator {
 		EList<EObject> resourceContents = pythonResource.getContents();
 		addComment(crew, resourceContents::add);
 		resourceContents.add(crewClass);
+		String indent = getIndent(crew);
+		pythonResource.getAllContents().forEachRemaining(e -> {
+			if (e instanceof Source) {
+				((Source) e).setIndent(indent);
+			}
+		});
 		pythonResource.save(null);
 		
 		// Generating and saving configs, adding agents to tasks, context, ...
 		
 		
+		
+	}
+	
+	protected String getIndent(Crew crew) {
+		return "\t";
 	}
 
 	protected void addImports(Crew crew, Class crewClass) {
 		addDefaultImports(crewClass);
 		List<String> allImports = new ArrayList<>();
 		allImports.add(crew.getImports());
-		TreeIterator<Object> cit = EcoreUtil.getAllContents(crewClass, true);
+		TreeIterator<Object> cit = EcoreUtil.getAllContents(crew, true);
 		while (cit.hasNext()) {
 			Object next = cit.next();
 			if (next instanceof Code) {
-				allImports.add(((Code) next).getCode());
+				allImports.add(((Code) next).getImports());
 			}
 		}
-
+		
+		Yaml yaml = new Yaml();
 		for (String toImport: allImports) {
 			if (!Util.isBlank(toImport)) {
-				// TODO - parse YAML, add
+				Object toImportObj = yaml.load(toImport);
+				if (toImportObj != null) {
+					Iterable<?> toImportIterable = toImportObj instanceof Iterable ? (Iterable<?>) toImportObj : Collections.singleton(toImportObj);
+					for (Object toImportElement: toImportIterable) {
+						Import importObj = PythonFactory.eINSTANCE.createImport();
+						if (toImportElement instanceof String) {
+							importObj.setModule((String) toImportElement);
+						} else if (toImportElement instanceof Map) {
+							Map<?,?> toImportMap = (Map<?, ?>) toImportElement;
+							importObj.setModule((String) toImportMap.get(PythonPackage.Literals.IMPORT__MODULE.getName()));
+							importObj.setAlias((String) toImportMap.get(PythonPackage.Literals.IMPORT__ALIAS.getName()));
+							importObj.setItem((String) toImportMap.get(PythonPackage.Literals.IMPORT__ITEM.getName()));
+							importObj.setName((String) toImportMap.get(PythonPackage.Literals.IMPORT__NAME.getName()));							
+						} else {
+							throw new IllegalArgumentException("Unsupported import specification: " + toImportElement);
+						}
+						crewClass.getImports().add(importObj);
+					}
+				}
 			}
 		}
 	}
@@ -191,7 +225,7 @@ public class CrewGenerator {
 			extraArgs
 				.append(",")
 				.append(System.lineSeparator())
-				.append("tools[");
+				.append("    tools=[");
 			
 			boolean firstTool = true;
 			for (Tool tool: agent.getTools()) {
@@ -205,16 +239,15 @@ public class CrewGenerator {
 			
 			extraArgs.append("]");
 		}
-		return Source.create(
-			"""
-			return Agent(
-				config=self.%s['%s'],
-				verbose=True%s
-			)				
-			""".formatted(
-					getAgentsConfigVariableName(), 
-					getAgentConfigKey(agent),
-					extraArgs));
+		
+		Map<String,String> tokenMap = Map.of(
+				"agents-config-variable", getAgentsConfigVariableName(), 	
+				"agent-config-key", getAgentConfigKey(agent),
+				"extra-args", extraArgs.toString());
+		
+		return Source.create(Util.interpolate(
+				getAgentFunctionBodyTemplate(agent), 
+				tokenMap::get));
 	}
 
 	protected Source createTaskFunctionBody(Task task, ProgressMonitor progressMonitor) {
@@ -223,7 +256,7 @@ public class CrewGenerator {
 			extraArgs
 				.append(",")
 				.append(System.lineSeparator())
-				.append("tools[");
+				.append("    tools=[");
 			
 			boolean firstTool = true;
 			for (Tool tool: task.getTools()) {
@@ -237,13 +270,39 @@ public class CrewGenerator {
 			
 			extraArgs.append("]");
 		}
-		return Source.create(
-			"""
-			return Task(
-				config=self.%s['%s'],
-				verbose=True
-			)				
-			""".formatted(getTasksConfigVariableName(), getTaskConfigKey(task)));
+		Map<String,String> tokenMap = Map.of(
+				"tasks-config-variable", getTasksConfigVariableName(), 	
+				"task-config-key", getTaskConfigKey(task),
+				"extra-args", extraArgs.toString());
+		
+		return Source.create(Util.interpolate(
+				getTaskFunctionBodyTemplate(task), 
+				tokenMap::get));
+	}
+	
+	public static final String DEFAULT_AGENT_FUNCTION_BODY_TEMPLATE =
+		"""
+		return Agent(
+		    config=self.${agents-config-variable}['${agent-config-key}'],
+		    verbose=True${extra-args}
+		)				
+		""";
+	
+	protected String getAgentFunctionBodyTemplate(Agent agent) {
+		String ret = agent.getCode();
+		return Util.isBlank(ret) ? DEFAULT_AGENT_FUNCTION_BODY_TEMPLATE : ret;
+	}
+	
+	public static final String DEFAULT_TASK_FUNCTION_BODY_TEMPLATE =
+		"""
+		return Task(
+		    config=self.${tasks-config-variable}['${task-config-key}']${extra-args}
+		)				
+		""";	
+	
+	protected String getTaskFunctionBodyTemplate(Task task) {
+		String ret = task.getCode();
+		return Util.isBlank(ret) ? DEFAULT_TASK_FUNCTION_BODY_TEMPLATE : ret;		
 	}
 
 	protected String getCrewMethodName(Crew crew) {

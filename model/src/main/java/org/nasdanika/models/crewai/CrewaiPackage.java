@@ -60,43 +60,6 @@ public interface CrewaiPackage extends EPackage {
 	CrewaiPackage eINSTANCE = org.nasdanika.models.crewai.impl.CrewaiPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.nasdanika.models.crewai.impl.CommentedImpl <em>Commented</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.models.crewai.impl.CommentedImpl
-	 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getCommented()
-	 * @generated
-	 */
-	int COMMENTED = 0;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMENTED__COMMENT = 0;
-
-	/**
-	 * The number of structural features of the '<em>Commented</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMENTED_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>Commented</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMENTED_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link org.nasdanika.models.crewai.impl.ConfigurableImpl <em>Configurable</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -104,7 +67,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getConfigurable()
 	 * @generated
 	 */
-	int CONFIGURABLE = 5;
+	int CONFIGURABLE = 4;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.models.crewai.impl.ToolImpl <em>Tool</em>}' class.
@@ -114,7 +77,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getTool()
 	 * @generated
 	 */
-	int TOOL = 6;
+	int TOOL = 5;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.models.crewai.impl.AgentImpl <em>Agent</em>}' class.
@@ -124,7 +87,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getAgent()
 	 * @generated
 	 */
-	int AGENT = 7;
+	int AGENT = 6;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.models.crewai.impl.CrewImpl <em>Crew</em>}' class.
@@ -134,7 +97,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getCrew()
 	 * @generated
 	 */
-	int CREW = 8;
+	int CREW = 7;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.models.crewai.impl.TaskImpl <em>Task</em>}' class.
@@ -144,7 +107,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getTask()
 	 * @generated
 	 */
-	int TASK = 9;
+	int TASK = 8;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.models.crewai.impl.CodeImpl <em>Code</em>}' class.
@@ -154,7 +117,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getCode()
 	 * @generated
 	 */
-	int CODE = 1;
+	int CODE = 0;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.models.crewai.impl.FunctionImpl <em>Function</em>}' class.
@@ -164,7 +127,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getFunction()
 	 * @generated
 	 */
-	int FUNCTION = 2;
+	int FUNCTION = 1;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.models.crewai.impl.GuardrailImpl <em>Guardrail</em>}' class.
@@ -174,7 +137,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getGuardrail()
 	 * @generated
 	 */
-	int GUARDRAIL = 3;
+	int GUARDRAIL = 2;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.models.crewai.impl.CallbackImpl <em>Callback</em>}' class.
@@ -184,16 +147,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getCallback()
 	 * @generated
 	 */
-	int CALLBACK = 4;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CODE__COMMENT = COMMENTED__COMMENT;
+	int CALLBACK = 3;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' attribute.
@@ -202,7 +156,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CODE__CODE = COMMENTED_FEATURE_COUNT + 0;
+	int CODE__CODE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Imports</b></em>' attribute.
@@ -211,25 +165,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CODE__IMPORTS = COMMENTED_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Code</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CODE_FEATURE_COUNT = COMMENTED_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Code</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CODE_OPERATION_COUNT = COMMENTED_OPERATION_COUNT + 0;
+	int CODE__IMPORTS = 1;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -238,7 +174,25 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION__COMMENT = CODE__COMMENT;
+	int CODE__COMMENT = 2;
+
+	/**
+	 * The number of structural features of the '<em>Code</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CODE_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Code</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CODE_OPERATION_COUNT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' attribute.
@@ -257,6 +211,15 @@ public interface CrewaiPackage extends EPackage {
 	 * @ordered
 	 */
 	int FUNCTION__IMPORTS = CODE__IMPORTS;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION__COMMENT = CODE__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
@@ -385,15 +348,6 @@ public interface CrewaiPackage extends EPackage {
 	int FUNCTION_OPERATION_COUNT = CODE_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GUARDRAIL__COMMENT = FUNCTION__COMMENT;
-
-	/**
 	 * The feature id for the '<em><b>Code</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -410,6 +364,15 @@ public interface CrewaiPackage extends EPackage {
 	 * @ordered
 	 */
 	int GUARDRAIL__IMPORTS = FUNCTION__IMPORTS;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUARDRAIL__COMMENT = FUNCTION__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
@@ -538,15 +501,6 @@ public interface CrewaiPackage extends EPackage {
 	int GUARDRAIL_OPERATION_COUNT = FUNCTION_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CALLBACK__COMMENT = FUNCTION__COMMENT;
-
-	/**
 	 * The feature id for the '<em><b>Code</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -563,6 +517,15 @@ public interface CrewaiPackage extends EPackage {
 	 * @ordered
 	 */
 	int CALLBACK__IMPORTS = FUNCTION__IMPORTS;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLBACK__COMMENT = FUNCTION__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
@@ -790,13 +753,40 @@ public interface CrewaiPackage extends EPackage {
 	int CONFIGURABLE__ID = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY__ID;
 
 	/**
+	 * The feature id for the '<em><b>Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIGURABLE__CODE = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Imports</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIGURABLE__IMPORTS = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIGURABLE__COMMENT = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Configuration</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIGURABLE__CONFIGURATION = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 0;
+	int CONFIGURABLE__CONFIGURATION = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Configurable</em>' class.
@@ -805,7 +795,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIGURABLE_FEATURE_COUNT = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 1;
+	int CONFIGURABLE_FEATURE_COUNT = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Configurable</em>' class.
@@ -815,15 +805,6 @@ public interface CrewaiPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONFIGURABLE_OPERATION_COUNT = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TOOL__COMMENT = CODE__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' attribute.
@@ -842,6 +823,15 @@ public interface CrewaiPackage extends EPackage {
 	 * @ordered
 	 */
 	int TOOL__IMPORTS = CODE__IMPORTS;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOOL__COMMENT = CODE__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
@@ -1069,6 +1059,33 @@ public interface CrewaiPackage extends EPackage {
 	int AGENT__ID = CONFIGURABLE__ID;
 
 	/**
+	 * The feature id for the '<em><b>Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__CODE = CONFIGURABLE__CODE;
+
+	/**
+	 * The feature id for the '<em><b>Imports</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__IMPORTS = CONFIGURABLE__IMPORTS;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__COMMENT = CONFIGURABLE__COMMENT;
+
+	/**
 	 * The feature id for the '<em><b>Configuration</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1078,22 +1095,13 @@ public interface CrewaiPackage extends EPackage {
 	int AGENT__CONFIGURATION = CONFIGURABLE__CONFIGURATION;
 
 	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AGENT__COMMENT = CONFIGURABLE_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Tools</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT__TOOLS = CONFIGURABLE_FEATURE_COUNT + 1;
+	int AGENT__TOOLS = CONFIGURABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Llm</b></em>' reference.
@@ -1102,7 +1110,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT__LLM = CONFIGURABLE_FEATURE_COUNT + 2;
+	int AGENT__LLM = CONFIGURABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Function Calling Llm</b></em>' reference.
@@ -1111,7 +1119,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT__FUNCTION_CALLING_LLM = CONFIGURABLE_FEATURE_COUNT + 3;
+	int AGENT__FUNCTION_CALLING_LLM = CONFIGURABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Step Callback</b></em>' reference.
@@ -1120,7 +1128,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT__STEP_CALLBACK = CONFIGURABLE_FEATURE_COUNT + 4;
+	int AGENT__STEP_CALLBACK = CONFIGURABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Knowledge Sources</b></em>' reference list.
@@ -1129,7 +1137,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT__KNOWLEDGE_SOURCES = CONFIGURABLE_FEATURE_COUNT + 5;
+	int AGENT__KNOWLEDGE_SOURCES = CONFIGURABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Embedder</b></em>' reference.
@@ -1138,7 +1146,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT__EMBEDDER = CONFIGURABLE_FEATURE_COUNT + 6;
+	int AGENT__EMBEDDER = CONFIGURABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Agent</em>' class.
@@ -1147,7 +1155,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT_FEATURE_COUNT = CONFIGURABLE_FEATURE_COUNT + 7;
+	int AGENT_FEATURE_COUNT = CONFIGURABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Agent</em>' class.
@@ -1258,22 +1266,13 @@ public interface CrewaiPackage extends EPackage {
 	int CREW__ID = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY__ID;
 
 	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREW__COMMENT = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Code</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREW__CODE = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 1;
+	int CREW__CODE = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Imports</b></em>' attribute.
@@ -1282,7 +1281,16 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREW__IMPORTS = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 2;
+	int CREW__IMPORTS = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREW__COMMENT = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Tools</b></em>' containment reference list.
@@ -1501,6 +1509,33 @@ public interface CrewaiPackage extends EPackage {
 	int TASK__ID = CONFIGURABLE__ID;
 
 	/**
+	 * The feature id for the '<em><b>Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__CODE = CONFIGURABLE__CODE;
+
+	/**
+	 * The feature id for the '<em><b>Imports</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__IMPORTS = CONFIGURABLE__IMPORTS;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__COMMENT = CONFIGURABLE__COMMENT;
+
+	/**
 	 * The feature id for the '<em><b>Configuration</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1510,22 +1545,13 @@ public interface CrewaiPackage extends EPackage {
 	int TASK__CONFIGURATION = CONFIGURABLE__CONFIGURATION;
 
 	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TASK__COMMENT = CONFIGURABLE_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Guardrail</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TASK__GUARDRAIL = CONFIGURABLE_FEATURE_COUNT + 1;
+	int TASK__GUARDRAIL = CONFIGURABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Agent</b></em>' reference.
@@ -1534,7 +1560,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TASK__AGENT = CONFIGURABLE_FEATURE_COUNT + 2;
+	int TASK__AGENT = CONFIGURABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Tools</b></em>' reference list.
@@ -1543,7 +1569,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TASK__TOOLS = CONFIGURABLE_FEATURE_COUNT + 3;
+	int TASK__TOOLS = CONFIGURABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Context</b></em>' reference list.
@@ -1552,7 +1578,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TASK__CONTEXT = CONFIGURABLE_FEATURE_COUNT + 4;
+	int TASK__CONTEXT = CONFIGURABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Callback</b></em>' reference.
@@ -1561,7 +1587,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TASK__CALLBACK = CONFIGURABLE_FEATURE_COUNT + 5;
+	int TASK__CALLBACK = CONFIGURABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Task</em>' class.
@@ -1570,7 +1596,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TASK_FEATURE_COUNT = CONFIGURABLE_FEATURE_COUNT + 6;
+	int TASK_FEATURE_COUNT = CONFIGURABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Task</em>' class.
@@ -1589,7 +1615,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getLargeLanguageModel()
 	 * @generated
 	 */
-	int LARGE_LANGUAGE_MODEL = 10;
+	int LARGE_LANGUAGE_MODEL = 9;
 
 	/**
 	 * The number of structural features of the '<em>Large Language Model</em>' class.
@@ -1617,7 +1643,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getKnowledgeSource()
 	 * @generated
 	 */
-	int KNOWLEDGE_SOURCE = 11;
+	int KNOWLEDGE_SOURCE = 10;
 
 	/**
 	 * The number of structural features of the '<em>Knowledge Source</em>' class.
@@ -1645,29 +1671,8 @@ public interface CrewaiPackage extends EPackage {
 	 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getProcess()
 	 * @generated
 	 */
-	int PROCESS = 12;
+	int PROCESS = 11;
 
-
-	/**
-	 * Returns the meta object for class '{@link org.nasdanika.models.crewai.Commented <em>Commented</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Commented</em>'.
-	 * @see org.nasdanika.models.crewai.Commented
-	 * @generated
-	 */
-	EClass getCommented();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.nasdanika.models.crewai.Commented#getComment <em>Comment</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Comment</em>'.
-	 * @see org.nasdanika.models.crewai.Commented#getComment()
-	 * @see #getCommented()
-	 * @generated
-	 */
-	EAttribute getCommented_Comment();
 
 	/**
 	 * Returns the meta object for class '{@link org.nasdanika.models.crewai.Configurable <em>Configurable</em>}'.
@@ -2067,6 +2072,17 @@ public interface CrewaiPackage extends EPackage {
 	EAttribute getCode_Imports();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.models.crewai.Code#getComment <em>Comment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Comment</em>'.
+	 * @see org.nasdanika.models.crewai.Code#getComment()
+	 * @see #getCode()
+	 * @generated
+	 */
+	EAttribute getCode_Comment();
+
+	/**
 	 * Returns the meta object for class '{@link org.nasdanika.models.crewai.KnowledgeSource <em>Knowledge Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2109,22 +2125,6 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
-		/**
-		 * The meta object literal for the '{@link org.nasdanika.models.crewai.impl.CommentedImpl <em>Commented</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.nasdanika.models.crewai.impl.CommentedImpl
-		 * @see org.nasdanika.models.crewai.impl.CrewaiPackageImpl#getCommented()
-		 * @generated
-		 */
-		EClass COMMENTED = eINSTANCE.getCommented();
-		/**
-		 * The meta object literal for the '<em><b>Comment</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMMENTED__COMMENT = eINSTANCE.getCommented_Comment();
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.models.crewai.impl.ConfigurableImpl <em>Configurable</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -2404,6 +2404,13 @@ public interface CrewaiPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CODE__IMPORTS = eINSTANCE.getCode_Imports();
+		/**
+		 * The meta object literal for the '<em><b>Comment</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CODE__COMMENT = eINSTANCE.getCode_Comment();
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.models.crewai.impl.KnowledgeSourceImpl <em>Knowledge Source</em>}' class.
 		 * <!-- begin-user-doc -->

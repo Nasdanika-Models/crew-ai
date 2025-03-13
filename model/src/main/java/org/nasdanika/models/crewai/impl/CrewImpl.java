@@ -10,7 +10,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.nasdanika.models.crewai.Agent;
 import org.nasdanika.models.crewai.Code;
-import org.nasdanika.models.crewai.Commented;
 import org.nasdanika.models.crewai.Crew;
 import org.nasdanika.models.crewai.CrewaiPackage;
 import org.nasdanika.models.crewai.Function;
@@ -28,9 +27,9 @@ import org.nasdanika.ncore.impl.DocumentedNamedStringIdentityImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getCode <em>Code</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getImports <em>Imports</em>}</li>
+ *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getTools <em>Tools</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getAgents <em>Agents</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getTasks <em>Tasks</em>}</li>
@@ -47,15 +46,6 @@ import org.nasdanika.ncore.impl.DocumentedNamedStringIdentityImpl;
  * @generated
  */
 public class CrewImpl extends DocumentedNamedStringIdentityImpl implements Crew {
-	/**
-	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComment()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COMMENT_EDEFAULT = null;
 	/**
 	 * The default value of the '{@link #getCode() <em>Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -74,6 +64,15 @@ public class CrewImpl extends DocumentedNamedStringIdentityImpl implements Crew 
 	 * @ordered
 	 */
 	protected static final String IMPORTS_EDEFAULT = null;
+	/**
+	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComment()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String COMMENT_EDEFAULT = null;
 	/**
 	 * The default value of the '{@link #getProcess() <em>Process</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -150,7 +149,7 @@ public class CrewImpl extends DocumentedNamedStringIdentityImpl implements Crew 
 	 */
 	@Override
 	public String getComment() {
-		return (String)eDynamicGet(CrewaiPackage.CREW__COMMENT, CrewaiPackage.Literals.COMMENTED__COMMENT, true, true);
+		return (String)eDynamicGet(CrewaiPackage.CREW__COMMENT, CrewaiPackage.Literals.CODE__COMMENT, true, true);
 	}
 
 	/**
@@ -160,7 +159,7 @@ public class CrewImpl extends DocumentedNamedStringIdentityImpl implements Crew 
 	 */
 	@Override
 	public void setComment(String newComment) {
-		eDynamicSet(CrewaiPackage.CREW__COMMENT, CrewaiPackage.Literals.COMMENTED__COMMENT, newComment);
+		eDynamicSet(CrewaiPackage.CREW__COMMENT, CrewaiPackage.Literals.CODE__COMMENT, newComment);
 	}
 
 	/**
@@ -433,12 +432,12 @@ public class CrewImpl extends DocumentedNamedStringIdentityImpl implements Crew 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CrewaiPackage.CREW__COMMENT:
-				return getComment();
 			case CrewaiPackage.CREW__CODE:
 				return getCode();
 			case CrewaiPackage.CREW__IMPORTS:
 				return getImports();
+			case CrewaiPackage.CREW__COMMENT:
+				return getComment();
 			case CrewaiPackage.CREW__TOOLS:
 				return getTools();
 			case CrewaiPackage.CREW__AGENTS:
@@ -478,14 +477,14 @@ public class CrewImpl extends DocumentedNamedStringIdentityImpl implements Crew 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CrewaiPackage.CREW__COMMENT:
-				setComment((String)newValue);
-				return;
 			case CrewaiPackage.CREW__CODE:
 				setCode((String)newValue);
 				return;
 			case CrewaiPackage.CREW__IMPORTS:
 				setImports((String)newValue);
+				return;
+			case CrewaiPackage.CREW__COMMENT:
+				setComment((String)newValue);
 				return;
 			case CrewaiPackage.CREW__TOOLS:
 				getTools().clear();
@@ -536,14 +535,14 @@ public class CrewImpl extends DocumentedNamedStringIdentityImpl implements Crew 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CrewaiPackage.CREW__COMMENT:
-				setComment(COMMENT_EDEFAULT);
-				return;
 			case CrewaiPackage.CREW__CODE:
 				setCode(CODE_EDEFAULT);
 				return;
 			case CrewaiPackage.CREW__IMPORTS:
 				setImports(IMPORTS_EDEFAULT);
+				return;
+			case CrewaiPackage.CREW__COMMENT:
+				setComment(COMMENT_EDEFAULT);
 				return;
 			case CrewaiPackage.CREW__TOOLS:
 				getTools().clear();
@@ -590,12 +589,12 @@ public class CrewImpl extends DocumentedNamedStringIdentityImpl implements Crew 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CrewaiPackage.CREW__COMMENT:
-				return COMMENT_EDEFAULT == null ? getComment() != null : !COMMENT_EDEFAULT.equals(getComment());
 			case CrewaiPackage.CREW__CODE:
 				return CODE_EDEFAULT == null ? getCode() != null : !CODE_EDEFAULT.equals(getCode());
 			case CrewaiPackage.CREW__IMPORTS:
 				return IMPORTS_EDEFAULT == null ? getImports() != null : !IMPORTS_EDEFAULT.equals(getImports());
+			case CrewaiPackage.CREW__COMMENT:
+				return COMMENT_EDEFAULT == null ? getComment() != null : !COMMENT_EDEFAULT.equals(getComment());
 			case CrewaiPackage.CREW__TOOLS:
 				return !getTools().isEmpty();
 			case CrewaiPackage.CREW__AGENTS:
@@ -629,16 +628,11 @@ public class CrewImpl extends DocumentedNamedStringIdentityImpl implements Crew 
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == Commented.class) {
-			switch (derivedFeatureID) {
-				case CrewaiPackage.CREW__COMMENT: return CrewaiPackage.COMMENTED__COMMENT;
-				default: return -1;
-			}
-		}
 		if (baseClass == Code.class) {
 			switch (derivedFeatureID) {
 				case CrewaiPackage.CREW__CODE: return CrewaiPackage.CODE__CODE;
 				case CrewaiPackage.CREW__IMPORTS: return CrewaiPackage.CODE__IMPORTS;
+				case CrewaiPackage.CREW__COMMENT: return CrewaiPackage.CODE__COMMENT;
 				default: return -1;
 			}
 		}
@@ -652,16 +646,11 @@ public class CrewImpl extends DocumentedNamedStringIdentityImpl implements Crew 
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == Commented.class) {
-			switch (baseFeatureID) {
-				case CrewaiPackage.COMMENTED__COMMENT: return CrewaiPackage.CREW__COMMENT;
-				default: return -1;
-			}
-		}
 		if (baseClass == Code.class) {
 			switch (baseFeatureID) {
 				case CrewaiPackage.CODE__CODE: return CrewaiPackage.CREW__CODE;
 				case CrewaiPackage.CODE__IMPORTS: return CrewaiPackage.CREW__IMPORTS;
+				case CrewaiPackage.CODE__COMMENT: return CrewaiPackage.CREW__COMMENT;
 				default: return -1;
 			}
 		}

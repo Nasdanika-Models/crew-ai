@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.nasdanika.models.crewai.Agent;
 import org.nasdanika.models.crewai.Callback;
 import org.nasdanika.models.crewai.Code;
-import org.nasdanika.models.crewai.Commented;
 import org.nasdanika.models.crewai.CrewaiPackage;
 import org.nasdanika.models.crewai.KnowledgeSource;
 import org.nasdanika.models.crewai.LargeLanguageModel;
@@ -25,7 +24,6 @@ import org.nasdanika.models.crewai.Tool;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.nasdanika.models.crewai.impl.AgentImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.AgentImpl#getTools <em>Tools</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.AgentImpl#getLlm <em>Llm</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.AgentImpl#getFunctionCallingLlm <em>Function Calling Llm</em>}</li>
@@ -37,16 +35,6 @@ import org.nasdanika.models.crewai.Tool;
  * @generated
  */
 public class AgentImpl extends ConfigurableImpl implements Agent {
-	/**
-	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComment()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COMMENT_EDEFAULT = null;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -64,26 +52,6 @@ public class AgentImpl extends ConfigurableImpl implements Agent {
 	@Override
 	protected EClass eStaticClass() {
 		return CrewaiPackage.Literals.AGENT;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getComment() {
-		return (String)eDynamicGet(CrewaiPackage.AGENT__COMMENT, CrewaiPackage.Literals.COMMENTED__COMMENT, true, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setComment(String newComment) {
-		eDynamicSet(CrewaiPackage.AGENT__COMMENT, CrewaiPackage.Literals.COMMENTED__COMMENT, newComment);
 	}
 
 	/**
@@ -232,8 +200,6 @@ public class AgentImpl extends ConfigurableImpl implements Agent {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CrewaiPackage.AGENT__COMMENT:
-				return getComment();
 			case CrewaiPackage.AGENT__TOOLS:
 				return getTools();
 			case CrewaiPackage.AGENT__LLM:
@@ -263,9 +229,6 @@ public class AgentImpl extends ConfigurableImpl implements Agent {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CrewaiPackage.AGENT__COMMENT:
-				setComment((String)newValue);
-				return;
 			case CrewaiPackage.AGENT__TOOLS:
 				getTools().clear();
 				getTools().addAll((Collection<? extends Tool>)newValue);
@@ -298,9 +261,6 @@ public class AgentImpl extends ConfigurableImpl implements Agent {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CrewaiPackage.AGENT__COMMENT:
-				setComment(COMMENT_EDEFAULT);
-				return;
 			case CrewaiPackage.AGENT__TOOLS:
 				getTools().clear();
 				return;
@@ -331,8 +291,6 @@ public class AgentImpl extends ConfigurableImpl implements Agent {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CrewaiPackage.AGENT__COMMENT:
-				return COMMENT_EDEFAULT == null ? getComment() != null : !COMMENT_EDEFAULT.equals(getComment());
 			case CrewaiPackage.AGENT__TOOLS:
 				return !getTools().isEmpty();
 			case CrewaiPackage.AGENT__LLM:
@@ -347,38 +305,6 @@ public class AgentImpl extends ConfigurableImpl implements Agent {
 				return basicGetEmbedder() != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == Commented.class) {
-			switch (derivedFeatureID) {
-				case CrewaiPackage.AGENT__COMMENT: return CrewaiPackage.COMMENTED__COMMENT;
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == Commented.class) {
-			switch (baseFeatureID) {
-				case CrewaiPackage.COMMENTED__COMMENT: return CrewaiPackage.AGENT__COMMENT;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 } //AgentImpl

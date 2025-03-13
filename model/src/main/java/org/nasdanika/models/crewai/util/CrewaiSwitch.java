@@ -11,7 +11,6 @@ import org.nasdanika.common.Adaptable;
 import org.nasdanika.models.crewai.Agent;
 import org.nasdanika.models.crewai.Callback;
 import org.nasdanika.models.crewai.Code;
-import org.nasdanika.models.crewai.Commented;
 import org.nasdanika.models.crewai.Configurable;
 import org.nasdanika.models.crewai.Crew;
 import org.nasdanika.models.crewai.CrewaiPackage;
@@ -87,16 +86,9 @@ public class CrewaiSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case CrewaiPackage.COMMENTED: {
-				Commented commented = (Commented)theEObject;
-				T result = caseCommented(commented);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case CrewaiPackage.CODE: {
 				Code code = (Code)theEObject;
 				T result = caseCode(code);
-				if (result == null) result = caseCommented(code);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -105,7 +97,6 @@ public class CrewaiSwitch<T> extends Switch<T> {
 				T result = caseFunction(function);
 				if (result == null) result = caseCode(function);
 				if (result == null) result = caseDocumentedNamedStringIdentity(function);
-				if (result == null) result = caseCommented(function);
 				if (result == null) result = caseDocumentedNamedElement(function);
 				if (result == null) result = caseStringIdentity(function);
 				if (result == null) result = caseNamedElement(function);
@@ -123,7 +114,6 @@ public class CrewaiSwitch<T> extends Switch<T> {
 				if (result == null) result = caseFunction(guardrail);
 				if (result == null) result = caseCode(guardrail);
 				if (result == null) result = caseDocumentedNamedStringIdentity(guardrail);
-				if (result == null) result = caseCommented(guardrail);
 				if (result == null) result = caseDocumentedNamedElement(guardrail);
 				if (result == null) result = caseStringIdentity(guardrail);
 				if (result == null) result = caseNamedElement(guardrail);
@@ -141,7 +131,6 @@ public class CrewaiSwitch<T> extends Switch<T> {
 				if (result == null) result = caseFunction(callback);
 				if (result == null) result = caseCode(callback);
 				if (result == null) result = caseDocumentedNamedStringIdentity(callback);
-				if (result == null) result = caseCommented(callback);
 				if (result == null) result = caseDocumentedNamedElement(callback);
 				if (result == null) result = caseStringIdentity(callback);
 				if (result == null) result = caseNamedElement(callback);
@@ -157,6 +146,7 @@ public class CrewaiSwitch<T> extends Switch<T> {
 				Configurable configurable = (Configurable)theEObject;
 				T result = caseConfigurable(configurable);
 				if (result == null) result = caseDocumentedNamedStringIdentity(configurable);
+				if (result == null) result = caseCode(configurable);
 				if (result == null) result = caseDocumentedNamedElement(configurable);
 				if (result == null) result = caseStringIdentity(configurable);
 				if (result == null) result = caseNamedElement(configurable);
@@ -173,7 +163,6 @@ public class CrewaiSwitch<T> extends Switch<T> {
 				T result = caseTool(tool);
 				if (result == null) result = caseCode(tool);
 				if (result == null) result = caseDocumentedNamedStringIdentity(tool);
-				if (result == null) result = caseCommented(tool);
 				if (result == null) result = caseDocumentedNamedElement(tool);
 				if (result == null) result = caseStringIdentity(tool);
 				if (result == null) result = caseNamedElement(tool);
@@ -189,8 +178,8 @@ public class CrewaiSwitch<T> extends Switch<T> {
 				Agent agent = (Agent)theEObject;
 				T result = caseAgent(agent);
 				if (result == null) result = caseConfigurable(agent);
-				if (result == null) result = caseCommented(agent);
 				if (result == null) result = caseDocumentedNamedStringIdentity(agent);
+				if (result == null) result = caseCode(agent);
 				if (result == null) result = caseDocumentedNamedElement(agent);
 				if (result == null) result = caseStringIdentity(agent);
 				if (result == null) result = caseNamedElement(agent);
@@ -209,7 +198,6 @@ public class CrewaiSwitch<T> extends Switch<T> {
 				if (result == null) result = caseCode(crew);
 				if (result == null) result = caseDocumentedNamedElement(crew);
 				if (result == null) result = caseStringIdentity(crew);
-				if (result == null) result = caseCommented(crew);
 				if (result == null) result = caseNamedElement(crew);
 				if (result == null) result = caseDocumented(crew);
 				if (result == null) result = caseModelElement(crew);
@@ -223,8 +211,8 @@ public class CrewaiSwitch<T> extends Switch<T> {
 				Task task = (Task)theEObject;
 				T result = caseTask(task);
 				if (result == null) result = caseConfigurable(task);
-				if (result == null) result = caseCommented(task);
 				if (result == null) result = caseDocumentedNamedStringIdentity(task);
+				if (result == null) result = caseCode(task);
 				if (result == null) result = caseDocumentedNamedElement(task);
 				if (result == null) result = caseStringIdentity(task);
 				if (result == null) result = caseNamedElement(task);
@@ -250,21 +238,6 @@ public class CrewaiSwitch<T> extends Switch<T> {
 			}
 			default: return defaultCase(theEObject);
 		}
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Commented</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Commented</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCommented(Commented object) {
-		return null;
 	}
 
 	/**

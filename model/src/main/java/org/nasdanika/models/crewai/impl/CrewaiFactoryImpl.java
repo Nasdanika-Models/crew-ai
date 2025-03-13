@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.nasdanika.models.crewai.Agent;
 import org.nasdanika.models.crewai.Callback;
 import org.nasdanika.models.crewai.Code;
-import org.nasdanika.models.crewai.Commented;
 import org.nasdanika.models.crewai.Configurable;
 import org.nasdanika.models.crewai.Crew;
 import org.nasdanika.models.crewai.CrewaiFactory;
@@ -69,7 +68,6 @@ public class CrewaiFactoryImpl extends EFactoryImpl implements CrewaiFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case CrewaiPackage.COMMENTED: return createCommented();
 			case CrewaiPackage.CODE: return createCode();
 			case CrewaiPackage.FUNCTION: return createFunction();
 			case CrewaiPackage.GUARDRAIL: return createGuardrail();
@@ -114,17 +112,6 @@ public class CrewaiFactoryImpl extends EFactoryImpl implements CrewaiFactory {
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Commented createCommented() {
-		CommentedImpl commented = new CommentedImpl();
-		return commented;
 	}
 
 	/**

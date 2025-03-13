@@ -20,7 +20,7 @@ import org.nasdanika.ncore.DocumentedNamedStringIdentity;
  * @model
  * @generated
  */
-public interface Configurable extends DocumentedNamedStringIdentity {
+public interface Configurable extends DocumentedNamedStringIdentity, Code {
 	/**
 	 * Returns the value of the '<em><b>Configuration</b></em>' attribute.
 	 * <!-- begin-user-doc -->
