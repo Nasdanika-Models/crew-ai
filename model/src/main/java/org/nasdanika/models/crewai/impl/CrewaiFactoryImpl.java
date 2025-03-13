@@ -11,20 +11,17 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.nasdanika.models.crewai.Agent;
-import org.nasdanika.models.crewai.Assignment;
 import org.nasdanika.models.crewai.Callback;
 import org.nasdanika.models.crewai.Code;
+import org.nasdanika.models.crewai.Commented;
 import org.nasdanika.models.crewai.Configurable;
 import org.nasdanika.models.crewai.Crew;
 import org.nasdanika.models.crewai.CrewaiFactory;
 import org.nasdanika.models.crewai.CrewaiPackage;
 import org.nasdanika.models.crewai.Function;
 import org.nasdanika.models.crewai.Guardrail;
-import org.nasdanika.models.crewai.Import;
 import org.nasdanika.models.crewai.KnowledgeSource;
 import org.nasdanika.models.crewai.LargeLanguageModel;
-import org.nasdanika.models.crewai.SourceElement;
-import org.nasdanika.models.crewai.SourceUnit;
 import org.nasdanika.models.crewai.Task;
 import org.nasdanika.models.crewai.Tool;
 
@@ -72,12 +69,9 @@ public class CrewaiFactoryImpl extends EFactoryImpl implements CrewaiFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case CrewaiPackage.SOURCE_UNIT: return createSourceUnit();
-			case CrewaiPackage.IMPORT: return createImport();
-			case CrewaiPackage.SOURCE_ELEMENT: return createSourceElement();
+			case CrewaiPackage.COMMENTED: return createCommented();
 			case CrewaiPackage.CODE: return createCode();
 			case CrewaiPackage.FUNCTION: return createFunction();
-			case CrewaiPackage.ASSIGNMENT: return createAssignment();
 			case CrewaiPackage.GUARDRAIL: return createGuardrail();
 			case CrewaiPackage.CALLBACK: return createCallback();
 			case CrewaiPackage.CONFIGURABLE: return createConfigurable();
@@ -120,6 +114,17 @@ public class CrewaiFactoryImpl extends EFactoryImpl implements CrewaiFactory {
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Commented createCommented() {
+		CommentedImpl commented = new CommentedImpl();
+		return commented;
 	}
 
 	/**
@@ -205,17 +210,6 @@ public class CrewaiFactoryImpl extends EFactoryImpl implements CrewaiFactory {
 	 * @generated
 	 */
 	@Override
-	public Assignment createAssignment() {
-		AssignmentImpl assignment = new AssignmentImpl();
-		return assignment;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Guardrail createGuardrail() {
 		GuardrailImpl guardrail = new GuardrailImpl();
 		return guardrail;
@@ -238,42 +232,9 @@ public class CrewaiFactoryImpl extends EFactoryImpl implements CrewaiFactory {
 	 * @generated
 	 */
 	@Override
-	public Import createImport() {
-		ImportImpl import_ = new ImportImpl();
-		return import_;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public SourceElement createSourceElement() {
-		SourceElementImpl sourceElement = new SourceElementImpl();
-		return sourceElement;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Code createCode() {
 		CodeImpl code = new CodeImpl();
 		return code;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public SourceUnit createSourceUnit() {
-		SourceUnitImpl sourceUnit = new SourceUnitImpl();
-		return sourceUnit;
 	}
 
 	/**

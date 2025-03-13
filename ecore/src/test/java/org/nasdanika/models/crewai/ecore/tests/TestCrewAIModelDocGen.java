@@ -29,6 +29,7 @@ import org.nasdanika.models.crewai.CrewaiPackage;
 import org.nasdanika.models.crewai.ecore.EcoreGenCrewAIProcessorsFactory;
 import org.nasdanika.models.ecore.graph.processors.EcoreHtmlAppGenerator;
 import org.nasdanika.models.ecore.graph.processors.EcoreNodeProcessorFactory;
+import org.nasdanika.models.python.PythonPackage;
 import org.nasdanika.models.source.SourcePackage;
 //import org.nasdanika.models.party.PartyPackage;
 import org.nasdanika.ncore.NcorePackage;

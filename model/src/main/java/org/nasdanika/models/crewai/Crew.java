@@ -31,7 +31,7 @@ import org.nasdanika.ncore.DocumentedNamedStringIdentity;
  * @model
  * @generated
  */
-public interface Crew extends SourceElement, DocumentedNamedStringIdentity {
+public interface Crew extends DocumentedNamedStringIdentity, Code {
 
 	/**
 	 * Returns the value of the '<em><b>Tools</b></em>' containment reference list.
@@ -40,7 +40,7 @@ public interface Crew extends SourceElement, DocumentedNamedStringIdentity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Tools</em>' containment reference list.
 	 * @see org.nasdanika.models.crewai.CrewaiPackage#getCrew_Tools()
-	 * @model containment="true"
+	 * @model containment="true" keys="id"
 	 * @generated
 	 */
 	EList<Tool> getTools();

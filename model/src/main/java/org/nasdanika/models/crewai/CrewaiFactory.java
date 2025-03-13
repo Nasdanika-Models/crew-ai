@@ -22,6 +22,15 @@ public interface CrewaiFactory extends EFactory {
 	CrewaiFactory eINSTANCE = org.nasdanika.models.crewai.impl.CrewaiFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Commented</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Commented</em>'.
+	 * @generated
+	 */
+	Commented createCommented();
+
+	/**
 	 * Returns a new object of class '<em>Configurable</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -85,15 +94,6 @@ public interface CrewaiFactory extends EFactory {
 	Function createFunction();
 
 	/**
-	 * Returns a new object of class '<em>Assignment</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Assignment</em>'.
-	 * @generated
-	 */
-	Assignment createAssignment();
-
-	/**
 	 * Returns a new object of class '<em>Guardrail</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -112,24 +112,6 @@ public interface CrewaiFactory extends EFactory {
 	Callback createCallback();
 
 	/**
-	 * Returns a new object of class '<em>Import</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Import</em>'.
-	 * @generated
-	 */
-	Import createImport();
-
-	/**
-	 * Returns a new object of class '<em>Source Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Source Element</em>'.
-	 * @generated
-	 */
-	SourceElement createSourceElement();
-
-	/**
 	 * Returns a new object of class '<em>Code</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -137,15 +119,6 @@ public interface CrewaiFactory extends EFactory {
 	 * @generated
 	 */
 	Code createCode();
-
-	/**
-	 * Returns a new object of class '<em>Source Unit</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Source Unit</em>'.
-	 * @generated
-	 */
-	SourceUnit createSourceUnit();
 
 	/**
 	 * Returns a new object of class '<em>Knowledge Source</em>'.

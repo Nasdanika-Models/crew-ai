@@ -25,7 +25,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Agent extends Configurable {
+public interface Agent extends Configurable, Commented {
 	/**
 	 * Returns the value of the '<em><b>Tools</b></em>' reference list.
 	 * The list contents are of type {@link org.nasdanika.models.crewai.Tool}.

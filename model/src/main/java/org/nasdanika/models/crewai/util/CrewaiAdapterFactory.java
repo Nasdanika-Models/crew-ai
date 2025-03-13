@@ -11,19 +11,16 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.nasdanika.common.Adaptable;
 import org.nasdanika.models.crewai.Agent;
-import org.nasdanika.models.crewai.Assignment;
 import org.nasdanika.models.crewai.Callback;
 import org.nasdanika.models.crewai.Code;
+import org.nasdanika.models.crewai.Commented;
 import org.nasdanika.models.crewai.Configurable;
 import org.nasdanika.models.crewai.Crew;
 import org.nasdanika.models.crewai.CrewaiPackage;
 import org.nasdanika.models.crewai.Function;
 import org.nasdanika.models.crewai.Guardrail;
-import org.nasdanika.models.crewai.Import;
 import org.nasdanika.models.crewai.KnowledgeSource;
 import org.nasdanika.models.crewai.LargeLanguageModel;
-import org.nasdanika.models.crewai.SourceElement;
-import org.nasdanika.models.crewai.SourceUnit;
 import org.nasdanika.models.crewai.Task;
 import org.nasdanika.models.crewai.Tool;
 import org.nasdanika.ncore.Documented;
@@ -92,16 +89,8 @@ public class CrewaiAdapterFactory extends AdapterFactoryImpl {
 	protected CrewaiSwitch<Adapter> modelSwitch =
 		new CrewaiSwitch<Adapter>() {
 			@Override
-			public Adapter caseSourceUnit(SourceUnit object) {
-				return createSourceUnitAdapter();
-			}
-			@Override
-			public Adapter caseImport(Import object) {
-				return createImportAdapter();
-			}
-			@Override
-			public Adapter caseSourceElement(SourceElement object) {
-				return createSourceElementAdapter();
+			public Adapter caseCommented(Commented object) {
+				return createCommentedAdapter();
 			}
 			@Override
 			public Adapter caseCode(Code object) {
@@ -110,10 +99,6 @@ public class CrewaiAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseFunction(Function object) {
 				return createFunctionAdapter();
-			}
-			@Override
-			public Adapter caseAssignment(Assignment object) {
-				return createAssignmentAdapter();
 			}
 			@Override
 			public Adapter caseGuardrail(Guardrail object) {
@@ -206,6 +191,20 @@ public class CrewaiAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.crewai.Commented <em>Commented</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.crewai.Commented
+	 * @generated
+	 */
+	public Adapter createCommentedAdapter() {
+		return null;
+	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.crewai.Configurable <em>Configurable</em>}'.
@@ -306,20 +305,6 @@ public class CrewaiAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.crewai.Assignment <em>Assignment</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.nasdanika.models.crewai.Assignment
-	 * @generated
-	 */
-	public Adapter createAssignmentAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.crewai.Guardrail <em>Guardrail</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -348,34 +333,6 @@ public class CrewaiAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.crewai.Import <em>Import</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.nasdanika.models.crewai.Import
-	 * @generated
-	 */
-	public Adapter createImportAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.crewai.SourceElement <em>Source Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.nasdanika.models.crewai.SourceElement
-	 * @generated
-	 */
-	public Adapter createSourceElementAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.crewai.Code <em>Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -386,20 +343,6 @@ public class CrewaiAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCodeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.crewai.SourceUnit <em>Source Unit</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.nasdanika.models.crewai.SourceUnit
-	 * @generated
-	 */
-	public Adapter createSourceUnitAdapter() {
 		return null;
 	}
 

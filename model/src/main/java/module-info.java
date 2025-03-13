@@ -8,7 +8,7 @@ module org.nasdanika.models.crewai {
 	
 	requires transitive org.eclipse.emf.ecore;
 	requires transitive org.eclipse.emf.common;
-	requires transitive org.nasdanika.exec;
+	requires transitive org.nasdanika.models.python;
 	
 	provides CapabilityFactory with CrewAIEPackageResourceSetCapabilityFactory;
 	

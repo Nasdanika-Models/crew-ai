@@ -5,29 +5,21 @@ package org.nasdanika.models.crewai.impl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.nasdanika.exec.ExecPackage;
-import org.nasdanika.exec.resources.ResourcesPackage;
 import org.nasdanika.models.crewai.Agent;
-import org.nasdanika.models.crewai.Assignment;
 import org.nasdanika.models.crewai.Callback;
 import org.nasdanika.models.crewai.Code;
+import org.nasdanika.models.crewai.Commented;
 import org.nasdanika.models.crewai.Configurable;
 import org.nasdanika.models.crewai.Crew;
 import org.nasdanika.models.crewai.CrewaiFactory;
 import org.nasdanika.models.crewai.CrewaiPackage;
-
 import org.nasdanika.models.crewai.Function;
 import org.nasdanika.models.crewai.Guardrail;
-import org.nasdanika.models.crewai.Import;
 import org.nasdanika.models.crewai.KnowledgeSource;
 import org.nasdanika.models.crewai.LargeLanguageModel;
-import org.nasdanika.models.crewai.SourceElement;
-import org.nasdanika.models.crewai.SourceUnit;
 import org.nasdanika.models.crewai.Task;
 import org.nasdanika.models.crewai.Tool;
 import org.nasdanika.ncore.NcorePackage;
@@ -39,6 +31,12 @@ import org.nasdanika.ncore.NcorePackage;
  * @generated
  */
 public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass commentedEClass = null;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -87,12 +85,6 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass assignmentEClass = null;
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass guardrailEClass = null;
 	/**
 	 * <!-- begin-user-doc -->
@@ -105,25 +97,7 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass importEClass = null;
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass sourceElementEClass = null;
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass codeEClass = null;
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass sourceUnitEClass = null;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -184,7 +158,6 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 		isInited = true;
 
 		// Initialize simple dependencies
-		ExecPackage.eINSTANCE.eClass();
 		NcorePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
@@ -199,6 +172,26 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(CrewaiPackage.eNS_URI, theCrewaiPackage);
 		return theCrewaiPackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getCommented() {
+		return commentedEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getCommented_Comment() {
+		return (EAttribute)commentedEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -229,6 +222,16 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 	@Override
 	public EClass getTool() {
 		return toolEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTool_Declarations() {
+		return (EAttribute)toolEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -517,16 +520,6 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getAssignment() {
-		return assignmentEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getGuardrail() {
 		return guardrailEClass;
 	}
@@ -539,86 +532,6 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 	@Override
 	public EClass getCallback() {
 		return callbackEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getImport() {
-		return importEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getImport_Module() {
-		return (EAttribute)importEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getImport_Item() {
-		return (EAttribute)importEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getImport_Name() {
-		return (EAttribute)importEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getSourceElement() {
-		return sourceElementEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getSourceElement_Imports() {
-		return (EReference)sourceElementEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getSourceElement_ReconcileAction() {
-		return (EAttribute)sourceElementEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getSourceElement__Generate__String() {
-		return sourceElementEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -647,28 +560,8 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getSourceUnit() {
-		return sourceUnitEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getSourceUnit_Elements() {
-		return (EReference)sourceUnitEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getSourceUnit__Generate() {
-		return sourceUnitEClass.getEOperations().get(0);
+	public EAttribute getCode_Imports() {
+		return (EAttribute)codeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -720,27 +613,15 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		sourceUnitEClass = createEClass(SOURCE_UNIT);
-		createEReference(sourceUnitEClass, SOURCE_UNIT__ELEMENTS);
-		createEOperation(sourceUnitEClass, SOURCE_UNIT___GENERATE);
-
-		importEClass = createEClass(IMPORT);
-		createEAttribute(importEClass, IMPORT__MODULE);
-		createEAttribute(importEClass, IMPORT__ITEM);
-		createEAttribute(importEClass, IMPORT__NAME);
-
-		sourceElementEClass = createEClass(SOURCE_ELEMENT);
-		createEReference(sourceElementEClass, SOURCE_ELEMENT__IMPORTS);
-		createEAttribute(sourceElementEClass, SOURCE_ELEMENT__RECONCILE_ACTION);
-		createEOperation(sourceElementEClass, SOURCE_ELEMENT___GENERATE__STRING);
+		commentedEClass = createEClass(COMMENTED);
+		createEAttribute(commentedEClass, COMMENTED__COMMENT);
 
 		codeEClass = createEClass(CODE);
 		createEAttribute(codeEClass, CODE__CODE);
+		createEAttribute(codeEClass, CODE__IMPORTS);
 
 		functionEClass = createEClass(FUNCTION);
 		createEAttribute(functionEClass, FUNCTION__PARAMETERS);
-
-		assignmentEClass = createEClass(ASSIGNMENT);
 
 		guardrailEClass = createEClass(GUARDRAIL);
 
@@ -750,6 +631,7 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 		createEAttribute(configurableEClass, CONFIGURABLE__CONFIGURATION);
 
 		toolEClass = createEClass(TOOL);
+		createEAttribute(toolEClass, TOOL__DECLARATIONS);
 
 		agentEClass = createEClass(AGENT);
 		createEReference(agentEClass, AGENT__TOOLS);
@@ -811,7 +693,6 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		ResourcesPackage theResourcesPackage = (ResourcesPackage)EPackage.Registry.INSTANCE.getEPackage(ResourcesPackage.eNS_URI);
 		NcorePackage theNcorePackage = (NcorePackage)EPackage.Registry.INSTANCE.getEPackage(NcorePackage.eNS_URI);
 
 		// Create type parameters
@@ -819,46 +700,31 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		sourceUnitEClass.getESuperTypes().add(this.getSourceElement());
-		codeEClass.getESuperTypes().add(this.getSourceElement());
+		codeEClass.getESuperTypes().add(this.getCommented());
 		functionEClass.getESuperTypes().add(this.getCode());
 		functionEClass.getESuperTypes().add(theNcorePackage.getDocumentedNamedStringIdentity());
-		assignmentEClass.getESuperTypes().add(this.getCode());
-		assignmentEClass.getESuperTypes().add(theNcorePackage.getDocumentedNamedStringIdentity());
 		guardrailEClass.getESuperTypes().add(this.getFunction());
 		callbackEClass.getESuperTypes().add(this.getFunction());
 		configurableEClass.getESuperTypes().add(theNcorePackage.getDocumentedNamedStringIdentity());
 		toolEClass.getESuperTypes().add(this.getCode());
+		toolEClass.getESuperTypes().add(theNcorePackage.getDocumentedNamedStringIdentity());
 		agentEClass.getESuperTypes().add(this.getConfigurable());
-		crewEClass.getESuperTypes().add(this.getSourceElement());
+		agentEClass.getESuperTypes().add(this.getCommented());
 		crewEClass.getESuperTypes().add(theNcorePackage.getDocumentedNamedStringIdentity());
+		crewEClass.getESuperTypes().add(this.getCode());
 		taskEClass.getESuperTypes().add(this.getConfigurable());
+		taskEClass.getESuperTypes().add(this.getCommented());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(sourceUnitEClass, SourceUnit.class, "SourceUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSourceUnit_Elements(), this.getSourceElement(), null, "elements", null, 0, -1, SourceUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEOperation(getSourceUnit__Generate(), ecorePackage.getEString(), "generate", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getImport_Module(), ecorePackage.getEString(), "module", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getImport_Item(), ecorePackage.getEString(), "item", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getImport_Name(), ecorePackage.getEString(), "name", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(sourceElementEClass, SourceElement.class, "SourceElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSourceElement_Imports(), this.getImport(), null, "imports", null, 0, -1, SourceElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSourceElement_ReconcileAction(), theResourcesPackage.getReconcileAction(), "reconcileAction", null, 0, 1, SourceElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		EOperation op = initEOperation(getSourceElement__Generate__String(), ecorePackage.getEString(), "generate", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "indent", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEClass(commentedEClass, Commented.class, "Commented", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCommented_Comment(), ecorePackage.getEString(), "comment", null, 0, 1, Commented.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(codeEClass, Code.class, "Code", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCode_Code(), ecorePackage.getEString(), "code", null, 0, 1, Code.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCode_Imports(), ecorePackage.getEString(), "imports", null, 0, 1, Code.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(functionEClass, Function.class, "Function", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFunction_Parameters(), ecorePackage.getEString(), "parameters", null, 0, -1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(assignmentEClass, Assignment.class, "Assignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(guardrailEClass, Guardrail.class, "Guardrail", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -868,6 +734,7 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 		initEAttribute(getConfigurable_Configuration(), ecorePackage.getEString(), "configuration", null, 0, 1, Configurable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(toolEClass, Tool.class, "Tool", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTool_Declarations(), ecorePackage.getEString(), "declarations", null, 0, 1, Tool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(agentEClass, Agent.class, "Agent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAgent_Tools(), this.getTool(), null, "tools", null, 0, -1, Agent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -879,6 +746,7 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 
 		initEClass(crewEClass, Crew.class, "Crew", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCrew_Tools(), this.getTool(), null, "tools", null, 0, -1, Crew.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getCrew_Tools().getEKeys().add(theNcorePackage.getStringIdentity_Id());
 		initEReference(getCrew_Agents(), this.getAgent(), null, "agents", null, 0, -1, Crew.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getCrew_Agents().getEKeys().add(theNcorePackage.getStringIdentity_Id());
 		initEReference(getCrew_Tasks(), this.getTask(), null, "tasks", null, 0, -1, Crew.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -3,7 +3,6 @@
 package org.nasdanika.models.crewai.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.nasdanika.models.crewai.Code;
 import org.nasdanika.models.crewai.CrewaiPackage;
 
@@ -16,11 +15,12 @@ import org.nasdanika.models.crewai.CrewaiPackage;
  * </p>
  * <ul>
  *   <li>{@link org.nasdanika.models.crewai.impl.CodeImpl#getCode <em>Code</em>}</li>
+ *   <li>{@link org.nasdanika.models.crewai.impl.CodeImpl#getImports <em>Imports</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class CodeImpl extends SourceElementImpl implements Code {
+public class CodeImpl extends CommentedImpl implements Code {
 	/**
 	 * The default value of the '{@link #getCode() <em>Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -30,6 +30,16 @@ public class CodeImpl extends SourceElementImpl implements Code {
 	 * @ordered
 	 */
 	protected static final String CODE_EDEFAULT = null;
+
+	/**
+	 * The default value of the '{@link #getImports() <em>Imports</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getImports()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String IMPORTS_EDEFAULT = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -76,10 +86,32 @@ public class CodeImpl extends SourceElementImpl implements Code {
 	 * @generated
 	 */
 	@Override
+	public String getImports() {
+		return (String)eDynamicGet(CrewaiPackage.CODE__IMPORTS, CrewaiPackage.Literals.CODE__IMPORTS, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setImports(String newImports) {
+		eDynamicSet(CrewaiPackage.CODE__IMPORTS, CrewaiPackage.Literals.CODE__IMPORTS, newImports);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CrewaiPackage.CODE__CODE:
 				return getCode();
+			case CrewaiPackage.CODE__IMPORTS:
+				return getImports();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -94,6 +126,9 @@ public class CodeImpl extends SourceElementImpl implements Code {
 		switch (featureID) {
 			case CrewaiPackage.CODE__CODE:
 				setCode((String)newValue);
+				return;
+			case CrewaiPackage.CODE__IMPORTS:
+				setImports((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -110,6 +145,9 @@ public class CodeImpl extends SourceElementImpl implements Code {
 			case CrewaiPackage.CODE__CODE:
 				setCode(CODE_EDEFAULT);
 				return;
+			case CrewaiPackage.CODE__IMPORTS:
+				setImports(IMPORTS_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -124,6 +162,8 @@ public class CodeImpl extends SourceElementImpl implements Code {
 		switch (featureID) {
 			case CrewaiPackage.CODE__CODE:
 				return CODE_EDEFAULT == null ? getCode() != null : !CODE_EDEFAULT.equals(getCode());
+			case CrewaiPackage.CODE__IMPORTS:
+				return IMPORTS_EDEFAULT == null ? getImports() != null : !IMPORTS_EDEFAULT.equals(getImports());
 		}
 		return super.eIsSet(featureID);
 	}

@@ -5,16 +5,12 @@ package org.nasdanika.models.crewai.impl;
 import java.util.Collection;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.nasdanika.common.Adaptable;
 import org.nasdanika.models.crewai.Agent;
 import org.nasdanika.models.crewai.Code;
+import org.nasdanika.models.crewai.Commented;
 import org.nasdanika.models.crewai.Crew;
 import org.nasdanika.models.crewai.CrewaiPackage;
 import org.nasdanika.models.crewai.Function;
@@ -22,16 +18,7 @@ import org.nasdanika.models.crewai.KnowledgeSource;
 import org.nasdanika.models.crewai.LargeLanguageModel;
 import org.nasdanika.models.crewai.Task;
 import org.nasdanika.models.crewai.Tool;
-import org.nasdanika.ncore.Documented;
-import org.nasdanika.ncore.DocumentedNamedElement;
-import org.nasdanika.ncore.DocumentedNamedStringIdentity;
-import org.nasdanika.ncore.Marker;
-import org.nasdanika.ncore.ModelElement;
-import org.nasdanika.ncore.NamedElement;
-import org.nasdanika.ncore.NcorePackage;
-import org.nasdanika.ncore.Property;
-import org.nasdanika.ncore.StringIdentity;
-import org.nasdanika.persistence.Marked;
+import org.nasdanika.ncore.impl.DocumentedNamedStringIdentityImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,17 +28,9 @@ import org.nasdanika.persistence.Marked;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getMarkers <em>Markers</em>}</li>
- *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getUris <em>Uris</em>}</li>
- *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getUuid <em>Uuid</em>}</li>
- *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getLabelPrototype <em>Label Prototype</em>}</li>
- *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getRepresentations <em>Representations</em>}</li>
- *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getAnnotations <em>Annotations</em>}</li>
- *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getDocumentation <em>Documentation</em>}</li>
- *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getContextHelp <em>Context Help</em>}</li>
- *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getId <em>Id</em>}</li>
+ *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getCode <em>Code</em>}</li>
+ *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getImports <em>Imports</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getTools <em>Tools</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getAgents <em>Agents</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getTasks <em>Tasks</em>}</li>
@@ -67,43 +46,34 @@ import org.nasdanika.persistence.Marked;
  *
  * @generated
  */
-public class CrewImpl extends SourceElementImpl implements Crew {
+public class CrewImpl extends DocumentedNamedStringIdentityImpl implements Crew {
 	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDescription()
+	 * @see #getComment()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
+	protected static final String COMMENT_EDEFAULT = null;
 	/**
-	 * The default value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
+	 * The default value of the '{@link #getCode() <em>Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUuid()
+	 * @see #getCode()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String UUID_EDEFAULT = null;
+	protected static final String CODE_EDEFAULT = null;
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The default value of the '{@link #getImports() <em>Imports</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getImports()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
-	/**
-	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ID_EDEFAULT = null;
+	protected static final String IMPORTS_EDEFAULT = null;
 	/**
 	 * The default value of the '{@link #getProcess() <em>Process</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -138,21 +108,9 @@ public class CrewImpl extends SourceElementImpl implements Crew {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
-	public EList<Marker> getMarkers() {
-		return (EList<Marker>)eDynamicGet(CrewaiPackage.CREW__MARKERS, NcorePackage.Literals.MARKED__MARKERS, true, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public EList<String> getUris() {
-		return (EList<String>)eDynamicGet(CrewaiPackage.CREW__URIS, NcorePackage.Literals.MODEL_ELEMENT__URIS, true, true);
+	public String getCode() {
+		return (String)eDynamicGet(CrewaiPackage.CREW__CODE, CrewaiPackage.Literals.CODE__CODE, true, true);
 	}
 
 	/**
@@ -161,8 +119,8 @@ public class CrewImpl extends SourceElementImpl implements Crew {
 	 * @generated
 	 */
 	@Override
-	public String getDescription() {
-		return (String)eDynamicGet(CrewaiPackage.CREW__DESCRIPTION, NcorePackage.Literals.MODEL_ELEMENT__DESCRIPTION, true, true);
+	public void setCode(String newCode) {
+		eDynamicSet(CrewaiPackage.CREW__CODE, CrewaiPackage.Literals.CODE__CODE, newCode);
 	}
 
 	/**
@@ -171,8 +129,8 @@ public class CrewImpl extends SourceElementImpl implements Crew {
 	 * @generated
 	 */
 	@Override
-	public void setDescription(String newDescription) {
-		eDynamicSet(CrewaiPackage.CREW__DESCRIPTION, NcorePackage.Literals.MODEL_ELEMENT__DESCRIPTION, newDescription);
+	public String getImports() {
+		return (String)eDynamicGet(CrewaiPackage.CREW__IMPORTS, CrewaiPackage.Literals.CODE__IMPORTS, true, true);
 	}
 
 	/**
@@ -181,8 +139,8 @@ public class CrewImpl extends SourceElementImpl implements Crew {
 	 * @generated
 	 */
 	@Override
-	public String getUuid() {
-		return (String)eDynamicGet(CrewaiPackage.CREW__UUID, NcorePackage.Literals.MODEL_ELEMENT__UUID, true, true);
+	public void setImports(String newImports) {
+		eDynamicSet(CrewaiPackage.CREW__IMPORTS, CrewaiPackage.Literals.CODE__IMPORTS, newImports);
 	}
 
 	/**
@@ -191,8 +149,8 @@ public class CrewImpl extends SourceElementImpl implements Crew {
 	 * @generated
 	 */
 	@Override
-	public void setUuid(String newUuid) {
-		eDynamicSet(CrewaiPackage.CREW__UUID, NcorePackage.Literals.MODEL_ELEMENT__UUID, newUuid);
+	public String getComment() {
+		return (String)eDynamicGet(CrewaiPackage.CREW__COMMENT, CrewaiPackage.Literals.COMMENTED__COMMENT, true, true);
 	}
 
 	/**
@@ -201,112 +159,8 @@ public class CrewImpl extends SourceElementImpl implements Crew {
 	 * @generated
 	 */
 	@Override
-	public EObject getLabelPrototype() {
-		return (EObject)eDynamicGet(CrewaiPackage.CREW__LABEL_PROTOTYPE, NcorePackage.Literals.MODEL_ELEMENT__LABEL_PROTOTYPE, true, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetLabelPrototype(EObject newLabelPrototype, NotificationChain msgs) {
-		msgs = eDynamicInverseAdd((InternalEObject)newLabelPrototype, CrewaiPackage.CREW__LABEL_PROTOTYPE, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setLabelPrototype(EObject newLabelPrototype) {
-		eDynamicSet(CrewaiPackage.CREW__LABEL_PROTOTYPE, NcorePackage.Literals.MODEL_ELEMENT__LABEL_PROTOTYPE, newLabelPrototype);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public EMap<String, String> getRepresentations() {
-		return (EMap<String, String>)eDynamicGet(CrewaiPackage.CREW__REPRESENTATIONS, NcorePackage.Literals.MODEL_ELEMENT__REPRESENTATIONS, true, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public EList<Property> getAnnotations() {
-		return (EList<Property>)eDynamicGet(CrewaiPackage.CREW__ANNOTATIONS, NcorePackage.Literals.MODEL_ELEMENT__ANNOTATIONS, true, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getName() {
-		return (String)eDynamicGet(CrewaiPackage.CREW__NAME, NcorePackage.Literals.NAMED_ELEMENT__NAME, true, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setName(String newName) {
-		eDynamicSet(CrewaiPackage.CREW__NAME, NcorePackage.Literals.NAMED_ELEMENT__NAME, newName);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public EList<EObject> getDocumentation() {
-		return (EList<EObject>)eDynamicGet(CrewaiPackage.CREW__DOCUMENTATION, NcorePackage.Literals.DOCUMENTED__DOCUMENTATION, true, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public EList<EObject> getContextHelp() {
-		return (EList<EObject>)eDynamicGet(CrewaiPackage.CREW__CONTEXT_HELP, NcorePackage.Literals.DOCUMENTED__CONTEXT_HELP, true, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getId() {
-		return (String)eDynamicGet(CrewaiPackage.CREW__ID, NcorePackage.Literals.STRING_IDENTITY__ID, true, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setId(String newId) {
-		eDynamicSet(CrewaiPackage.CREW__ID, NcorePackage.Literals.STRING_IDENTITY__ID, newId);
+	public void setComment(String newComment) {
+		eDynamicSet(CrewaiPackage.CREW__COMMENT, CrewaiPackage.Literals.COMMENTED__COMMENT, newComment);
 	}
 
 	/**
@@ -557,18 +411,6 @@ public class CrewImpl extends SourceElementImpl implements Crew {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CrewaiPackage.CREW__MARKERS:
-				return ((InternalEList<?>)getMarkers()).basicRemove(otherEnd, msgs);
-			case CrewaiPackage.CREW__LABEL_PROTOTYPE:
-				return basicSetLabelPrototype(null, msgs);
-			case CrewaiPackage.CREW__REPRESENTATIONS:
-				return ((InternalEList<?>)getRepresentations()).basicRemove(otherEnd, msgs);
-			case CrewaiPackage.CREW__ANNOTATIONS:
-				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
-			case CrewaiPackage.CREW__DOCUMENTATION:
-				return ((InternalEList<?>)getDocumentation()).basicRemove(otherEnd, msgs);
-			case CrewaiPackage.CREW__CONTEXT_HELP:
-				return ((InternalEList<?>)getContextHelp()).basicRemove(otherEnd, msgs);
 			case CrewaiPackage.CREW__TOOLS:
 				return ((InternalEList<?>)getTools()).basicRemove(otherEnd, msgs);
 			case CrewaiPackage.CREW__AGENTS:
@@ -591,29 +433,12 @@ public class CrewImpl extends SourceElementImpl implements Crew {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CrewaiPackage.CREW__MARKERS:
-				return getMarkers();
-			case CrewaiPackage.CREW__URIS:
-				return getUris();
-			case CrewaiPackage.CREW__DESCRIPTION:
-				return getDescription();
-			case CrewaiPackage.CREW__UUID:
-				return getUuid();
-			case CrewaiPackage.CREW__LABEL_PROTOTYPE:
-				return getLabelPrototype();
-			case CrewaiPackage.CREW__REPRESENTATIONS:
-				if (coreType) return getRepresentations();
-				else return getRepresentations().map();
-			case CrewaiPackage.CREW__ANNOTATIONS:
-				return getAnnotations();
-			case CrewaiPackage.CREW__NAME:
-				return getName();
-			case CrewaiPackage.CREW__DOCUMENTATION:
-				return getDocumentation();
-			case CrewaiPackage.CREW__CONTEXT_HELP:
-				return getContextHelp();
-			case CrewaiPackage.CREW__ID:
-				return getId();
+			case CrewaiPackage.CREW__COMMENT:
+				return getComment();
+			case CrewaiPackage.CREW__CODE:
+				return getCode();
+			case CrewaiPackage.CREW__IMPORTS:
+				return getImports();
 			case CrewaiPackage.CREW__TOOLS:
 				return getTools();
 			case CrewaiPackage.CREW__AGENTS:
@@ -653,43 +478,14 @@ public class CrewImpl extends SourceElementImpl implements Crew {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CrewaiPackage.CREW__MARKERS:
-				getMarkers().clear();
-				getMarkers().addAll((Collection<? extends Marker>)newValue);
+			case CrewaiPackage.CREW__COMMENT:
+				setComment((String)newValue);
 				return;
-			case CrewaiPackage.CREW__URIS:
-				getUris().clear();
-				getUris().addAll((Collection<? extends String>)newValue);
+			case CrewaiPackage.CREW__CODE:
+				setCode((String)newValue);
 				return;
-			case CrewaiPackage.CREW__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case CrewaiPackage.CREW__UUID:
-				setUuid((String)newValue);
-				return;
-			case CrewaiPackage.CREW__LABEL_PROTOTYPE:
-				setLabelPrototype((EObject)newValue);
-				return;
-			case CrewaiPackage.CREW__REPRESENTATIONS:
-				((EStructuralFeature.Setting)getRepresentations()).set(newValue);
-				return;
-			case CrewaiPackage.CREW__ANNOTATIONS:
-				getAnnotations().clear();
-				getAnnotations().addAll((Collection<? extends Property>)newValue);
-				return;
-			case CrewaiPackage.CREW__NAME:
-				setName((String)newValue);
-				return;
-			case CrewaiPackage.CREW__DOCUMENTATION:
-				getDocumentation().clear();
-				getDocumentation().addAll((Collection<? extends EObject>)newValue);
-				return;
-			case CrewaiPackage.CREW__CONTEXT_HELP:
-				getContextHelp().clear();
-				getContextHelp().addAll((Collection<? extends EObject>)newValue);
-				return;
-			case CrewaiPackage.CREW__ID:
-				setId((String)newValue);
+			case CrewaiPackage.CREW__IMPORTS:
+				setImports((String)newValue);
 				return;
 			case CrewaiPackage.CREW__TOOLS:
 				getTools().clear();
@@ -740,38 +536,14 @@ public class CrewImpl extends SourceElementImpl implements Crew {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CrewaiPackage.CREW__MARKERS:
-				getMarkers().clear();
+			case CrewaiPackage.CREW__COMMENT:
+				setComment(COMMENT_EDEFAULT);
 				return;
-			case CrewaiPackage.CREW__URIS:
-				getUris().clear();
+			case CrewaiPackage.CREW__CODE:
+				setCode(CODE_EDEFAULT);
 				return;
-			case CrewaiPackage.CREW__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case CrewaiPackage.CREW__UUID:
-				setUuid(UUID_EDEFAULT);
-				return;
-			case CrewaiPackage.CREW__LABEL_PROTOTYPE:
-				setLabelPrototype((EObject)null);
-				return;
-			case CrewaiPackage.CREW__REPRESENTATIONS:
-				getRepresentations().clear();
-				return;
-			case CrewaiPackage.CREW__ANNOTATIONS:
-				getAnnotations().clear();
-				return;
-			case CrewaiPackage.CREW__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case CrewaiPackage.CREW__DOCUMENTATION:
-				getDocumentation().clear();
-				return;
-			case CrewaiPackage.CREW__CONTEXT_HELP:
-				getContextHelp().clear();
-				return;
-			case CrewaiPackage.CREW__ID:
-				setId(ID_EDEFAULT);
+			case CrewaiPackage.CREW__IMPORTS:
+				setImports(IMPORTS_EDEFAULT);
 				return;
 			case CrewaiPackage.CREW__TOOLS:
 				getTools().clear();
@@ -818,28 +590,12 @@ public class CrewImpl extends SourceElementImpl implements Crew {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CrewaiPackage.CREW__MARKERS:
-				return !getMarkers().isEmpty();
-			case CrewaiPackage.CREW__URIS:
-				return !getUris().isEmpty();
-			case CrewaiPackage.CREW__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? getDescription() != null : !DESCRIPTION_EDEFAULT.equals(getDescription());
-			case CrewaiPackage.CREW__UUID:
-				return UUID_EDEFAULT == null ? getUuid() != null : !UUID_EDEFAULT.equals(getUuid());
-			case CrewaiPackage.CREW__LABEL_PROTOTYPE:
-				return getLabelPrototype() != null;
-			case CrewaiPackage.CREW__REPRESENTATIONS:
-				return !getRepresentations().isEmpty();
-			case CrewaiPackage.CREW__ANNOTATIONS:
-				return !getAnnotations().isEmpty();
-			case CrewaiPackage.CREW__NAME:
-				return NAME_EDEFAULT == null ? getName() != null : !NAME_EDEFAULT.equals(getName());
-			case CrewaiPackage.CREW__DOCUMENTATION:
-				return !getDocumentation().isEmpty();
-			case CrewaiPackage.CREW__CONTEXT_HELP:
-				return !getContextHelp().isEmpty();
-			case CrewaiPackage.CREW__ID:
-				return ID_EDEFAULT == null ? getId() != null : !ID_EDEFAULT.equals(getId());
+			case CrewaiPackage.CREW__COMMENT:
+				return COMMENT_EDEFAULT == null ? getComment() != null : !COMMENT_EDEFAULT.equals(getComment());
+			case CrewaiPackage.CREW__CODE:
+				return CODE_EDEFAULT == null ? getCode() != null : !CODE_EDEFAULT.equals(getCode());
+			case CrewaiPackage.CREW__IMPORTS:
+				return IMPORTS_EDEFAULT == null ? getImports() != null : !IMPORTS_EDEFAULT.equals(getImports());
 			case CrewaiPackage.CREW__TOOLS:
 				return !getTools().isEmpty();
 			case CrewaiPackage.CREW__AGENTS:
@@ -873,59 +629,16 @@ public class CrewImpl extends SourceElementImpl implements Crew {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == Marked.class) {
+		if (baseClass == Commented.class) {
 			switch (derivedFeatureID) {
+				case CrewaiPackage.CREW__COMMENT: return CrewaiPackage.COMMENTED__COMMENT;
 				default: return -1;
 			}
 		}
-		if (baseClass == org.nasdanika.ncore.Marked.class) {
+		if (baseClass == Code.class) {
 			switch (derivedFeatureID) {
-				case CrewaiPackage.CREW__MARKERS: return NcorePackage.MARKED__MARKERS;
-				default: return -1;
-			}
-		}
-		if (baseClass == Adaptable.class) {
-			switch (derivedFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == ModelElement.class) {
-			switch (derivedFeatureID) {
-				case CrewaiPackage.CREW__URIS: return NcorePackage.MODEL_ELEMENT__URIS;
-				case CrewaiPackage.CREW__DESCRIPTION: return NcorePackage.MODEL_ELEMENT__DESCRIPTION;
-				case CrewaiPackage.CREW__UUID: return NcorePackage.MODEL_ELEMENT__UUID;
-				case CrewaiPackage.CREW__LABEL_PROTOTYPE: return NcorePackage.MODEL_ELEMENT__LABEL_PROTOTYPE;
-				case CrewaiPackage.CREW__REPRESENTATIONS: return NcorePackage.MODEL_ELEMENT__REPRESENTATIONS;
-				case CrewaiPackage.CREW__ANNOTATIONS: return NcorePackage.MODEL_ELEMENT__ANNOTATIONS;
-				default: return -1;
-			}
-		}
-		if (baseClass == NamedElement.class) {
-			switch (derivedFeatureID) {
-				case CrewaiPackage.CREW__NAME: return NcorePackage.NAMED_ELEMENT__NAME;
-				default: return -1;
-			}
-		}
-		if (baseClass == Documented.class) {
-			switch (derivedFeatureID) {
-				case CrewaiPackage.CREW__DOCUMENTATION: return NcorePackage.DOCUMENTED__DOCUMENTATION;
-				case CrewaiPackage.CREW__CONTEXT_HELP: return NcorePackage.DOCUMENTED__CONTEXT_HELP;
-				default: return -1;
-			}
-		}
-		if (baseClass == DocumentedNamedElement.class) {
-			switch (derivedFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == StringIdentity.class) {
-			switch (derivedFeatureID) {
-				case CrewaiPackage.CREW__ID: return NcorePackage.STRING_IDENTITY__ID;
-				default: return -1;
-			}
-		}
-		if (baseClass == DocumentedNamedStringIdentity.class) {
-			switch (derivedFeatureID) {
+				case CrewaiPackage.CREW__CODE: return CrewaiPackage.CODE__CODE;
+				case CrewaiPackage.CREW__IMPORTS: return CrewaiPackage.CODE__IMPORTS;
 				default: return -1;
 			}
 		}
@@ -939,59 +652,16 @@ public class CrewImpl extends SourceElementImpl implements Crew {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == Marked.class) {
+		if (baseClass == Commented.class) {
 			switch (baseFeatureID) {
+				case CrewaiPackage.COMMENTED__COMMENT: return CrewaiPackage.CREW__COMMENT;
 				default: return -1;
 			}
 		}
-		if (baseClass == org.nasdanika.ncore.Marked.class) {
+		if (baseClass == Code.class) {
 			switch (baseFeatureID) {
-				case NcorePackage.MARKED__MARKERS: return CrewaiPackage.CREW__MARKERS;
-				default: return -1;
-			}
-		}
-		if (baseClass == Adaptable.class) {
-			switch (baseFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == ModelElement.class) {
-			switch (baseFeatureID) {
-				case NcorePackage.MODEL_ELEMENT__URIS: return CrewaiPackage.CREW__URIS;
-				case NcorePackage.MODEL_ELEMENT__DESCRIPTION: return CrewaiPackage.CREW__DESCRIPTION;
-				case NcorePackage.MODEL_ELEMENT__UUID: return CrewaiPackage.CREW__UUID;
-				case NcorePackage.MODEL_ELEMENT__LABEL_PROTOTYPE: return CrewaiPackage.CREW__LABEL_PROTOTYPE;
-				case NcorePackage.MODEL_ELEMENT__REPRESENTATIONS: return CrewaiPackage.CREW__REPRESENTATIONS;
-				case NcorePackage.MODEL_ELEMENT__ANNOTATIONS: return CrewaiPackage.CREW__ANNOTATIONS;
-				default: return -1;
-			}
-		}
-		if (baseClass == NamedElement.class) {
-			switch (baseFeatureID) {
-				case NcorePackage.NAMED_ELEMENT__NAME: return CrewaiPackage.CREW__NAME;
-				default: return -1;
-			}
-		}
-		if (baseClass == Documented.class) {
-			switch (baseFeatureID) {
-				case NcorePackage.DOCUMENTED__DOCUMENTATION: return CrewaiPackage.CREW__DOCUMENTATION;
-				case NcorePackage.DOCUMENTED__CONTEXT_HELP: return CrewaiPackage.CREW__CONTEXT_HELP;
-				default: return -1;
-			}
-		}
-		if (baseClass == DocumentedNamedElement.class) {
-			switch (baseFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == StringIdentity.class) {
-			switch (baseFeatureID) {
-				case NcorePackage.STRING_IDENTITY__ID: return CrewaiPackage.CREW__ID;
-				default: return -1;
-			}
-		}
-		if (baseClass == DocumentedNamedStringIdentity.class) {
-			switch (baseFeatureID) {
+				case CrewaiPackage.CODE__CODE: return CrewaiPackage.CREW__CODE;
+				case CrewaiPackage.CODE__IMPORTS: return CrewaiPackage.CREW__IMPORTS;
 				default: return -1;
 			}
 		}

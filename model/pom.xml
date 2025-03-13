@@ -67,5 +67,10 @@
 		    <artifactId>exec</artifactId>
 		    <version>2025.2.0</version>
 		</dependency>
+        <dependency>
+            <groupId>org.nasdanika.models.python</groupId>
+            <artifactId>model</artifactId>
+            <version>2025.3.0</version>
+        </dependency>
 	</dependencies>
 </project>

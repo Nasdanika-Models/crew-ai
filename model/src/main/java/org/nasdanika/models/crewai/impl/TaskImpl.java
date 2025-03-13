@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.nasdanika.models.crewai.Agent;
 import org.nasdanika.models.crewai.Callback;
+import org.nasdanika.models.crewai.Commented;
 import org.nasdanika.models.crewai.CrewaiPackage;
 import org.nasdanika.models.crewai.Guardrail;
 import org.nasdanika.models.crewai.Task;
@@ -23,6 +24,7 @@ import org.nasdanika.models.crewai.Tool;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.nasdanika.models.crewai.impl.TaskImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.TaskImpl#getGuardrail <em>Guardrail</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.TaskImpl#getAgent <em>Agent</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.TaskImpl#getTools <em>Tools</em>}</li>
@@ -33,6 +35,16 @@ import org.nasdanika.models.crewai.Tool;
  * @generated
  */
 public class TaskImpl extends ConfigurableImpl implements Task {
+	/**
+	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComment()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String COMMENT_EDEFAULT = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -50,6 +62,26 @@ public class TaskImpl extends ConfigurableImpl implements Task {
 	@Override
 	protected EClass eStaticClass() {
 		return CrewaiPackage.Literals.TASK;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getComment() {
+		return (String)eDynamicGet(CrewaiPackage.TASK__COMMENT, CrewaiPackage.Literals.COMMENTED__COMMENT, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setComment(String newComment) {
+		eDynamicSet(CrewaiPackage.TASK__COMMENT, CrewaiPackage.Literals.COMMENTED__COMMENT, newComment);
 	}
 
 	/**
@@ -169,6 +201,8 @@ public class TaskImpl extends ConfigurableImpl implements Task {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case CrewaiPackage.TASK__COMMENT:
+				return getComment();
 			case CrewaiPackage.TASK__GUARDRAIL:
 				if (resolve) return getGuardrail();
 				return basicGetGuardrail();
@@ -195,6 +229,9 @@ public class TaskImpl extends ConfigurableImpl implements Task {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case CrewaiPackage.TASK__COMMENT:
+				setComment((String)newValue);
+				return;
 			case CrewaiPackage.TASK__GUARDRAIL:
 				setGuardrail((Guardrail)newValue);
 				return;
@@ -224,6 +261,9 @@ public class TaskImpl extends ConfigurableImpl implements Task {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case CrewaiPackage.TASK__COMMENT:
+				setComment(COMMENT_EDEFAULT);
+				return;
 			case CrewaiPackage.TASK__GUARDRAIL:
 				setGuardrail((Guardrail)null);
 				return;
@@ -251,6 +291,8 @@ public class TaskImpl extends ConfigurableImpl implements Task {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case CrewaiPackage.TASK__COMMENT:
+				return COMMENT_EDEFAULT == null ? getComment() != null : !COMMENT_EDEFAULT.equals(getComment());
 			case CrewaiPackage.TASK__GUARDRAIL:
 				return basicGetGuardrail() != null;
 			case CrewaiPackage.TASK__AGENT:
@@ -263,6 +305,38 @@ public class TaskImpl extends ConfigurableImpl implements Task {
 				return basicGetCallback() != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == Commented.class) {
+			switch (derivedFeatureID) {
+				case CrewaiPackage.TASK__COMMENT: return CrewaiPackage.COMMENTED__COMMENT;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == Commented.class) {
+			switch (baseFeatureID) {
+				case CrewaiPackage.COMMENTED__COMMENT: return CrewaiPackage.TASK__COMMENT;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 } //TaskImpl

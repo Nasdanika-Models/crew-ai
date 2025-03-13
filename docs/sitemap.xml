@@ -2,812 +2,547 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" >
   <url>
     <loc>https://crew-ai.models.nasdanika.org/circular-layout-graph-with-dependencies-and-subpackages.html</loc>
-    <lastmod>2025-03-08T16:15:13.137-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.541-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/circular-layout-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.134-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.539-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/classifiers.html</loc>
-    <lastmod>2025-03-08T16:15:13.127-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.532-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/default-graph-with-dependencies-and-subpackages.html</loc>
-    <lastmod>2025-03-08T16:15:13.136-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.540-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/default-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.133-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.538-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/diagram.html</loc>
-    <lastmod>2025-03-08T16:15:13.132-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.537-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/force-layout-graph-with-dependencies-and-subpackages.html</loc>
-    <lastmod>2025-03-08T16:15:13.138-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.542-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/force-layout-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.135-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.540-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/index.html</loc>
-    <lastmod>2025-03-08T16:15:12.962-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.417-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Agent/attributes.html</loc>
-    <lastmod>2025-03-08T16:15:12.965-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.419-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Agent/circular-layout-graph.html</loc>
-    <lastmod>2025-03-08T16:15:12.973-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.429-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Agent/default-graph.html</loc>
-    <lastmod>2025-03-08T16:15:12.972-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.428-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Agent/diagram.html</loc>
-    <lastmod>2025-03-08T16:15:12.971-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.427-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Agent/force-layout-graph.html</loc>
-    <lastmod>2025-03-08T16:15:12.974-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.430-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Agent/index.html</loc>
-    <lastmod>2025-03-08T16:15:12.964-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.418-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Agent/inheritance.html</loc>
-    <lastmod>2025-03-08T16:15:12.966-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.420-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Agent/load-specification.html</loc>
-    <lastmod>2025-03-08T16:15:12.975-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.431-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Agent/references.html</loc>
-    <lastmod>2025-03-08T16:15:12.967-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Assignment/attributes.html</loc>
-    <lastmod>2025-03-08T16:15:12.977-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Assignment/circular-layout-graph.html</loc>
-    <lastmod>2025-03-08T16:15:12.982-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Assignment/default-graph.html</loc>
-    <lastmod>2025-03-08T16:15:12.981-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Assignment/diagram.html</loc>
-    <lastmod>2025-03-08T16:15:12.980-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Assignment/force-layout-graph.html</loc>
-    <lastmod>2025-03-08T16:15:12.983-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Assignment/index.html</loc>
-    <lastmod>2025-03-08T16:15:12.976-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Assignment/inheritance.html</loc>
-    <lastmod>2025-03-08T16:15:12.977-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Assignment/load-specification.html</loc>
-    <lastmod>2025-03-08T16:15:12.984-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Assignment/operations.html</loc>
-    <lastmod>2025-03-08T16:15:12.978-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Assignment/references.html</loc>
-    <lastmod>2025-03-08T16:15:12.979-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.423-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Callback/attributes.html</loc>
-    <lastmod>2025-03-08T16:15:12.987-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.433-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Callback/circular-layout-graph.html</loc>
-    <lastmod>2025-03-08T16:15:12.993-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.439-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Callback/default-graph.html</loc>
-    <lastmod>2025-03-08T16:15:12.992-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.438-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Callback/diagram.html</loc>
-    <lastmod>2025-03-08T16:15:12.991-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.438-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Callback/force-layout-graph.html</loc>
-    <lastmod>2025-03-08T16:15:12.994-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.440-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Callback/index.html</loc>
-    <lastmod>2025-03-08T16:15:12.986-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.431-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Callback/inheritance.html</loc>
-    <lastmod>2025-03-08T16:15:12.987-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.434-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Callback/load-specification.html</loc>
-    <lastmod>2025-03-08T16:15:12.995-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Callback/operations.html</loc>
-    <lastmod>2025-03-08T16:15:12.988-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.441-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Callback/references.html</loc>
-    <lastmod>2025-03-08T16:15:12.990-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.436-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Code/attributes.html</loc>
-    <lastmod>2025-03-08T16:15:12.997-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.442-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Code/circular-layout-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.005-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.448-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Code/default-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.004-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.447-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Code/diagram.html</loc>
-    <lastmod>2025-03-08T16:15:13.003-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.447-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Code/force-layout-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.006-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.449-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Code/index.html</loc>
-    <lastmod>2025-03-08T16:15:12.996-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.442-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Code/inheritance.html</loc>
-    <lastmod>2025-03-08T16:15:12.998-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.443-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Code/load-specification.html</loc>
-    <lastmod>2025-03-08T16:15:13.007-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.450-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Code/operations.html</loc>
-    <lastmod>2025-03-08T16:15:12.999-05:00</lastmod>
+    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Commented/attributes.html</loc>
+    <lastmod>2025-03-12T20:32:34.452-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Code/references.html</loc>
-    <lastmod>2025-03-08T16:15:13-05:00</lastmod>
+    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Commented/circular-layout-graph.html</loc>
+    <lastmod>2025-03-12T20:32:34.456-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Commented/default-graph.html</loc>
+    <lastmod>2025-03-12T20:32:34.455-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Commented/diagram.html</loc>
+    <lastmod>2025-03-12T20:32:34.455-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Commented/force-layout-graph.html</loc>
+    <lastmod>2025-03-12T20:32:34.457-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Commented/index.html</loc>
+    <lastmod>2025-03-12T20:32:34.451-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Commented/inheritance.html</loc>
+    <lastmod>2025-03-12T20:32:34.453-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Commented/load-specification.html</loc>
+    <lastmod>2025-03-12T20:32:34.458-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Configurable/attributes.html</loc>
-    <lastmod>2025-03-08T16:15:13.009-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.460-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Configurable/circular-layout-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.014-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.466-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Configurable/default-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.013-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.465-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Configurable/diagram.html</loc>
-    <lastmod>2025-03-08T16:15:13.012-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.464-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Configurable/force-layout-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.015-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.466-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Configurable/index.html</loc>
-    <lastmod>2025-03-08T16:15:13.008-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.459-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Configurable/inheritance.html</loc>
-    <lastmod>2025-03-08T16:15:13.010-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.461-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Configurable/load-specification.html</loc>
-    <lastmod>2025-03-08T16:15:13.016-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.467-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Configurable/references.html</loc>
-    <lastmod>2025-03-08T16:15:13.011-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Container/attributes.html</loc>
-    <lastmod>2025-03-08T16:15:13.018-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Container/circular-layout-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.022-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Container/default-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.022-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Container/diagram.html</loc>
-    <lastmod>2025-03-08T16:15:13.021-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Container/force-layout-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.023-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Container/index.html</loc>
-    <lastmod>2025-03-08T16:15:13.017-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Container/inheritance.html</loc>
-    <lastmod>2025-03-08T16:15:13.019-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Container/load-specification.html</loc>
-    <lastmod>2025-03-08T16:15:13.024-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Container/references.html</loc>
-    <lastmod>2025-03-08T16:15:13.020-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.462-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Crew/attributes.html</loc>
-    <lastmod>2025-03-08T16:15:13.028-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.469-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Crew/circular-layout-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.038-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.478-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Crew/default-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.037-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.477-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Crew/diagram.html</loc>
-    <lastmod>2025-03-08T16:15:13.036-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.476-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Crew/force-layout-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.039-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.479-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Crew/index.html</loc>
-    <lastmod>2025-03-08T16:15:13.025-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.468-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Crew/inheritance.html</loc>
-    <lastmod>2025-03-08T16:15:13.029-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.470-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Crew/load-specification.html</loc>
-    <lastmod>2025-03-08T16:15:13.040-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Crew/operations.html</loc>
-    <lastmod>2025-03-08T16:15:13.030-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.480-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Crew/references.html</loc>
-    <lastmod>2025-03-08T16:15:13.032-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.471-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Function/attributes.html</loc>
-    <lastmod>2025-03-08T16:15:13.042-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.482-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Function/circular-layout-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.048-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.488-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Function/default-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.048-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.487-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Function/diagram.html</loc>
-    <lastmod>2025-03-08T16:15:13.047-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.487-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Function/force-layout-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.049-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.489-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Function/index.html</loc>
-    <lastmod>2025-03-08T16:15:13.041-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.480-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Function/inheritance.html</loc>
-    <lastmod>2025-03-08T16:15:13.043-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.483-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Function/load-specification.html</loc>
-    <lastmod>2025-03-08T16:15:13.050-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Function/operations.html</loc>
-    <lastmod>2025-03-08T16:15:13.044-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.490-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Function/references.html</loc>
-    <lastmod>2025-03-08T16:15:13.045-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.485-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Guardrail/attributes.html</loc>
-    <lastmod>2025-03-08T16:15:13.053-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.492-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Guardrail/circular-layout-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.058-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.497-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Guardrail/default-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.057-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.496-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Guardrail/diagram.html</loc>
-    <lastmod>2025-03-08T16:15:13.056-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.495-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Guardrail/force-layout-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.058-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.498-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Guardrail/index.html</loc>
-    <lastmod>2025-03-08T16:15:13.052-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.491-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Guardrail/inheritance.html</loc>
-    <lastmod>2025-03-08T16:15:13.054-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.493-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Guardrail/load-specification.html</loc>
-    <lastmod>2025-03-08T16:15:13.059-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Guardrail/operations.html</loc>
-    <lastmod>2025-03-08T16:15:13.054-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.498-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Guardrail/references.html</loc>
-    <lastmod>2025-03-08T16:15:13.055-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Import/attributes.html</loc>
-    <lastmod>2025-03-08T16:15:13.061-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Import/circular-layout-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.064-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Import/default-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.063-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Import/diagram.html</loc>
-    <lastmod>2025-03-08T16:15:13.062-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Import/force-layout-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.064-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Import/index.html</loc>
-    <lastmod>2025-03-08T16:15:13.060-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Import/load-specification.html</loc>
-    <lastmod>2025-03-08T16:15:13.065-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.494-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/KnowledgeSource/circular-layout-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.070-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.503-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/KnowledgeSource/default-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.069-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.502-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/KnowledgeSource/diagram.html</loc>
-    <lastmod>2025-03-08T16:15:13.068-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.501-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/KnowledgeSource/force-layout-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.070-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.504-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/KnowledgeSource/index.html</loc>
-    <lastmod>2025-03-08T16:15:13.066-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.499-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/LargeLanguageModel/circular-layout-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.075-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.508-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/LargeLanguageModel/default-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.074-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.508-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/LargeLanguageModel/diagram.html</loc>
-    <lastmod>2025-03-08T16:15:13.073-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.507-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/LargeLanguageModel/force-layout-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.076-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.509-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/LargeLanguageModel/index.html</loc>
-    <lastmod>2025-03-08T16:15:13.071-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.505-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Process/index.html</loc>
-    <lastmod>2025-03-08T16:15:13.077-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Resource/attributes.html</loc>
-    <lastmod>2025-03-08T16:15:13.079-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Resource/circular-layout-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.084-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Resource/default-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.083-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Resource/diagram.html</loc>
-    <lastmod>2025-03-08T16:15:13.082-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Resource/force-layout-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.085-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Resource/index.html</loc>
-    <lastmod>2025-03-08T16:15:13.078-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Resource/inheritance.html</loc>
-    <lastmod>2025-03-08T16:15:13.079-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Resource/load-specification.html</loc>
-    <lastmod>2025-03-08T16:15:13.086-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Resource/references.html</loc>
-    <lastmod>2025-03-08T16:15:13.081-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/SourceElement/circular-layout-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.093-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/SourceElement/default-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.092-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/SourceElement/diagram.html</loc>
-    <lastmod>2025-03-08T16:15:13.092-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/SourceElement/force-layout-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.094-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/SourceElement/index.html</loc>
-    <lastmod>2025-03-08T16:15:13.087-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/SourceElement/inheritance.html</loc>
-    <lastmod>2025-03-08T16:15:13.090-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/SourceElement/load-specification.html</loc>
-    <lastmod>2025-03-08T16:15:13.095-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/SourceElement/operations.html</loc>
-    <lastmod>2025-03-08T16:15:13.088-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/SourceElement/references.html</loc>
-    <lastmod>2025-03-08T16:15:13.089-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/SourceUnit/attributes.html</loc>
-    <lastmod>2025-03-08T16:15:13.097-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/SourceUnit/circular-layout-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.103-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/SourceUnit/default-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.102-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/SourceUnit/diagram.html</loc>
-    <lastmod>2025-03-08T16:15:13.101-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/SourceUnit/force-layout-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.103-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/SourceUnit/index.html</loc>
-    <lastmod>2025-03-08T16:15:13.096-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/SourceUnit/inheritance.html</loc>
-    <lastmod>2025-03-08T16:15:13.098-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/SourceUnit/load-specification.html</loc>
-    <lastmod>2025-03-08T16:15:13.104-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/SourceUnit/operations.html</loc>
-    <lastmod>2025-03-08T16:15:13.099-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/SourceUnit/references.html</loc>
-    <lastmod>2025-03-08T16:15:13.100-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.510-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Task/attributes.html</loc>
-    <lastmod>2025-03-08T16:15:13.107-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.513-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Task/circular-layout-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.113-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.519-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Task/default-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.112-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.519-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Task/diagram.html</loc>
-    <lastmod>2025-03-08T16:15:13.112-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.518-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Task/force-layout-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.114-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.520-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Task/index.html</loc>
-    <lastmod>2025-03-08T16:15:13.106-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.512-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Task/inheritance.html</loc>
-    <lastmod>2025-03-08T16:15:13.107-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.514-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Task/load-specification.html</loc>
-    <lastmod>2025-03-08T16:15:13.115-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.521-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Task/references.html</loc>
-    <lastmod>2025-03-08T16:15:13.109-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.515-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Tool/attributes.html</loc>
-    <lastmod>2025-03-08T16:15:13.118-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.523-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Tool/circular-layout-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.124-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.530-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Tool/default-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.123-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.529-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Tool/diagram.html</loc>
-    <lastmod>2025-03-08T16:15:13.122-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.528-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Tool/force-layout-graph.html</loc>
-    <lastmod>2025-03-08T16:15:13.125-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.531-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Tool/index.html</loc>
-    <lastmod>2025-03-08T16:15:13.117-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.522-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Tool/inheritance.html</loc>
-    <lastmod>2025-03-08T16:15:13.118-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.524-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Tool/load-specification.html</loc>
-    <lastmod>2025-03-08T16:15:13.126-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Tool/operations.html</loc>
-    <lastmod>2025-03-08T16:15:13.119-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.531-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/references/eClassifiers/Tool/references.html</loc>
-    <lastmod>2025-03-08T16:15:13.120-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.525-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://crew-ai.models.nasdanika.org/search.html</loc>
-    <lastmod>2025-03-08T16:15:13.141-05:00</lastmod>
+    <lastmod>2025-03-12T20:32:34.544-04:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>
