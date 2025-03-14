@@ -38,7 +38,9 @@ import org.nasdanika.ncore.impl.DocumentedNamedStringIdentityImpl;
  *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getAfterKickoff <em>After Kickoff</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getProcess <em>Process</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getKnowledgeSources <em>Knowledge Sources</em>}</li>
+ *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getLanguageModels <em>Language Models</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getManagerLlm <em>Manager Llm</em>}</li>
+ *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getManagerAgent <em>Manager Agent</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getFunctionCallingLlm <em>Function Calling Llm</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getPlanningLlm <em>Planning Llm</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getEmbedder <em>Embedder</em>}</li>
@@ -294,6 +296,17 @@ public class CrewImpl extends DocumentedNamedStringIdentityImpl implements Crew 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EList<LargeLanguageModel> getLanguageModels() {
+		return (EList<LargeLanguageModel>)eDynamicGet(CrewaiPackage.CREW__LANGUAGE_MODELS, CrewaiPackage.Literals.CREW__LANGUAGE_MODELS, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public LargeLanguageModel getManagerLlm() {
 		return (LargeLanguageModel)eDynamicGet(CrewaiPackage.CREW__MANAGER_LLM, CrewaiPackage.Literals.CREW__MANAGER_LLM, true, true);
@@ -316,6 +329,35 @@ public class CrewImpl extends DocumentedNamedStringIdentityImpl implements Crew 
 	@Override
 	public void setManagerLlm(LargeLanguageModel newManagerLlm) {
 		eDynamicSet(CrewaiPackage.CREW__MANAGER_LLM, CrewaiPackage.Literals.CREW__MANAGER_LLM, newManagerLlm);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Agent getManagerAgent() {
+		return (Agent)eDynamicGet(CrewaiPackage.CREW__MANAGER_AGENT, CrewaiPackage.Literals.CREW__MANAGER_AGENT, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Agent basicGetManagerAgent() {
+		return (Agent)eDynamicGet(CrewaiPackage.CREW__MANAGER_AGENT, CrewaiPackage.Literals.CREW__MANAGER_AGENT, false, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setManagerAgent(Agent newManagerAgent) {
+		eDynamicSet(CrewaiPackage.CREW__MANAGER_AGENT, CrewaiPackage.Literals.CREW__MANAGER_AGENT, newManagerAgent);
 	}
 
 	/**
@@ -513,9 +555,14 @@ public class CrewImpl extends DocumentedNamedStringIdentityImpl implements Crew 
 				return getProcess();
 			case CrewaiPackage.CREW__KNOWLEDGE_SOURCES:
 				return getKnowledgeSources();
+			case CrewaiPackage.CREW__LANGUAGE_MODELS:
+				return getLanguageModels();
 			case CrewaiPackage.CREW__MANAGER_LLM:
 				if (resolve) return getManagerLlm();
 				return basicGetManagerLlm();
+			case CrewaiPackage.CREW__MANAGER_AGENT:
+				if (resolve) return getManagerAgent();
+				return basicGetManagerAgent();
 			case CrewaiPackage.CREW__FUNCTION_CALLING_LLM:
 				if (resolve) return getFunctionCallingLlm();
 				return basicGetFunctionCallingLlm();
@@ -578,8 +625,15 @@ public class CrewImpl extends DocumentedNamedStringIdentityImpl implements Crew 
 				getKnowledgeSources().clear();
 				getKnowledgeSources().addAll((Collection<? extends KnowledgeSource>)newValue);
 				return;
+			case CrewaiPackage.CREW__LANGUAGE_MODELS:
+				getLanguageModels().clear();
+				getLanguageModels().addAll((Collection<? extends LargeLanguageModel>)newValue);
+				return;
 			case CrewaiPackage.CREW__MANAGER_LLM:
 				setManagerLlm((LargeLanguageModel)newValue);
+				return;
+			case CrewaiPackage.CREW__MANAGER_AGENT:
+				setManagerAgent((Agent)newValue);
 				return;
 			case CrewaiPackage.CREW__FUNCTION_CALLING_LLM:
 				setFunctionCallingLlm((LargeLanguageModel)newValue);
@@ -638,8 +692,14 @@ public class CrewImpl extends DocumentedNamedStringIdentityImpl implements Crew 
 			case CrewaiPackage.CREW__KNOWLEDGE_SOURCES:
 				getKnowledgeSources().clear();
 				return;
+			case CrewaiPackage.CREW__LANGUAGE_MODELS:
+				getLanguageModels().clear();
+				return;
 			case CrewaiPackage.CREW__MANAGER_LLM:
 				setManagerLlm((LargeLanguageModel)null);
+				return;
+			case CrewaiPackage.CREW__MANAGER_AGENT:
+				setManagerAgent((Agent)null);
 				return;
 			case CrewaiPackage.CREW__FUNCTION_CALLING_LLM:
 				setFunctionCallingLlm((LargeLanguageModel)null);
@@ -688,8 +748,12 @@ public class CrewImpl extends DocumentedNamedStringIdentityImpl implements Crew 
 				return getProcess() != PROCESS_EDEFAULT;
 			case CrewaiPackage.CREW__KNOWLEDGE_SOURCES:
 				return !getKnowledgeSources().isEmpty();
+			case CrewaiPackage.CREW__LANGUAGE_MODELS:
+				return !getLanguageModels().isEmpty();
 			case CrewaiPackage.CREW__MANAGER_LLM:
 				return basicGetManagerLlm() != null;
+			case CrewaiPackage.CREW__MANAGER_AGENT:
+				return basicGetManagerAgent() != null;
 			case CrewaiPackage.CREW__FUNCTION_CALLING_LLM:
 				return basicGetFunctionCallingLlm() != null;
 			case CrewaiPackage.CREW__PLANNING_LLM:

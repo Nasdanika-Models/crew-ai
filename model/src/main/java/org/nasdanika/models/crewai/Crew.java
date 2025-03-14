@@ -21,7 +21,9 @@ import org.nasdanika.ncore.DocumentedNamedStringIdentity;
  *   <li>{@link org.nasdanika.models.crewai.Crew#getAfterKickoff <em>After Kickoff</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.Crew#getProcess <em>Process</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.Crew#getKnowledgeSources <em>Knowledge Sources</em>}</li>
+ *   <li>{@link org.nasdanika.models.crewai.Crew#getLanguageModels <em>Language Models</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.Crew#getManagerLlm <em>Manager Llm</em>}</li>
+ *   <li>{@link org.nasdanika.models.crewai.Crew#getManagerAgent <em>Manager Agent</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.Crew#getFunctionCallingLlm <em>Function Calling Llm</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.Crew#getPlanningLlm <em>Planning Llm</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.Crew#getEmbedder <em>Embedder</em>}</li>
@@ -153,6 +155,18 @@ public interface Crew extends DocumentedNamedStringIdentity, Code {
 	EList<KnowledgeSource> getKnowledgeSources();
 
 	/**
+	 * Returns the value of the '<em><b>Language Models</b></em>' reference list.
+	 * The list contents are of type {@link org.nasdanika.models.crewai.LargeLanguageModel}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Language Models</em>' reference list.
+	 * @see org.nasdanika.models.crewai.CrewaiPackage#getCrew_LanguageModels()
+	 * @model
+	 * @generated
+	 */
+	EList<LargeLanguageModel> getLanguageModels();
+
+	/**
 	 * Returns the value of the '<em><b>Manager Llm</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -173,6 +187,28 @@ public interface Crew extends DocumentedNamedStringIdentity, Code {
 	 * @generated
 	 */
 	void setManagerLlm(LargeLanguageModel value);
+
+	/**
+	 * Returns the value of the '<em><b>Manager Agent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Manager Agent</em>' reference.
+	 * @see #setManagerAgent(Agent)
+	 * @see org.nasdanika.models.crewai.CrewaiPackage#getCrew_ManagerAgent()
+	 * @model
+	 * @generated
+	 */
+	Agent getManagerAgent();
+
+	/**
+	 * Sets the value of the '{@link org.nasdanika.models.crewai.Crew#getManagerAgent <em>Manager Agent</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Manager Agent</em>' reference.
+	 * @see #getManagerAgent()
+	 * @generated
+	 */
+	void setManagerAgent(Agent value);
 
 	/**
 	 * Returns the value of the '<em><b>Function Calling Llm</b></em>' reference.

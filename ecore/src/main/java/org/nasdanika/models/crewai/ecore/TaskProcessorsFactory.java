@@ -4,16 +4,14 @@ import java.util.function.BiConsumer;
 
 import org.nasdanika.common.Context;
 import org.nasdanika.common.ProgressMonitor;
-import org.nasdanika.common.Util;
-import org.nasdanika.emf.EmfUtil.EModelElementDocumentation;
 import org.nasdanika.graph.processor.NodeProcessorConfig;
 import org.nasdanika.models.app.Action;
 import org.nasdanika.models.app.Label;
 import org.nasdanika.models.app.graph.WidgetFactory;
 import org.nasdanika.models.crewai.CrewaiPackage;
-import org.nasdanika.models.ecore.graph.processors.EAttributeNodeProcessor;
 import org.nasdanika.models.ecore.graph.processors.EClassNodeProcessor;
 import org.nasdanika.models.ecore.graph.processors.EClassifierNodeProcessorFactory;
+import org.nasdanika.models.ecore.graph.processors.EReferenceNodeProcessor;
 import org.nasdanika.models.ecore.graph.processors.EStructuralFeatureNodeProcessorFactory;
 
 @EClassifierNodeProcessorFactory(classifierID = CrewaiPackage.TASK)
@@ -33,22 +31,14 @@ public class TaskProcessorsFactory {
 	 */
 	@EClassifierNodeProcessorFactory(
 			icon = "https://crew-ai.models.nasdanika.org/images/task.svg", 
-			description = "Family is a group of related people",
+			description = "A specific assignment completed by an Agent",
 			documentation = 
-                    """
-					
-                    [Family](https://en.wikipedia.org/wiki/Family) (from Latin: _familia_) is a group of people related either by consanguinity (by recognized birth) or affinity (by marriage or other relationship). 
-                    It forms the basis for social order. The purpose of the family is to maintain the well-being of its members and of society. 
-                    Ideally, families offer predictability, structure, and safety as members mature and learn to participate in the community.
-                    Historically, most human societies use family as the primary locus of attachment, nurturance, and socialization.
+                    """					
+                     A [Task](https://docs.crewai.com/concepts/tasks) is a specific assignment completed by an [Agent](../Agent/index.html).
+                     Tasks provide all necessary details for execution, such as a description, the agent responsible, required [tools](../Tool/index.html), 
+                     and more, facilitating a wide range of action complexities.
 
-                    Anthropologists classify most family organizations as matrifocal (a mother and her children), patrifocal (a father and his children), 
-                    conjugal (a married couple with children, also called the nuclear family), avuncular (a man, his sister, and her children), 
-                    or extended (in addition to parents and children, may include grandparents, aunts, uncles, or cousins).
-
-                    The field of genealogy aims to trace family lineages through history. 
-                    The family is also an important economic unit studied in family economics. 
-                    The word "families" can be used metaphorically to create more inclusive categories such as community, nationhood, and global village.					
+					Tasks can be collaborative, requiring multiple agents to work together. 
                     """
 	)
 	public EClassNodeProcessor createFamilyProcessor(
@@ -66,64 +56,148 @@ public class TaskProcessorsFactory {
 				}
 			}	
 			
+		};
+	}
+	
+	@EStructuralFeatureNodeProcessorFactory(
+			nsURI = CrewaiPackage.eNS_URI,
+			classID = CrewaiPackage.TASK,
+			featureID = CrewaiPackage.TASK__GUARDRAIL,
+			description = "Validates and transforms task outputs",
+			documentation = 
+					"""
+					Task guardrails provide a way to validate and transform task outputs before they are passed to the next task.
+					This feature helps ensure data quality and provides feedback to [agents](../../../../Agent/index.html) when their output doesn’t meet specific criteria.
+					"""
+	)
+	public EReferenceNodeProcessor createGuardrailProcessor(
+			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			java.util.function.Function<ProgressMonitor, Action> prototypeProvider,
+			BiConsumer<Label, ProgressMonitor> labelConfigurator,
+			ProgressMonitor progressMonitor) {		
+		return new EReferenceNodeProcessor(config, context, prototypeProvider) {
+			
 			@Override
-			protected EModelElementDocumentation getLoadDocumentation() {
-				return new EModelElementDocumentation("""
-						Load documentation with code snippets:
-						
-						```yaml
-						key: value
-						```
-						
-						""", 
-						Util.createClassURI(getClass()));
-			}			
+			public void configureLabel(Object source, Label label, ProgressMonitor progressMonitor) {
+				super.configureLabel(source, label, progressMonitor);
+				if (labelConfigurator != null) {
+					labelConfigurator.accept(label, progressMonitor);
+				}
+			}
 			
 		};
 	}
 	
-//	@EStructuralFeatureNodeProcessorFactory(
-//			nsURI = CrewaiPackage.eNS_URI,
-//			classID = CrewaiPackage.CREW,
-//			featureID = CrewaiPackage.AGENTS,
-//			label = "Agents",
-//			description = "A collection of family members",
-//			documentation = "Some documentation about family members reference"
-//	)
-//	public EAttributeNodeProcessor createFamilyMembersProcessor(
-//			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
-//			java.util.function.Function<ProgressMonitor, Action> prototypeProvider,
-//			BiConsumer<Label, ProgressMonitor> labelConfigurator,
-//			ProgressMonitor progressMonitor) {		
-//		return new EAttributeNodeProcessor(config, context, prototypeProvider) {
-//			
-//			@Override
-//			public void configureLabel(Object source, Label label, ProgressMonitor progressMonitor) {
-//				super.configureLabel(source, label, progressMonitor);
-//				if (labelConfigurator != null) {
-//					labelConfigurator.accept(label, progressMonitor);
-//				}
-//			}
-//			
-//			@Override
-//			public String getLoadDescription() {
-//				return "Description how to load family members. The description is shown in the load specification table. Details like snippets shall go to documentation";
-//			}
-//			
-//			@Override
-//			protected EModelElementDocumentation getLoadDocumentation() {
-//				return new EModelElementDocumentation("""
-//						Some ``documentation``:
-//						
-//						```yaml
-//						key: value
-//						```
-//						
-//						""", 
-//						Util.createClassURI(getClass()));
-//			}
-//			
-//		};
-//	}
+	@EStructuralFeatureNodeProcessorFactory(
+			nsURI = CrewaiPackage.eNS_URI,
+			classID = CrewaiPackage.TASK,
+			featureID = CrewaiPackage.TASK__AGENT,
+			description = "The agent responsible for executing the task",
+			documentation = 
+					"""
+					The agent responsible for executing the task.
+					"""
+	)
+	public EReferenceNodeProcessor createAgentProcessor(
+			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			java.util.function.Function<ProgressMonitor, Action> prototypeProvider,
+			BiConsumer<Label, ProgressMonitor> labelConfigurator,
+			ProgressMonitor progressMonitor) {		
+		return new EReferenceNodeProcessor(config, context, prototypeProvider) {
+			
+			@Override
+			public void configureLabel(Object source, Label label, ProgressMonitor progressMonitor) {
+				super.configureLabel(source, label, progressMonitor);
+				if (labelConfigurator != null) {
+					labelConfigurator.accept(label, progressMonitor);
+				}
+			}
+			
+		};
+	}
+	
+	@EStructuralFeatureNodeProcessorFactory(
+			nsURI = CrewaiPackage.eNS_URI,
+			classID = CrewaiPackage.TASK,
+			featureID = CrewaiPackage.TASK__TOOLS,
+			description = "Tools/resources for this task",
+			documentation = 
+					"""
+					The tools/resources the agent is limited to use for this task.
+					"""
+	)
+	public EReferenceNodeProcessor createToolsProcessor(
+			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			java.util.function.Function<ProgressMonitor, Action> prototypeProvider,
+			BiConsumer<Label, ProgressMonitor> labelConfigurator,
+			ProgressMonitor progressMonitor) {		
+		return new EReferenceNodeProcessor(config, context, prototypeProvider) {
+			
+			@Override
+			public void configureLabel(Object source, Label label, ProgressMonitor progressMonitor) {
+				super.configureLabel(source, label, progressMonitor);
+				if (labelConfigurator != null) {
+					labelConfigurator.accept(label, progressMonitor);
+				}
+			}
+			
+		};
+	}
+	
+	@EStructuralFeatureNodeProcessorFactory(
+			nsURI = CrewaiPackage.eNS_URI,
+			classID = CrewaiPackage.TASK,
+			featureID = CrewaiPackage.TASK__CONTEXT,
+			description = "Other tasks whose outputs will be used as context for this task",
+			documentation = 
+					"""
+					
+					"""
+	)
+	public EReferenceNodeProcessor createContextProcessor(
+			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			java.util.function.Function<ProgressMonitor, Action> prototypeProvider,
+			BiConsumer<Label, ProgressMonitor> labelConfigurator,
+			ProgressMonitor progressMonitor) {		
+		return new EReferenceNodeProcessor(config, context, prototypeProvider) {
+			
+			@Override
+			public void configureLabel(Object source, Label label, ProgressMonitor progressMonitor) {
+				super.configureLabel(source, label, progressMonitor);
+				if (labelConfigurator != null) {
+					labelConfigurator.accept(label, progressMonitor);
+				}
+			}
+			
+		};
+	}
+	
+	@EStructuralFeatureNodeProcessorFactory(
+			nsURI = CrewaiPackage.eNS_URI,
+			classID = CrewaiPackage.TASK,
+			featureID = CrewaiPackage.TASK__CALLBACK,
+			description = "Executes after task completion",
+			documentation = 
+					"""
+					Function to be executed after task completion.
+					"""
+	)
+	public EReferenceNodeProcessor createStepCallbackProcessor(
+			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			java.util.function.Function<ProgressMonitor, Action> prototypeProvider,
+			BiConsumer<Label, ProgressMonitor> labelConfigurator,
+			ProgressMonitor progressMonitor) {		
+		return new EReferenceNodeProcessor(config, context, prototypeProvider) {
+			
+			@Override
+			public void configureLabel(Object source, Label label, ProgressMonitor progressMonitor) {
+				super.configureLabel(source, label, progressMonitor);
+				if (labelConfigurator != null) {
+					labelConfigurator.accept(label, progressMonitor);
+				}
+			}
+			
+		};
+	}
 
 }

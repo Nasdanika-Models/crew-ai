@@ -88,26 +88,55 @@ public class EcoreGenCrewAIProcessorsFactory {
 			icon = "https://cdn.jsdelivr.net/gh/Nasdanika-Models/crew-ai@main/cli/web-resources/crewai.svg",
 			description = "A model of a CrewAI concepts for the purposes of modeling and code generation",
 			documentation =  """
-				Family model is used to demonstrate different Nasdanika technologies such as:
-				
-				* Generating of metamodel (Ecore) documentation like this one
-				* Loading of models from MS Excel and Drawio diagrams
-				* Generation of HTML sites from loaded models		
-				
-				The model was created to mimic the model from [Eclipse Sirius Basic Family](https://wiki.eclipse.org/Sirius/Tutorials/BasicFamily) tutorial. 
-				This site uses fee icons from [Icons8](https://icons8.com/) and quotes [Wikipedia](https://www.wikipedia.org/) articles.
-				
-				The diagram below is interactive:
-				
-				 * Hover the mouse pointer over the shapes and connections to see tooltips
-				 * Click on the shapes and connections to navigate to the pages of the respective model elements.
-				   
-				Click on the diagram to make it fullscreen. Then you may click on the pencil icon to edit it in the browser. 				 				
 				
 				```drawio-resource
 				crew-ai.drawio
 				```
-						
+				
+				The [CrewAI](https://www.crewai.com/) model can be used as a reference guide complementary to the [official documentation](https://docs.crewai.com/)[^attribution].
+				Hover the mouse over the diagram elements above for short descriptions (tooltips), click to navigate to element pages with more details.
+				The above diagram is conceptual - it shows only the most important classes and relationships.
+				The [generated UML class diagram](diagram.html) provides more details. 
+				Hover the mouse over diagram elements for tooltips, click to navigate to class/feature pages.				
+				
+				You can also use the [default graph](default-graph.html) and other graphs to quickly grasp relationships of the model elements.
+				Hover the mouse over graph nodes for tooltips and to highlight their reated classes.
+				Drag to rearrange, double-click to navigate to class pages.   
+				
+				It can also be used as a starting point for an organization-specific documentation - make a copy or fork, modify descriptions of model elements.
+				For example, add links to catalogs of internal [knowledge sources](references/eClassifiers/KnowledgeSource/index.html)
+				or approved/available [LLMs](references/eClassifiers/LargeLanguageModel/index.html) and their configurations.
+				Similarly, you may have a catalog of reusable [agents](references/eClassifiers/Agent/index.html) or [guardrails](references/eClassifiers/Guardrail/index.html).
+				You may also have organization-specific development guidelines with references to shared libraries and internal productivity tools such as code generators, wizards, IDE plugins, training resources, ...				 
+				
+				[^attribution]: Documentation in this model is copied verbatim or almost verbatim from the reference documentation for the purpose of consistency.   
+
+				However, the main objective of the model is to serve as an intermediary for code generation.
+				The model can be populated from diagrams and other data sources.
+				Then it produces a [python model](https://python.models.nasdanika.org/) and, finally, Python sources and supporting artifacts.
+				
+				The model can be created from [Drawio diagrams](https://docs.nasdanika.org/core/drawio/index.html) using [exeutable diagrams](https://docs.nasdanika.org/core/drawio/index.html#executable-diagrams) or [semantic mapping](https://docs.nasdanika.org/core/mapping/index.html).
+				
+				You can find an example of programmatic population of a model [here](https://github.com/Nasdanika-Models/crew-ai/blob/main/model/src/test/java/org/nasdanika/models/crewai/tests/CrewAITests.java#L117).
+				The below code snippet shows how to generate a python source file and configuration files using [CrewGenerator](https://github.com/Nasdanika-Models/crew-ai/blob/main/model/src/main/java/org/nasdanika/models/crewai/util/CrewGenerator.java):
+				
+				```java
+				CapabilityLoader capabilityLoader = new CapabilityLoader();
+				ProgressMonitor progressMonitor = new PrintStreamProgressMonitor();
+				Requirement<ResourceSetRequirement, ResourceSet> requirement = ServiceCapabilityFactory.createRequirement(ResourceSet.class);
+				ResourceSet resourceSet = capabilityLoader.loadOne(requirement, progressMonitor);
+		
+				File crewSourceFile = new File("target/latest-ai-developments/src/crew.py").getCanonicalFile();
+				URI crewSourceURI = URI.createFileURI(crewSourceFile.getAbsolutePath());
+				CrewGenerator crewGenerator = new CrewGenerator();
+				crewGenerator.generate(
+						createCrew(), 
+						crewSourceURI, 
+						resourceSet, 
+						progressMonitor);				
+				```
+				     				     
+				You can override CrewGenerator methods to customize the generation process.     				     				     				     				      				     				     				     				 				     				     				      				     				     				     				 						
 				"""
 	)
 	public EPackageNodeProcessor createEPackageProcessor(

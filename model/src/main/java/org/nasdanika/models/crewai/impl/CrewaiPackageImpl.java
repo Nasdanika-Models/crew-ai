@@ -363,7 +363,7 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getCrew_ManagerLlm() {
+	public EReference getCrew_LanguageModels() {
 		return (EReference)crewEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -373,7 +373,7 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getCrew_FunctionCallingLlm() {
+	public EReference getCrew_ManagerLlm() {
 		return (EReference)crewEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -383,7 +383,7 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getCrew_PlanningLlm() {
+	public EReference getCrew_ManagerAgent() {
 		return (EReference)crewEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -393,7 +393,7 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getCrew_Embedder() {
+	public EReference getCrew_FunctionCallingLlm() {
 		return (EReference)crewEClass.getEStructuralFeatures().get(10);
 	}
 
@@ -403,7 +403,7 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getCrew_StepCallback() {
+	public EReference getCrew_PlanningLlm() {
 		return (EReference)crewEClass.getEStructuralFeatures().get(11);
 	}
 
@@ -413,8 +413,28 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getCrew_TaskCallback() {
+	public EReference getCrew_Embedder() {
 		return (EReference)crewEClass.getEStructuralFeatures().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getCrew_StepCallback() {
+		return (EReference)crewEClass.getEStructuralFeatures().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getCrew_TaskCallback() {
+		return (EReference)crewEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
@@ -650,7 +670,9 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 		createEReference(crewEClass, CREW__AFTER_KICKOFF);
 		createEAttribute(crewEClass, CREW__PROCESS);
 		createEReference(crewEClass, CREW__KNOWLEDGE_SOURCES);
+		createEReference(crewEClass, CREW__LANGUAGE_MODELS);
 		createEReference(crewEClass, CREW__MANAGER_LLM);
+		createEReference(crewEClass, CREW__MANAGER_AGENT);
 		createEReference(crewEClass, CREW__FUNCTION_CALLING_LLM);
 		createEReference(crewEClass, CREW__PLANNING_LLM);
 		createEReference(crewEClass, CREW__EMBEDDER);
@@ -754,7 +776,9 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 		initEReference(getCrew_AfterKickoff(), this.getFunction(), null, "afterKickoff", null, 0, 1, Crew.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCrew_Process(), this.getProcess(), "process", null, 0, 1, Crew.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCrew_KnowledgeSources(), this.getKnowledgeSource(), null, "knowledgeSources", null, 0, -1, Crew.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCrew_LanguageModels(), this.getLargeLanguageModel(), null, "languageModels", null, 0, -1, Crew.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCrew_ManagerLlm(), this.getLargeLanguageModel(), null, "managerLlm", null, 0, 1, Crew.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCrew_ManagerAgent(), this.getAgent(), null, "managerAgent", null, 0, 1, Crew.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCrew_FunctionCallingLlm(), this.getLargeLanguageModel(), null, "functionCallingLlm", null, 0, 1, Crew.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCrew_PlanningLlm(), this.getLargeLanguageModel(), null, "planningLlm", null, 0, 1, Crew.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCrew_Embedder(), this.getCode(), null, "embedder", null, 0, 1, Crew.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

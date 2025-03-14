@@ -46,6 +46,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="process" eType="#//Process"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="knowledgeSources" upperBound="-1"
         eType="#//KnowledgeSource"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="languageModels" upperBound="-1"
+        eType="#//LargeLanguageModel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="managerAgent" eType="#//Agent"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="managerLlm" eType="#//LargeLanguageModel"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="functionCallingLlm" eType="#//LargeLanguageModel"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="planningLlm" eType="#//LargeLanguageModel"/>

@@ -1356,13 +1356,31 @@ public interface CrewaiPackage extends EPackage {
 	int CREW__KNOWLEDGE_SOURCES = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 9;
 
 	/**
+	 * The feature id for the '<em><b>Language Models</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREW__LANGUAGE_MODELS = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 10;
+
+	/**
 	 * The feature id for the '<em><b>Manager Llm</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREW__MANAGER_LLM = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 10;
+	int CREW__MANAGER_LLM = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 11;
+
+	/**
+	 * The feature id for the '<em><b>Manager Agent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREW__MANAGER_AGENT = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Function Calling Llm</b></em>' reference.
@@ -1371,7 +1389,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREW__FUNCTION_CALLING_LLM = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 11;
+	int CREW__FUNCTION_CALLING_LLM = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Planning Llm</b></em>' reference.
@@ -1380,7 +1398,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREW__PLANNING_LLM = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 12;
+	int CREW__PLANNING_LLM = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Embedder</b></em>' reference.
@@ -1389,7 +1407,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREW__EMBEDDER = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 13;
+	int CREW__EMBEDDER = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Step Callback</b></em>' reference.
@@ -1398,7 +1416,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREW__STEP_CALLBACK = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 14;
+	int CREW__STEP_CALLBACK = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Task Callback</b></em>' reference.
@@ -1407,7 +1425,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREW__TASK_CALLBACK = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 15;
+	int CREW__TASK_CALLBACK = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 17;
 
 	/**
 	 * The number of structural features of the '<em>Crew</em>' class.
@@ -1416,7 +1434,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREW_FEATURE_COUNT = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 16;
+	int CREW_FEATURE_COUNT = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 18;
 
 	/**
 	 * The number of operations of the '<em>Crew</em>' class.
@@ -1898,6 +1916,17 @@ public interface CrewaiPackage extends EPackage {
 	EReference getCrew_KnowledgeSources();
 
 	/**
+	 * Returns the meta object for the reference list '{@link org.nasdanika.models.crewai.Crew#getLanguageModels <em>Language Models</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Language Models</em>'.
+	 * @see org.nasdanika.models.crewai.Crew#getLanguageModels()
+	 * @see #getCrew()
+	 * @generated
+	 */
+	EReference getCrew_LanguageModels();
+
+	/**
 	 * Returns the meta object for the reference '{@link org.nasdanika.models.crewai.Crew#getManagerLlm <em>Manager Llm</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1907,6 +1936,17 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getCrew_ManagerLlm();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.nasdanika.models.crewai.Crew#getManagerAgent <em>Manager Agent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Manager Agent</em>'.
+	 * @see org.nasdanika.models.crewai.Crew#getManagerAgent()
+	 * @see #getCrew()
+	 * @generated
+	 */
+	EReference getCrew_ManagerAgent();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.nasdanika.models.crewai.Crew#getFunctionCallingLlm <em>Function Calling Llm</em>}'.
@@ -2307,12 +2347,26 @@ public interface CrewaiPackage extends EPackage {
 		 */
 		EReference CREW__KNOWLEDGE_SOURCES = eINSTANCE.getCrew_KnowledgeSources();
 		/**
+		 * The meta object literal for the '<em><b>Language Models</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CREW__LANGUAGE_MODELS = eINSTANCE.getCrew_LanguageModels();
+		/**
 		 * The meta object literal for the '<em><b>Manager Llm</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference CREW__MANAGER_LLM = eINSTANCE.getCrew_ManagerLlm();
+		/**
+		 * The meta object literal for the '<em><b>Manager Agent</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CREW__MANAGER_AGENT = eINSTANCE.getCrew_ManagerAgent();
 		/**
 		 * The meta object literal for the '<em><b>Function Calling Llm</b></em>' reference feature.
 		 * <!-- begin-user-doc -->

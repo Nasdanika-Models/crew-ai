@@ -21,7 +21,6 @@ import org.nasdanika.common.ExecutionException;
 import org.nasdanika.common.MutableContext;
 import org.nasdanika.common.NullProgressMonitor;
 import org.nasdanika.common.ProgressMonitor;
-import org.nasdanika.html.bootstrap.Theme;
 import org.nasdanika.models.app.Action;
 import org.nasdanika.models.app.gen.AppSiteGenerator;
 //import org.nasdanika.models.architecture.ArchitecturePackage;
@@ -83,6 +82,7 @@ public class TestCrewAIModelDocGen {
 				
 		String rootActionResource = "actions.yml";
 		URI rootActionURI = URI.createFileURI(new File(rootActionResource).getAbsolutePath());//.appendFragment("/");
+		URI pageTeplateURI = URI.createFileURI(new File("page-template.yml").getAbsolutePath());//.appendFragment("/");
 		String siteMapDomain = "https://crew-ai.models.nasdanika.org";		
 		AppSiteGenerator actionSiteGenerator = new AppSiteGenerator() {
 			
@@ -94,7 +94,7 @@ public class TestCrewAIModelDocGen {
 		
 		Map<String, Collection<String>> errors = actionSiteGenerator.generate(
 				rootActionURI, 
-				Theme.Cerulean.pageTemplateCdnURI, 
+				pageTeplateURI, // Theme.Cerulean.pageTemplateCdnURI, 
 				siteMapDomain, 
 				new File("../docs"), 
 				new File("target/doc-site-work-dir"), 
