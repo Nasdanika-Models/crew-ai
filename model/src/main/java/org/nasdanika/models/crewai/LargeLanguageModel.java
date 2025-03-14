@@ -2,7 +2,7 @@
  */
 package org.nasdanika.models.crewai;
 
-import org.eclipse.emf.ecore.EObject;
+import org.nasdanika.ncore.DocumentedNamedStringIdentity;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,5 +14,5 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface LargeLanguageModel extends EObject {
+public interface LargeLanguageModel extends DocumentedNamedStringIdentity {
 } // LargeLanguageModel

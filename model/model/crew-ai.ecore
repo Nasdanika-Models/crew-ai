@@ -32,7 +32,7 @@
     <eLiterals name="sequential"/>
     <eLiterals name="hierarchical" value="1"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Crew" eSuperTypes="../../org.nasdanika.ncore/model/ncore.ecore#//DocumentedNamedStringIdentity #//Code">
+  <eClassifiers xsi:type="ecore:EClass" name="Crew" eSuperTypes="#//Code ../../org.nasdanika.ncore/model/ncore.ecore#//DocumentedNamedStringIdentity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="tools" upperBound="-1"
         eType="#//Tool" containment="true" eKeys="../../org.nasdanika.ncore/model/ncore.ecore#//StringIdentity/id"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="agents" upperBound="-1"
@@ -45,9 +45,9 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="process" eType="#//Process"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="knowledgeSources" upperBound="-1"
-        eType="#//KnowledgeSource"/>
+        eType="#//KnowledgeSource" containment="true" eKeys="../../org.nasdanika.ncore/model/ncore.ecore#//StringIdentity/id"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="languageModels" upperBound="-1"
-        eType="#//LargeLanguageModel"/>
+        eType="#//LargeLanguageModel" containment="true" eKeys="../../org.nasdanika.ncore/model/ncore.ecore#//StringIdentity/id"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="managerAgent" eType="#//Agent"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="managerLlm" eType="#//LargeLanguageModel"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="functionCallingLlm" eType="#//LargeLanguageModel"/>
@@ -65,6 +65,6 @@
         eType="#//Task"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="callback" eType="#//Callback"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LargeLanguageModel"/>
-  <eClassifiers xsi:type="ecore:EClass" name="KnowledgeSource"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LargeLanguageModel" eSuperTypes="../../org.nasdanika.ncore/model/ncore.ecore#//DocumentedNamedStringIdentity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="KnowledgeSource" eSuperTypes="../../org.nasdanika.ncore/model/ncore.ecore#//DocumentedNamedStringIdentity"/>
 </ecore:EPackage>

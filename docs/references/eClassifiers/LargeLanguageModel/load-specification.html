@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="EN">
+  <head>
+    <title>Load specification</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css" id="nsd-bootstrap-theme-stylesheet"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Nasdanika-Models/html-app@master/gen/web-resources/css/app.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jstree@3.3.11/dist/themes/default/style.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.1.0/github-markdown.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/styles/default.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-vue@2.21.2/dist/bootstrap-vue.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/html-app@master/gen/web-resources/js/common.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/html-app@master/gen/web-resources/js/dark-head.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jstree@3.3.11/dist/jstree.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-vue@2.21.2/dist/bootstrap-vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/html-app@master/gen/web-resources/js/components/table.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/components/table.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js"></script><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9BRJVLK8CC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9BRJVLK8CC');
+</script>    
+
+<!--  Start search configuration -->
+<script src="../../../search-documents.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
+
+<script>
+// Script for full-text search of JsTree
+
+window.nsdJsTreeSearchCallback = function(str, node) { 
+    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
+    if (sf.search(node.text).isMatch) {
+		return true;
+	} 
+    let searchResult = this.search(str); 
+    for (const sr in searchResult) {
+        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
+            return true;
+        } 
+    } 
+    return false; 
+}.bind(lunr(function () {
+			  this.ref('id');
+			  this.field('title');
+			  this.field('content');
+
+			  for (const key in searchDocuments) {
+				  let doc = searchDocuments[key];
+				this.add({
+					id: doc['link-uuid'],
+					title: doc.title,
+					path: doc.path,
+					content: doc.content
+				});  
+			  }
+			}));
+</script>
+<!-- End search configuration  -->
+ 
+</head>
+  <body>
+    <div class="container-fluid nsd-app-container">
+      <div class="row">
+        <div class="col nsd-app-header">
+          <a href="https://github.com/Nasdanika-Models" data-nsd-label-uuid="6cdb6aff-88e4-4778-a7db-d34b02cc7e27" class="nsd-app-header-title">
+            <img src="https://docs.nasdanika.org/images/nasdanika-logo.png" class="nsd-app-label-icon"/>Nasdanika Models</a>
+          <ul class="nav nsd-app-header-navs">
+            <li class="nav-item">
+              <a href="../../../search.html" data-nsd-label-uuid="a624e5fa-29ff-475e-aec8-9f7668bcc2b5" class="nav-link"><span class="fas fa-search nsd-app-label-icon"></span>Search</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col nsd-app-navbar">
+          <ul class="navbar navbar-light navbar-expand-lg">
+            <a href="../../../index.html" title="A model of a CrewAI concepts for the purposes of modeling and code generation" data-nsd-label-uuid="6838b83f-bcee-46d9-a3b2-54598257b950" class="navbar-brand">
+              <img src="https://crew-ai.models.nasdanika.org/images/crewai.svg" class="nsd-app-label-icon"/>CrewAI Model</a>
+            <button type="button" data-toggle="collapse" data-target="#nsd_1ez" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="nsd_1ez" class="collapse navbar-collapse">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a href="../../../classifiers.html" data-nsd-label-uuid="e2991624-ab7e-4142-a833-1eeace2d9003" class="nav-link">Classifiers</a>
+                </li>
+                <li class="nav-item">
+                  <a href="../../../diagram.html" data-nsd-label-uuid="4854fa4e-c66c-48b5-bdaa-9b99b993cd7e" class="nav-link"><span class="fas fa-project-diagram nsd-app-label-icon"></span>Diagram</a>
+                </li>
+                <li class="nav-item">
+                  <li data-nsd-label-uuid="d0a1e8d8-35a1-4a9c-bf45-b7f2f1959f04" class="dropdown">
+                    <a role="button" data-toggle="dropdown" class="nav-link dropdown-toggle">
+                      <img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/16/external-diagram-seo-media-dreamstale-lineal-dreamstale.png" class="nsd-app-label-icon"/>Graphs</a>
+                    <div class="dropdown-menu">
+                      <a href="../../../default-graph.html" data-nsd-label-uuid="4c99a960-dabe-4bf0-8214-659f64b242fe" class="dropdown-item">Default Graph</a>
+                      <a href="../../../circular-layout-graph.html" data-nsd-label-uuid="728f229e-20fd-4816-84fc-95a578d09fc7" class="dropdown-item">Circular Graph</a>
+                      <a href="../../../force-layout-graph.html" data-nsd-label-uuid="0aaf1039-d5e2-4b2a-bafc-075c64d435fb" class="dropdown-item">Force Graph</a>
+                      <div title="With dependencies and sub-packages" class="dropdown-divider"></div>
+                      <a href="../../../default-graph-with-dependencies-and-subpackages.html" data-nsd-label-uuid="06f74631-1f5d-4392-bb2b-8b0c6a7ec70d" class="dropdown-item">Default Graph</a>
+                      <a href="../../../circular-layout-graph-with-dependencies-and-subpackages.html" data-nsd-label-uuid="e6f26c06-e654-47bd-ab1c-bd2439a0b006" class="dropdown-item">Circular Graph</a>
+                      <a href="../../../force-layout-graph-with-dependencies-and-subpackages.html" data-nsd-label-uuid="3887f21f-51ef-4197-8612-6dae71c39524" class="dropdown-item">Force Graph</a>
+                    </div>
+                  </li>
+                </li>
+              </ul>
+            </div>
+          </ul>
+        </div>
+      </div>
+      <div class="row nsd-app-content-row">
+        <div class="col nsd-app-navigation-panel">
+          <div class="nsd-collapse-panel bg-light text-center"><span data-toggle="collapse" data-target="#nsd-nav-panel-3c239b66-ad63-4f4d-9426-ce111ee94de2-collapsible" aria-expanded="true" aria-controls="nsd-nav-panel-3c239b66-ad63-4f4d-9426-ce111ee94de2-collapsible" title="Toggle panel" id="nsd-nav-panel-3c239b66-ad63-4f4d-9426-ce111ee94de2-collapsible-trigger" class="nsd-collapsible-trigger"><i aria-hidden="true" class="fa"></i></span>
+          </div>
+          <div id="nsd-nav-panel-3c239b66-ad63-4f4d-9426-ce111ee94de2-collapsible" style="clear:right" class="nsd-collapsible collapse show">
+            <input type="text" id="3b4c9516-237e-4b9d-9920-38abc4968fe0-navigation-panel_searchInput" title="Full-text search. You can use wildcards, e.g. 'foo*' or 'f*o'; title or content fields, e.g. 'title:foo* bar'; boosts, e.g. 'foo^10 bar'; fuzzy matches, e.g. 'foo~1'; and term presence, e.g. '+foo bar -baz'" class="form-control mt-1"/>
+            <div id="3b4c9516-237e-4b9d-9920-38abc4968fe0-navigation-panel"></div>
+            <script>$(document).ready( function() {
+$('#3b4c9516-237e-4b9d-9920-38abc4968fe0-navigation-panel').jstree(function(tree) { tree.state.filter = function(state) { delete state.core.selected; return state; };  tree.search.search_callback = function(searchStr, node) { if (typeof window.nsdJsTreeSearchCallback === 'function') return window.nsdJsTreeSearchCallback(searchStr, node); var sf = new $.vakata.search(searchStr, true, { caseSensitive : false, fuzzy : false }); return sf.search(node.text).isMatch; }; return tree; }({"core":{"data":[{"a_attr":{"title":"Think of an agent as a specialized team member with specific skills, expertise, and responsibilities","onclick":"window.location='../Agent/index.html';"},"data-nsd-label-uuid":"31c57e5d-e781-43a1-bd8b-a17544dbab63","icon":"https://crew-ai.models.nasdanika.org/images/software-agent.svg","id":"nsd-app-nav-item-195b1749-f584-48ec-9fac-cbcc1c8f4bc1","text":"Agent","type":"leaf"},{"a_attr":{"title":"A function called after completion of tasks and steps","onclick":"window.location='../Callback/index.html';"},"data-nsd-label-uuid":"19de299c-bc65-4735-b655-069cf9994ee2","icon":"https://crew-ai.models.nasdanika.org/images/callback.svg","id":"nsd-app-nav-item-d3348707-b0b7-4b36-8dc0-1704337e54bb","text":"Callback","type":"leaf"},{"a_attr":{"title":"Base class for producers of python code","onclick":"window.location='../Code/index.html';"},"data-nsd-label-uuid":"d05f7b6d-b541-4dcc-9f22-cf66723f0ef3","icon":"https://crew-ai.models.nasdanika.org/images/script.svg","id":"nsd-app-nav-item-c6cd1771-7166-4d65-b6a3-b769c24a4ef7","text":"Code","type":"leaf"},{"a_attr":{"title":"An element with YAML configuration","onclick":"window.location='../Configurable/index.html';"},"data-nsd-label-uuid":"6aaa68a9-39f4-4176-bf12-a7ea945444bf","icon":"https://crew-ai.models.nasdanika.org/images/web-management.svg","id":"nsd-app-nav-item-7b8552ae-7781-4961-ad31-66f615619425","text":"Configurable","type":"leaf"},{"a_attr":{"title":"A collaborative group of agents working together to complete a set of tasks","onclick":"window.location='../Crew/index.html';"},"data-nsd-label-uuid":"92bfef94-72cc-4916-9182-14b278fe5b46","icon":"https://crew-ai.models.nasdanika.org/images/navy.svg","id":"nsd-app-nav-item-42c0a182-59c7-4a79-b2e4-2a42bfaaa12a","text":"Crew","type":"leaf"},{"a_attr":{"title":"Generates python function","onclick":"window.location='../Function/index.html';"},"data-nsd-label-uuid":"b247736a-b7a2-49d9-b831-155d9250b15a","icon":"https://crew-ai.models.nasdanika.org/images/settings.svg","id":"nsd-app-nav-item-99f657e3-065b-41c8-a7b7-691fb0ccecf0","text":"Function","type":"leaf"},{"a_attr":{"title":"A function which validates and transforms task outputs","onclick":"window.location='../Guardrail/index.html';"},"data-nsd-label-uuid":"8052959b-9000-42a0-a336-31a0655ea8d1","icon":"https://crew-ai.models.nasdanika.org/images/barrier.svg","id":"nsd-app-nav-item-ce383330-9f8a-47ea-a9ea-6d723efe09a3","text":"Guardrail","type":"leaf"},{"a_attr":{"title":"An external source of information","onclick":"window.location='../KnowledgeSource/index.html';"},"data-nsd-label-uuid":"d9df9072-b816-42bd-901a-c13e6a3553ed","icon":"https://crew-ai.models.nasdanika.org/images/book.svg","id":"nsd-app-nav-item-e166f6e0-94a8-4bc9-8a3c-1b73051a1d45","text":"Knowledge Source","type":"leaf"},{"a_attr":{"title":"Family is a group of related people","onclick":"window.location='index.html';"},"data-nsd-label-uuid":"82b9e998-0737-453b-b6f7-98c1395b1506","icon":"https://crew-ai.models.nasdanika.org/images/ai.svg","state":{"selected":true},"id":"nsd-app-nav-item-16c30371-52e1-4816-bf5d-c004919a3453","text":"Large Language Model","type":"leaf"},{"a_attr":{"title":"Processes orchestrate the execution of tasks by agents","onclick":"window.location='../Process/index.html';"},"data-nsd-label-uuid":"d7ac3532-f6ae-4949-bf95-045d34b6e0bd","icon":"https://crew-ai.models.nasdanika.org/images/milestone.svg","id":"nsd-app-nav-item-e2e40ded-a85d-46f2-ba6b-a02bf0cca801","text":"Process","type":"leaf"},{"a_attr":{"title":"A specific assignment completed by an Agent","onclick":"window.location='../Task/index.html';"},"data-nsd-label-uuid":"5cbd22e0-0378-4677-b8c0-5075f6bd4513","icon":"https://crew-ai.models.nasdanika.org/images/task.svg","id":"nsd-app-nav-item-9de6fd05-ca44-4835-ac3b-446340ee6637","text":"Task","type":"leaf"},{"a_attr":{"title":"A skill or function that agents can utilize to perform various actions","onclick":"window.location='../Tool/index.html';"},"data-nsd-label-uuid":"06fe1080-31c5-4c0c-8861-a0184e975328","icon":"https://crew-ai.models.nasdanika.org/images/tool.svg","id":"nsd-app-nav-item-56a51556-3570-45b7-b683-60e0b00b6e05","text":"Tool","type":"leaf"}]},"search":{"show_only_matches":true,"show_only_matches_children":true},"types":{"leaf":{"icon":"jstree-file"}},"plugins":["state","type","search"],"state":{"key":"3b4c9516-237e-4b9d-9920-38abc4968fe0-navigation-panel"}}));
+// Tokens: searchInputSelector, timer, treeSelector
+$('#3b4c9516-237e-4b9d-9920-38abc4968fe0-navigation-panel_searchInput').keyup(function () {
+    if (window['nsd_jstTreeSearchTimer_nsd_1fc']) { 
+		clearTimeout(window['nsd_jstTreeSearchTimer_nsd_1fc']); 
+	}
+    window['nsd_jstTreeSearchTimer_nsd_1fc'] = setTimeout(function () {
+      var v = $('#3b4c9516-237e-4b9d-9920-38abc4968fe0-navigation-panel_searchInput').val();
+      $('#3b4c9516-237e-4b9d-9920-38abc4968fe0-navigation-panel').jstree(true).search(v);
+    }, 250);
+  });
+
+});</script>
+          </div>
+        </div>
+        <div data-nsd-label-uuid="42e0bd42-8233-482d-9948-c612c66c443b" data-nsd-action-uris="uuid:42e0bd42-8233-482d-9948-c612c66c443b" class="col nsd-app-content-panel">
+          <div class="container-fluid">
+            <div class="row nsd-app-content-panel-breadcrumb-row">
+              <div class="col">
+                <nav aria-label="breadcrumb" class="nsd-app-content-panel-breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                      <a href="index.html" title="Family is a group of related people" data-nsd-label-uuid="82b9e998-0737-453b-b6f7-98c1395b1506">
+                        <img src="https://crew-ai.models.nasdanika.org/images/ai.svg" class="nsd-app-label-icon"/>Large Language Model</a>
+                    </li>
+                    <li class="breadcrumb-item active"><span data-nsd-label-uuid="42e0bd42-8233-482d-9948-c612c66c443b">Load specification</span>
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+            <div class="row nsd-app-content-panel-title-and-items-row">
+              <div class="col-auto">
+                <H1><span data-nsd-label-uuid="42e0bd42-8233-482d-9948-c612c66c443b" class="nsd-app-content-panel-title">Load specification</span>
+                </H1>
+              </div>
+            </div>
+            <div class="row nsd-app-content-panel-content-row">
+              <div class="col">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col">
+<div>
+  <div id="load-specification-table">
+    <nsd-table :columns="[{&quot;visible&quot;:true,&quot;sortable&quot;:true,&quot;label&quot;:&quot;Key&quot;,&quot;key&quot;:&quot;key&quot;},{&quot;visible&quot;:true,&quot;sortable&quot;:true,&quot;label&quot;:&quot;Type&quot;,&quot;key&quot;:&quot;type&quot;},{&quot;key&quot;:&quot;multiplicity&quot;,&quot;visible&quot;:true,&quot;label&quot;:&quot;Multiplicity&quot;},{&quot;key&quot;:&quot;homogeneous&quot;,&quot;visible&quot;:true,&quot;label&quot;:&quot;Homogeneous&quot;},{&quot;key&quot;:&quot;strict-containment&quot;,&quot;visible&quot;:true,&quot;label&quot;:&quot;Strict Containment&quot;},{&quot;visible&quot;:true,&quot;sortable&quot;:true,&quot;label&quot;:&quot;Exclusive With&quot;,&quot;key&quot;:&quot;exclusive&quot;},{&quot;key&quot;:&quot;description&quot;,&quot;visible&quot;:true,&quot;label&quot;:&quot;Description&quot;}]" :items="[{&quot;homogeneous&quot;:&quot;&lt;i class=\&quot;fas fa-check\&quot;&gt;&lt;\/i&gt;&quot;,&quot;multiplicity&quot;:&quot;&lt;B&gt;0..*&lt;\/B&gt;&quot;,&quot;type&quot;:&quot;&lt;!-- Property--&gt; \r\n&lt;a href=\&quot;../../../../Property/index.html\&quot; title=\&quot;Base class for keyed values.\&quot;&gt;\r\n  &lt;img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EInterface.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/&gt;&lt;i&gt;Property&lt;\/i&gt;&lt;\/a&gt;&quot;,&quot;key&quot;:&quot;annotations&quot;},{&quot;type&quot;:&quot;&lt;!-- EObject--&gt; \r\n&lt;a href=\&quot;//ecore.models.nasdanika.org/references/eClassifiers/EObject/index.html\&quot;&gt;\r\n  &lt;img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/&gt;EObject&lt;\/a&gt;&quot;,&quot;multiplicity&quot;:&quot;&lt;B&gt;0..*&lt;\/B&gt;&quot;,&quot;key&quot;:&quot;context-help&quot;},{&quot;type&quot;:&quot;&lt;!-- EString--&gt; \r\n&lt;a href=\&quot;//ecore.models.nasdanika.org/references/eClassifiers/EString/index.html\&quot;&gt;\r\n  &lt;img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EDataType.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/&gt;EString&lt;\/a&gt;&quot;,&quot;multiplicity&quot;:&quot;0..1&quot;,&quot;key&quot;:&quot;description&quot;},{&quot;type&quot;:&quot;&lt;!-- EObject--&gt; \r\n&lt;a href=\&quot;//ecore.models.nasdanika.org/references/eClassifiers/EObject/index.html\&quot;&gt;\r\n  &lt;img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/&gt;EObject&lt;\/a&gt;&quot;,&quot;multiplicity&quot;:&quot;&lt;B&gt;0..*&lt;\/B&gt;&quot;,&quot;key&quot;:&quot;documentation&quot;},{&quot;type&quot;:&quot;&lt;!-- EString--&gt; \r\n&lt;a href=\&quot;//ecore.models.nasdanika.org/references/eClassifiers/EString/index.html\&quot;&gt;\r\n  &lt;img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EDataType.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/&gt;EString&lt;\/a&gt;&quot;,&quot;multiplicity&quot;:&quot;1&quot;,&quot;key&quot;:&quot;id&quot;},{&quot;type&quot;:&quot;&lt;!-- EObject--&gt; \r\n&lt;a href=\&quot;//ecore.models.nasdanika.org/references/eClassifiers/EObject/index.html\&quot;&gt;\r\n  &lt;img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/&gt;EObject&lt;\/a&gt;&quot;,&quot;multiplicity&quot;:&quot;&lt;B&gt;0..1&lt;\/B&gt;&quot;,&quot;key&quot;:&quot;label-prototype&quot;},{&quot;type&quot;:&quot;&lt;!-- EString--&gt; \r\n&lt;a href=\&quot;//ecore.models.nasdanika.org/references/eClassifiers/EString/index.html\&quot;&gt;\r\n  &lt;img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EDataType.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/&gt;EString&lt;\/a&gt;&quot;,&quot;multiplicity&quot;:&quot;0..1&quot;,&quot;key&quot;:&quot;name&quot;},{&quot;homogeneous&quot;:&quot;&lt;i class=\&quot;fas fa-check\&quot;&gt;&lt;\/i&gt;&quot;,&quot;multiplicity&quot;:&quot;&lt;B&gt;0..*&lt;\/B&gt;&quot;,&quot;type&quot;:&quot;&lt;!-- RepresentationEntry--&gt; \r\n&lt;a href=\&quot;../../../../RepresentationEntry/index.html\&quot; title=\&quot;Mapping of representation key to a representation resource uri. Null values are supported to suppress inherited entries.\&quot;&gt;\r\n  &lt;img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/&gt;RepresentationEntry&lt;\/a&gt;&quot;,&quot;key&quot;:&quot;&lt;a href=\&quot;https://ncore.models.nasdanika.org/references/eClassifiers/ModelElement/references/eStructuralFeatures/representations/load-specification.html\&quot;&gt;representations&lt;\/a&gt;&quot;},{&quot;type&quot;:&quot;&lt;!-- EString--&gt; \r\n&lt;a href=\&quot;//ecore.models.nasdanika.org/references/eClassifiers/EString/index.html\&quot;&gt;\r\n  &lt;img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EDataType.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/&gt;EString&lt;\/a&gt;&quot;,&quot;multiplicity&quot;:&quot;0..*&quot;,&quot;key&quot;:&quot;uris&quot;},{&quot;type&quot;:&quot;&lt;!-- EString--&gt; \r\n&lt;a href=\&quot;//ecore.models.nasdanika.org/references/eClassifiers/EString/index.html\&quot;&gt;\r\n  &lt;img src=\&quot;https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EDataType.gif\&quot; class=\&quot;nsd-app-label-icon\&quot;/&gt;EString&lt;\/a&gt;&quot;,&quot;multiplicity&quot;:&quot;0..1&quot;,&quot;key&quot;:&quot;uuid&quot;}]" config-key="1116392720-LargeLanguageModel-load-specification"/>
+  </div>
+  <script>new Vue({ el: '#load-specification-table' });</script>
+</div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col nsd-app-footer">
+          <ul class="nav nsd-app-footer-navs">
+            <li class="nav-item">
+              <a href="https://github.com/Nasdanika-Models/crew-ai" data-nsd-label-uuid="227d29a0-a7af-40c7-a124-242fef4f648c" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

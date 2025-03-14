@@ -85,7 +85,7 @@ public class EcoreGenCrewAIProcessorsFactory {
 //                        text: Param
 //                        icon: fas fa-user					
 //					""",
-			icon = "https://cdn.jsdelivr.net/gh/Nasdanika-Models/crew-ai@main/cli/web-resources/crewai.svg",
+			icon = "https://crew-ai.models.nasdanika.org/images/crewai.svg",
 			description = "A model of a CrewAI concepts for the purposes of modeling and code generation",
 			documentation =  """
 				
@@ -107,7 +107,10 @@ public class EcoreGenCrewAIProcessorsFactory {
 				For example, add links to catalogs of internal [knowledge sources](references/eClassifiers/KnowledgeSource/index.html)
 				or approved/available [LLMs](references/eClassifiers/LargeLanguageModel/index.html) and their configurations.
 				Similarly, you may have a catalog of reusable [agents](references/eClassifiers/Agent/index.html) or [guardrails](references/eClassifiers/Guardrail/index.html).
-				You may also have organization-specific development guidelines with references to shared libraries and internal productivity tools such as code generators, wizards, IDE plugins, training resources, ...				 
+				You may also have organization-specific development guidelines with references to shared libraries and internal productivity tools such as code generators, wizards, IDE plugins, training resources, ...		
+				
+				You can also create a custom model by extending classes in this model and add classes and features specific to your organization. 
+				For example, catalogs, ownership and reponsibilities, alignment to organizational structure, development efforts, etc.		 		 
 				
 				[^attribution]: Documentation in this model is copied verbatim or almost verbatim from the reference documentation for the purpose of consistency.   
 

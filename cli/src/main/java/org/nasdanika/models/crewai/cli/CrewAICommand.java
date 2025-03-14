@@ -25,7 +25,7 @@ import picocli.CommandLine.ParentCommand;
 		mixinStandardHelpOptions = true,
 		name = "crew-ai")
 @ParentCommands(Document.Supplier.class)
-@Description(icon = "https://cdn.jsdelivr.net/gh/Nasdanika-Models/crew-ai@main/cli/web-resources/crewai.svg")
+@Description(icon = "https://crew-ai.models.nasdanika.org/images/crewai.svg")
 public class CrewAICommand extends CommandGroup implements EObjectSupplier<EObject> {
 
 	protected CrewAICommand() {

@@ -194,8 +194,8 @@ public class CrewaiSwitch<T> extends Switch<T> {
 			case CrewaiPackage.CREW: {
 				Crew crew = (Crew)theEObject;
 				T result = caseCrew(crew);
-				if (result == null) result = caseDocumentedNamedStringIdentity(crew);
 				if (result == null) result = caseCode(crew);
+				if (result == null) result = caseDocumentedNamedStringIdentity(crew);
 				if (result == null) result = caseDocumentedNamedElement(crew);
 				if (result == null) result = caseStringIdentity(crew);
 				if (result == null) result = caseNamedElement(crew);
@@ -227,12 +227,30 @@ public class CrewaiSwitch<T> extends Switch<T> {
 			case CrewaiPackage.LARGE_LANGUAGE_MODEL: {
 				LargeLanguageModel largeLanguageModel = (LargeLanguageModel)theEObject;
 				T result = caseLargeLanguageModel(largeLanguageModel);
+				if (result == null) result = caseDocumentedNamedStringIdentity(largeLanguageModel);
+				if (result == null) result = caseDocumentedNamedElement(largeLanguageModel);
+				if (result == null) result = caseStringIdentity(largeLanguageModel);
+				if (result == null) result = caseNamedElement(largeLanguageModel);
+				if (result == null) result = caseDocumented(largeLanguageModel);
+				if (result == null) result = caseModelElement(largeLanguageModel);
+				if (result == null) result = caseMarked(largeLanguageModel);
+				if (result == null) result = caseAdaptable(largeLanguageModel);
+				if (result == null) result = caseIMarked(largeLanguageModel);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CrewaiPackage.KNOWLEDGE_SOURCE: {
 				KnowledgeSource knowledgeSource = (KnowledgeSource)theEObject;
 				T result = caseKnowledgeSource(knowledgeSource);
+				if (result == null) result = caseDocumentedNamedStringIdentity(knowledgeSource);
+				if (result == null) result = caseDocumentedNamedElement(knowledgeSource);
+				if (result == null) result = caseStringIdentity(knowledgeSource);
+				if (result == null) result = caseNamedElement(knowledgeSource);
+				if (result == null) result = caseDocumented(knowledgeSource);
+				if (result == null) result = caseModelElement(knowledgeSource);
+				if (result == null) result = caseMarked(knowledgeSource);
+				if (result == null) result = caseAdaptable(knowledgeSource);
+				if (result == null) result = caseIMarked(knowledgeSource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

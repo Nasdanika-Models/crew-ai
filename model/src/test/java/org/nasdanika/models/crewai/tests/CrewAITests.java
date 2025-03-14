@@ -110,11 +110,11 @@ public class CrewAITests {
 
 		File crewFile = new File("target/latest-ai-development-crew.xml").getCanonicalFile();
 		Resource crewResource = resourceSet.createResource(URI.createFileURI(crewFile.getAbsolutePath()));
-		crewResource.getContents().add(createCrew());
+		crewResource.getContents().add(createSampleCrew());
 		crewResource.save(null);
 	}
 
-	protected Crew createCrew() {
+	protected Crew createSampleCrew() {
 		// Building
 		CrewaiFactory crewaiFactory = CrewaiFactory.eINSTANCE;
 		
@@ -233,7 +233,7 @@ public class CrewAITests {
 		URI crewSourceURI = URI.createFileURI(crewSourceFile.getAbsolutePath());
 		CrewGenerator crewGenerator = new CrewGenerator();
 		crewGenerator.generate(
-				createCrew(), 
+				createSampleCrew(), 
 				crewSourceURI, 
 				resourceSet, 
 				progressMonitor);

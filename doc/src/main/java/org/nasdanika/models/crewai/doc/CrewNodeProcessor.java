@@ -1,9 +1,7 @@
 package org.nasdanika.models.crewai.doc;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EReference;
@@ -14,20 +12,16 @@ import org.nasdanika.graph.processor.NodeProcessorConfig;
 import org.nasdanika.models.app.Action;
 import org.nasdanika.models.app.Label;
 import org.nasdanika.models.app.graph.WidgetFactory;
-import org.nasdanika.models.app.graph.emf.EObjectNodeProcessor;
-import org.nasdanika.models.app.graph.emf.OutgoingReferenceBuilder;
 import org.nasdanika.models.crewai.Crew;
-import org.nasdanika.models.crewai.CrewaiPackage;
 
-public class CrewNodeProcessor extends EObjectNodeProcessor<Crew> {
+public class CrewNodeProcessor extends CodeNodeProcessor<Crew> {
 	
 	public CrewNodeProcessor(
 		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
 		Context context,
 		java.util.function.Function<ProgressMonitor, Action> prototypeProvider) {
 		super(config, context, prototypeProvider);
-	}	
-	
+	}		
 	
 	/**
 	* Suppressing default behavior, explicit specification of how to build.
@@ -68,7 +62,7 @@ public class CrewNodeProcessor extends EObjectNodeProcessor<Crew> {
 			String location = ((Action) label).getLocation();
 			URI uri = getUri();
 			if (uri != null && location != null && uri.toString().equals(location)) {
-				label.setIcon("https://docs.nasdanika.org/images/navy.svg");
+				label.setIcon("https://crew-ai.models.nasdanika.org/images/navy.svg");
 			}
 		}		
 	}

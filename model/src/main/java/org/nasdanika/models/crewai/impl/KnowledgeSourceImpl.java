@@ -3,11 +3,9 @@
 package org.nasdanika.models.crewai.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.nasdanika.models.crewai.CrewaiPackage;
 import org.nasdanika.models.crewai.KnowledgeSource;
+import org.nasdanika.ncore.impl.DocumentedNamedStringIdentityImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,7 +14,7 @@ import org.nasdanika.models.crewai.KnowledgeSource;
  *
  * @generated
  */
-public class KnowledgeSourceImpl extends MinimalEObjectImpl.Container implements KnowledgeSource {
+public class KnowledgeSourceImpl extends DocumentedNamedStringIdentityImpl implements KnowledgeSource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -34,16 +32,6 @@ public class KnowledgeSourceImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	protected EClass eStaticClass() {
 		return CrewaiPackage.Literals.KNOWLEDGE_SOURCE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected int eStaticFeatureCount() {
-		return 0;
 	}
 
 } //KnowledgeSourceImpl

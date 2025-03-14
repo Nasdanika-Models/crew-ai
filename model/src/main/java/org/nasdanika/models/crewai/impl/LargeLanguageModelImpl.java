@@ -3,11 +3,9 @@
 package org.nasdanika.models.crewai.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.nasdanika.models.crewai.CrewaiPackage;
 import org.nasdanika.models.crewai.LargeLanguageModel;
+import org.nasdanika.ncore.impl.DocumentedNamedStringIdentityImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,7 +14,7 @@ import org.nasdanika.models.crewai.LargeLanguageModel;
  *
  * @generated
  */
-public class LargeLanguageModelImpl extends MinimalEObjectImpl.Container implements LargeLanguageModel {
+public class LargeLanguageModelImpl extends DocumentedNamedStringIdentityImpl implements LargeLanguageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -34,16 +32,6 @@ public class LargeLanguageModelImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	protected EClass eStaticClass() {
 		return CrewaiPackage.Literals.LARGE_LANGUAGE_MODEL;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected int eStaticFeatureCount() {
-		return 0;
 	}
 
 } //LargeLanguageModelImpl
