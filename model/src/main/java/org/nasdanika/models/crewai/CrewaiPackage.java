@@ -1392,13 +1392,31 @@ public interface CrewaiPackage extends EPackage {
 	int CREW__EMBEDDER = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 13;
 
 	/**
+	 * The feature id for the '<em><b>Step Callback</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREW__STEP_CALLBACK = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 14;
+
+	/**
+	 * The feature id for the '<em><b>Task Callback</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREW__TASK_CALLBACK = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 15;
+
+	/**
 	 * The number of structural features of the '<em>Crew</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREW_FEATURE_COUNT = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 14;
+	int CREW_FEATURE_COUNT = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 16;
 
 	/**
 	 * The number of operations of the '<em>Crew</em>' class.
@@ -1924,6 +1942,28 @@ public interface CrewaiPackage extends EPackage {
 	EReference getCrew_Embedder();
 
 	/**
+	 * Returns the meta object for the reference '{@link org.nasdanika.models.crewai.Crew#getStepCallback <em>Step Callback</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Step Callback</em>'.
+	 * @see org.nasdanika.models.crewai.Crew#getStepCallback()
+	 * @see #getCrew()
+	 * @generated
+	 */
+	EReference getCrew_StepCallback();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.nasdanika.models.crewai.Crew#getTaskCallback <em>Task Callback</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Task Callback</em>'.
+	 * @see org.nasdanika.models.crewai.Crew#getTaskCallback()
+	 * @see #getCrew()
+	 * @generated
+	 */
+	EReference getCrew_TaskCallback();
+
+	/**
 	 * Returns the meta object for class '{@link org.nasdanika.models.crewai.Task <em>Task</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2294,6 +2334,20 @@ public interface CrewaiPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CREW__EMBEDDER = eINSTANCE.getCrew_Embedder();
+		/**
+		 * The meta object literal for the '<em><b>Step Callback</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CREW__STEP_CALLBACK = eINSTANCE.getCrew_StepCallback();
+		/**
+		 * The meta object literal for the '<em><b>Task Callback</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CREW__TASK_CALLBACK = eINSTANCE.getCrew_TaskCallback();
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.models.crewai.impl.TaskImpl <em>Task</em>}' class.
 		 * <!-- begin-user-doc -->

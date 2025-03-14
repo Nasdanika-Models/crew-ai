@@ -5,6 +5,7 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,6 +32,10 @@ import org.nasdanika.models.python.PythonFactory;
 import org.nasdanika.models.python.PythonPackage;
 import org.nasdanika.models.python.Variable;
 import org.nasdanika.models.source.Source;
+import org.springframework.expression.Expression;
+import org.springframework.expression.ExpressionParser;
+import org.springframework.expression.spel.standard.SpelExpressionParser;
+import org.springframework.expression.spel.support.StandardEvaluationContext;
 import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.DumperOptions.FlowStyle;
 import org.yaml.snakeyaml.Yaml;
@@ -40,6 +45,8 @@ import org.yaml.snakeyaml.Yaml;
  */
 public class CrewGenerator {
 	
+	private static final String SPEL_TOKEN_SCHEME = "spel:";
+
 	/**
 	 * Agents config relative to the crew source file
 	 * @return
@@ -64,6 +71,24 @@ public class CrewGenerator {
 		}
 	}
 	
+	protected java.util.function.Function<String, String> createSpelTokenSource(org.nasdanika.models.python.Source rootObject) {
+		StandardEvaluationContext evaluationContext = new StandardEvaluationContext(rootObject);		
+		ExpressionParser parser = new SpelExpressionParser();
+		
+		return token -> {
+			if (token != null && token.startsWith(SPEL_TOKEN_SCHEME)) {
+				Expression exp = parser.parseExpression(token.substring(SPEL_TOKEN_SCHEME.length()));		
+				Object result = exp.getValue(evaluationContext);
+				return result == null ? null : result.toString();				
+			}
+			return null;
+		};		
+	}
+	
+	protected Source createIntepolatedSource(org.nasdanika.models.python.Source rootObject, String source) {
+		return Source.create(Util.interpolate(source, createSpelTokenSource(rootObject)));		
+	}
+	
 	public void generate(
 			Crew crew, 
 			URI crewSourceURI, 
@@ -82,17 +107,17 @@ public class CrewGenerator {
 		EList<Source> crewClassBody = crewClass.getBody();
 		crewClassBody.add(classDoc);
 		
-		String crewCode = crew.getCode();
-		if (!Util.isBlank(crewCode)) {
-			crewClassBody.add(Source.create(crewCode));			
-		}
-		
 		String agentsConfig = getAgentsConfig(crew);
 		crewClassBody.add(Variable.createVariable(getAgentsConfigVariableName(), "'" + agentsConfig + "'"));
 		
 		String tasksConfig = getTasksConfig(crew);
 		String taskConfigVariableName = getTasksConfigVariableName();
 		crewClassBody.add(Variable.createVariable(taskConfigVariableName, "'" + tasksConfig + "'"));
+		
+		String crewCode = crew.getCode();
+		if (!Util.isBlank(crewCode)) {
+			crewClassBody.add(createIntepolatedSource(crewClass, crew.getCode()));			
+		}
 
 		// TODO - split tools monitor for agents and tasks.
 		
@@ -100,7 +125,7 @@ public class CrewGenerator {
 			String toolDeclarations = tool.getDeclarations();
 			if (!Util.isBlank(toolDeclarations)) {
 				addComment(tool, crewClassBody::add);
-				crewClassBody.add(Source.create(toolDeclarations));
+				crewClassBody.add(createIntepolatedSource(crewClass, toolDeclarations));
 			}
 		}
 		
@@ -109,7 +134,7 @@ public class CrewGenerator {
 		Map<String,Object> agentConfigs = new LinkedHashMap<>();
 		for (Agent agent: crew.getAgents()) {			
 			Function agentMethod = pythonFactory.createFunction();
-			agentMethod.getBody().add(createAgentFunctionBody(agent, progressMonitor));
+			agentMethod.getBody().add(createAgentFunctionBody(agent, crewClass, progressMonitor));
 			agentMethod.setAnnotation(getAgentMethodAnnotation(agent));
 			agentMethod.setName(getAgentMethodName(agent));
 			agentMethod.getParameters().add("self");
@@ -126,7 +151,7 @@ public class CrewGenerator {
 		Map<String,Object> taskConfigs = new LinkedHashMap<>();
 		for (Task task: crew.getTasks()) {			
 			Function taskMethod = pythonFactory.createFunction();
-			taskMethod.getBody().add(createTaskFunctionBody(task, progressMonitor));
+			taskMethod.getBody().add(createTaskFunctionBody(task, crewClass, progressMonitor));
 			taskMethod.setAnnotation(getTaskMethodAnnotation(task));
 			taskMethod.setName(getTaskMethodName(task));
 			taskMethod.getParameters().add("self");
@@ -258,7 +283,11 @@ public class CrewGenerator {
 			""");
 	}
 
-	protected Source createAgentFunctionBody(Agent agent, ProgressMonitor progressMonitor) {
+	protected Source createAgentFunctionBody(
+			Agent agent, 
+			org.nasdanika.models.python.Source importSink, 
+			ProgressMonitor progressMonitor) {
+		
 		StringBuilder extraArgs = new StringBuilder();
 		if (!agent.getTools().isEmpty()) {
 			extraArgs
@@ -279,17 +308,22 @@ public class CrewGenerator {
 			extraArgs.append("]");
 		}
 		
-		Map<String,String> tokenMap = Map.of(
+		Map<String,String> tokenMap = new HashMap<>(Map.of(
 				"agents-config-variable", getAgentsConfigVariableName(), 	
 				"agent-config-key", getAgentConfigKey(agent),
-				"extra-args", extraArgs.toString());
-		
+				"extra-args", extraArgs.toString()));
+				
+		java.util.function.Function<String, String> spelTokenSource = createSpelTokenSource(importSink);
+		java.util.function.Function<String, String> tokenSource = token -> tokenMap.computeIfAbsent(token, spelTokenSource);
 		return Source.create(Util.interpolate(
 				getAgentFunctionBodyTemplate(agent), 
-				tokenMap::get));
+				tokenSource));
 	}
 
-	protected Source createTaskFunctionBody(Task task, ProgressMonitor progressMonitor) {
+	protected Source createTaskFunctionBody(
+			Task task, 
+			org.nasdanika.models.python.Source importSink, 
+			ProgressMonitor progressMonitor) {
 		StringBuilder extraArgs = new StringBuilder();
 		if (!task.getTools().isEmpty()) {
 			extraArgs
@@ -309,14 +343,16 @@ public class CrewGenerator {
 			
 			extraArgs.append("]");
 		}
-		Map<String,String> tokenMap = Map.of(
+		Map<String,String> tokenMap = new HashMap<>(Map.of(
 				"tasks-config-variable", getTasksConfigVariableName(), 	
 				"task-config-key", getTaskConfigKey(task),
-				"extra-args", extraArgs.toString());
+				"extra-args", extraArgs.toString()));
 		
+		java.util.function.Function<String, String> spelTokenSource = createSpelTokenSource(importSink);
+		java.util.function.Function<String, String> tokenSource = token -> tokenMap.computeIfAbsent(token, spelTokenSource);
 		return Source.create(Util.interpolate(
 				getTaskFunctionBodyTemplate(task), 
-				tokenMap::get));
+				tokenSource));
 	}
 	
 	public static final String DEFAULT_AGENT_FUNCTION_BODY_TEMPLATE =

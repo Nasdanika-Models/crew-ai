@@ -403,6 +403,26 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getCrew_StepCallback() {
+		return (EReference)crewEClass.getEStructuralFeatures().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getCrew_TaskCallback() {
+		return (EReference)crewEClass.getEStructuralFeatures().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getTask() {
 		return taskEClass;
 	}
@@ -634,6 +654,8 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 		createEReference(crewEClass, CREW__FUNCTION_CALLING_LLM);
 		createEReference(crewEClass, CREW__PLANNING_LLM);
 		createEReference(crewEClass, CREW__EMBEDDER);
+		createEReference(crewEClass, CREW__STEP_CALLBACK);
+		createEReference(crewEClass, CREW__TASK_CALLBACK);
 
 		taskEClass = createEClass(TASK);
 		createEReference(taskEClass, TASK__GUARDRAIL);
@@ -736,6 +758,8 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 		initEReference(getCrew_FunctionCallingLlm(), this.getLargeLanguageModel(), null, "functionCallingLlm", null, 0, 1, Crew.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCrew_PlanningLlm(), this.getLargeLanguageModel(), null, "planningLlm", null, 0, 1, Crew.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCrew_Embedder(), this.getCode(), null, "embedder", null, 0, 1, Crew.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCrew_StepCallback(), this.getCallback(), null, "stepCallback", null, 0, 1, Crew.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCrew_TaskCallback(), this.getCallback(), null, "taskCallback", null, 0, 1, Crew.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(taskEClass, Task.class, "Task", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTask_Guardrail(), this.getGuardrail(), null, "guardrail", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

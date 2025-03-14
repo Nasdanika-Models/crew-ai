@@ -25,6 +25,8 @@ import org.nasdanika.ncore.DocumentedNamedStringIdentity;
  *   <li>{@link org.nasdanika.models.crewai.Crew#getFunctionCallingLlm <em>Function Calling Llm</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.Crew#getPlanningLlm <em>Planning Llm</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.Crew#getEmbedder <em>Embedder</em>}</li>
+ *   <li>{@link org.nasdanika.models.crewai.Crew#getStepCallback <em>Step Callback</em>}</li>
+ *   <li>{@link org.nasdanika.models.crewai.Crew#getTaskCallback <em>Task Callback</em>}</li>
  * </ul>
  *
  * @see org.nasdanika.models.crewai.CrewaiPackage#getCrew()
@@ -237,4 +239,48 @@ public interface Crew extends DocumentedNamedStringIdentity, Code {
 	 * @generated
 	 */
 	void setEmbedder(Code value);
+
+	/**
+	 * Returns the value of the '<em><b>Step Callback</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Step Callback</em>' reference.
+	 * @see #setStepCallback(Callback)
+	 * @see org.nasdanika.models.crewai.CrewaiPackage#getCrew_StepCallback()
+	 * @model
+	 * @generated
+	 */
+	Callback getStepCallback();
+
+	/**
+	 * Sets the value of the '{@link org.nasdanika.models.crewai.Crew#getStepCallback <em>Step Callback</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Step Callback</em>' reference.
+	 * @see #getStepCallback()
+	 * @generated
+	 */
+	void setStepCallback(Callback value);
+
+	/**
+	 * Returns the value of the '<em><b>Task Callback</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Task Callback</em>' reference.
+	 * @see #setTaskCallback(Callback)
+	 * @see org.nasdanika.models.crewai.CrewaiPackage#getCrew_TaskCallback()
+	 * @model
+	 * @generated
+	 */
+	Callback getTaskCallback();
+
+	/**
+	 * Sets the value of the '{@link org.nasdanika.models.crewai.Crew#getTaskCallback <em>Task Callback</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Task Callback</em>' reference.
+	 * @see #getTaskCallback()
+	 * @generated
+	 */
+	void setTaskCallback(Callback value);
 } // Crew

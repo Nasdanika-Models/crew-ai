@@ -50,6 +50,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="functionCallingLlm" eType="#//LargeLanguageModel"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="planningLlm" eType="#//LargeLanguageModel"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="embedder" eType="#//Code"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stepCallback" eType="#//Callback"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="taskCallback" eType="#//Callback"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Task" eSuperTypes="#//Configurable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="guardrail" eType="#//Guardrail"/>

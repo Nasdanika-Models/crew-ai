@@ -49,6 +49,8 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Crew/functionCallingLlm"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Crew/planningLlm"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Crew/embedder"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Crew/stepCallback"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Crew/taskCallback"/>
     </genClasses>
     <genClasses ecoreClass="crew-ai.ecore#//Task">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Task/guardrail"/>

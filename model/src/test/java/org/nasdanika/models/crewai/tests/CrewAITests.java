@@ -200,6 +200,11 @@ public class CrewAITests {
 		crew.setId("LatestAiDevelopmentCrew");
 		crew.setName("Latest AI Development Crew");
 		
+		// Example of importing using spel token
+//		crew.setCode("""
+//				my_var = ${spel:addItemImport('my_module', 'my_item').item}
+//				""");
+		
 		EList<Agent> agents = crew.getAgents();
 		agents.add(researcher);
 		agents.add(reportingAnalyst);

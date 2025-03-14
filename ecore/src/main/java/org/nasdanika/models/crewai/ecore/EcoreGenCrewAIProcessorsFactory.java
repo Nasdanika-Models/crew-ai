@@ -17,82 +17,57 @@ import org.nasdanika.models.ecore.graph.processors.EPackageNodeProcessorFactory;
 public class EcoreGenCrewAIProcessorsFactory {
 
 	private Context context;
-	
-//	@Factory
-//	public final AgentProcessorsFactory agentProcessorsFactory;
-//	
-//	@Factory
-//	public final AssignmentProcessorsFactory assignmentProcessorsFactory;
-//	
-//	@Factory
-//	public final CallbackProcessorsFactory callbackProcessorsFactory;
-//	
-//	@Factory
-//	public final CodeProcessorsFactory codeProcessorsFactory;
-//	
-//	@Factory
-//	public final ConfigurableProcessorsFactory configurableProcessorsFactory;
-//	
-//	@Factory
-//	public final ContainerProcessorsFactory containerProcessorsFactory;
-	
+		
 	@Factory
 	public final CrewProcessorsFactory crewProcessorsFactory;
-		
-//	@Factory
-//	public final FunctionProcessorsFactory functionProcessorsFactory;
-//	
-//	@Factory
-//	public final GuardrailProcessorsFactory guardrailProcessorsFactory;
-//	
-//	@Factory
-//	public final ImportProcessorsFactory importProcessorsFactory;
-//	
-//	@Factory
-//	public final KnowledgeSourceProcessorsFactory knowledgeSourceProcessorsFactory;
-//	
-//	@Factory
-//	public final LargeLanguageModelProcessorsFactory largeLanguageModelProcessorsFactory;
-//	
-//	@Factory
-//	public final ProcessProcessorsFactory processProcessorsFactory;
-//	
-//	@Factory
-//	public final ResourceProcessorsFactory resourceProcessorsFactory;
-//	
-//	@Factory
-//	public final SourceElementProcessorsFactory sourceElementProcessorsFactory;
-//	
-//	@Factory
-//	public final SourceUnitProcessorsFactory sourceUnitProcessorsFactory;
-//	
-//	@Factory
-//	public final TaskProcessorsFactory taskProcessorsFactory;
-//	
-//	@Factory
-//	public final ToolProcessorsFactory toolProcessorsFactory;	
+	
+	@Factory
+	public final AgentProcessorsFactory agentProcessorsFactory;
+	
+	@Factory
+	public final CallbackProcessorsFactory callbackProcessorsFactory;
+	
+	@Factory
+	public final CodeProcessorsFactory codeProcessorsFactory;
+	
+	@Factory
+	public final ConfigurableProcessorsFactory configurableProcessorsFactory;
+	
+	@Factory
+	public final FunctionProcessorsFactory functionProcessorsFactory;
+	
+	@Factory
+	public final GuardrailProcessorsFactory guardrailProcessorsFactory;
+	
+	@Factory
+	public final KnowledgeSourceProcessorsFactory knowledgeSourceProcessorsFactory;
+	
+	@Factory
+	public final LargeLanguageModelProcessorsFactory largeLanguageModelProcessorsFactory;
+	
+	@Factory
+	public final ProcessProcessorsFactory processProcessorsFactory;
+	
+	@Factory
+	public final TaskProcessorsFactory taskProcessorsFactory;
+	
+	@Factory
+	public final ToolProcessorsFactory toolProcessorsFactory;		
 	
 	public EcoreGenCrewAIProcessorsFactory(Context context) {
 		this.context = context;
-		crewProcessorsFactory = new CrewProcessorsFactory(context);
-//		Agent.java
-//		Assignment.java
-//		Callback.java
-//		Code.java
-//		Configurable.java
-//		Container.java
-//		Crew.java
-//		Function.java
-//		Guardrail.java
-//		Import.java
-//		KnowledgeSource.java
-//		LargeLanguageModel.java
-//		Process.java
-//		Resource.java
-//		SourceElement.java
-//		SourceUnit.java
-//		Task.java
-//		Tool.java		
+		crewProcessorsFactory = new CrewProcessorsFactory(context);		
+		agentProcessorsFactory = new AgentProcessorsFactory(context);
+		callbackProcessorsFactory = new CallbackProcessorsFactory(context);
+		codeProcessorsFactory = new CodeProcessorsFactory(context);
+		configurableProcessorsFactory = new ConfigurableProcessorsFactory(context);
+		functionProcessorsFactory = new FunctionProcessorsFactory(context);
+		guardrailProcessorsFactory = new GuardrailProcessorsFactory(context);
+		knowledgeSourceProcessorsFactory = new KnowledgeSourceProcessorsFactory(context);
+		largeLanguageModelProcessorsFactory = new LargeLanguageModelProcessorsFactory(context);
+		processProcessorsFactory = new ProcessProcessorsFactory(context);
+		taskProcessorsFactory = new TaskProcessorsFactory(context);
+		toolProcessorsFactory = new ToolProcessorsFactory(context);		
 	}
 	
 	/**

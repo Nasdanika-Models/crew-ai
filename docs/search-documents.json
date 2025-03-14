@@ -1,72 +1,199 @@
 {
-  "references/eClassifiers/Task/inheritance.html": {
-    "path": "Task/Inheritance",
-    "link-uuid": "ff3de093-35e8-4bfe-8c7e-ca0fd2e002af",
-    "title": "Inheritance",
-    "content": "Supertypes "
-  },
-  "references/eClassifiers/Function/inheritance.html": {
-    "path": "Function/Inheritance",
-    "link-uuid": "6a635ff5-c260-44ef-8469-ddda197e24e1",
-    "title": "Inheritance",
-    "content": "Supertypes Subtypes  "
-  },
-  "references/eClassifiers/Crew/load-specification.html": {
-    "path": "Crew/Load specification",
-    "link-uuid": "6d0d1f58-c6a4-4217-98d1-f8e322ac0025",
+  "references/eClassifiers/Task/load-specification.html": {
+    "path": "Task/Load specification",
+    "link-uuid": "3f97af10-5aca-4b19-9220-91d958cfb255",
     "title": "Load specification",
     "content": "Load documentation with code snippets: key: value"
   },
+  "references/eClassifiers/Task/inheritance.html": {
+    "path": "Task/Inheritance",
+    "link-uuid": "6dc7d72f-4e98-4d66-8050-98cc70f407c9",
+    "title": "Inheritance",
+    "content": "Supertypes "
+  },
+  "references/eClassifiers/Tool/index.html": {
+    "link-uuid": "0e4c2b90-2866-49be-b48a-d8fe308a6093",
+    "title": "Tool",
+    "content": "A tool is a skill or function that agents can utilize to perform various actions."
+  },
+  "references/eClassifiers/Function/index.html": {
+    "link-uuid": "27b94ec6-357b-49bc-8281-88844a936ebb",
+    "title": "Function",
+    "content": "Generates a python function."
+  },
+  "references/eClassifiers/Configurable/index.html": {
+    "link-uuid": "64494fc7-beed-4ca7-b453-560418fc8df0",
+    "title": "Configurable",
+    "content": "Base class for Agent and Task which can be configured with YAML."
+  },
+  "references/eClassifiers/Process/index.html": {
+    "link-uuid": "91fb5a13-f53a-433c-90dd-f56723d7e64d",
+    "title": "Process",
+    "content": "Processes enable individual agents to operate as a cohesive unit, streamlining their efforts to achieve common objectives with efficiency and coherence."
+  },
+  "references/eClassifiers/Task/index.html": {
+    "link-uuid": "ac883f37-bec2-4f69-b38d-2b20a34731c1",
+    "title": "Task",
+    "content": "Family (from Latin: familia) is a group of people related either by consanguinity (by recognized birth) or affinity (by marriage or other relationship). It forms the basis for social order. The purpose of the family is to maintain the well-being of its members and of society. Ideally, families offer predictability, structure, and safety as members mature and learn to participate in the community. Historically, most human societies use family as the primary locus of attachment, nurturance, and socialization. Anthropologists classify most family organizations as matrifocal (a mother and her children), patrifocal (a father and his children), conjugal (a married couple with children, also called the nuclear family), avuncular (a man, his sister, and her children), or extended (in addition to parents and children, may include grandparents, aunts, uncles, or cousins). The field of genealogy aims to trace family lineages through history. The family is also an important economic unit studied in family economics. The word &ldquo;families&rdquo; can be used metaphorically to create more inclusive categories such as community, nationhood, and global village."
+  },
+  "references/eClassifiers/Tool/inheritance.html": {
+    "path": "Tool/Inheritance",
+    "link-uuid": "217b7da0-1451-4490-82cc-9bf11d704459",
+    "title": "Inheritance",
+    "content": "Supertypes "
+  },
+  "references/eClassifiers/Code/references/eStructuralFeatures/code/index.html": {
+    "path": "Code/Attributes/code",
+    "link-uuid": "88eca87a-051a-4f25-98a2-5ace27b5e59a",
+    "title": "code",
+    "content": "How code attribute is used is subclass-specific: Crew - code is added to the top of the generated crew class after configuration fields and before any other declarations. Agent and Task - code is used as agent/task method body template. Function - code is used to produce function body. Tool - what is added to the tools array. E.g. SerperDevTool(). Code can contain interpolation tokens for adding imports. Example: my_var = ${spel:addItemImport('my_module', 'my_item').item}\n spel: is a prefix for Spring Expression Language tokens. addItemImport('my_module', 'my_item').item - calls org.nasdanika.models.python.Source.addImport() method and then getItem() value of the result. Import methods: addItemImport(module, item) - the method used above addItemImport(module, item, name) - in this case use .name addModuleImport(module) - in this case use add dot and imported item after the token. e.g. ${spel:addModuleImport('my_module').module}.my_item addModuleImport(module, alias) - in this case use add dot and imported item after the token. e.g. ${spel:addModuleImport('my_module', 'mi_modulo').alias}.my_item"
+  },
+  "references/eClassifiers/Guardrail/index.html": {
+    "link-uuid": "ae5c8dfb-8518-4d06-8b25-c881573cd646",
+    "title": "Guardrail",
+    "content": "Task guardrails provide a powerful way to validate, transform, or filter task outputs before they are passed to the next task. Guardrails are optional functions that execute before the next task starts, allowing you to ensure that task outputs meet specific requirements or formats."
+  },
+  "references/eClassifiers/KnowledgeSource/index.html": {
+    "link-uuid": "bcdd0b8b-d323-4578-bed2-07120c9ce589",
+    "title": "KnowledgeSource",
+    "content": "Family (from Latin: familia) is a group of people related either by consanguinity (by recognized birth) or affinity (by marriage or other relationship). It forms the basis for social order. The purpose of the family is to maintain the well-being of its members and of society. Ideally, families offer predictability, structure, and safety as members mature and learn to participate in the community. Historically, most human societies use family as the primary locus of attachment, nurturance, and socialization. Anthropologists classify most family organizations as matrifocal (a mother and her children), patrifocal (a father and his children), conjugal (a married couple with children, also called the nuclear family), avuncular (a man, his sister, and her children), or extended (in addition to parents and children, may include grandparents, aunts, uncles, or cousins). The field of genealogy aims to trace family lineages through history. The family is also an important economic unit studied in family economics. The word &ldquo;families&rdquo; can be used metaphorically to create more inclusive categories such as community, nationhood, and global village."
+  },
+  "references/eClassifiers/Code/references/eStructuralFeatures/imports/index.html": {
+    "path": "Code/Attributes/imports",
+    "link-uuid": "97a49f10-4f9c-4fbc-9f77-ae6b1bc2ed12",
+    "title": "imports",
+    "content": "Imports used by code can be specified as a list of maps or a single map with the keys corresponding to Import attributes."
+  },
+  "index.html": {
+    "link-uuid": "74629c7d-ee20-4311-aded-2d6152ec6217",
+    "title": "CrewAI Model",
+    "content": "Family model is used to demonstrate different Nasdanika technologies such as: Generating of metamodel (Ecore) documentation like this one Loading of models from MS Excel and Drawio diagrams Generation of HTML sites from loaded models The model was created to mimic the model from Eclipse Sirius Basic Family tutorial. This site uses fee icons from Icons8 and quotes Wikipedia articles. The diagram below is interactive: Hover the mouse pointer over the shapes and connections to see tooltips Click on the shapes and connections to navigate to the pages of the respective model elements. Click on the diagram to make it fullscreen. Then you may click on the pencil icon to edit it in the browser. Step callback Agent You can think of an agent as a specialized team member with specific skills, expertise, and responsibilities. Task Tool Guardrail A crew may use multiple LLMs: * Function calling LLM * Manager LLM * Planning LLM Step and taks callbacks Crew A group of agents working together to complete a set of tasks Large Language Model (LLM) Knowledge Source Callback Context Family"
+  },
+  "references/eClassifiers/Crew/index.html": {
+    "link-uuid": "436fa6e2-0748-4055-b312-7940fcae4823",
+    "title": "Crew",
+    "content": "A crew represents a collaborative group of agents working together to accomplish a set of tasks. Each crew defines the strategy for task execution, agent collaboration, and the overall workflow."
+  },
+  "references/eClassifiers/Code/inheritance.html": {
+    "path": "Code/Inheritance",
+    "link-uuid": "8da70d72-0bf7-4765-a0c9-05d86ee29c31",
+    "title": "Inheritance",
+    "content": "Subtypes "
+  },
+  "references/eClassifiers/Code/references/eStructuralFeatures/comment/index.html": {
+    "path": "Code/Attributes/comment",
+    "link-uuid": "258742dd-fb2f-4de0-98cc-e7ac8d6f07dc",
+    "title": "comment",
+    "content": "Comment to add before the code."
+  },
+  "references/eClassifiers/Callback/index.html": {
+    "link-uuid": "d57ff0dc-ddc3-4675-8908-3dc74d826f1f",
+    "title": "Callback",
+    "content": "Crew Step Callback - A function that is called after each step of every agent. Task Callback - A function that is called after the completion of each task. Useful for monitoring or additional operations post-task execution. Agent Step Callback - Function called after each agent step, overrides crew callback. Task Callback - Function/object to be executed after task completion."
+  },
+  "references/eClassifiers/Function/inheritance.html": {
+    "path": "Function/Inheritance",
+    "link-uuid": "3ac1f840-2e4e-456c-bbb3-ab93630bb36f",
+    "title": "Inheritance",
+    "content": "Supertypes Subtypes  "
+  },
+  "references/eClassifiers/Agent/index.html": {
+    "link-uuid": "aa7a50e0-28e5-4ac3-9ae9-319ed554de97",
+    "title": "Agent",
+    "content": "An [Agent](https://docs.crewai.com/concepts/agents) is an autonomous unit that can:\n Perform specific tasks Make decisions based on its role and goal Use tools to accomplish objectives Communicate and collaborate with other agents Maintain memory of interactions Delegate tasks when allowed"
+  },
+  "references/eClassifiers/Agent/inheritance.html": {
+    "path": "Agent/Inheritance",
+    "link-uuid": "bf45aee2-35c5-4289-950a-3756e2e55559",
+    "title": "Inheritance",
+    "content": "Supertypes "
+  },
+  "references/eClassifiers/Tool/references/eStructuralFeatures/declarations/index.html": {
+    "path": "Tool/Attributes/declarations",
+    "link-uuid": "70e94758-5f41-4a74-b3e8-f0f3d8aaf0e1",
+    "title": "declarations",
+    "content": "Declarations used by the tool. Added to the crew class body. For example, a shared search tool can have the following declaration: serper_tool = SeperDevTool()\n In this case the tool code would be serper_tool"
+  },
+  "references/eClassifiers/Agent/references/eStructuralFeatures/embedder/index.html": {
+    "path": "Agent/References/embedder",
+    "link-uuid": "e3c4f1ea-c585-4c88-983b-25c368495f0d",
+    "title": "embedder",
+    "content": "Configuration for the embedder used by the agent."
+  },
+  "references/eClassifiers/Agent/references/eStructuralFeatures/knowledgeSources/index.html": {
+    "path": "Agent/References/knowledgeSources",
+    "link-uuid": "a3cb0557-1b2c-4312-ae63-bef141f3ddb9",
+    "title": "knowledgeSources",
+    "content": "Knowledge sources available to the agent."
+  },
+  "references/eClassifiers/Function/references/eStructuralFeatures/parameters/index.html": {
+    "path": "Function/Attributes/parameters",
+    "link-uuid": "7ac0ed6c-a5b6-4894-b7b8-565a78ee9b63",
+    "title": "parameters",
+    "content": "A list of function parameters."
+  },
+  "references/eClassifiers/LargeLanguageModel/index.html": {
+    "link-uuid": "f4a3d154-13e2-4c06-8736-97fda8c66033",
+    "title": "LargeLanguageModel",
+    "content": "Family (from Latin: familia) is a group of people related either by consanguinity (by recognized birth) or affinity (by marriage or other relationship). It forms the basis for social order. The purpose of the family is to maintain the well-being of its members and of society. Ideally, families offer predictability, structure, and safety as members mature and learn to participate in the community. Historically, most human societies use family as the primary locus of attachment, nurturance, and socialization. Anthropologists classify most family organizations as matrifocal (a mother and her children), patrifocal (a father and his children), conjugal (a married couple with children, also called the nuclear family), avuncular (a man, his sister, and her children), or extended (in addition to parents and children, may include grandparents, aunts, uncles, or cousins). The field of genealogy aims to trace family lineages through history. The family is also an important economic unit studied in family economics. The word &ldquo;families&rdquo; can be used metaphorically to create more inclusive categories such as community, nationhood, and global village."
+  },
+  "references/eClassifiers/Agent/references/eStructuralFeatures/tools/index.html": {
+    "path": "Agent/References/tools",
+    "link-uuid": "6f67c4c3-234a-4984-b734-9fc1d8e06e37",
+    "title": "tools",
+    "content": "Capabilities or functions available to the agent."
+  },
+  "references/eClassifiers/Configurable/references/eStructuralFeatures/configuration/index.html": {
+    "path": "Configurable/Attributes/configuration",
+    "link-uuid": "91d43591-f2e2-400b-927c-a66ff94d5796",
+    "title": "configuration",
+    "content": "YAML configuration."
+  },
+  "references/eClassifiers/Agent/references/eStructuralFeatures/functionCallingLlm/index.html": {
+    "path": "Agent/References/functionCallingLlm",
+    "link-uuid": "c4e78dcc-89c8-4055-8d3a-f16f2ec2f7a9",
+    "title": "functionCallingLlm",
+    "content": "Language model for tool calling, overrides crew&rsquo;s LLM if specified."
+  },
   "references/eClassifiers/Configurable/inheritance.html": {
     "path": "Configurable/Inheritance",
-    "link-uuid": "55a12241-2742-410b-9bf5-4dbd073ac889",
+    "link-uuid": "12d5a97e-02b4-45bc-80d4-cca8bf4090ce",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  "
   },
   "references/eClassifiers/Guardrail/inheritance.html": {
     "path": "Guardrail/Inheritance",
-    "link-uuid": "9bcd459d-8fd4-43d6-a758-37555b91a004",
+    "link-uuid": "83e71e8a-e785-4921-861e-16645273be38",
     "title": "Inheritance",
     "content": "Supertypes "
-  },
-  "index.html": {
-    "link-uuid": "80cad0e2-24c9-4001-ae25-c9e494f80843",
-    "title": "CrewAI Model",
-    "content": "Family model is used to demonstrate different Nasdanika technologies such as: Generating of metamodel (Ecore) documentation like this one Loading of models from MS Excel and Drawio diagrams Generation of HTML sites from loaded models The model was created to mimic the model from Eclipse Sirius Basic Family tutorial. This site uses fee icons from Icons8 and quotes Wikipedia articles. The diagram below is interactive: Hover the mouse pointer over the shapes and connections to see tooltips Click on the shapes and connections to navigate to the pages of the respective model elements. Click on the diagram to make it fullscreen. Then you may click on the pencil icon to edit it in the browser. Step callback Agent You can think of an agent as a specialized team member with specific skills, expertise, and responsibilities. Task Tool Guardrail A crew may use multiple LLMs: * Function calling LLM * Manager LLM * Planning LLM Crew A group of agents working together to complete a set of tasks Large Language Model (LLM) Knowledge Source Callback Context Family"
-  },
-  "references/eClassifiers/Crew/index.html": {
-    "link-uuid": "c5148bc4-9232-47dd-8db2-d2daa6979b2b",
-    "title": "Crew",
-    "content": "Family (from Latin: familia) is a group of people related either by consanguinity (by recognized birth) or affinity (by marriage or other relationship). It forms the basis for social order. The purpose of the family is to maintain the well-being of its members and of society. Ideally, families offer predictability, structure, and safety as members mature and learn to participate in the community. Historically, most human societies use family as the primary locus of attachment, nurturance, and socialization. Anthropologists classify most family organizations as matrifocal (a mother and her children), patrifocal (a father and his children), conjugal (a married couple with children, also called the nuclear family), avuncular (a man, his sister, and her children), or extended (in addition to parents and children, may include grandparents, aunts, uncles, or cousins). The field of genealogy aims to trace family lineages through history. The family is also an important economic unit studied in family economics. The word &ldquo;families&rdquo; can be used metaphorically to create more inclusive categories such as community, nationhood, and global village."
   },
   "references/eClassifiers/Callback/inheritance.html": {
     "path": "Callback/Inheritance",
-    "link-uuid": "20ef01f4-079f-4d70-b023-b2e5808a49e8",
+    "link-uuid": "8a4e269b-f58b-4736-ab4a-a231574f5e0c",
     "title": "Inheritance",
     "content": "Supertypes "
   },
-  "references/eClassifiers/Agent/inheritance.html": {
-    "path": "Agent/Inheritance",
-    "link-uuid": "ac52e33e-9581-45f2-8903-01c467a99ca8",
-    "title": "Inheritance",
-    "content": "Supertypes "
+  "references/eClassifiers/Agent/references/eStructuralFeatures/stepCallback/index.html": {
+    "path": "Agent/References/stepCallback",
+    "link-uuid": "bb7b0990-647b-4993-90d0-36f014b740bc",
+    "title": "stepCallback",
+    "content": "Function called after each agent step, overrides crew callback."
   },
   "references/eClassifiers/Crew/inheritance.html": {
     "path": "Crew/Inheritance",
-    "link-uuid": "af5473d5-8cf6-4576-9e13-85cffdc22303",
+    "link-uuid": "58b0ad6f-cda3-4f85-a52d-4a3458060d07",
     "title": "Inheritance",
     "content": "Supertypes "
   },
-  "references/eClassifiers/Tool/inheritance.html": {
-    "path": "Tool/Inheritance",
-    "link-uuid": "c040f77e-7b61-43b6-b600-b6f979479cf7",
-    "title": "Inheritance",
-    "content": "Supertypes "
+  "references/eClassifiers/Agent/references/eStructuralFeatures/llm/index.html": {
+    "path": "Agent/References/llm",
+    "link-uuid": "bc10d908-83f9-43a7-b823-07fcc70fca52",
+    "title": "llm",
+    "content": "Language model that powers the agent."
   },
-  "references/eClassifiers/Code/inheritance.html": {
-    "path": "Code/Inheritance",
-    "link-uuid": "4948a3ab-6151-4895-b3d3-cd9a8ec44ce6",
-    "title": "Inheritance",
-    "content": "Subtypes "
+  "references/eClassifiers/Code/index.html": {
+    "link-uuid": "c3caaeda-55c3-4c35-99a6-01ad870c1971",
+    "title": "Code",
+    "content": "Base class for model element which generate python code."
   }
 }

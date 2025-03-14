@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.nasdanika.models.crewai.Agent;
+import org.nasdanika.models.crewai.Callback;
 import org.nasdanika.models.crewai.Code;
 import org.nasdanika.models.crewai.Crew;
 import org.nasdanika.models.crewai.CrewaiPackage;
@@ -41,6 +42,8 @@ import org.nasdanika.ncore.impl.DocumentedNamedStringIdentityImpl;
  *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getFunctionCallingLlm <em>Function Calling Llm</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getPlanningLlm <em>Planning Llm</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getEmbedder <em>Embedder</em>}</li>
+ *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getStepCallback <em>Step Callback</em>}</li>
+ *   <li>{@link org.nasdanika.models.crewai.impl.CrewImpl#getTaskCallback <em>Task Callback</em>}</li>
  * </ul>
  *
  * @generated
@@ -408,6 +411,64 @@ public class CrewImpl extends DocumentedNamedStringIdentityImpl implements Crew 
 	 * @generated
 	 */
 	@Override
+	public Callback getStepCallback() {
+		return (Callback)eDynamicGet(CrewaiPackage.CREW__STEP_CALLBACK, CrewaiPackage.Literals.CREW__STEP_CALLBACK, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Callback basicGetStepCallback() {
+		return (Callback)eDynamicGet(CrewaiPackage.CREW__STEP_CALLBACK, CrewaiPackage.Literals.CREW__STEP_CALLBACK, false, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setStepCallback(Callback newStepCallback) {
+		eDynamicSet(CrewaiPackage.CREW__STEP_CALLBACK, CrewaiPackage.Literals.CREW__STEP_CALLBACK, newStepCallback);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Callback getTaskCallback() {
+		return (Callback)eDynamicGet(CrewaiPackage.CREW__TASK_CALLBACK, CrewaiPackage.Literals.CREW__TASK_CALLBACK, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Callback basicGetTaskCallback() {
+		return (Callback)eDynamicGet(CrewaiPackage.CREW__TASK_CALLBACK, CrewaiPackage.Literals.CREW__TASK_CALLBACK, false, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTaskCallback(Callback newTaskCallback) {
+		eDynamicSet(CrewaiPackage.CREW__TASK_CALLBACK, CrewaiPackage.Literals.CREW__TASK_CALLBACK, newTaskCallback);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CrewaiPackage.CREW__TOOLS:
@@ -464,6 +525,12 @@ public class CrewImpl extends DocumentedNamedStringIdentityImpl implements Crew 
 			case CrewaiPackage.CREW__EMBEDDER:
 				if (resolve) return getEmbedder();
 				return basicGetEmbedder();
+			case CrewaiPackage.CREW__STEP_CALLBACK:
+				if (resolve) return getStepCallback();
+				return basicGetStepCallback();
+			case CrewaiPackage.CREW__TASK_CALLBACK:
+				if (resolve) return getTaskCallback();
+				return basicGetTaskCallback();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -523,6 +590,12 @@ public class CrewImpl extends DocumentedNamedStringIdentityImpl implements Crew 
 			case CrewaiPackage.CREW__EMBEDDER:
 				setEmbedder((Code)newValue);
 				return;
+			case CrewaiPackage.CREW__STEP_CALLBACK:
+				setStepCallback((Callback)newValue);
+				return;
+			case CrewaiPackage.CREW__TASK_CALLBACK:
+				setTaskCallback((Callback)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -577,6 +650,12 @@ public class CrewImpl extends DocumentedNamedStringIdentityImpl implements Crew 
 			case CrewaiPackage.CREW__EMBEDDER:
 				setEmbedder((Code)null);
 				return;
+			case CrewaiPackage.CREW__STEP_CALLBACK:
+				setStepCallback((Callback)null);
+				return;
+			case CrewaiPackage.CREW__TASK_CALLBACK:
+				setTaskCallback((Callback)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -617,6 +696,10 @@ public class CrewImpl extends DocumentedNamedStringIdentityImpl implements Crew 
 				return basicGetPlanningLlm() != null;
 			case CrewaiPackage.CREW__EMBEDDER:
 				return basicGetEmbedder() != null;
+			case CrewaiPackage.CREW__STEP_CALLBACK:
+				return basicGetStepCallback() != null;
+			case CrewaiPackage.CREW__TASK_CALLBACK:
+				return basicGetTaskCallback() != null;
 		}
 		return super.eIsSet(featureID);
 	}
