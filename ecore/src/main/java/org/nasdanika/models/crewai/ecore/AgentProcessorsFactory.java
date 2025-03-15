@@ -32,18 +32,15 @@ public class AgentProcessorsFactory {
 	@EClassifierNodeProcessorFactory(
 			icon = "https://crew-ai.models.nasdanika.org/images/software-agent.svg", 
 			description = "Think of an agent as a specialized team member with specific skills, expertise, and responsibilities",
-			documentation = 
-                    """
+			documentation = """
+					An [Agent](https://docs.crewai.com/concepts/agents) is an autonomous unit that can:
 					
-                    An [Agent](https://docs.crewai.com/concepts/agents) is an autonomous unit that can:
-
 					* Perform specific [tasks](../Task/index.html)
 					* Make decisions based on its role and goal
 					* Use [tools](../Tool/index.html) to accomplish objectives
 					* Communicate and collaborate with other agents
 					* Maintain memory of interactions
-					* Delegate tasks when allowed
-										
+					* Delegate tasks when allowed										
                     """
 	)
 	public EClassNodeProcessor createAgentProcessor(

@@ -114,7 +114,7 @@ public class EcoreGenCrewAIProcessorsFactory {
 				
 				[^attribution]: Documentation in this model is copied verbatim or almost verbatim from the reference documentation for the purpose of consistency.   
 
-				However, the main objective of the model is to serve as an intermediary for code generation.
+				However, the main objective of the model is to serve as an intermediary for code and documentation generation.
 				The model can be populated from diagrams and other data sources.
 				Then it produces a [python model](https://python.models.nasdanika.org/) and, finally, Python sources and supporting artifacts.
 				

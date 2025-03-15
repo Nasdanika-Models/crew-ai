@@ -34,6 +34,8 @@ public class TestDocSiteGen {
 		
 		// Tools
 		Tool serper = crewaiFactory.createTool();
+		serper.setName("Serper");
+		serper.setDescription("Searches internet");
 		serper.setCode("SerperDevTool()");		
 		serper.setImports(
 				"""
