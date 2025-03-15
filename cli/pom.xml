@@ -18,7 +18,7 @@
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>model</artifactId>
+			<artifactId>doc</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>

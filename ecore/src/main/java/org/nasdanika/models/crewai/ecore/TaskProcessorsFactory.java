@@ -34,10 +34,10 @@ public class TaskProcessorsFactory {
 			description = "A specific assignment completed by an Agent",
 			documentation = 
                     """					
-                     A [Task](https://docs.crewai.com/concepts/tasks) is a specific assignment completed by an [Agent](../Agent/index.html).
-                     Tasks provide all necessary details for execution, such as a description, the agent responsible, required [tools](../Tool/index.html), 
-                     and more, facilitating a wide range of action complexities.
-
+					A [Task](https://docs.crewai.com/concepts/tasks) is a specific assignment completed by an [Agent](../Agent/index.html).
+					Tasks provide all necessary details for execution, such as a description, the agent responsible, required [tools](../Tool/index.html), 
+					and more, facilitating a wide range of action complexities.
+					
 					Tasks can be collaborative, requiring multiple agents to work together. 
                     """
 	)
