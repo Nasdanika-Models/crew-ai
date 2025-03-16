@@ -101,7 +101,7 @@ public class CrewNodeProcessor extends CodeNodeProcessor<Crew> {
 					Action::getChildren,
 					"tasks.html", 
 					"Tasks", 
-					TASK_ICON);
+					TASKS_ICON);
 			
 			for (Entry<EReferenceConnection, Collection<Label>> re: sorted) {
 				tasksAction.getChildren().addAll(re.getValue());
@@ -146,7 +146,7 @@ public class CrewNodeProcessor extends CodeNodeProcessor<Crew> {
 					Action::getChildren,
 					"tools.html", 
 					"Tools", 
-					TOOL_ICON);
+					TOOLS_ICON);
 			
 			for (Entry<EReferenceConnection, Collection<Label>> re: sorted) {
 				toolsAction.getChildren().addAll(re.getValue());

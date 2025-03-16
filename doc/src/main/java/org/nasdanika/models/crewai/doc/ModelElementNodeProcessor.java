@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.nasdanika.common.Context;
 import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.common.Util;
+import org.nasdanika.drawio.emf.AbstractDrawioFactory;
 import org.nasdanika.graph.emf.EReferenceConnection;
 import org.nasdanika.graph.processor.NodeProcessorConfig;
 import org.nasdanika.models.app.Action;
@@ -29,7 +30,9 @@ public abstract class ModelElementNodeProcessor<T extends EObject> extends EObje
 	
 	public static final String GUARDRAIL_ICON = "https://crew-ai.models.nasdanika.org/images/barrier.svg";
 	public static final String TOOL_ICON = "https://crew-ai.models.nasdanika.org/images/tool.svg";	
+	public static final String TOOLS_ICON = "https://crew-ai.models.nasdanika.org/images/toolbox.svg";	
 	public static final String TASK_ICON = "https://crew-ai.models.nasdanika.org/images/task.svg";	
+	public static final String TASKS_ICON = "https://crew-ai.models.nasdanika.org/images/project-management.svg";	
 	public static final String LLM_ICON = "https://crew-ai.models.nasdanika.org/images/ai.svg";	
 	public static final String KNOWLDEGE_SOURCE_ICON = "https://crew-ai.models.nasdanika.org/images/book.svg";	
 	public static final String FUNCTION_ICON = "https://crew-ai.models.nasdanika.org/images/settings.svg";	
@@ -85,7 +88,14 @@ public abstract class ModelElementNodeProcessor<T extends EObject> extends EObje
 		}		
 	}
 
-	protected String getIcon() {
+	protected String getIcon() {		
+		for (Map.Entry<String, String> representation: getRepresentations().entrySet()) {
+			if (AbstractDrawioFactory.IMAGE_REPRESENTATION.equals(representation.getKey())) {
+				String imageRepr = representation.getValue();
+				return getImageRepresentationIcon(imageRepr);				
+			}
+		}
+		
 		return getTypeIcon();
 	}	
 	
@@ -141,6 +151,5 @@ public abstract class ModelElementNodeProcessor<T extends EObject> extends EObje
 		Object label = widgetFactory.createLabel(progressMonitor);
 		return label instanceof Label ? ((Label) label).getTooltip() : null;
 	}	
-	
-	
+		
 }
