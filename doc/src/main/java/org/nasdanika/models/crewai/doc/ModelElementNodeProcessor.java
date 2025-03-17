@@ -3,11 +3,13 @@ package org.nasdanika.models.crewai.doc;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.function.Predicate;
 
 import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.nasdanika.common.Context;
+import org.nasdanika.common.DocumentationFactory;
 import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.common.Util;
 import org.nasdanika.drawio.emf.AbstractDrawioFactory;
@@ -42,11 +44,16 @@ public abstract class ModelElementNodeProcessor<T extends EObject> extends EObje
 	public static final String CODE_ICON = "https://crew-ai.models.nasdanika.org/images/script.svg";	
 	public static final String AGENT_ICON = "https://crew-ai.models.nasdanika.org/images/software-agent.svg";
 	
+	protected Collection<DocumentationFactory> documentationFactories;
+	
 	protected ModelElementNodeProcessor(
 		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
 		Context context,
-		java.util.function.Function<ProgressMonitor, Action> prototypeProvider) {
+		java.util.function.Function<ProgressMonitor, Action> prototypeProvider,
+		Collection<DocumentationFactory> documentationFactories) {
+		
 		super(config, context, prototypeProvider);
+		this.documentationFactories = documentationFactories;
 	}		
 	
 	/**
@@ -102,35 +109,74 @@ public abstract class ModelElementNodeProcessor<T extends EObject> extends EObje
 	protected String getTypeIcon() {
 		return null;
 	}
-		
+	
 	/**
 	 * Returns an action matched by location, creates if necessary..
 	 * @param parent
 	 * @return
 	 */
-	protected Action getRoleAction(
-			Action parent, 
-			java.util.function.Function<Action, Collection<? super Action>> accessor,
+	protected Action getRoleActionByLocation(
+			Collection<? super Action> roleActions, 
 			String location, 
 			String text,
 			String icon) {
 		
-		Collection<? super Action> roleActions = accessor.apply(parent);
+		Action ret = getRoleAction(
+				roleActions, 
+				e -> e instanceof Action && location.equals(((Action) e).getLocation()), 
+				text, 
+				icon);
+		
+		ret.setLocation(location);
+		return ret;
+	}	
+	
+	/**
+	 * Returns an action matched by name (for sections), creates if necessary..
+	 * @param parent
+	 * @return
+	 */
+	protected Action getRoleActionByName(
+			Collection<? super Action> roleActions, 
+			String name, 
+			String text,
+			String icon) {
+		
+		Action ret = getRoleAction(
+				roleActions, 
+				e -> e instanceof Action && name.equals(((Action) e).getName()), 
+				text, 
+				icon);
+		
+		ret.setName(name);
+		return ret;
+	}	
+		
+	/**
+	 * Returns an action matched by predicate, creates if necessary..
+	 * @param parent
+	 * @return
+	 */
+	protected Action getRoleAction(
+			Collection<? super Action> roleActions, 
+			Predicate<Object> predicate, 
+			String text,
+			String icon) {
+		
 		return roleActions
 			.stream()
-			.filter(e -> e instanceof Action && location.equals(((Action) e).getLocation()))
+			.filter(predicate)
 			.findFirst()
 			.map(Action.class::cast)
 			.orElseGet(() -> {
 				Action ret = AppFactory.eINSTANCE.createAction();
 				ret.setText(text);
 				ret.setIcon(icon);
-				ret.setLocation(location);
 				roleActions.add(ret);
 				return ret;
 			});
 	}	
-	
+
 	/**
 	 * Builds columns for {@link ENamedElement}
 	 * @param tableBuilder

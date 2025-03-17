@@ -7,6 +7,7 @@ import java.util.Map.Entry;
 
 import org.eclipse.emf.ecore.EReference;
 import org.nasdanika.common.Context;
+import org.nasdanika.common.DocumentationFactory;
 import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.graph.emf.EReferenceConnection;
 import org.nasdanika.graph.processor.NodeProcessorConfig;
@@ -24,8 +25,10 @@ public class CrewNodeProcessor extends CodeNodeProcessor<Crew> {
 	public CrewNodeProcessor(
 		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
 		Context context,
-		java.util.function.Function<ProgressMonitor, Action> prototypeProvider) {
-		super(config, context, prototypeProvider);
+		java.util.function.Function<ProgressMonitor, Action> prototypeProvider,
+		Collection<DocumentationFactory> documentationFactories) {
+		
+		super(config, context, prototypeProvider, documentationFactories);
 	}		
 
 	@Override
@@ -50,9 +53,8 @@ public class CrewNodeProcessor extends CodeNodeProcessor<Crew> {
 
 		// A page with a dynamic agents table and links to agent pages.
 		for (Label label: labels) {
-			Action agentsAction = getRoleAction(
-					(Action) label, 
-					Action::getChildren,
+			Action agentsAction = getRoleActionByLocation(
+					((Action) label).getChildren(), 
 					"agents.html", 
 					"Agents", 
 					AGENT_ICON);
@@ -96,9 +98,8 @@ public class CrewNodeProcessor extends CodeNodeProcessor<Crew> {
 
 		// A page with a dynamic agents table and links to agent pages.
 		for (Label label: labels) {
-			Action tasksAction = getRoleAction(
-					(Action) label, 
-					Action::getChildren,
+			Action tasksAction = getRoleActionByLocation(
+					((Action) label).getChildren(), 
 					"tasks.html", 
 					"Tasks", 
 					TASKS_ICON);
@@ -141,9 +142,8 @@ public class CrewNodeProcessor extends CodeNodeProcessor<Crew> {
 
 		// A page with a dynamic agents table and links to agent pages.
 		for (Label label: labels) {
-			Action toolsAction = getRoleAction(
-					(Action) label, 
-					Action::getChildren,
+			Action toolsAction = getRoleActionByLocation(
+					((Action) label).getChildren(), 
 					"tools.html", 
 					"Tools", 
 					TOOLS_ICON);
@@ -187,9 +187,8 @@ public class CrewNodeProcessor extends CodeNodeProcessor<Crew> {
 
 		// A page with a dynamic agents table and links to agent pages.
 		for (Label label: labels) {
-			Action knowledgeSourcesAction = getRoleAction(
-					(Action) label, 
-					Action::getChildren,
+			Action knowledgeSourcesAction = getRoleActionByLocation(
+					((Action) label).getChildren(), 
 					"knowledge-sources.html", 
 					"Knowledge Sources", 
 					KNOWLDEGE_SOURCE_ICON);

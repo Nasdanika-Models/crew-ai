@@ -1,5 +1,5 @@
 import org.nasdanika.capability.CapabilityFactory;
-import org.nasdanika.models.crewai.cli.CrewAICommandFactory;
+import org.nasdanika.models.crewai.cli.CrewAIGeneratorCommandFactory;
 
 module org.nasdanika.models.crewai.cli {
 	
@@ -10,6 +10,6 @@ module org.nasdanika.models.crewai.cli {
 	opens org.nasdanika.models.crewai.cli;
 		
 	provides CapabilityFactory with 
-		CrewAICommandFactory;
+		CrewAIGeneratorCommandFactory;
 
 }

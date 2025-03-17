@@ -1,9 +1,11 @@
 package org.nasdanika.models.crewai.doc;
 
+import java.util.Collection;
 import java.util.function.BiConsumer;
 
 import org.eclipse.emf.common.util.URI;
 import org.nasdanika.common.Context;
+import org.nasdanika.common.DocumentationFactory;
 import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.graph.Element;
 import org.nasdanika.graph.emf.EObjectNode;
@@ -34,6 +36,7 @@ public class CrewAINodeProcessorFactory {
 			
 	private Context context;
 	private java.util.function.BiFunction<URI, ProgressMonitor, Label> prototypeProvider;
+	private Collection<DocumentationFactory> documentationFactories;
 
 	protected java.util.function.Function<ProgressMonitor, Action> getPrototypeProvider(NodeProcessorConfig<WidgetFactory, WidgetFactory> config) {
 		return progressMonitor -> {
@@ -56,9 +59,11 @@ public class CrewAINodeProcessorFactory {
 	 */
 	public CrewAINodeProcessorFactory(
 			Context context, 
-			java.util.function.BiFunction<URI, ProgressMonitor, Label> prototypeProvider)  {
+			java.util.function.BiFunction<URI, ProgressMonitor, Label> prototypeProvider,
+			Collection<DocumentationFactory> documentationFactories)  {
 		this.context = context;
 		this.prototypeProvider = prototypeProvider;
+		this.documentationFactories = documentationFactories;
 	}
 	
 	@EObjectNodeProcessor(type = Code.class)
@@ -68,7 +73,11 @@ public class CrewAINodeProcessorFactory {
 			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
-		return new CodeNodeProcessor<Code>(config, context, getPrototypeProvider(config));
+		return new CodeNodeProcessor<Code>(
+				config, 
+				context, 
+				getPrototypeProvider(config), 
+				documentationFactories);
 	}
 	
 	@EObjectNodeProcessor(type = org.nasdanika.models.crewai.Function.class)
@@ -78,7 +87,11 @@ public class CrewAINodeProcessorFactory {
 			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
-		return new FunctionNodeProcessor<org.nasdanika.models.crewai.Function>(config, context, getPrototypeProvider(config));
+		return new FunctionNodeProcessor<org.nasdanika.models.crewai.Function>(
+				config, 
+				context, 
+				getPrototypeProvider(config), 
+				documentationFactories);
 	}
 	
 	@EObjectNodeProcessor(type = Guardrail.class)
@@ -88,7 +101,11 @@ public class CrewAINodeProcessorFactory {
 			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
-		return new GuardrailNodeProcessor(config, context, getPrototypeProvider(config));
+		return new GuardrailNodeProcessor(
+				config, 
+				context, 
+				getPrototypeProvider(config), 
+				documentationFactories);
 	}
 	
 	@EObjectNodeProcessor(type = Callback.class)
@@ -98,7 +115,11 @@ public class CrewAINodeProcessorFactory {
 			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
-		return new CallbackNodeProcessor(config, context, getPrototypeProvider(config));
+		return new CallbackNodeProcessor(
+				config, 
+				context, 
+				getPrototypeProvider(config), 
+				documentationFactories);
 	}
 	
 	@EObjectNodeProcessor(type = Tool.class)
@@ -108,7 +129,11 @@ public class CrewAINodeProcessorFactory {
 			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
-		return new ToolNodeProcessor(config, context, getPrototypeProvider(config));
+		return new ToolNodeProcessor(
+				config, 
+				context, 
+				getPrototypeProvider(config), 
+				documentationFactories);
 	}
 	
 	@EObjectNodeProcessor(type = Agent.class)
@@ -118,7 +143,11 @@ public class CrewAINodeProcessorFactory {
 			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
-		return new AgentNodeProcessor(config, context, getPrototypeProvider(config));
+		return new AgentNodeProcessor(
+				config, 
+				context, 
+				getPrototypeProvider(config), 
+				documentationFactories);
 	}
 	
 	@EObjectNodeProcessor(type = Crew.class)
@@ -128,7 +157,11 @@ public class CrewAINodeProcessorFactory {
 			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
-		return new CrewNodeProcessor(config, context, getPrototypeProvider(config));
+		return new CrewNodeProcessor(
+				config, 
+				context, 
+				getPrototypeProvider(config), 
+				documentationFactories);
 	}
 	
 	@EObjectNodeProcessor(type = Task.class)
@@ -138,7 +171,11 @@ public class CrewAINodeProcessorFactory {
 			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
-		return new TaskNodeProcessor(config, context, getPrototypeProvider(config));
+		return new TaskNodeProcessor(
+				config, 
+				context, 
+				getPrototypeProvider(config), 
+				documentationFactories);
 	}
 	
 	@EObjectNodeProcessor(type = LargeLanguageModel.class)
@@ -148,7 +185,11 @@ public class CrewAINodeProcessorFactory {
 			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
-		return new LargeLanguageModelNodeProcessor(config, context, getPrototypeProvider(config));
+		return new LargeLanguageModelNodeProcessor(
+				config, 
+				context, 
+				getPrototypeProvider(config), 
+				documentationFactories);
 	}
 	
 	@EObjectNodeProcessor(type = KnowledgeSource.class)
@@ -158,7 +199,11 @@ public class CrewAINodeProcessorFactory {
 			BiConsumer<Element,BiConsumer<ProcessorInfo<Object>,ProgressMonitor>> infoProvider,
 			ProgressMonitor progressMonitor) {
 		
-		return new KnowledgeSourceNodeProcessor(config, context, getPrototypeProvider(config));
+		return new KnowledgeSourceNodeProcessor(
+				config, 
+				context, 
+				getPrototypeProvider(config), 
+				documentationFactories);
 	}
 	
 }

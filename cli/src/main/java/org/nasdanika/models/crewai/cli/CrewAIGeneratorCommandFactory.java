@@ -4,25 +4,24 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 
-import org.nasdanika.capability.CapabilityFactory.Loader;
 import org.nasdanika.cli.SubCommandCapabilityFactory;
 import org.nasdanika.common.ProgressMonitor;
 
 import picocli.CommandLine;
 
-public class CrewAICommandFactory extends SubCommandCapabilityFactory<CrewAICommand> {
+public class CrewAIGeneratorCommandFactory extends SubCommandCapabilityFactory<CrewAIGeneratorCommand> {
 
 	@Override
-	protected Class<CrewAICommand> getCommandType() {
-		return CrewAICommand.class;
+	protected Class<CrewAIGeneratorCommand> getCommandType() {
+		return CrewAIGeneratorCommand.class;
 	}
 	
 	@Override
-	protected CompletionStage<CrewAICommand> doCreateCommand(
+	protected CompletionStage<CrewAIGeneratorCommand> doCreateCommand(
 			List<CommandLine> parentPath,
 			Loader loader,
 			ProgressMonitor progressMonitor) {
-		return CompletableFuture.completedStage(new CrewAICommand(loader.getCapabilityLoader()));
+		return CompletableFuture.completedStage(new CrewAIGeneratorCommand(loader.getCapabilityLoader()));
 	}
 
 }
