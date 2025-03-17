@@ -25,4 +25,6 @@ public class FunctionNodeProcessor<T extends org.nasdanika.models.crewai.Functio
 		return FUNCTION_ICON;
 	}	
 	
+	// TODO - parameters section with a table to the code page
+	
 }

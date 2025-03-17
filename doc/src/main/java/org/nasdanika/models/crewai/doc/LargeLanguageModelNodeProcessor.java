@@ -26,4 +26,6 @@ public class LargeLanguageModelNodeProcessor extends ModelElementNodeProcessor<L
 		return LLM_ICON;
 	}
 	
+	// TODO - agents using this LLM, aggregation of incoming references
+	
 }

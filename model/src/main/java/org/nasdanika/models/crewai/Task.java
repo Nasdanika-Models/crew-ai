@@ -49,12 +49,14 @@ public interface Task extends Configurable {
 
 	/**
 	 * Returns the value of the '<em><b>Agent</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link org.nasdanika.models.crewai.Agent#getTasks <em>Tasks</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Agent</em>' reference.
 	 * @see #setAgent(Agent)
 	 * @see org.nasdanika.models.crewai.CrewaiPackage#getTask_Agent()
-	 * @model
+	 * @see org.nasdanika.models.crewai.Agent#getTasks
+	 * @model opposite="tasks"
 	 * @generated
 	 */
 	Agent getAgent();
@@ -72,11 +74,13 @@ public interface Task extends Configurable {
 	/**
 	 * Returns the value of the '<em><b>Tools</b></em>' reference list.
 	 * The list contents are of type {@link org.nasdanika.models.crewai.Tool}.
+	 * It is bidirectional and its opposite is '{@link org.nasdanika.models.crewai.Tool#getTasks <em>Tasks</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Tools</em>' reference list.
 	 * @see org.nasdanika.models.crewai.CrewaiPackage#getTask_Tools()
-	 * @model
+	 * @see org.nasdanika.models.crewai.Tool#getTasks
+	 * @model opposite="tasks"
 	 * @generated
 	 */
 	EList<Tool> getTools();

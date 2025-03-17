@@ -942,13 +942,31 @@ public interface CrewaiPackage extends EPackage {
 	int TOOL__DECLARATIONS = CODE_FEATURE_COUNT + 11;
 
 	/**
+	 * The feature id for the '<em><b>Tasks</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOOL__TASKS = CODE_FEATURE_COUNT + 12;
+
+	/**
+	 * The feature id for the '<em><b>Agents</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOOL__AGENTS = CODE_FEATURE_COUNT + 13;
+
+	/**
 	 * The number of structural features of the '<em>Tool</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TOOL_FEATURE_COUNT = CODE_FEATURE_COUNT + 12;
+	int TOOL_FEATURE_COUNT = CODE_FEATURE_COUNT + 14;
 
 	/**
 	 * The number of operations of the '<em>Tool</em>' class.
@@ -1149,13 +1167,22 @@ public interface CrewaiPackage extends EPackage {
 	int AGENT__EMBEDDER = CONFIGURABLE_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Tasks</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__TASKS = CONFIGURABLE_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Agent</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT_FEATURE_COUNT = CONFIGURABLE_FEATURE_COUNT + 6;
+	int AGENT_FEATURE_COUNT = CONFIGURABLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of operations of the '<em>Agent</em>' class.
@@ -1880,13 +1907,22 @@ public interface CrewaiPackage extends EPackage {
 	int KNOWLEDGE_SOURCE__ID = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY__ID;
 
 	/**
+	 * The feature id for the '<em><b>Agents</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KNOWLEDGE_SOURCE__AGENTS = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Knowledge Source</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int KNOWLEDGE_SOURCE_FEATURE_COUNT = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 0;
+	int KNOWLEDGE_SOURCE_FEATURE_COUNT = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Knowledge Source</em>' class.
@@ -1949,6 +1985,28 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTool_Declarations();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.nasdanika.models.crewai.Tool#getTasks <em>Tasks</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Tasks</em>'.
+	 * @see org.nasdanika.models.crewai.Tool#getTasks()
+	 * @see #getTool()
+	 * @generated
+	 */
+	EReference getTool_Tasks();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.nasdanika.models.crewai.Tool#getAgents <em>Agents</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Agents</em>'.
+	 * @see org.nasdanika.models.crewai.Tool#getAgents()
+	 * @see #getTool()
+	 * @generated
+	 */
+	EReference getTool_Agents();
 
 	/**
 	 * Returns the meta object for class '{@link org.nasdanika.models.crewai.Agent <em>Agent</em>}'.
@@ -2025,6 +2083,17 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAgent_Embedder();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.nasdanika.models.crewai.Agent#getTasks <em>Tasks</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Tasks</em>'.
+	 * @see org.nasdanika.models.crewai.Agent#getTasks()
+	 * @see #getAgent()
+	 * @generated
+	 */
+	EReference getAgent_Tasks();
 
 	/**
 	 * Returns the meta object for class '{@link org.nasdanika.models.crewai.Crew <em>Crew</em>}'.
@@ -2371,6 +2440,17 @@ public interface CrewaiPackage extends EPackage {
 	EClass getKnowledgeSource();
 
 	/**
+	 * Returns the meta object for the reference list '{@link org.nasdanika.models.crewai.KnowledgeSource#getAgents <em>Agents</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Agents</em>'.
+	 * @see org.nasdanika.models.crewai.KnowledgeSource#getAgents()
+	 * @see #getKnowledgeSource()
+	 * @generated
+	 */
+	EReference getKnowledgeSource_Agents();
+
+	/**
 	 * Returns the meta object for enum '{@link org.nasdanika.models.crewai.Process <em>Process</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2436,6 +2516,20 @@ public interface CrewaiPackage extends EPackage {
 		 */
 		EAttribute TOOL__DECLARATIONS = eINSTANCE.getTool_Declarations();
 		/**
+		 * The meta object literal for the '<em><b>Tasks</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TOOL__TASKS = eINSTANCE.getTool_Tasks();
+		/**
+		 * The meta object literal for the '<em><b>Agents</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TOOL__AGENTS = eINSTANCE.getTool_Agents();
+		/**
 		 * The meta object literal for the '{@link org.nasdanika.models.crewai.impl.AgentImpl <em>Agent</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2486,6 +2580,13 @@ public interface CrewaiPackage extends EPackage {
 		 * @generated
 		 */
 		EReference AGENT__EMBEDDER = eINSTANCE.getAgent_Embedder();
+		/**
+		 * The meta object literal for the '<em><b>Tasks</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AGENT__TASKS = eINSTANCE.getAgent_Tasks();
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.models.crewai.impl.CrewImpl <em>Crew</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -2726,6 +2827,13 @@ public interface CrewaiPackage extends EPackage {
 		 * @generated
 		 */
 		EClass KNOWLEDGE_SOURCE = eINSTANCE.getKnowledgeSource();
+		/**
+		 * The meta object literal for the '<em><b>Agents</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference KNOWLEDGE_SOURCE__AGENTS = eINSTANCE.getKnowledgeSource_Agents();
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.models.crewai.Process <em>Process</em>}' enum.
 		 * <!-- begin-user-doc -->

@@ -215,6 +215,6 @@ public class CrewNodeProcessor extends CodeNodeProcessor<Crew> {
 		}
 	}
 	
-	
+	// TODO - befor/after kickoff, process, language models, manager agent, manager llm, function calling lllm, planning llm, embedder, step callback, task callback
 	
 }

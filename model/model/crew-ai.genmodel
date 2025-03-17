@@ -28,6 +28,8 @@
     </genClasses>
     <genClasses ecoreClass="crew-ai.ecore#//Tool">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crew-ai.ecore#//Tool/declarations"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Tool/tasks"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Tool/agents"/>
     </genClasses>
     <genClasses ecoreClass="crew-ai.ecore#//Agent">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Agent/tools"/>
@@ -36,6 +38,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Agent/stepCallback"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Agent/knowledgeSources"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Agent/embedder"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Agent/tasks"/>
     </genClasses>
     <genClasses ecoreClass="crew-ai.ecore#//Crew">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Crew/tools"/>
@@ -62,6 +65,8 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Task/callback"/>
     </genClasses>
     <genClasses ecoreClass="crew-ai.ecore#//LargeLanguageModel"/>
-    <genClasses ecoreClass="crew-ai.ecore#//KnowledgeSource"/>
+    <genClasses ecoreClass="crew-ai.ecore#//KnowledgeSource">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crew-ai.ecore#//KnowledgeSource/agents"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

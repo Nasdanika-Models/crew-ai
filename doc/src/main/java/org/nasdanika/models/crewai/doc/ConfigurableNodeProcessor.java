@@ -15,6 +15,7 @@ import org.nasdanika.models.app.Action;
 import org.nasdanika.models.app.Label;
 import org.nasdanika.models.app.graph.WidgetFactory;
 import org.nasdanika.models.crewai.Configurable;
+import org.yaml.snakeyaml.Yaml;
 
 public class ConfigurableNodeProcessor<T extends Configurable> extends CodeNodeProcessor<T> {
 
@@ -31,6 +32,19 @@ public class ConfigurableNodeProcessor<T extends Configurable> extends CodeNodeP
 	protected String getTypeIcon() {
 		return CONFIGURABLE_ICON;
 	}	
+	
+	/**
+	 * @return parsed configuration of null
+	 */
+	protected Object getConfiguration() {
+		Configurable target = getTarget();
+		String configuration = target.getConfiguration();
+		if (Util.isBlank(configuration)) {
+			return null;
+		}
+		Yaml yaml = new Yaml();
+		return yaml.load(configuration);		
+	}
 	
 	@Override
 	protected Label createAction(ProgressMonitor progressMonitor) {

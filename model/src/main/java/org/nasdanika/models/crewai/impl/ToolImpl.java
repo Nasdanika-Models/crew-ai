@@ -12,7 +12,9 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.nasdanika.common.Adaptable;
+import org.nasdanika.models.crewai.Agent;
 import org.nasdanika.models.crewai.CrewaiPackage;
+import org.nasdanika.models.crewai.Task;
 import org.nasdanika.models.crewai.Tool;
 import org.nasdanika.ncore.Documented;
 import org.nasdanika.ncore.DocumentedNamedElement;
@@ -45,6 +47,8 @@ import org.nasdanika.persistence.Marked;
  *   <li>{@link org.nasdanika.models.crewai.impl.ToolImpl#getContextHelp <em>Context Help</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.ToolImpl#getId <em>Id</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.ToolImpl#getDeclarations <em>Declarations</em>}</li>
+ *   <li>{@link org.nasdanika.models.crewai.impl.ToolImpl#getTasks <em>Tasks</em>}</li>
+ *   <li>{@link org.nasdanika.models.crewai.impl.ToolImpl#getAgents <em>Agents</em>}</li>
  * </ul>
  *
  * @generated
@@ -316,6 +320,45 @@ public class ToolImpl extends CodeImpl implements Tool {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EList<Task> getTasks() {
+		return (EList<Task>)eDynamicGet(CrewaiPackage.TOOL__TASKS, CrewaiPackage.Literals.TOOL__TASKS, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EList<Agent> getAgents() {
+		return (EList<Agent>)eDynamicGet(CrewaiPackage.TOOL__AGENTS, CrewaiPackage.Literals.TOOL__AGENTS, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case CrewaiPackage.TOOL__TASKS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTasks()).basicAdd(otherEnd, msgs);
+			case CrewaiPackage.TOOL__AGENTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getAgents()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -331,6 +374,10 @@ public class ToolImpl extends CodeImpl implements Tool {
 				return ((InternalEList<?>)getDocumentation()).basicRemove(otherEnd, msgs);
 			case CrewaiPackage.TOOL__CONTEXT_HELP:
 				return ((InternalEList<?>)getContextHelp()).basicRemove(otherEnd, msgs);
+			case CrewaiPackage.TOOL__TASKS:
+				return ((InternalEList<?>)getTasks()).basicRemove(otherEnd, msgs);
+			case CrewaiPackage.TOOL__AGENTS:
+				return ((InternalEList<?>)getAgents()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -368,6 +415,10 @@ public class ToolImpl extends CodeImpl implements Tool {
 				return getId();
 			case CrewaiPackage.TOOL__DECLARATIONS:
 				return getDeclarations();
+			case CrewaiPackage.TOOL__TASKS:
+				return getTasks();
+			case CrewaiPackage.TOOL__AGENTS:
+				return getAgents();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -422,6 +473,14 @@ public class ToolImpl extends CodeImpl implements Tool {
 			case CrewaiPackage.TOOL__DECLARATIONS:
 				setDeclarations((String)newValue);
 				return;
+			case CrewaiPackage.TOOL__TASKS:
+				getTasks().clear();
+				getTasks().addAll((Collection<? extends Task>)newValue);
+				return;
+			case CrewaiPackage.TOOL__AGENTS:
+				getAgents().clear();
+				getAgents().addAll((Collection<? extends Agent>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -470,6 +529,12 @@ public class ToolImpl extends CodeImpl implements Tool {
 			case CrewaiPackage.TOOL__DECLARATIONS:
 				setDeclarations(DECLARATIONS_EDEFAULT);
 				return;
+			case CrewaiPackage.TOOL__TASKS:
+				getTasks().clear();
+				return;
+			case CrewaiPackage.TOOL__AGENTS:
+				getAgents().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -506,6 +571,10 @@ public class ToolImpl extends CodeImpl implements Tool {
 				return ID_EDEFAULT == null ? getId() != null : !ID_EDEFAULT.equals(getId());
 			case CrewaiPackage.TOOL__DECLARATIONS:
 				return DECLARATIONS_EDEFAULT == null ? getDeclarations() != null : !DECLARATIONS_EDEFAULT.equals(getDeclarations());
+			case CrewaiPackage.TOOL__TASKS:
+				return !getTasks().isEmpty();
+			case CrewaiPackage.TOOL__AGENTS:
+				return !getAgents().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -43,6 +43,10 @@ public abstract class ModelElementNodeProcessor<T extends EObject> extends EObje
 	public static final String CALLBACK_ICON = "https://crew-ai.models.nasdanika.org/images/callback.svg";	
 	public static final String CODE_ICON = "https://crew-ai.models.nasdanika.org/images/script.svg";	
 	public static final String AGENT_ICON = "https://crew-ai.models.nasdanika.org/images/software-agent.svg";
+	public static final String BACKSTORY_ICON = "https://crew-ai.models.nasdanika.org/images/cv.svg";
+	public static final String ROLE_ICON = "https://crew-ai.models.nasdanika.org/images/role.svg";
+	public static final String GOAL_ICON = "https://crew-ai.models.nasdanika.org/images/business-plan.svg";
+	public static final String DESCRIPTION_ICON = "https://crew-ai.models.nasdanika.org/images/instructions.svg";
 	
 	protected Collection<DocumentationFactory> documentationFactories;
 	

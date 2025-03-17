@@ -213,6 +213,26 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getTool_Tasks() {
+		return (EReference)toolEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getTool_Agents() {
+		return (EReference)toolEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getAgent() {
 		return agentEClass;
 	}
@@ -275,6 +295,16 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 	@Override
 	public EReference getAgent_Embedder() {
 		return (EReference)agentEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAgent_Tasks() {
+		return (EReference)agentEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -603,6 +633,16 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getKnowledgeSource_Agents() {
+		return (EReference)knowledgeSourceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getProcess() {
 		return processEEnum;
 	}
@@ -653,6 +693,8 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 
 		toolEClass = createEClass(TOOL);
 		createEAttribute(toolEClass, TOOL__DECLARATIONS);
+		createEReference(toolEClass, TOOL__TASKS);
+		createEReference(toolEClass, TOOL__AGENTS);
 
 		agentEClass = createEClass(AGENT);
 		createEReference(agentEClass, AGENT__TOOLS);
@@ -661,6 +703,7 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 		createEReference(agentEClass, AGENT__STEP_CALLBACK);
 		createEReference(agentEClass, AGENT__KNOWLEDGE_SOURCES);
 		createEReference(agentEClass, AGENT__EMBEDDER);
+		createEReference(agentEClass, AGENT__TASKS);
 
 		crewEClass = createEClass(CREW);
 		createEReference(crewEClass, CREW__TOOLS);
@@ -689,6 +732,7 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 		largeLanguageModelEClass = createEClass(LARGE_LANGUAGE_MODEL);
 
 		knowledgeSourceEClass = createEClass(KNOWLEDGE_SOURCE);
+		createEReference(knowledgeSourceEClass, KNOWLEDGE_SOURCE__AGENTS);
 
 		// Create enums
 		processEEnum = createEEnum(PROCESS);
@@ -758,14 +802,17 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 
 		initEClass(toolEClass, Tool.class, "Tool", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTool_Declarations(), ecorePackage.getEString(), "declarations", null, 0, 1, Tool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTool_Tasks(), this.getTask(), this.getTask_Tools(), "tasks", null, 0, -1, Tool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTool_Agents(), this.getAgent(), this.getAgent_Tools(), "agents", null, 0, -1, Tool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(agentEClass, Agent.class, "Agent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAgent_Tools(), this.getTool(), null, "tools", null, 0, -1, Agent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAgent_Tools(), this.getTool(), this.getTool_Agents(), "tools", null, 0, -1, Agent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAgent_Llm(), this.getLargeLanguageModel(), null, "llm", null, 0, 1, Agent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAgent_FunctionCallingLlm(), this.getLargeLanguageModel(), null, "functionCallingLlm", null, 0, 1, Agent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAgent_StepCallback(), this.getCallback(), null, "stepCallback", null, 0, 1, Agent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAgent_KnowledgeSources(), this.getKnowledgeSource(), null, "knowledgeSources", null, 0, -1, Agent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAgent_KnowledgeSources(), this.getKnowledgeSource(), this.getKnowledgeSource_Agents(), "knowledgeSources", null, 0, -1, Agent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAgent_Embedder(), this.getCode(), null, "embedder", null, 0, 1, Agent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAgent_Tasks(), this.getTask(), this.getTask_Agent(), "tasks", null, 0, -1, Agent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(crewEClass, Crew.class, "Crew", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCrew_Tools(), this.getTool(), null, "tools", null, 0, -1, Crew.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -791,14 +838,15 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 
 		initEClass(taskEClass, Task.class, "Task", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTask_Guardrail(), this.getGuardrail(), null, "guardrail", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTask_Agent(), this.getAgent(), null, "agent", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTask_Tools(), this.getTool(), null, "tools", null, 0, -1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTask_Agent(), this.getAgent(), this.getAgent_Tasks(), "agent", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTask_Tools(), this.getTool(), this.getTool_Tasks(), "tools", null, 0, -1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTask_Context(), this.getTask(), null, "context", null, 0, -1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTask_Callback(), this.getCallback(), null, "callback", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(largeLanguageModelEClass, LargeLanguageModel.class, "LargeLanguageModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(knowledgeSourceEClass, KnowledgeSource.class, "KnowledgeSource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getKnowledgeSource_Agents(), this.getAgent(), this.getAgent_KnowledgeSources(), "agents", null, 0, -1, KnowledgeSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(processEEnum, org.nasdanika.models.crewai.Process.class, "Process");

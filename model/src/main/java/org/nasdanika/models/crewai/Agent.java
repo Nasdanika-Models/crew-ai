@@ -19,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.nasdanika.models.crewai.Agent#getStepCallback <em>Step Callback</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.Agent#getKnowledgeSources <em>Knowledge Sources</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.Agent#getEmbedder <em>Embedder</em>}</li>
+ *   <li>{@link org.nasdanika.models.crewai.Agent#getTasks <em>Tasks</em>}</li>
  * </ul>
  *
  * @see org.nasdanika.models.crewai.CrewaiPackage#getAgent()
@@ -29,11 +30,13 @@ public interface Agent extends Configurable {
 	/**
 	 * Returns the value of the '<em><b>Tools</b></em>' reference list.
 	 * The list contents are of type {@link org.nasdanika.models.crewai.Tool}.
+	 * It is bidirectional and its opposite is '{@link org.nasdanika.models.crewai.Tool#getAgents <em>Agents</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Tools</em>' reference list.
 	 * @see org.nasdanika.models.crewai.CrewaiPackage#getAgent_Tools()
-	 * @model
+	 * @see org.nasdanika.models.crewai.Tool#getAgents
+	 * @model opposite="agents"
 	 * @generated
 	 */
 	EList<Tool> getTools();
@@ -107,11 +110,13 @@ public interface Agent extends Configurable {
 	/**
 	 * Returns the value of the '<em><b>Knowledge Sources</b></em>' reference list.
 	 * The list contents are of type {@link org.nasdanika.models.crewai.KnowledgeSource}.
+	 * It is bidirectional and its opposite is '{@link org.nasdanika.models.crewai.KnowledgeSource#getAgents <em>Agents</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Knowledge Sources</em>' reference list.
 	 * @see org.nasdanika.models.crewai.CrewaiPackage#getAgent_KnowledgeSources()
-	 * @model
+	 * @see org.nasdanika.models.crewai.KnowledgeSource#getAgents
+	 * @model opposite="agents"
 	 * @generated
 	 */
 	EList<KnowledgeSource> getKnowledgeSources();
@@ -137,5 +142,19 @@ public interface Agent extends Configurable {
 	 * @generated
 	 */
 	void setEmbedder(Code value);
+
+	/**
+	 * Returns the value of the '<em><b>Tasks</b></em>' reference list.
+	 * The list contents are of type {@link org.nasdanika.models.crewai.Task}.
+	 * It is bidirectional and its opposite is '{@link org.nasdanika.models.crewai.Task#getAgent <em>Agent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Tasks</em>' reference list.
+	 * @see org.nasdanika.models.crewai.CrewaiPackage#getAgent_Tasks()
+	 * @see org.nasdanika.models.crewai.Task#getAgent
+	 * @model opposite="agent"
+	 * @generated
+	 */
+	EList<Task> getTasks();
 
 } // Agent

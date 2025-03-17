@@ -50,6 +50,14 @@ public class TaskNodeProcessor extends ConfigurableNodeProcessor<Task> {
 	@Override
 	protected Collection<Entry<String, Collection<EObject>>> getProperties(ProgressMonitor progressMonitor) {
 		Map<String, Collection<EObject>> properties = new LinkedHashMap<>();
+		Object configuration = getConfiguration();
+		if (configuration instanceof Map) {
+			Map<?, ?> cMap = (Map<?,?>) configuration;
+			Object expectedOutput = cMap.get("expected_output");
+			if (expectedOutput instanceof String) {
+				properties.put("Expected output", Collections.singleton(createText((String) expectedOutput)));
+			}
+		}
 		if (agentWidgetFactory != null) {
 			properties.put("Agent", Collections.singleton((EObject) agentWidgetFactory.createLink(progressMonitor)));
 		}
@@ -100,5 +108,75 @@ public class TaskNodeProcessor extends ConfigurableNodeProcessor<Task> {
 			}
 		}
 	}	
+		
+	@OutgoingReferenceBuilder(
+			nsURI = CrewaiPackage.eNS_URI,
+			classID = CrewaiPackage.TASK,
+			referenceID = CrewaiPackage.TASK__CONTEXT)
+	public void buildContextOutgoingReference(
+			EReference eReference,
+			List<Entry<EReferenceConnection, WidgetFactory>> referenceOutgoingEndpoints, 
+			Collection<Label> labels,
+			Map<EReferenceConnection, Collection<Label>> outgoingLabels, 
+			ProgressMonitor progressMonitor) {
+
+		List<Entry<EReferenceConnection, Collection<Label>>> sorted = outgoingLabels.entrySet().stream()
+				.sorted((a,b) -> ((NamedElement) a.getKey().getTarget().get()).getName().compareTo(((NamedElement) b.getKey().getTarget().get()).getName()))
+				.toList();		
+
+		// A page with a dynamic agents table and links to agent pages.
+		for (Label label: labels) {
+			Action toolsAction = getRoleActionByName(
+					((Action) label).getSections(), 
+					"context", 
+					"Context", 
+					TASK_ICON);
+			
+			for (Entry<EReferenceConnection, Collection<Label>> re: sorted) {
+				toolsAction.getChildren().addAll(re.getValue());
+			}
+			if (label instanceof Action) {										
+				DynamicTableBuilder<Entry<EReferenceConnection, WidgetFactory>> toolsTableBuilder = new DynamicTableBuilder<>("nsd-table");
+				buildNamedElementColumns(toolsTableBuilder, progressMonitor);
+				
+				org.nasdanika.models.html.Tag agentsTable = toolsTableBuilder.build(
+						referenceOutgoingEndpoints
+							.stream()
+							.sorted((a,b) -> a.getKey().getIndex() - b.getKey().getIndex())
+							.toList(),  
+						"task-context", 
+						"context-table", 
+						progressMonitor);
+				
+				toolsAction.getContent().add(agentsTable);
+			}
+		}
+	}	
+	
+	/**
+	 * Parses configuration for Role, Goal, and Back story
+	 */
+	@Override
+	protected Label createAction(ProgressMonitor progressMonitor) {
+		Action action = (Action) super.createAction(progressMonitor);
+		Object configuration = getConfiguration();
+		if (configuration instanceof Map) {
+			Map<?, ?> cMap = (Map<?,?>) configuration;
+			Object backstory = cMap.get("description");
+			if (backstory instanceof String) {
+				Action backstoryAction = getRoleActionByLocation(
+						action.getSections(), 
+						"description", 
+						"Description", 
+						DESCRIPTION_ICON);
+				
+				backstoryAction.getContent().add(createText((String) backstory));
+			}
+		}
+		return action;
+	}
+	
+	
+	// TODO - callback
 	
 }

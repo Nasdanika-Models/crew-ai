@@ -4,10 +4,13 @@ package org.nasdanika.models.crewai.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.nasdanika.models.crewai.Agent;
 import org.nasdanika.models.crewai.Callback;
 import org.nasdanika.models.crewai.CrewaiPackage;
@@ -105,6 +108,16 @@ public class TaskImpl extends ConfigurableImpl implements Task {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public NotificationChain basicSetAgent(Agent newAgent, NotificationChain msgs) {
+		msgs = eDynamicInverseAdd((InternalEObject)newAgent, CrewaiPackage.TASK__AGENT, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public void setAgent(Agent newAgent) {
 		eDynamicSet(CrewaiPackage.TASK__AGENT, CrewaiPackage.Literals.TASK__AGENT, newAgent);
@@ -159,6 +172,42 @@ public class TaskImpl extends ConfigurableImpl implements Task {
 	@Override
 	public void setCallback(Callback newCallback) {
 		eDynamicSet(CrewaiPackage.TASK__CALLBACK, CrewaiPackage.Literals.TASK__CALLBACK, newCallback);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case CrewaiPackage.TASK__AGENT:
+				Agent agent = basicGetAgent();
+				if (agent != null)
+					msgs = ((InternalEObject)agent).eInverseRemove(this, CrewaiPackage.AGENT__TASKS, Agent.class, msgs);
+				return basicSetAgent((Agent)otherEnd, msgs);
+			case CrewaiPackage.TASK__TOOLS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTools()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case CrewaiPackage.TASK__AGENT:
+				return basicSetAgent(null, msgs);
+			case CrewaiPackage.TASK__TOOLS:
+				return ((InternalEList<?>)getTools()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

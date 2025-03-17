@@ -17,16 +17,22 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Tool" eSuperTypes="#//Code ../../org.nasdanika.ncore/model/ncore.ecore#//DocumentedNamedStringIdentity">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="declarations" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tasks" upperBound="-1"
+        eType="#//Task" eOpposite="#//Task/tools"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="agents" upperBound="-1"
+        eType="#//Agent" eOpposite="#//Agent/tools"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Agent" eSuperTypes="#//Configurable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="tools" upperBound="-1"
-        eType="#//Tool"/>
+        eType="#//Tool" eOpposite="#//Tool/agents"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="llm" eType="#//LargeLanguageModel"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="functionCallingLlm" eType="#//LargeLanguageModel"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="stepCallback" eType="#//Callback"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="knowledgeSources" upperBound="-1"
-        eType="#//KnowledgeSource"/>
+        eType="#//KnowledgeSource" eOpposite="#//KnowledgeSource/agents"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="embedder" eType="#//Code"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tasks" upperBound="-1"
+        eType="#//Task" eOpposite="#//Task/agent"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Process">
     <eLiterals name="sequential"/>
@@ -58,13 +64,17 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Task" eSuperTypes="#//Configurable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="guardrail" eType="#//Guardrail"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="agent" eType="#//Agent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="agent" eType="#//Agent"
+        eOpposite="#//Agent/tasks"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tools" upperBound="-1"
-        eType="#//Tool"/>
+        eType="#//Tool" eOpposite="#//Tool/tasks"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="context" upperBound="-1"
         eType="#//Task"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="callback" eType="#//Callback"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LargeLanguageModel" eSuperTypes="../../org.nasdanika.ncore/model/ncore.ecore#//DocumentedNamedStringIdentity"/>
-  <eClassifiers xsi:type="ecore:EClass" name="KnowledgeSource" eSuperTypes="../../org.nasdanika.ncore/model/ncore.ecore#//DocumentedNamedStringIdentity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="KnowledgeSource" eSuperTypes="../../org.nasdanika.ncore/model/ncore.ecore#//DocumentedNamedStringIdentity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="agents" upperBound="-1"
+        eType="#//Agent" eOpposite="#//Agent/knowledgeSources"/>
+  </eClassifiers>
 </ecore:EPackage>

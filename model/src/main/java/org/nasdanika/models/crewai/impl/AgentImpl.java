@@ -4,16 +4,20 @@ package org.nasdanika.models.crewai.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.nasdanika.models.crewai.Agent;
 import org.nasdanika.models.crewai.Callback;
 import org.nasdanika.models.crewai.Code;
 import org.nasdanika.models.crewai.CrewaiPackage;
 import org.nasdanika.models.crewai.KnowledgeSource;
 import org.nasdanika.models.crewai.LargeLanguageModel;
+import org.nasdanika.models.crewai.Task;
 import org.nasdanika.models.crewai.Tool;
 
 /**
@@ -30,6 +34,7 @@ import org.nasdanika.models.crewai.Tool;
  *   <li>{@link org.nasdanika.models.crewai.impl.AgentImpl#getStepCallback <em>Step Callback</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.AgentImpl#getKnowledgeSources <em>Knowledge Sources</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.AgentImpl#getEmbedder <em>Embedder</em>}</li>
+ *   <li>{@link org.nasdanika.models.crewai.impl.AgentImpl#getTasks <em>Tasks</em>}</li>
  * </ul>
  *
  * @generated
@@ -197,6 +202,54 @@ public class AgentImpl extends ConfigurableImpl implements Agent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EList<Task> getTasks() {
+		return (EList<Task>)eDynamicGet(CrewaiPackage.AGENT__TASKS, CrewaiPackage.Literals.AGENT__TASKS, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case CrewaiPackage.AGENT__TOOLS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTools()).basicAdd(otherEnd, msgs);
+			case CrewaiPackage.AGENT__KNOWLEDGE_SOURCES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getKnowledgeSources()).basicAdd(otherEnd, msgs);
+			case CrewaiPackage.AGENT__TASKS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTasks()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case CrewaiPackage.AGENT__TOOLS:
+				return ((InternalEList<?>)getTools()).basicRemove(otherEnd, msgs);
+			case CrewaiPackage.AGENT__KNOWLEDGE_SOURCES:
+				return ((InternalEList<?>)getKnowledgeSources()).basicRemove(otherEnd, msgs);
+			case CrewaiPackage.AGENT__TASKS:
+				return ((InternalEList<?>)getTasks()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -216,6 +269,8 @@ public class AgentImpl extends ConfigurableImpl implements Agent {
 			case CrewaiPackage.AGENT__EMBEDDER:
 				if (resolve) return getEmbedder();
 				return basicGetEmbedder();
+			case CrewaiPackage.AGENT__TASKS:
+				return getTasks();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -249,6 +304,10 @@ public class AgentImpl extends ConfigurableImpl implements Agent {
 			case CrewaiPackage.AGENT__EMBEDDER:
 				setEmbedder((Code)newValue);
 				return;
+			case CrewaiPackage.AGENT__TASKS:
+				getTasks().clear();
+				getTasks().addAll((Collection<? extends Task>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -279,6 +338,9 @@ public class AgentImpl extends ConfigurableImpl implements Agent {
 			case CrewaiPackage.AGENT__EMBEDDER:
 				setEmbedder((Code)null);
 				return;
+			case CrewaiPackage.AGENT__TASKS:
+				getTasks().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -303,6 +365,8 @@ public class AgentImpl extends ConfigurableImpl implements Agent {
 				return !getKnowledgeSources().isEmpty();
 			case CrewaiPackage.AGENT__EMBEDDER:
 				return basicGetEmbedder() != null;
+			case CrewaiPackage.AGENT__TASKS:
+				return !getTasks().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
