@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512.002 512.002" style="enable-background:new 0 0 512.002 512.002;" xml:space="preserve" width="20" height="20">
+<g>
+	<g>
+		<path style="fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;" d="M315.234,62.002H56.001v440h349.232l0-350h-90V62.002&#10;&#9;&#9;&#9;L315.234,62.002z M151.001,107.002c13.75,0,25,11.289,25,25.087v8.158c0,13.798-11.25,25.087-25,25.087&#10;&#9;&#9;&#9;c-13.75,0-25-11.289-25-25.087v-8.158C126.001,118.291,137.251,107.002,151.001,107.002L151.001,107.002z M151.001,169.502&#10;&#9;&#9;&#9;c27.614,0,50,22.386,50,50h-50h-50C101.001,191.888,123.387,169.502,151.001,169.502z"/>
+		<path style="fill-rule:evenodd;clip-rule:evenodd;fill:#FFDCD5;" d="M176.001,132.09c0-13.798-11.25-25.087-25-25.087&#10;&#9;&#9;&#9;c-13.75,0-25,11.289-25,25.087v8.158c0,13.798,11.25,25.087,25,25.087c13.75,0,25-11.29,25-25.087V132.09z"/>
+		<path style="fill-rule:evenodd;clip-rule:evenodd;fill:#FF5A58;" d="M201.001,219.502c0-27.614-22.386-50-50-50&#10;&#9;&#9;&#9;c-27.614,0-50,22.386-50,50h50H201.001z"/>
+		<polygon style="fill-rule:evenodd;clip-rule:evenodd;fill:#B6BCCF;" points="315.234,62.002 315.234,152.002 405.233,152.002 &#9;&#9;&#10;&#9;&#9;&#9;"/>
+		<polygon style="fill-rule:evenodd;clip-rule:evenodd;fill:#E8EAF0;" points="405.234,152.002 405.233,457.002 456.001,457.002 &#10;&#9;&#9;&#9;456.001,10 101.001,10 101.001,62.002 315.234,62.002 &#9;&#9;"/>
+	</g>
+	<g>
+		
+			<polygon style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:20.0001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;" points="&#10;&#9;&#9;&#9;56.001,62.002 315.234,62.002 405.233,152.002 405.233,502.002 56.001,502.002 &#9;&#9;"/>
+		
+			<polyline style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:20.0001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;" points="&#10;&#9;&#9;&#9;400.233,152.002 315.234,152.002 315.234,67.002 &#9;&#9;"/>
+		
+			<polyline style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:20.0001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;" points="&#10;&#9;&#9;&#9;101.001,57.002 101.001,10 456.001,10 456.001,457.002 410.233,457.002 &#9;&#9;"/>
+		
+			<path style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:20.0001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;" d="&#10;&#9;&#9;&#9;M151.001,107.002c13.75,0,25,11.289,25,25.087v8.158c0,13.798-11.25,25.087-25,25.087c-13.75,0-25-11.289-25-25.087v-8.158&#10;&#9;&#9;&#9;C126.001,118.291,137.251,107.002,151.001,107.002z"/>
+		
+			<path style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:20.0001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;" d="&#10;&#9;&#9;&#9;M151.001,219.502h-50c0-27.614,22.386-50,50-50s50,22.386,50,50H151.001z"/>
+		
+			<line style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:20.0001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;" x1="145.998" y1="267.002" x2="360.233" y2="267.002"/>
+		
+			<line style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:20.0001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;" x1="101.001" y1="314.502" x2="230.617" y2="314.502"/>
+		
+			<line style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:20.0001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;" x1="101.001" y1="362.002" x2="360.233" y2="362.002"/>
+		
+			<line style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:20.0001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;" x1="101.001" y1="409.502" x2="360.233" y2="409.502"/>
+		
+			<line style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:20.0001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;" x1="101.001" y1="457.002" x2="230.617" y2="457.002"/>
+		
+			<line style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:20.0001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;" x1="250.618" y1="219.502" x2="360.233" y2="219.502"/>
+		
+			<line style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:19.9998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.6131;" x1="100.994" y1="267.002" x2="101.001" y2="267.002"/>
+	</g>
+</g>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</svg>
