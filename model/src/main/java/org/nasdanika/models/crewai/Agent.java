@@ -30,6 +30,11 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface Agent extends Configurable {
+	
+	String BACKSTORY_KEY = CrewaiPackage.Literals.AGENT__BACKSTORY.getName();
+	String GOAL_KEY = CrewaiPackage.Literals.AGENT__GOAL.getName();
+	String ROLE_KEY = CrewaiPackage.Literals.AGENT__ROLE.getName();
+	
 	/**
 	 * Returns the value of the '<em><b>Role</b></em>' attribute.
 	 * <!-- begin-user-doc -->

@@ -51,19 +51,13 @@ public class TaskNodeProcessor extends ConfigurableNodeProcessor<Task> {
 	@Override
 	protected Collection<Entry<String, Collection<EObject>>> getProperties(ProgressMonitor progressMonitor) {
 		Map<String, Collection<EObject>> properties = new LinkedHashMap<>();
-		String expectedOutput = getTarget().getExpectedOutput();
-		if (Util.isBlank(expectedOutput)) {
-			Object configuration = getConfiguration();
-			if (configuration instanceof Map) {
-				Map<?, ?> cMap = (Map<?,?>) configuration;
-				Object expectedOutputObj = cMap.get("expected_output");
-				if (expectedOutputObj instanceof String) {
-					expectedOutput = (String) expectedOutputObj;
-				}
+		Map<String, Object> configMap = getTarget().getConfigMap();
+		Object expectedOutputObj = configMap.get(Task.EXPECTED_OUTPUT_KEY);
+		if (expectedOutputObj instanceof String) {
+			String expectedOutput = (String) expectedOutputObj;
+			if (!Util.isBlank(expectedOutput)) {
+				properties.put("Expected output", Collections.singleton(createText((String) expectedOutput)));			
 			}
-		}
-		if (!Util.isBlank(expectedOutput)) {
-			properties.put("Expected output", Collections.singleton(createText((String) expectedOutput)));			
 		}
 		if (agentWidgetFactory != null) {
 			properties.put("Agent", Collections.singleton((EObject) agentWidgetFactory.createLink(progressMonitor)));
@@ -166,31 +160,24 @@ public class TaskNodeProcessor extends ConfigurableNodeProcessor<Task> {
 	@Override
 	protected Label createAction(ProgressMonitor progressMonitor) {
 		Action action = (Action) super.createAction(progressMonitor);
-		String taskDescription = getTarget().getTaskDescription();
-		if (Util.isBlank(taskDescription)) {			
-			Object configuration = getConfiguration();
-			if (configuration instanceof Map) {
-				Map<?, ?> cMap = (Map<?,?>) configuration;
-				Object taskDescriptionObj = cMap.get("description");
-				if (taskDescriptionObj instanceof String) {
-					taskDescription = (String) taskDescriptionObj;
-				}
-			}
-		}
-		if (!Util.isBlank(taskDescription)) {
-			Action taskDescriptionAction = getRoleActionByLocation(
-					action.getSections(), 
-					"description", 
-					"Description", 
-					DESCRIPTION_ICON);
-			
-			taskDescriptionAction.getContent().add(createText(taskDescription));			
+		Map<String, Object> configMap = getTarget().getConfigMap();
+		Object taskDescriptionObj = configMap.get(Task.TASK_DESCRIPTION_KEY);
+		if (taskDescriptionObj instanceof String) {
+			String taskDescription = (String) taskDescriptionObj;
+			if (!Util.isBlank(taskDescription)) {
+				Action taskDescriptionAction = getRoleActionByLocation(
+						action.getSections(), 
+						"description", 
+						"Description", 
+						DESCRIPTION_ICON);
+				
+				taskDescriptionAction.getContent().add(createText(taskDescription));			
+			}			
 		}
 			
 		return action;
 	}
-	
-	
+		
 	// TODO - callback
 	
 }

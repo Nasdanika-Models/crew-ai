@@ -3,6 +3,7 @@
 package org.nasdanika.models.crewai.impl;
 
 import java.util.Collection;
+import java.util.Map;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -11,6 +12,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.nasdanika.common.Util;
 import org.nasdanika.models.crewai.Agent;
 import org.nasdanika.models.crewai.Callback;
 import org.nasdanika.models.crewai.Code;
@@ -491,5 +493,25 @@ public class AgentImpl extends ConfigurableImpl implements Agent {
 		}
 		return super.eIsSet(featureID);
 	}
+		
+	@Override
+	public Map<String, Object> getConfigMap() {
+		Map<String, Object> configMap = super.getConfigMap();
+		String role = getRole();
+		if (!Util.isBlank(role)) {
+			configMap.put(ROLE_KEY, role);
+		}
+		String goal = getGoal();
+		if (!Util.isBlank(goal)) {
+			configMap.put(GOAL_KEY, goal);
+		}
+		String backstory = getBackstory();
+		if (!Util.isBlank(backstory)) {
+			configMap.put(BACKSTORY_KEY, backstory);
+		}
+		
+		return configMap;
+	}
+	
 
 } //AgentImpl

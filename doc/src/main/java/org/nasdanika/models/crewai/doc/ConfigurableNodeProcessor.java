@@ -33,19 +33,6 @@ public class ConfigurableNodeProcessor<T extends Configurable> extends CodeNodeP
 		return CONFIGURABLE_ICON;
 	}	
 	
-	/**
-	 * @return parsed configuration of null
-	 */
-	protected Object getConfiguration() {
-		Configurable target = getTarget();
-		String configuration = target.getConfiguration();
-		if (Util.isBlank(configuration)) {
-			return null;
-		}
-		Yaml yaml = new Yaml();
-		return yaml.load(configuration);		
-	}
-	
 	@Override
 	protected Label createAction(ProgressMonitor progressMonitor) {
 		Action action = (Action) super.createAction(progressMonitor);

@@ -141,24 +141,7 @@ public class CrewGenerator {
 			addComment(agent, crewClassBody::add);
 			crewClassBody.add(agentMethod);
 			
-			Map<String,Object> configMap = new LinkedHashMap<>();
-			String agentConfig = agent.getConfiguration();
-			if (!Util.isBlank(agentConfig)) {
-				Map<String, Object> agentConfigObj = yaml.load(agentConfig);
-				configMap.putAll(agentConfigObj);
-			}
-			String role = agent.getRole();
-			if (!Util.isBlank(role)) {
-				configMap.put(CrewaiPackage.Literals.AGENT__ROLE.getName(), role);
-			}
-			String goal = agent.getGoal();
-			if (!Util.isBlank(goal)) {
-				configMap.put(CrewaiPackage.Literals.AGENT__GOAL.getName(), goal);
-			}
-			String backstory = agent.getBackstory();
-			if (!Util.isBlank(backstory)) {
-				configMap.put(CrewaiPackage.Literals.AGENT__BACKSTORY.getName(), backstory);
-			}
+			Map<String,Object> configMap = agent.getConfigMap();
 			if (!configMap.isEmpty()) {
 				agentConfigs.put(getAgentConfigKey(agent), configMap);				
 			}
@@ -175,13 +158,7 @@ public class CrewGenerator {
 			addComment(task, crewClassBody::add);
 			crewClassBody.add(taskMethod);
 
-			Map<String,Object> configMap = new LinkedHashMap<>();
-			
-			String taskConfig = task.getConfiguration();
-			if (!Util.isBlank(taskConfig)) {
-				Map<String, Object> taskConfigObj = yaml.load(taskConfig);
-				configMap.putAll(taskConfigObj);
-			}
+			Map<String,Object> configMap = task.getConfigMap();
 			Agent taskAgent = task.getAgent();
 			if (taskAgent != null) {
 				configMap.put(CrewaiPackage.Literals.TASK__AGENT.getName(), getAgentConfigKey(taskAgent));

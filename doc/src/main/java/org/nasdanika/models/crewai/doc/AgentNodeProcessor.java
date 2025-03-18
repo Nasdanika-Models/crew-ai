@@ -129,18 +129,15 @@ public class AgentNodeProcessor extends ConfigurableNodeProcessor<Agent> {
 	@Override
 	protected Collection<Entry<String, Collection<EObject>>> getProperties(ProgressMonitor progressMonitor) {
 		Map<String, Collection<EObject>> properties = new LinkedHashMap<>();
-		Object configuration = getConfiguration();
-		if (configuration instanceof Map) {
-			Map<?, ?> cMap = (Map<?,?>) configuration;
-			Object role = cMap.get("role");
-			if (role instanceof String) {
-				properties.put("Role", Collections.singleton(createText((String) role)));
-			}
-			Object goal = cMap.get("goal");
-			if (goal instanceof String) {
-				properties.put("Goal", Collections.singleton(createText((String) goal)));
-			}			
+		Map<String, Object> configMap = getTarget().getConfigMap();
+		Object role = configMap.get(Agent.ROLE_KEY);
+		if (role instanceof String) {
+			properties.put("Role", Collections.singleton(createText((String) role)));
 		}
+		Object goal = configMap.get(Agent.GOAL_KEY);
+		if (goal instanceof String) {
+			properties.put("Goal", Collections.singleton(createText((String) goal)));
+		}			
 		return properties.entrySet();		
 	}
 	
@@ -150,19 +147,16 @@ public class AgentNodeProcessor extends ConfigurableNodeProcessor<Agent> {
 	@Override
 	protected Label createAction(ProgressMonitor progressMonitor) {
 		Action action = (Action) super.createAction(progressMonitor);
-		Object configuration = getConfiguration();
-		if (configuration instanceof Map) {
-			Map<?, ?> cMap = (Map<?,?>) configuration;
-			Object backstory = cMap.get("backstory");
-			if (backstory instanceof String) {
-				Action backstoryAction = getRoleActionByLocation(
-						action.getSections(), 
-						"backstory", 
-						"Backstory", 
-						BACKSTORY_ICON);
-				
-				backstoryAction.getContent().add(createText((String) backstory));
-			}
+		Map<String, Object> configMap = getTarget().getConfigMap();
+		Object backstory = configMap.get(Agent.BACKSTORY_KEY);
+		if (backstory instanceof String) {
+			Action backstoryAction = getRoleActionByLocation(
+					action.getSections(), 
+					"backstory", 
+					"Backstory", 
+					BACKSTORY_ICON);
+			
+			backstoryAction.getContent().add(createText((String) backstory));
 		}
 		return action;
 	}	
