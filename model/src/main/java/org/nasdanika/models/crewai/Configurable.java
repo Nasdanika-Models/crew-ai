@@ -17,7 +17,7 @@ import org.nasdanika.ncore.DocumentedNamedStringIdentity;
  * </ul>
  *
  * @see org.nasdanika.models.crewai.CrewaiPackage#getConfigurable()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='configuration'"
  * @generated
  */
 public interface Configurable extends DocumentedNamedStringIdentity, Code {

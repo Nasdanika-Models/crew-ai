@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see org.nasdanika.models.crewai.CrewaiPackage#getCode()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='imports'"
  * @generated
  */
 public interface Code extends EObject {

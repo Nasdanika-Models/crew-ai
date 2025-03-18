@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.nasdanika.models.crewai.Agent;
 import org.nasdanika.models.crewai.Callback;
@@ -21,6 +22,7 @@ import org.nasdanika.models.crewai.KnowledgeSource;
 import org.nasdanika.models.crewai.LargeLanguageModel;
 import org.nasdanika.models.crewai.Task;
 import org.nasdanika.models.crewai.Tool;
+import org.nasdanika.models.crewai.util.CrewaiValidator;
 import org.nasdanika.ncore.NcorePackage;
 
 /**
@@ -158,6 +160,16 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 
 		// Initialize created meta-data
 		theCrewaiPackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theCrewaiPackage,
+			 new EValidator.Descriptor() {
+				 @Override
+				 public EValidator getEValidator() {
+					 return CrewaiValidator.INSTANCE;
+				 }
+			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theCrewaiPackage.freeze();
@@ -855,6 +867,32 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";
+		addAnnotation
+		  (codeEClass,
+		   source,
+		   new String[] {
+			   "constraints", "imports"
+		   });
+		addAnnotation
+		  (configurableEClass,
+		   source,
+		   new String[] {
+			   "constraints", "configuration"
+		   });
 	}
 
 } //CrewaiPackageImpl

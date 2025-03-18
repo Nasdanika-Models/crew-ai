@@ -2,6 +2,9 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="crewai" nsURI="ecore://nasdanika.org/models/crew-ai" nsPrefix="org.nasdanika.models.crew-ai">
   <eClassifiers xsi:type="ecore:EClass" name="Code">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="imports"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="imports" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -13,6 +16,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="Guardrail" eSuperTypes="#//Function"/>
   <eClassifiers xsi:type="ecore:EClass" name="Callback" eSuperTypes="#//Function"/>
   <eClassifiers xsi:type="ecore:EClass" name="Configurable" eSuperTypes="../../org.nasdanika.ncore/model/ncore.ecore#//DocumentedNamedStringIdentity #//Code">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="configuration"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="configuration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Tool" eSuperTypes="#//Code ../../org.nasdanika.ncore/model/ncore.ecore#//DocumentedNamedStringIdentity">
