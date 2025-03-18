@@ -5,6 +5,7 @@ package org.nasdanika.models.crewai.impl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
@@ -197,6 +198,16 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 	@Override
 	public EAttribute getConfigurable_Configuration() {
 		return (EAttribute)configurableEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getConfigurable_ConfigMap() {
+		return (EAttribute)configurableEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -752,6 +763,7 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 
 		configurableEClass = createEClass(CONFIGURABLE);
 		createEAttribute(configurableEClass, CONFIGURABLE__CONFIGURATION);
+		createEAttribute(configurableEClass, CONFIGURABLE__CONFIG_MAP);
 
 		toolEClass = createEClass(TOOL);
 		createEAttribute(toolEClass, TOOL__DECLARATIONS);
@@ -866,6 +878,12 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 
 		initEClass(configurableEClass, Configurable.class, "Configurable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getConfigurable_Configuration(), ecorePackage.getEString(), "configuration", null, 0, 1, Configurable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
+		EGenericType g2 = createEGenericType(ecorePackage.getEString());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		initEAttribute(getConfigurable_ConfigMap(), g1, "configMap", null, 0, 1, Configurable.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(toolEClass, Tool.class, "Tool", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTool_Declarations(), ecorePackage.getEString(), "declarations", null, 0, 1, Tool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

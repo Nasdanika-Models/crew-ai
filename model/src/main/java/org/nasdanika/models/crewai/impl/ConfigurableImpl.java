@@ -2,13 +2,16 @@
  */
 package org.nasdanika.models.crewai.impl;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
 import org.eclipse.emf.ecore.EClass;
-
+import org.nasdanika.common.Util;
 import org.nasdanika.models.crewai.Code;
 import org.nasdanika.models.crewai.Configurable;
 import org.nasdanika.models.crewai.CrewaiPackage;
 
 import org.nasdanika.ncore.impl.DocumentedNamedStringIdentityImpl;
+import org.yaml.snakeyaml.Yaml;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,6 +25,7 @@ import org.nasdanika.ncore.impl.DocumentedNamedStringIdentityImpl;
  *   <li>{@link org.nasdanika.models.crewai.impl.ConfigurableImpl#getImports <em>Imports</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.ConfigurableImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.ConfigurableImpl#getConfiguration <em>Configuration</em>}</li>
+ *   <li>{@link org.nasdanika.models.crewai.impl.ConfigurableImpl#getConfigMap <em>Config Map</em>}</li>
  * </ul>
  *
  * @generated
@@ -169,6 +173,24 @@ public class ConfigurableImpl extends DocumentedNamedStringIdentityImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public Map<String, Object> getConfigMap() {
+		Map<String, Object> configMap = new LinkedHashMap<>();
+		String config = getConfiguration();
+		if (!Util.isBlank(config)) {			
+			Yaml yaml = new Yaml();
+			Map<String, Object> configObj = yaml.load(config);
+			configMap.putAll(configObj);
+			
+		}
+		return configMap;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -182,6 +204,8 @@ public class ConfigurableImpl extends DocumentedNamedStringIdentityImpl implemen
 				return getComment();
 			case CrewaiPackage.CONFIGURABLE__CONFIGURATION:
 				return getConfiguration();
+			case CrewaiPackage.CONFIGURABLE__CONFIG_MAP:
+				return getConfigMap();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -250,6 +274,8 @@ public class ConfigurableImpl extends DocumentedNamedStringIdentityImpl implemen
 				return COMMENT_EDEFAULT == null ? getComment() != null : !COMMENT_EDEFAULT.equals(getComment());
 			case CrewaiPackage.CONFIGURABLE__CONFIGURATION:
 				return CONFIGURATION_EDEFAULT == null ? getConfiguration() != null : !CONFIGURATION_EDEFAULT.equals(getConfiguration());
+			case CrewaiPackage.CONFIGURABLE__CONFIG_MAP:
+				return getConfigMap() != null;
 		}
 		return super.eIsSet(featureID);
 	}

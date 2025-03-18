@@ -27,6 +27,10 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface Task extends Configurable {
+	
+	String EXPECTED_OUTPUT_KEY = "expected_output";
+	String TASK_DESCRIPTION_KEY = "description";	
+	
 	/**
 	 * Returns the value of the '<em><b>Task Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->

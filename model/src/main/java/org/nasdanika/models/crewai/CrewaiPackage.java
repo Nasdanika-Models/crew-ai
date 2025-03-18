@@ -789,13 +789,22 @@ public interface CrewaiPackage extends EPackage {
 	int CONFIGURABLE__CONFIGURATION = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Config Map</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIGURABLE__CONFIG_MAP = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Configurable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIGURABLE_FEATURE_COUNT = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 4;
+	int CONFIGURABLE_FEATURE_COUNT = NcorePackage.DOCUMENTED_NAMED_STRING_IDENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Configurable</em>' class.
@@ -1111,6 +1120,15 @@ public interface CrewaiPackage extends EPackage {
 	 * @ordered
 	 */
 	int AGENT__CONFIGURATION = CONFIGURABLE__CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Config Map</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__CONFIG_MAP = CONFIGURABLE__CONFIG_MAP;
 
 	/**
 	 * The feature id for the '<em><b>Role</b></em>' attribute.
@@ -1635,6 +1653,15 @@ public interface CrewaiPackage extends EPackage {
 	int TASK__CONFIGURATION = CONFIGURABLE__CONFIGURATION;
 
 	/**
+	 * The feature id for the '<em><b>Config Map</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__CONFIG_MAP = CONFIGURABLE__CONFIG_MAP;
+
+	/**
 	 * The feature id for the '<em><b>Task Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2009,6 +2036,17 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getConfigurable_Configuration();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.models.crewai.Configurable#getConfigMap <em>Config Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Config Map</em>'.
+	 * @see org.nasdanika.models.crewai.Configurable#getConfigMap()
+	 * @see #getConfigurable()
+	 * @generated
+	 */
+	EAttribute getConfigurable_ConfigMap();
 
 	/**
 	 * Returns the meta object for class '{@link org.nasdanika.models.crewai.Tool <em>Tool</em>}'.
@@ -2599,6 +2637,13 @@ public interface CrewaiPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CONFIGURABLE__CONFIGURATION = eINSTANCE.getConfigurable_Configuration();
+		/**
+		 * The meta object literal for the '<em><b>Config Map</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONFIGURABLE__CONFIG_MAP = eINSTANCE.getConfigurable_ConfigMap();
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.models.crewai.impl.ToolImpl <em>Tool</em>}' class.
 		 * <!-- begin-user-doc -->

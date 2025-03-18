@@ -25,6 +25,7 @@
     <genClasses ecoreClass="crew-ai.ecore#//Callback"/>
     <genClasses ecoreClass="crew-ai.ecore#//Configurable">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crew-ai.ecore#//Configurable/configuration"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute crew-ai.ecore#//Configurable/configMap"/>
     </genClasses>
     <genClasses ecoreClass="crew-ai.ecore#//Tool">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crew-ai.ecore#//Tool/declarations"/>

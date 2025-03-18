@@ -23,6 +23,7 @@ import org.nasdanika.common.Util;
 import org.nasdanika.models.crewai.Agent;
 import org.nasdanika.models.crewai.Code;
 import org.nasdanika.models.crewai.Crew;
+import org.nasdanika.models.crewai.CrewaiPackage;
 import org.nasdanika.models.crewai.Task;
 import org.nasdanika.models.crewai.Tool;
 import org.nasdanika.models.python.Class;
@@ -129,8 +130,6 @@ public class CrewGenerator {
 			}
 		}
 		
-		Yaml yaml = getYaml();
-		
 		Map<String,Object> agentConfigs = new LinkedHashMap<>();
 		for (Agent agent: crew.getAgents()) {			
 			Function agentMethod = pythonFactory.createFunction();
@@ -140,11 +139,28 @@ public class CrewGenerator {
 			agentMethod.getParameters().add("self");
 			agentMethod.getDecorators().add("agent");
 			addComment(agent, crewClassBody::add);
-			crewClassBody.add(agentMethod);		
+			crewClassBody.add(agentMethod);
+			
+			Map<String,Object> configMap = new LinkedHashMap<>();
 			String agentConfig = agent.getConfiguration();
 			if (!Util.isBlank(agentConfig)) {
 				Map<String, Object> agentConfigObj = yaml.load(agentConfig);
-				agentConfigs.put(getAgentConfigKey(agent), agentConfigObj);
+				configMap.putAll(agentConfigObj);
+			}
+			String role = agent.getRole();
+			if (!Util.isBlank(role)) {
+				configMap.put(CrewaiPackage.Literals.AGENT__ROLE.getName(), role);
+			}
+			String goal = agent.getGoal();
+			if (!Util.isBlank(goal)) {
+				configMap.put(CrewaiPackage.Literals.AGENT__GOAL.getName(), goal);
+			}
+			String backstory = agent.getBackstory();
+			if (!Util.isBlank(backstory)) {
+				configMap.put(CrewaiPackage.Literals.AGENT__BACKSTORY.getName(), backstory);
+			}
+			if (!configMap.isEmpty()) {
+				agentConfigs.put(getAgentConfigKey(agent), configMap);				
 			}
 		}
 		
@@ -157,16 +173,22 @@ public class CrewGenerator {
 			taskMethod.getParameters().add("self");
 			taskMethod.getDecorators().add("task");
 			addComment(task, crewClassBody::add);
-			crewClassBody.add(taskMethod);		
+			crewClassBody.add(taskMethod);
+
+			Map<String,Object> configMap = new LinkedHashMap<>();
+			
 			String taskConfig = task.getConfiguration();
 			if (!Util.isBlank(taskConfig)) {
 				Map<String, Object> taskConfigObj = yaml.load(taskConfig);
-				Agent taskAgent = task.getAgent();
-				if (taskAgent != null) {
-					taskConfigObj.put("agent", getAgentConfigKey(taskAgent));
-				}
-				taskConfigs.put(getTaskConfigKey(task), taskConfigObj);
+				configMap.putAll(taskConfigObj);
 			}
+			Agent taskAgent = task.getAgent();
+			if (taskAgent != null) {
+				configMap.put(CrewaiPackage.Literals.TASK__AGENT.getName(), getAgentConfigKey(taskAgent));
+			}
+			if (!configMap.isEmpty()) {
+				taskConfigs.put(getTaskConfigKey(task), configMap);
+			}			
 		}
 		
 		Function crewMethod = pythonFactory.createFunction();
@@ -188,6 +210,8 @@ public class CrewGenerator {
 			}
 		});
 		pythonResource.save(null);
+		
+		Yaml yaml = getYaml();
 		
 		if (!agentConfigs.isEmpty()) {
 			URI agentConfigsURI = URI.createURI(agentsConfig).resolve(crewSourceURI);

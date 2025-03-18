@@ -3,6 +3,7 @@
 package org.nasdanika.models.crewai.impl;
 
 import java.util.Collection;
+import java.util.Map;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -11,6 +12,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.nasdanika.common.Util;
 import org.nasdanika.models.crewai.Agent;
 import org.nasdanika.models.crewai.Callback;
 import org.nasdanika.models.crewai.CrewaiPackage;
@@ -393,6 +395,21 @@ public class TaskImpl extends ConfigurableImpl implements Task {
 				return basicGetCallback() != null;
 		}
 		return super.eIsSet(featureID);
+	}
+	
+	@Override
+	public Map<String, Object> getConfigMap() {
+		Map<String, Object> configMap = super.getConfigMap();
+		String taskDescription = getTaskDescription();
+		if (!Util.isBlank(taskDescription)) {
+			configMap.put(TASK_DESCRIPTION_KEY, taskDescription);
+		}
+		String expectedOutput = getExpectedOutput();
+		if (!Util.isBlank(expectedOutput)) {
+			configMap.put(EXPECTED_OUTPUT_KEY, expectedOutput);
+		}			
+		
+		return configMap;
 	}
 
 } //TaskImpl
