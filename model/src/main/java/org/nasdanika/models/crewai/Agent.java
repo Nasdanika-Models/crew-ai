@@ -13,6 +13,9 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.nasdanika.models.crewai.Agent#getRole <em>Role</em>}</li>
+ *   <li>{@link org.nasdanika.models.crewai.Agent#getGoal <em>Goal</em>}</li>
+ *   <li>{@link org.nasdanika.models.crewai.Agent#getBackstory <em>Backstory</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.Agent#getTools <em>Tools</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.Agent#getLlm <em>Llm</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.Agent#getFunctionCallingLlm <em>Function Calling Llm</em>}</li>
@@ -27,6 +30,72 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface Agent extends Configurable {
+	/**
+	 * Returns the value of the '<em><b>Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Role</em>' attribute.
+	 * @see #setRole(String)
+	 * @see org.nasdanika.models.crewai.CrewaiPackage#getAgent_Role()
+	 * @model
+	 * @generated
+	 */
+	String getRole();
+
+	/**
+	 * Sets the value of the '{@link org.nasdanika.models.crewai.Agent#getRole <em>Role</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Role</em>' attribute.
+	 * @see #getRole()
+	 * @generated
+	 */
+	void setRole(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Goal</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Goal</em>' attribute.
+	 * @see #setGoal(String)
+	 * @see org.nasdanika.models.crewai.CrewaiPackage#getAgent_Goal()
+	 * @model
+	 * @generated
+	 */
+	String getGoal();
+
+	/**
+	 * Sets the value of the '{@link org.nasdanika.models.crewai.Agent#getGoal <em>Goal</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Goal</em>' attribute.
+	 * @see #getGoal()
+	 * @generated
+	 */
+	void setGoal(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Backstory</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Backstory</em>' attribute.
+	 * @see #setBackstory(String)
+	 * @see org.nasdanika.models.crewai.CrewaiPackage#getAgent_Backstory()
+	 * @model
+	 * @generated
+	 */
+	String getBackstory();
+
+	/**
+	 * Sets the value of the '{@link org.nasdanika.models.crewai.Agent#getBackstory <em>Backstory</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Backstory</em>' attribute.
+	 * @see #getBackstory()
+	 * @generated
+	 */
+	void setBackstory(String value);
+
 	/**
 	 * Returns the value of the '<em><b>Tools</b></em>' reference list.
 	 * The list contents are of type {@link org.nasdanika.models.crewai.Tool}.

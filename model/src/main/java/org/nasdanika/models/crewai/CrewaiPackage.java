@@ -1113,13 +1113,40 @@ public interface CrewaiPackage extends EPackage {
 	int AGENT__CONFIGURATION = CONFIGURABLE__CONFIGURATION;
 
 	/**
+	 * The feature id for the '<em><b>Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__ROLE = CONFIGURABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Goal</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__GOAL = CONFIGURABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Backstory</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__BACKSTORY = CONFIGURABLE_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Tools</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT__TOOLS = CONFIGURABLE_FEATURE_COUNT + 0;
+	int AGENT__TOOLS = CONFIGURABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Llm</b></em>' reference.
@@ -1128,7 +1155,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT__LLM = CONFIGURABLE_FEATURE_COUNT + 1;
+	int AGENT__LLM = CONFIGURABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Function Calling Llm</b></em>' reference.
@@ -1137,7 +1164,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT__FUNCTION_CALLING_LLM = CONFIGURABLE_FEATURE_COUNT + 2;
+	int AGENT__FUNCTION_CALLING_LLM = CONFIGURABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Step Callback</b></em>' reference.
@@ -1146,7 +1173,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT__STEP_CALLBACK = CONFIGURABLE_FEATURE_COUNT + 3;
+	int AGENT__STEP_CALLBACK = CONFIGURABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Knowledge Sources</b></em>' reference list.
@@ -1155,7 +1182,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT__KNOWLEDGE_SOURCES = CONFIGURABLE_FEATURE_COUNT + 4;
+	int AGENT__KNOWLEDGE_SOURCES = CONFIGURABLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Embedder</b></em>' reference.
@@ -1164,7 +1191,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT__EMBEDDER = CONFIGURABLE_FEATURE_COUNT + 5;
+	int AGENT__EMBEDDER = CONFIGURABLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Tasks</b></em>' reference list.
@@ -1173,7 +1200,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT__TASKS = CONFIGURABLE_FEATURE_COUNT + 6;
+	int AGENT__TASKS = CONFIGURABLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Agent</em>' class.
@@ -1182,7 +1209,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT_FEATURE_COUNT = CONFIGURABLE_FEATURE_COUNT + 7;
+	int AGENT_FEATURE_COUNT = CONFIGURABLE_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of operations of the '<em>Agent</em>' class.
@@ -1608,13 +1635,31 @@ public interface CrewaiPackage extends EPackage {
 	int TASK__CONFIGURATION = CONFIGURABLE__CONFIGURATION;
 
 	/**
+	 * The feature id for the '<em><b>Task Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__TASK_DESCRIPTION = CONFIGURABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Expected Output</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__EXPECTED_OUTPUT = CONFIGURABLE_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Guardrail</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TASK__GUARDRAIL = CONFIGURABLE_FEATURE_COUNT + 0;
+	int TASK__GUARDRAIL = CONFIGURABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Agent</b></em>' reference.
@@ -1623,7 +1668,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TASK__AGENT = CONFIGURABLE_FEATURE_COUNT + 1;
+	int TASK__AGENT = CONFIGURABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Tools</b></em>' reference list.
@@ -1632,7 +1677,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TASK__TOOLS = CONFIGURABLE_FEATURE_COUNT + 2;
+	int TASK__TOOLS = CONFIGURABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Context</b></em>' reference list.
@@ -1641,7 +1686,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TASK__CONTEXT = CONFIGURABLE_FEATURE_COUNT + 3;
+	int TASK__CONTEXT = CONFIGURABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Callback</b></em>' reference.
@@ -1650,7 +1695,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TASK__CALLBACK = CONFIGURABLE_FEATURE_COUNT + 4;
+	int TASK__CALLBACK = CONFIGURABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Task</em>' class.
@@ -1659,7 +1704,7 @@ public interface CrewaiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TASK_FEATURE_COUNT = CONFIGURABLE_FEATURE_COUNT + 5;
+	int TASK_FEATURE_COUNT = CONFIGURABLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of operations of the '<em>Task</em>' class.
@@ -2019,6 +2064,39 @@ public interface CrewaiPackage extends EPackage {
 	EClass getAgent();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.models.crewai.Agent#getRole <em>Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Role</em>'.
+	 * @see org.nasdanika.models.crewai.Agent#getRole()
+	 * @see #getAgent()
+	 * @generated
+	 */
+	EAttribute getAgent_Role();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.models.crewai.Agent#getGoal <em>Goal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Goal</em>'.
+	 * @see org.nasdanika.models.crewai.Agent#getGoal()
+	 * @see #getAgent()
+	 * @generated
+	 */
+	EAttribute getAgent_Goal();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.models.crewai.Agent#getBackstory <em>Backstory</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Backstory</em>'.
+	 * @see org.nasdanika.models.crewai.Agent#getBackstory()
+	 * @see #getAgent()
+	 * @generated
+	 */
+	EAttribute getAgent_Backstory();
+
+	/**
 	 * Returns the meta object for the reference list '{@link org.nasdanika.models.crewai.Agent#getTools <em>Tools</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2281,6 +2359,28 @@ public interface CrewaiPackage extends EPackage {
 	EClass getTask();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.models.crewai.Task#getTaskDescription <em>Task Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Task Description</em>'.
+	 * @see org.nasdanika.models.crewai.Task#getTaskDescription()
+	 * @see #getTask()
+	 * @generated
+	 */
+	EAttribute getTask_TaskDescription();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.models.crewai.Task#getExpectedOutput <em>Expected Output</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Expected Output</em>'.
+	 * @see org.nasdanika.models.crewai.Task#getExpectedOutput()
+	 * @see #getTask()
+	 * @generated
+	 */
+	EAttribute getTask_ExpectedOutput();
+
+	/**
 	 * Returns the meta object for the reference '{@link org.nasdanika.models.crewai.Task#getGuardrail <em>Guardrail</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2539,6 +2639,27 @@ public interface CrewaiPackage extends EPackage {
 		 */
 		EClass AGENT = eINSTANCE.getAgent();
 		/**
+		 * The meta object literal for the '<em><b>Role</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute AGENT__ROLE = eINSTANCE.getAgent_Role();
+		/**
+		 * The meta object literal for the '<em><b>Goal</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute AGENT__GOAL = eINSTANCE.getAgent_Goal();
+		/**
+		 * The meta object literal for the '<em><b>Backstory</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute AGENT__BACKSTORY = eINSTANCE.getAgent_Backstory();
+		/**
 		 * The meta object literal for the '<em><b>Tools</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2710,6 +2831,20 @@ public interface CrewaiPackage extends EPackage {
 		 * @generated
 		 */
 		EClass TASK = eINSTANCE.getTask();
+		/**
+		 * The meta object literal for the '<em><b>Task Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TASK__TASK_DESCRIPTION = eINSTANCE.getTask_TaskDescription();
+		/**
+		 * The meta object literal for the '<em><b>Expected Output</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TASK__EXPECTED_OUTPUT = eINSTANCE.getTask_ExpectedOutput();
 		/**
 		 * The meta object literal for the '<em><b>Guardrail</b></em>' reference feature.
 		 * <!-- begin-user-doc -->

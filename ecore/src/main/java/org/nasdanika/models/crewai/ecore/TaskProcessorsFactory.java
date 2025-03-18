@@ -9,6 +9,7 @@ import org.nasdanika.models.app.Action;
 import org.nasdanika.models.app.Label;
 import org.nasdanika.models.app.graph.WidgetFactory;
 import org.nasdanika.models.crewai.CrewaiPackage;
+import org.nasdanika.models.ecore.graph.processors.EAttributeNodeProcessor;
 import org.nasdanika.models.ecore.graph.processors.EClassNodeProcessor;
 import org.nasdanika.models.ecore.graph.processors.EClassifierNodeProcessorFactory;
 import org.nasdanika.models.ecore.graph.processors.EReferenceNodeProcessor;
@@ -188,6 +189,65 @@ public class TaskProcessorsFactory {
 			BiConsumer<Label, ProgressMonitor> labelConfigurator,
 			ProgressMonitor progressMonitor) {		
 		return new EReferenceNodeProcessor(config, context, prototypeProvider) {
+			
+			@Override
+			public void configureLabel(Object source, Label label, ProgressMonitor progressMonitor) {
+				super.configureLabel(source, label, progressMonitor);
+				if (labelConfigurator != null) {
+					labelConfigurator.accept(label, progressMonitor);
+				}
+			}
+			
+		};
+	}
+	
+	@EStructuralFeatureNodeProcessorFactory(
+			nsURI = CrewaiPackage.eNS_URI,
+			classID = CrewaiPackage.TASK,
+			featureID = CrewaiPackage.TASK__TASK_DESCRIPTION,
+			description = "A clear, concise statement of what the task entails",
+			icon = "https://crew-ai.models.nasdanika.org/images/instructions.svg",
+			documentation = 
+					"""
+					A clear, concise statement of what the task entails.					  					  				
+					
+					"""
+	)
+	public EAttributeNodeProcessor createTaskDescriptionProcessor(
+			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			java.util.function.Function<ProgressMonitor, Action> prototypeProvider,
+			BiConsumer<Label, ProgressMonitor> labelConfigurator,
+			ProgressMonitor progressMonitor) {		
+		return new EAttributeNodeProcessor(config, context, prototypeProvider) {
+			
+			@Override
+			public void configureLabel(Object source, Label label, ProgressMonitor progressMonitor) {
+				super.configureLabel(source, label, progressMonitor);
+				if (labelConfigurator != null) {
+					labelConfigurator.accept(label, progressMonitor);
+				}
+			}
+			
+		};
+	}
+	
+	@EStructuralFeatureNodeProcessorFactory(
+			nsURI = CrewaiPackage.eNS_URI,
+			classID = CrewaiPackage.TASK,
+			featureID = CrewaiPackage.TASK__EXPECTED_OUTPUT,
+			description = "A detailed description of what the task’s completion looks like",
+			documentation = 
+					"""
+					A detailed description of what the task’s completion looks like.					  					  				
+					
+					"""
+	)
+	public EAttributeNodeProcessor createExpectedOutputProcessor(
+			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			java.util.function.Function<ProgressMonitor, Action> prototypeProvider,
+			BiConsumer<Label, ProgressMonitor> labelConfigurator,
+			ProgressMonitor progressMonitor) {		
+		return new EAttributeNodeProcessor(config, context, prototypeProvider) {
 			
 			@Override
 			public void configureLabel(Object source, Label label, ProgressMonitor progressMonitor) {

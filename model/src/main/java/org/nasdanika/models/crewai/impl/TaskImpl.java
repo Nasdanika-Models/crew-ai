@@ -26,6 +26,8 @@ import org.nasdanika.models.crewai.Tool;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.nasdanika.models.crewai.impl.TaskImpl#getTaskDescription <em>Task Description</em>}</li>
+ *   <li>{@link org.nasdanika.models.crewai.impl.TaskImpl#getExpectedOutput <em>Expected Output</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.TaskImpl#getGuardrail <em>Guardrail</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.TaskImpl#getAgent <em>Agent</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.TaskImpl#getTools <em>Tools</em>}</li>
@@ -36,6 +38,25 @@ import org.nasdanika.models.crewai.Tool;
  * @generated
  */
 public class TaskImpl extends ConfigurableImpl implements Task {
+	/**
+	 * The default value of the '{@link #getTaskDescription() <em>Task Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTaskDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TASK_DESCRIPTION_EDEFAULT = null;
+	/**
+	 * The default value of the '{@link #getExpectedOutput() <em>Expected Output</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExpectedOutput()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String EXPECTED_OUTPUT_EDEFAULT = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -53,6 +74,46 @@ public class TaskImpl extends ConfigurableImpl implements Task {
 	@Override
 	protected EClass eStaticClass() {
 		return CrewaiPackage.Literals.TASK;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getTaskDescription() {
+		return (String)eDynamicGet(CrewaiPackage.TASK__TASK_DESCRIPTION, CrewaiPackage.Literals.TASK__TASK_DESCRIPTION, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTaskDescription(String newTaskDescription) {
+		eDynamicSet(CrewaiPackage.TASK__TASK_DESCRIPTION, CrewaiPackage.Literals.TASK__TASK_DESCRIPTION, newTaskDescription);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getExpectedOutput() {
+		return (String)eDynamicGet(CrewaiPackage.TASK__EXPECTED_OUTPUT, CrewaiPackage.Literals.TASK__EXPECTED_OUTPUT, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setExpectedOutput(String newExpectedOutput) {
+		eDynamicSet(CrewaiPackage.TASK__EXPECTED_OUTPUT, CrewaiPackage.Literals.TASK__EXPECTED_OUTPUT, newExpectedOutput);
 	}
 
 	/**
@@ -218,6 +279,10 @@ public class TaskImpl extends ConfigurableImpl implements Task {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case CrewaiPackage.TASK__TASK_DESCRIPTION:
+				return getTaskDescription();
+			case CrewaiPackage.TASK__EXPECTED_OUTPUT:
+				return getExpectedOutput();
 			case CrewaiPackage.TASK__GUARDRAIL:
 				if (resolve) return getGuardrail();
 				return basicGetGuardrail();
@@ -244,6 +309,12 @@ public class TaskImpl extends ConfigurableImpl implements Task {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case CrewaiPackage.TASK__TASK_DESCRIPTION:
+				setTaskDescription((String)newValue);
+				return;
+			case CrewaiPackage.TASK__EXPECTED_OUTPUT:
+				setExpectedOutput((String)newValue);
+				return;
 			case CrewaiPackage.TASK__GUARDRAIL:
 				setGuardrail((Guardrail)newValue);
 				return;
@@ -273,6 +344,12 @@ public class TaskImpl extends ConfigurableImpl implements Task {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case CrewaiPackage.TASK__TASK_DESCRIPTION:
+				setTaskDescription(TASK_DESCRIPTION_EDEFAULT);
+				return;
+			case CrewaiPackage.TASK__EXPECTED_OUTPUT:
+				setExpectedOutput(EXPECTED_OUTPUT_EDEFAULT);
+				return;
 			case CrewaiPackage.TASK__GUARDRAIL:
 				setGuardrail((Guardrail)null);
 				return;
@@ -300,6 +377,10 @@ public class TaskImpl extends ConfigurableImpl implements Task {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case CrewaiPackage.TASK__TASK_DESCRIPTION:
+				return TASK_DESCRIPTION_EDEFAULT == null ? getTaskDescription() != null : !TASK_DESCRIPTION_EDEFAULT.equals(getTaskDescription());
+			case CrewaiPackage.TASK__EXPECTED_OUTPUT:
+				return EXPECTED_OUTPUT_EDEFAULT == null ? getExpectedOutput() != null : !EXPECTED_OUTPUT_EDEFAULT.equals(getExpectedOutput());
 			case CrewaiPackage.TASK__GUARDRAIL:
 				return basicGetGuardrail() != null;
 			case CrewaiPackage.TASK__AGENT:

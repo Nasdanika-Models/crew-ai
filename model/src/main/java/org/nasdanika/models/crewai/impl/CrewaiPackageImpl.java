@@ -255,37 +255,37 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getAgent_Role() {
+		return (EAttribute)agentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getAgent_Goal() {
+		return (EAttribute)agentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getAgent_Backstory() {
+		return (EAttribute)agentEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getAgent_Tools() {
-		return (EReference)agentEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getAgent_Llm() {
-		return (EReference)agentEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getAgent_FunctionCallingLlm() {
-		return (EReference)agentEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getAgent_StepCallback() {
 		return (EReference)agentEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -295,7 +295,7 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getAgent_KnowledgeSources() {
+	public EReference getAgent_Llm() {
 		return (EReference)agentEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -305,7 +305,7 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getAgent_Embedder() {
+	public EReference getAgent_FunctionCallingLlm() {
 		return (EReference)agentEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -315,8 +315,38 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getAgent_Tasks() {
+	public EReference getAgent_StepCallback() {
 		return (EReference)agentEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAgent_KnowledgeSources() {
+		return (EReference)agentEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAgent_Embedder() {
+		return (EReference)agentEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAgent_Tasks() {
+		return (EReference)agentEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -495,27 +525,27 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getTask_TaskDescription() {
+		return (EAttribute)taskEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTask_ExpectedOutput() {
+		return (EAttribute)taskEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getTask_Guardrail() {
-		return (EReference)taskEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getTask_Agent() {
-		return (EReference)taskEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getTask_Tools() {
 		return (EReference)taskEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -525,7 +555,7 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getTask_Context() {
+	public EReference getTask_Agent() {
 		return (EReference)taskEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -535,8 +565,28 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getTask_Callback() {
+	public EReference getTask_Tools() {
 		return (EReference)taskEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getTask_Context() {
+		return (EReference)taskEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getTask_Callback() {
+		return (EReference)taskEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -709,6 +759,9 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 		createEReference(toolEClass, TOOL__AGENTS);
 
 		agentEClass = createEClass(AGENT);
+		createEAttribute(agentEClass, AGENT__ROLE);
+		createEAttribute(agentEClass, AGENT__GOAL);
+		createEAttribute(agentEClass, AGENT__BACKSTORY);
 		createEReference(agentEClass, AGENT__TOOLS);
 		createEReference(agentEClass, AGENT__LLM);
 		createEReference(agentEClass, AGENT__FUNCTION_CALLING_LLM);
@@ -735,6 +788,8 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 		createEReference(crewEClass, CREW__TASK_CALLBACK);
 
 		taskEClass = createEClass(TASK);
+		createEAttribute(taskEClass, TASK__TASK_DESCRIPTION);
+		createEAttribute(taskEClass, TASK__EXPECTED_OUTPUT);
 		createEReference(taskEClass, TASK__GUARDRAIL);
 		createEReference(taskEClass, TASK__AGENT);
 		createEReference(taskEClass, TASK__TOOLS);
@@ -818,6 +873,9 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 		initEReference(getTool_Agents(), this.getAgent(), this.getAgent_Tools(), "agents", null, 0, -1, Tool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(agentEClass, Agent.class, "Agent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAgent_Role(), ecorePackage.getEString(), "role", null, 0, 1, Agent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAgent_Goal(), ecorePackage.getEString(), "goal", null, 0, 1, Agent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAgent_Backstory(), ecorePackage.getEString(), "backstory", null, 0, 1, Agent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAgent_Tools(), this.getTool(), this.getTool_Agents(), "tools", null, 0, -1, Agent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAgent_Llm(), this.getLargeLanguageModel(), null, "llm", null, 0, 1, Agent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAgent_FunctionCallingLlm(), this.getLargeLanguageModel(), null, "functionCallingLlm", null, 0, 1, Agent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -849,6 +907,8 @@ public class CrewaiPackageImpl extends EPackageImpl implements CrewaiPackage {
 		initEReference(getCrew_TaskCallback(), this.getCallback(), null, "taskCallback", null, 0, 1, Crew.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(taskEClass, Task.class, "Task", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTask_TaskDescription(), ecorePackage.getEString(), "taskDescription", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTask_ExpectedOutput(), ecorePackage.getEString(), "expectedOutput", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTask_Guardrail(), this.getGuardrail(), null, "guardrail", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTask_Agent(), this.getAgent(), this.getAgent_Tasks(), "agent", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTask_Tools(), this.getTool(), this.getTool_Tasks(), "tools", null, 0, -1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -9,6 +9,7 @@ import org.nasdanika.models.app.Action;
 import org.nasdanika.models.app.Label;
 import org.nasdanika.models.app.graph.WidgetFactory;
 import org.nasdanika.models.crewai.CrewaiPackage;
+import org.nasdanika.models.ecore.graph.processors.EAttributeNodeProcessor;
 import org.nasdanika.models.ecore.graph.processors.EClassNodeProcessor;
 import org.nasdanika.models.ecore.graph.processors.EClassifierNodeProcessorFactory;
 import org.nasdanika.models.ecore.graph.processors.EReferenceNodeProcessor;
@@ -223,6 +224,96 @@ public class AgentProcessorsFactory {
 			BiConsumer<Label, ProgressMonitor> labelConfigurator,
 			ProgressMonitor progressMonitor) {		
 		return new EReferenceNodeProcessor(config, context, prototypeProvider) {
+			
+			@Override
+			public void configureLabel(Object source, Label label, ProgressMonitor progressMonitor) {
+				super.configureLabel(source, label, progressMonitor);
+				if (labelConfigurator != null) {
+					labelConfigurator.accept(label, progressMonitor);
+				}
+			}
+			
+		};
+	}
+		
+	@EStructuralFeatureNodeProcessorFactory(
+			nsURI = CrewaiPackage.eNS_URI,
+			classID = CrewaiPackage.AGENT,
+			featureID = CrewaiPackage.AGENT__ROLE,
+			description = "Defines the agent’s function and expertise within the crew",
+			icon = "https://crew-ai.models.nasdanika.org/images/user.svg",
+			documentation = 
+					"""
+					Defines the agent’s function and expertise within the crew.					  					  				
+					
+					"""
+	)
+	public EAttributeNodeProcessor createRoleProcessor(
+			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			java.util.function.Function<ProgressMonitor, Action> prototypeProvider,
+			BiConsumer<Label, ProgressMonitor> labelConfigurator,
+			ProgressMonitor progressMonitor) {		
+		return new EAttributeNodeProcessor(config, context, prototypeProvider) {
+			
+			@Override
+			public void configureLabel(Object source, Label label, ProgressMonitor progressMonitor) {
+				super.configureLabel(source, label, progressMonitor);
+				if (labelConfigurator != null) {
+					labelConfigurator.accept(label, progressMonitor);
+				}
+			}
+			
+		};
+	}
+		
+	@EStructuralFeatureNodeProcessorFactory(
+			nsURI = CrewaiPackage.eNS_URI,
+			classID = CrewaiPackage.AGENT,
+			featureID = CrewaiPackage.AGENT__GOAL,
+			description = "The individual objective that guides the agent’s decision-making",
+			icon = "https://crew-ai.models.nasdanika.org/images/business-plan.svg",
+			documentation = 
+					"""
+					The individual objective that guides the agent’s decision-making.					  					  				
+					
+					"""
+	)
+	public EAttributeNodeProcessor createGoalProcessor(
+			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			java.util.function.Function<ProgressMonitor, Action> prototypeProvider,
+			BiConsumer<Label, ProgressMonitor> labelConfigurator,
+			ProgressMonitor progressMonitor) {		
+		return new EAttributeNodeProcessor(config, context, prototypeProvider) {
+			
+			@Override
+			public void configureLabel(Object source, Label label, ProgressMonitor progressMonitor) {
+				super.configureLabel(source, label, progressMonitor);
+				if (labelConfigurator != null) {
+					labelConfigurator.accept(label, progressMonitor);
+				}
+			}
+			
+		};
+	}
+	
+	@EStructuralFeatureNodeProcessorFactory(
+			nsURI = CrewaiPackage.eNS_URI,
+			classID = CrewaiPackage.AGENT,
+			featureID = CrewaiPackage.AGENT__BACKSTORY,
+			description = "Provides context and personality to the agent",
+			icon = "https://crew-ai.models.nasdanika.org/images/cv.svg",
+			documentation = 
+					"""
+					Provides context and personality to the agent, enriching interactions.					  					  				
+					
+					"""
+	)
+	public EAttributeNodeProcessor createBackstoryProcessor(
+			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			java.util.function.Function<ProgressMonitor, Action> prototypeProvider,
+			BiConsumer<Label, ProgressMonitor> labelConfigurator,
+			ProgressMonitor progressMonitor) {		
+		return new EAttributeNodeProcessor(config, context, prototypeProvider) {
 			
 			@Override
 			public void configureLabel(Object source, Label label, ProgressMonitor progressMonitor) {

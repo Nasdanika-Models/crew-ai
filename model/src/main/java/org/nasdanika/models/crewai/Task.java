@@ -13,6 +13,8 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.nasdanika.models.crewai.Task#getTaskDescription <em>Task Description</em>}</li>
+ *   <li>{@link org.nasdanika.models.crewai.Task#getExpectedOutput <em>Expected Output</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.Task#getGuardrail <em>Guardrail</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.Task#getAgent <em>Agent</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.Task#getTools <em>Tools</em>}</li>
@@ -25,6 +27,50 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface Task extends Configurable {
+	/**
+	 * Returns the value of the '<em><b>Task Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Task Description</em>' attribute.
+	 * @see #setTaskDescription(String)
+	 * @see org.nasdanika.models.crewai.CrewaiPackage#getTask_TaskDescription()
+	 * @model
+	 * @generated
+	 */
+	String getTaskDescription();
+
+	/**
+	 * Sets the value of the '{@link org.nasdanika.models.crewai.Task#getTaskDescription <em>Task Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Task Description</em>' attribute.
+	 * @see #getTaskDescription()
+	 * @generated
+	 */
+	void setTaskDescription(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Expected Output</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Expected Output</em>' attribute.
+	 * @see #setExpectedOutput(String)
+	 * @see org.nasdanika.models.crewai.CrewaiPackage#getTask_ExpectedOutput()
+	 * @model
+	 * @generated
+	 */
+	String getExpectedOutput();
+
+	/**
+	 * Sets the value of the '{@link org.nasdanika.models.crewai.Task#getExpectedOutput <em>Expected Output</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Expected Output</em>' attribute.
+	 * @see #getExpectedOutput()
+	 * @generated
+	 */
+	void setExpectedOutput(String value);
+
 	/**
 	 * Returns the value of the '<em><b>Guardrail</b></em>' reference.
 	 * <!-- begin-user-doc -->

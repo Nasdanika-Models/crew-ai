@@ -28,6 +28,9 @@ import org.nasdanika.models.crewai.Tool;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.nasdanika.models.crewai.impl.AgentImpl#getRole <em>Role</em>}</li>
+ *   <li>{@link org.nasdanika.models.crewai.impl.AgentImpl#getGoal <em>Goal</em>}</li>
+ *   <li>{@link org.nasdanika.models.crewai.impl.AgentImpl#getBackstory <em>Backstory</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.AgentImpl#getTools <em>Tools</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.AgentImpl#getLlm <em>Llm</em>}</li>
  *   <li>{@link org.nasdanika.models.crewai.impl.AgentImpl#getFunctionCallingLlm <em>Function Calling Llm</em>}</li>
@@ -40,6 +43,34 @@ import org.nasdanika.models.crewai.Tool;
  * @generated
  */
 public class AgentImpl extends ConfigurableImpl implements Agent {
+	/**
+	 * The default value of the '{@link #getRole() <em>Role</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRole()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ROLE_EDEFAULT = null;
+	/**
+	 * The default value of the '{@link #getGoal() <em>Goal</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGoal()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String GOAL_EDEFAULT = null;
+	/**
+	 * The default value of the '{@link #getBackstory() <em>Backstory</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBackstory()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String BACKSTORY_EDEFAULT = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -57,6 +88,66 @@ public class AgentImpl extends ConfigurableImpl implements Agent {
 	@Override
 	protected EClass eStaticClass() {
 		return CrewaiPackage.Literals.AGENT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getRole() {
+		return (String)eDynamicGet(CrewaiPackage.AGENT__ROLE, CrewaiPackage.Literals.AGENT__ROLE, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setRole(String newRole) {
+		eDynamicSet(CrewaiPackage.AGENT__ROLE, CrewaiPackage.Literals.AGENT__ROLE, newRole);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getGoal() {
+		return (String)eDynamicGet(CrewaiPackage.AGENT__GOAL, CrewaiPackage.Literals.AGENT__GOAL, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setGoal(String newGoal) {
+		eDynamicSet(CrewaiPackage.AGENT__GOAL, CrewaiPackage.Literals.AGENT__GOAL, newGoal);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getBackstory() {
+		return (String)eDynamicGet(CrewaiPackage.AGENT__BACKSTORY, CrewaiPackage.Literals.AGENT__BACKSTORY, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setBackstory(String newBackstory) {
+		eDynamicSet(CrewaiPackage.AGENT__BACKSTORY, CrewaiPackage.Literals.AGENT__BACKSTORY, newBackstory);
 	}
 
 	/**
@@ -253,6 +344,12 @@ public class AgentImpl extends ConfigurableImpl implements Agent {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case CrewaiPackage.AGENT__ROLE:
+				return getRole();
+			case CrewaiPackage.AGENT__GOAL:
+				return getGoal();
+			case CrewaiPackage.AGENT__BACKSTORY:
+				return getBackstory();
 			case CrewaiPackage.AGENT__TOOLS:
 				return getTools();
 			case CrewaiPackage.AGENT__LLM:
@@ -284,6 +381,15 @@ public class AgentImpl extends ConfigurableImpl implements Agent {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case CrewaiPackage.AGENT__ROLE:
+				setRole((String)newValue);
+				return;
+			case CrewaiPackage.AGENT__GOAL:
+				setGoal((String)newValue);
+				return;
+			case CrewaiPackage.AGENT__BACKSTORY:
+				setBackstory((String)newValue);
+				return;
 			case CrewaiPackage.AGENT__TOOLS:
 				getTools().clear();
 				getTools().addAll((Collection<? extends Tool>)newValue);
@@ -320,6 +426,15 @@ public class AgentImpl extends ConfigurableImpl implements Agent {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case CrewaiPackage.AGENT__ROLE:
+				setRole(ROLE_EDEFAULT);
+				return;
+			case CrewaiPackage.AGENT__GOAL:
+				setGoal(GOAL_EDEFAULT);
+				return;
+			case CrewaiPackage.AGENT__BACKSTORY:
+				setBackstory(BACKSTORY_EDEFAULT);
+				return;
 			case CrewaiPackage.AGENT__TOOLS:
 				getTools().clear();
 				return;
@@ -353,6 +468,12 @@ public class AgentImpl extends ConfigurableImpl implements Agent {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case CrewaiPackage.AGENT__ROLE:
+				return ROLE_EDEFAULT == null ? getRole() != null : !ROLE_EDEFAULT.equals(getRole());
+			case CrewaiPackage.AGENT__GOAL:
+				return GOAL_EDEFAULT == null ? getGoal() != null : !GOAL_EDEFAULT.equals(getGoal());
+			case CrewaiPackage.AGENT__BACKSTORY:
+				return BACKSTORY_EDEFAULT == null ? getBackstory() != null : !BACKSTORY_EDEFAULT.equals(getBackstory());
 			case CrewaiPackage.AGENT__TOOLS:
 				return !getTools().isEmpty();
 			case CrewaiPackage.AGENT__LLM:

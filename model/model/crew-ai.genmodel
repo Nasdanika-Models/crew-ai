@@ -32,6 +32,9 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Tool/agents"/>
     </genClasses>
     <genClasses ecoreClass="crew-ai.ecore#//Agent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crew-ai.ecore#//Agent/role"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crew-ai.ecore#//Agent/goal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crew-ai.ecore#//Agent/backstory"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Agent/tools"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Agent/llm"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Agent/functionCallingLlm"/>
@@ -58,6 +61,8 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Crew/taskCallback"/>
     </genClasses>
     <genClasses ecoreClass="crew-ai.ecore#//Task">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crew-ai.ecore#//Task/taskDescription"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute crew-ai.ecore#//Task/expectedOutput"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Task/guardrail"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Task/agent"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference crew-ai.ecore#//Task/tools"/>

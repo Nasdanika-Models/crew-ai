@@ -113,25 +113,6 @@ public class CodeProcessorsFactory {
 					labelConfigurator.accept(label, progressMonitor);
 				}
 			}
-			
-//			@Override
-//			public String getLoadDescription() {
-//				return "Description how to load family members. The description is shown in the load specification table. Details like snippets shall go to documentation";
-//			}
-//			
-//			@Override
-//			protected EModelElementDocumentation getLoadDocumentation() {
-//				return new EModelElementDocumentation("""
-//						Some ``documentation``:
-//						
-//						```yaml
-//						key: value
-//						```
-//						
-//						""", 
-//						Util.createClassURI(getClass()));
-//			}
-			
 		};
 	}
 	
