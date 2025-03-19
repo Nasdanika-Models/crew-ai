@@ -2,6 +2,7 @@ package org.nasdanika.models.crewai.ecore;
 
 import java.util.function.BiConsumer;
 
+import org.eclipse.emf.common.util.EList;
 import org.nasdanika.common.Context;
 import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.graph.processor.NodeProcessorConfig;
@@ -59,6 +60,11 @@ public class AgentProcessorsFactory {
 				}
 			}	
 			
+			@Override
+			protected EList<? super Action> getMembersActionCollection(Action parent) {
+				return parent.getChildren();
+			}
+			
 		};
 	}
 	
@@ -74,6 +80,35 @@ public class AgentProcessorsFactory {
 					"""
 	)
 	public EReferenceNodeProcessor createToolsProcessor(
+			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			java.util.function.Function<ProgressMonitor, Action> prototypeProvider,
+			BiConsumer<Label, ProgressMonitor> labelConfigurator,
+			ProgressMonitor progressMonitor) {		
+		return new EReferenceNodeProcessor(config, context, prototypeProvider) {
+			
+			@Override
+			public void configureLabel(Object source, Label label, ProgressMonitor progressMonitor) {
+				super.configureLabel(source, label, progressMonitor);
+				if (labelConfigurator != null) {
+					labelConfigurator.accept(label, progressMonitor);
+				}
+			}
+			
+		};
+	}
+	
+	@EStructuralFeatureNodeProcessorFactory(
+			nsURI = CrewaiPackage.eNS_URI,
+			classID = CrewaiPackage.AGENT,
+			featureID = CrewaiPackage.AGENT__TASKS,
+			description = "Tasks assigned to this agent",
+			documentation = 
+					"""
+					Tasks assigned to this agent. 					  					  				
+					
+					"""
+	)
+	public EReferenceNodeProcessor createTasksProcessor(
 			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
 			java.util.function.Function<ProgressMonitor, Action> prototypeProvider,
 			BiConsumer<Label, ProgressMonitor> labelConfigurator,

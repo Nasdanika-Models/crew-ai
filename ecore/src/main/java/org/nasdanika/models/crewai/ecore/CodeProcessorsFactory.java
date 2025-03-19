@@ -2,6 +2,7 @@ package org.nasdanika.models.crewai.ecore;
 
 import java.util.function.BiConsumer;
 
+import org.eclipse.emf.common.util.EList;
 import org.nasdanika.common.Context;
 import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.graph.processor.NodeProcessorConfig;
@@ -51,21 +52,13 @@ public class CodeProcessorsFactory {
 				if (labelConfigurator != null) {
 					labelConfigurator.accept(label, progressMonitor);
 				}
-			}	
+			}
 			
-//			@Override
-//			protected EModelElementDocumentation getLoadDocumentation() {
-//				return new EModelElementDocumentation("""
-//						Load documentation with code snippets:
-//						
-//						```yaml
-//						key: value
-//						```
-//						
-//						""", 
-//						Util.createClassURI(getClass()));
-//			}			
-			
+			@Override
+			protected EList<? super Action> getMembersActionCollection(Action parent) {
+				return parent.getChildren();
+			}
+						
 		};
 	}
 	

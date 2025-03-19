@@ -2,6 +2,7 @@ package org.nasdanika.models.crewai.ecore;
 
 import java.util.function.BiConsumer;
 
+import org.eclipse.emf.common.util.EList;
 import org.nasdanika.common.Context;
 import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.graph.processor.NodeProcessorConfig;
@@ -54,6 +55,11 @@ public class ConfigurableProcessorsFactory {
 				}
 			}	
 			
+			@Override
+			protected EList<? super Action> getMembersActionCollection(Action parent) {
+				return parent.getChildren();
+			}
+			
 		};
 	}
 	
@@ -68,6 +74,34 @@ public class ConfigurableProcessorsFactory {
 					"""
 	)
 	public EAttributeNodeProcessor createConfigurationProcessor(
+			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+			java.util.function.Function<ProgressMonitor, Action> prototypeProvider,
+			BiConsumer<Label, ProgressMonitor> labelConfigurator,
+			ProgressMonitor progressMonitor) {		
+		return new EAttributeNodeProcessor(config, context, prototypeProvider) {
+			
+			@Override
+			public void configureLabel(Object source, Label label, ProgressMonitor progressMonitor) {
+				super.configureLabel(source, label, progressMonitor);
+				if (labelConfigurator != null) {
+					labelConfigurator.accept(label, progressMonitor);
+				}
+			}
+			
+		};
+	}
+	
+	@EStructuralFeatureNodeProcessorFactory(
+			nsURI = CrewaiPackage.eNS_URI,
+			classID = CrewaiPackage.CONFIGURABLE,
+			featureID = CrewaiPackage.CONFIGURABLE__CONFIG_MAP,
+			description = "Computed configuration map",
+			documentation = 
+					"""
+					Configuration map computed from YAML configuration and other features. 					  					  									
+					"""
+	)
+	public EAttributeNodeProcessor createConfiMapProcessor(
 			NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
 			java.util.function.Function<ProgressMonitor, Action> prototypeProvider,
 			BiConsumer<Label, ProgressMonitor> labelConfigurator,

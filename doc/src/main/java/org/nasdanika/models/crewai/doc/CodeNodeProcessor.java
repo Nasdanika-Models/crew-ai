@@ -14,6 +14,7 @@ import org.nasdanika.graph.processor.NodeProcessorConfig;
 import org.nasdanika.models.app.Action;
 import org.nasdanika.models.app.Label;
 import org.nasdanika.models.app.graph.WidgetFactory;
+import org.nasdanika.models.bootstrap.Table;
 import org.nasdanika.models.crewai.Code;
 
 public class CodeNodeProcessor<T extends Code> extends ModelElementNodeProcessor<T> {
@@ -35,6 +36,12 @@ public class CodeNodeProcessor<T extends Code> extends ModelElementNodeProcessor
 	@Override
 	protected Label createAction(ProgressMonitor progressMonitor) {
 		Action action = (Action) super.createAction(progressMonitor);
+		
+		Table propertiesTable = createPropertiesTable(progressMonitor);
+		if (propertiesTable != null) {
+			action.getContent().add(0, propertiesTable);
+		}
+		
 		if (documentationFactories != null && !documentationFactories.isEmpty()) {
 			Code target = getTarget();
 			String code = target.getCode();
