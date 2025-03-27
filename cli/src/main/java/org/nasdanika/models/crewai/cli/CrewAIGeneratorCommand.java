@@ -35,7 +35,6 @@ public class CrewAIGeneratorCommand extends TelemetryCommand {
 
 	public CrewAIGeneratorCommand(OpenTelemetry openTelemetry, CapabilityLoader capabilityLoader) {
 		super(openTelemetry, capabilityLoader);
-		// TODO Auto-generated constructor stub
 	}
 
 	@ParentCommand
