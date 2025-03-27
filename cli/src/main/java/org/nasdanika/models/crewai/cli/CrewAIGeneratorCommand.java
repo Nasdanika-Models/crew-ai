@@ -7,23 +7,22 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.nasdanika.capability.CapabilityLoader;
-import org.nasdanika.cli.CommandBase;
 import org.nasdanika.cli.ParentCommands;
 import org.nasdanika.cli.ProgressMonitorMixIn;
 import org.nasdanika.cli.ResourceSetMixIn;
+import org.nasdanika.cli.TelemetryCommand;
 import org.nasdanika.common.Description;
 import org.nasdanika.common.EObjectSupplier;
 import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.models.crewai.Crew;
 import org.nasdanika.models.crewai.util.CrewGenerator;
 
+import io.opentelemetry.api.OpenTelemetry;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.ExecutionException;
 import picocli.CommandLine.Mixin;
-import picocli.CommandLine.Model.CommandSpec;
 import picocli.CommandLine.Parameters;
 import picocli.CommandLine.ParentCommand;
-import picocli.CommandLine.Spec;
 
 @Command(
 		description = "Generates CrewAI code and configuration from a model",
@@ -32,21 +31,15 @@ import picocli.CommandLine.Spec;
 		name = "crew-ai")
 @ParentCommands(EObjectSupplier.class)
 @Description(icon = "https://crew-ai.models.nasdanika.org/images/crewai.svg")
-public class CrewAIGeneratorCommand extends CommandBase {
-		
-	public CrewAIGeneratorCommand() {
-		super();
-	}
+public class CrewAIGeneratorCommand extends TelemetryCommand {
 
-	public CrewAIGeneratorCommand(CapabilityLoader capabilityLoader) {
-		super(capabilityLoader);
+	public CrewAIGeneratorCommand(OpenTelemetry openTelemetry, CapabilityLoader capabilityLoader) {
+		super(openTelemetry, capabilityLoader);
+		// TODO Auto-generated constructor stub
 	}
 
 	@ParentCommand
 	private EObjectSupplier<EObject> eObjectSupplier;
-	
-	@Spec
-	private CommandSpec spec;
 		
 	@Parameters(
 		index =  "0",	
@@ -61,7 +54,7 @@ public class CrewAIGeneratorCommand extends CommandBase {
 	private ResourceSetMixIn resourceSetMixIn;
 		
 	@Override
-	public Integer call() throws Exception {
+	public Integer execute() throws Exception {
 		if (eObjectSupplier == null) {
 			throw new ExecutionException(spec.commandLine(), "No parent command");
 		}

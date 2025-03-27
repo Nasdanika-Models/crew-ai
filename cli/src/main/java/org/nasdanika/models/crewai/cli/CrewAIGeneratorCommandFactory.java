@@ -1,12 +1,13 @@
 package org.nasdanika.models.crewai.cli;
 
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 
+import org.nasdanika.capability.ServiceCapabilityFactory;
 import org.nasdanika.cli.SubCommandCapabilityFactory;
 import org.nasdanika.common.ProgressMonitor;
 
+import io.opentelemetry.api.OpenTelemetry;
 import picocli.CommandLine;
 
 public class CrewAIGeneratorCommandFactory extends SubCommandCapabilityFactory<CrewAIGeneratorCommand> {
@@ -21,7 +22,10 @@ public class CrewAIGeneratorCommandFactory extends SubCommandCapabilityFactory<C
 			List<CommandLine> parentPath,
 			Loader loader,
 			ProgressMonitor progressMonitor) {
-		return CompletableFuture.completedStage(new CrewAIGeneratorCommand(loader.getCapabilityLoader()));
+		
+		Requirement<Object, OpenTelemetry> requirement = ServiceCapabilityFactory.createRequirement(OpenTelemetry.class);
+		CompletionStage<OpenTelemetry> openTelemetryCS = loader.loadOne(requirement, progressMonitor);		
+		return openTelemetryCS.thenApply(ot -> new CrewAIGeneratorCommand(ot, loader.getCapabilityLoader()));
 	}
 
 }
