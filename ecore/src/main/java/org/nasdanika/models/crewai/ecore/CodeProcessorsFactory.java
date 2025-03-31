@@ -58,6 +58,11 @@ public class CodeProcessorsFactory {
 			protected EList<? super Action> getMembersActionCollection(Action parent) {
 				return parent.getChildren();
 			}
+			
+			@Override
+			protected EList<? super Action> getMembersCollection(Action membersAction) {
+				return membersAction.getChildren();
+			}
 						
 		};
 	}

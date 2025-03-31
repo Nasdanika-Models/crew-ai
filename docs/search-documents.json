@@ -1,384 +1,384 @@
 {
   "references/eClassifiers/Task/references/eStructuralFeatures/callback/index.html": {
     "path": "Task/References/callback",
-    "link-uuid": "acb6f7d0-847d-4b24-b3ba-c985b469620c",
+    "link-uuid": "846f212f-26f0-4f7c-a7b8-7062edacce4a",
     "title": "callback",
     "content": "Type Callback Multiplicity 0..1 Function to be executed after task completion."
   },
   "references/eClassifiers/Task/inheritance.html": {
     "path": "Task/Inheritance",
-    "link-uuid": "2ecd2de3-7a9f-4920-a8a5-8c14735b9141",
+    "link-uuid": "d1c21d9d-fb00-421d-bd0a-7c877162f08a",
     "title": "Inheritance",
     "content": "Supertypes "
   },
   "references/eClassifiers/KnowledgeSource/inheritance.html": {
     "path": "Knowledge Source/Inheritance",
-    "link-uuid": "0809a4c4-9f2f-4433-8a76-f22eaa079d2a",
+    "link-uuid": "cdef554b-75f3-44bf-8813-815f35a7b44e",
     "title": "Inheritance",
     "content": "Supertypes "
   },
   "references/eClassifiers/Function/index.html": {
-    "link-uuid": "e4d689da-5d7b-45b7-90f4-2045bcb972f2",
+    "link-uuid": "4957d5a4-b1dc-481f-8ece-c9cde2c3b2f9",
     "title": "Function",
     "content": "Generates a python function."
   },
   "references/eClassifiers/Crew/references/eStructuralFeatures/embedder/index.html": {
     "path": "Crew/References/embedder",
-    "link-uuid": "f1ce273c-dda2-4304-821e-e02d806f7045",
+    "link-uuid": "23c4677a-d3f6-41d9-973e-81f782f754f8",
     "title": "embedder",
     "content": "Type Code Multiplicity 0..1 Configuration for the embedder to be used by the crew."
   },
   "references/eClassifiers/Crew/references/eStructuralFeatures/stepCallback/index.html": {
     "path": "Crew/References/stepCallback",
-    "link-uuid": "830f9c2b-f4c7-49e2-9cc9-e13eeeabcdcb",
+    "link-uuid": "5869d646-1521-441c-aa8f-eb6f7d125d67",
     "title": "stepCallback",
     "content": "Type Callback Multiplicity 0..1 A function that is called after each step of every agent. This can be used to log the agent&rsquo;s actions or to perform other operations; it won&rsquo;t override the agent-specific step callback."
   },
   "references/eClassifiers/Task/index.html": {
-    "link-uuid": "0c09b472-48a0-42b4-9570-d326bf5b9089",
+    "link-uuid": "18865a15-3293-4c37-a8ec-af17ac964aa7",
     "title": "Task",
     "content": "A Task is a specific assignment completed by an Agent. Tasks provide all necessary details for execution, such as a description, the agent responsible, required tools, and more, facilitating a wide range of action complexities. Tasks can be collaborative, requiring multiple agents to work together."
   },
   "references/eClassifiers/Tool/inheritance.html": {
     "path": "Tool/Inheritance",
-    "link-uuid": "f1985c9e-3b9d-4a76-9d06-6c3da7c2d36e",
+    "link-uuid": "d2a4d2f8-9b37-4cc4-a741-4023c76e70f9",
     "title": "Inheritance",
     "content": "Supertypes "
   },
   "references/eClassifiers/Code/references/eStructuralFeatures/code/index.html": {
     "path": "Code/Attributes/code",
-    "link-uuid": "4e6ab8c2-f884-48a4-9562-af48a29e0f0f",
+    "link-uuid": "7dd961d9-0c81-4792-b253-80d61ebeb068",
     "title": "code",
     "content": "Type EString Multiplicity 0..1 How code attribute is used is subclass-specific: Crew - code is added to the top of the generated crew class after configuration fields and before any other declarations. Agent and Task - code is used as agent/task method body template. Function - code is used to produce function body. Tool - what is added to the tools array. E.g. SerperDevTool(). Code can contain interpolation tokens for adding imports. Example: my_var = ${spel:addItemImport('my_module', 'my_item').item}\n spel: is a prefix for Spring Expression Language tokens. addItemImport('my_module', 'my_item').item - calls org.nasdanika.models.python.Source.addImport() method and then getItem() value of the result. Import methods: addItemImport(module, item) - the method used above addItemImport(module, item, name) - in this case use .name addModuleImport(module) - in this case use add dot and imported item after the token. e.g. ${spel:addModuleImport('my_module').module}.my_item addModuleImport(module, alias) - in this case use add dot and imported item after the token. e.g. ${spel:addModuleImport('my_module', 'mi_modulo').alias}.my_item"
   },
   "references/eClassifiers/Crew/references/eStructuralFeatures/afterKickoff/index.html": {
     "path": "Crew/References/afterKickoff",
-    "link-uuid": "36c9544c-20de-4a3e-87a7-224249db82a6",
+    "link-uuid": "0b4e1340-a1e5-4fe3-9b99-d695219d9089",
     "title": "afterKickoff",
     "content": "Type Function Multiplicity 0..1 Executes after the crew finishes."
   },
   "references/eClassifiers/Task/references/eStructuralFeatures/taskDescription/index.html": {
     "path": "Task/Attributes/taskDescription",
-    "link-uuid": "7c7d42ec-80a9-4495-af86-dd4da7c238ea",
+    "link-uuid": "e5b609c6-246d-41db-a17c-bc85f2a156b4",
     "title": "taskDescription",
     "content": "Type EString Multiplicity 0..1 A clear, concise statement of what the task entails."
   },
   "references/eClassifiers/Task/references/eStructuralFeatures/tools/index.html": {
     "path": "Task/References/tools",
-    "link-uuid": "011cc3e7-b9d3-4b91-a0e0-a7cacf952775",
+    "link-uuid": "97b83081-9f30-4db8-8651-57258120aefc",
     "title": "tools",
     "content": "Type Tool Multiplicity 0..* The tools/resources the agent is limited to use for this task."
   },
   "references/eClassifiers/Guardrail/index.html": {
-    "link-uuid": "351e80db-7abf-4087-b5a1-84d1ef6e7ca5",
+    "link-uuid": "572602c6-8542-4d19-8f76-1014f2304dfc",
     "title": "Guardrail",
     "content": "Task guardrails provide a powerful way to validate, transform, or filter task outputs before they are passed to the next task. Guardrails are optional functions that execute before the next task starts, allowing you to ensure that task outputs meet specific requirements or formats."
   },
   "references/eClassifiers/KnowledgeSource/references/eStructuralFeatures/agents/index.html": {
     "path": "Knowledge Source/References/agents",
-    "link-uuid": "c07c9440-e487-4576-8298-e9f3c27a026f",
+    "link-uuid": "78834344-1471-4cd5-995b-d5097b7b0824",
     "title": "agents",
     "content": "Type Agent Multiplicity 0..* Agents using this knowledge source."
   },
   "references/eClassifiers/KnowledgeSource/index.html": {
-    "link-uuid": "26838e85-ca3d-42d1-a396-04f2921dac85",
+    "link-uuid": "3a1ed5ed-bf7f-41bf-83d2-08bcaf022a8f",
     "title": "Knowledge Source",
     "content": "Knowledge allows agents to access and utilize external information sources during their tasks. Think of it as giving your agents a reference library they can consult while working."
   },
   "references/eClassifiers/Crew/references/eStructuralFeatures/functionCallingLlm/index.html": {
     "path": "Crew/References/functionCallingLlm",
-    "link-uuid": "80c9ffc1-7c90-476c-b16d-c93af430ffc1",
+    "link-uuid": "5e3a1a65-ba31-4c8b-bc8e-84df37cdd91c",
     "title": "functionCallingLlm",
     "content": "Type Large Language Model Multiplicity 0..1 If passed, the crew will use this LLM to do function calling for tools for all agents in the crew. Each agent can have its own LLM, which overrides the crew&rsquo;s LLM for function calling."
   },
   "index.html": {
-    "link-uuid": "a7774ff5-eedc-43a4-a6bf-7cb8826e4755",
+    "link-uuid": "429c84f8-a7b5-4eda-a043-756d3862cf51",
     "title": "CrewAI Model",
     "content": "The CrewAI model can be used as a reference guide complementary to the official documentation1. Hover the mouse over the diagram elements above for short descriptions (tooltips), click to navigate to element pages with more details. The above diagram is conceptual - it shows only the most important classes and relationships. The generated UML class diagram provides more details. Hover the mouse over diagram elements for tooltips, click to navigate to class/feature pages. You can also use the default graph and other graphs to quickly grasp relationships of the model elements. Hover the mouse over graph nodes for tooltips and to highlight their reated classes. Drag to rearrange, double-click to navigate to class pages. It can also be used as a starting point for an organization-specific documentation - make a copy or fork, modify descriptions of model elements. For example, add links to catalogs of internal knowledge sources or approved/available LLMs and their configurations. Similarly, you may have a catalog of reusable agents or guardrails. You may also have organization-specific development guidelines with references to shared libraries and internal productivity tools such as code generators, wizards, IDE plugins, training resources, &hellip; You can also create a custom model by extending classes in this model and add classes and features specific to your organization. For example, catalogs, ownership and reponsibilities, alignment to organizational structure, development efforts, etc. However, the main objective of the model is to serve as an intermediary for code and documentation generation. The model can be populated from diagrams and other data sources. Then it produces a python model and, finally, Python sources and supporting artifacts. The model can be created from Drawio diagrams using exeutable diagrams or semantic mapping. You can find an example of programmatic population of a model here. The below code snippet shows how to generate a python source file and configuration files using CrewGenerator: CapabilityLoader capabilityLoader = new CapabilityLoader();\nProgressMonitor progressMonitor = new PrintStreamProgressMonitor();\nRequirement&lt;ResourceSetRequirement, ResourceSet&gt; requirement = ServiceCapabilityFactory.createRequirement(ResourceSet.class);\nResourceSet resourceSet = capabilityLoader.loadOne(requirement, progressMonitor);\n\nFile crewSourceFile = new File(&quot;target/latest-ai-developments/src/crew.py&quot;).getCanonicalFile();\nURI crewSourceURI = URI.createFileURI(crewSourceFile.getAbsolutePath());\nCrewGenerator crewGenerator = new CrewGenerator();\ncrewGenerator.generate(\n\t\tcreateCrew(),\n\t\tcrewSourceURI,\n\t\tresourceSet,\n\t\tprogressMonitor);\n You can override CrewGenerator methods to customize the generation process. Documentation in this model is copied verbatim or almost verbatim from the reference documentation for the purpose of consistency. ↩ Step callback Agent You can think of an agent as a specialized team member with specific skills, expertise, and responsibilities. Task A specific assignment completed by an Agent Tool A skill or function that agents can utilize to perform various actions Guardrail Validates and transforms task outputs A crew may use multiple LLMs: * Function calling LLM * Manager LLM * Planning LLM Step and taks callbacks Crew A group of agents working together to complete a set of tasks Large Language Model (LLM) LLMs enable agents to understand context, make decisions, and generate human-like responses Knowledge Source An external source of information which agents use to work on tasks Callback A function called after completion of tasks and steps Context Family"
   },
   "references/eClassifiers/Agent/references/eStructuralFeatures/role/index.html": {
     "path": "Agent/Attributes/role",
-    "link-uuid": "82fd5df8-ef49-4994-8704-96be169f6f4e",
+    "link-uuid": "1c22f5dd-e49e-48b0-99bd-880e6b18350e",
     "title": "role",
     "content": "Type EString Multiplicity 0..1 Defines the agent&rsquo;s function and expertise within the crew."
   },
   "references/eClassifiers/Crew/references/eStructuralFeatures/agents/index.html": {
     "path": "Crew/References/agents",
-    "link-uuid": "9cce215f-7859-4018-ab3e-f0840bc4aa54",
+    "link-uuid": "afd1dded-b6c2-417b-b847-244df9b9a167",
     "title": "agents",
     "content": "Type Agent Multiplicity 0..* Agents in this crew."
   },
   "references/eClassifiers/Function/inheritance.html": {
     "path": "Function/Inheritance",
-    "link-uuid": "f8325744-1320-4428-a2c8-ae66d0613edc",
+    "link-uuid": "b181f217-f1ee-4892-9462-8e2d76f4e5de",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  "
   },
   "references/eClassifiers/Agent/index.html": {
-    "link-uuid": "c5091be5-f870-4d6b-a016-0feddafb914c",
+    "link-uuid": "b1d8d42c-bf80-4f81-97ca-5c4eb9dbc709",
     "title": "Agent",
     "content": "An Agent is an autonomous unit that can: Perform specific tasks Make decisions based on its role and goal Use tools to accomplish objectives Communicate and collaborate with other agents Maintain memory of interactions Delegate tasks when allowed"
   },
   "references/eClassifiers/Agent/inheritance.html": {
     "path": "Agent/Inheritance",
-    "link-uuid": "0a6089cc-5588-4534-a5c1-e20cd8b44605",
+    "link-uuid": "2e68f80d-4b67-41da-8292-d920be9152f2",
     "title": "Inheritance",
     "content": "Supertypes "
   },
   "references/eClassifiers/Agent/references/eStructuralFeatures/embedder/index.html": {
     "path": "Agent/References/embedder",
-    "link-uuid": "72d43c34-d9b2-4926-8e5f-82f3cb5632ba",
+    "link-uuid": "3f16a744-57da-4c89-8880-787dc631cb64",
     "title": "embedder",
     "content": "Type Code Multiplicity 0..1 Configuration for the embedder used by the agent."
   },
   "references/eClassifiers/Crew/references/eStructuralFeatures/taskCallback/index.html": {
     "path": "Crew/References/taskCallback",
-    "link-uuid": "47ed472e-d5e5-443d-b648-865141665788",
+    "link-uuid": "97f7814c-ea3e-4963-b8b0-555341832dac",
     "title": "taskCallback",
     "content": "Type Callback Multiplicity 0..1 A function that is called after the completion of each task. Useful for monitoring or additional operations post-task execution."
   },
   "references/eClassifiers/LargeLanguageModel/inheritance.html": {
     "path": "Large Language Model/Inheritance",
-    "link-uuid": "e2d5c8e9-9bf1-456b-b497-d80dce434030",
+    "link-uuid": "666be3f0-393f-43d6-b3f9-22df898b040b",
     "title": "Inheritance",
     "content": "Supertypes "
   },
   "references/eClassifiers/Agent/references/eStructuralFeatures/tasks/index.html": {
     "path": "Agent/References/tasks",
-    "link-uuid": "848a0a6a-ad59-4faf-9c30-cae65bbee872",
+    "link-uuid": "2219f971-912b-4851-823b-1e8b1cf2e5bd",
     "title": "tasks",
     "content": "Type Task Multiplicity 0..* Tasks assigned to this agent."
   },
   "references/eClassifiers/Agent/references/eStructuralFeatures/backstory/index.html": {
     "path": "Agent/Attributes/backstory",
-    "link-uuid": "ca065373-7df6-4352-8cdb-312daff84920",
+    "link-uuid": "8e8ac64c-45ba-4e37-b8ab-3c4d2cbe30eb",
     "title": "backstory",
     "content": "Type EString Multiplicity 0..1 Provides context and personality to the agent, enriching interactions."
   },
   "references/eClassifiers/Function/references/eStructuralFeatures/parameters/index.html": {
     "path": "Function/Attributes/parameters",
-    "link-uuid": "ed80002b-481c-4620-a48f-3aa7c0ee79d1",
+    "link-uuid": "a63394cb-f784-4704-8583-05e7cb92e9e7",
     "title": "parameters",
     "content": "Type EString Multiplicity 0..* A list of function parameters."
   },
   "references/eClassifiers/Task/references/eStructuralFeatures/expectedOutput/index.html": {
     "path": "Task/Attributes/expectedOutput",
-    "link-uuid": "7eb59bb1-ba1d-4177-ae31-4dc3c116d594",
+    "link-uuid": "04190fb6-e7a0-454f-9402-82b69adbccdb",
     "title": "expectedOutput",
     "content": "Type EString Multiplicity 0..1 A detailed description of what the task&rsquo;s completion looks like."
   },
   "references/eClassifiers/Tool/references/eStructuralFeatures/agents/index.html": {
     "path": "Tool/References/agents",
-    "link-uuid": "7f0b7295-7312-4910-9a33-afed3bedb364",
+    "link-uuid": "3caaf24d-1483-48e3-8bba-1e142f78523d",
     "title": "agents",
     "content": "Type Agent Multiplicity 0..* Agents using this tool."
   },
   "references/eClassifiers/Agent/references/eStructuralFeatures/goal/index.html": {
     "path": "Agent/Attributes/goal",
-    "link-uuid": "481263e5-c3bc-4091-99f0-b8f872916d25",
+    "link-uuid": "4aad1de8-9035-42af-8f3d-ff02f129f748",
     "title": "goal",
     "content": "Type EString Multiplicity 0..1 The individual objective that guides the agent&rsquo;s decision-making."
   },
   "references/eClassifiers/Crew/references/eStructuralFeatures/knowledgeSources/index.html": {
     "path": "Crew/References/knowledgeSources",
-    "link-uuid": "b3e185bf-94cb-4315-8055-86391e66cb3d",
+    "link-uuid": "ac31f094-ee65-420e-8943-110efbba7884",
     "title": "knowledgeSources",
     "content": "Type Knowledge Source Multiplicity 0..* Knowledge sources used by agents"
   },
   "references/eClassifiers/Crew/references/eStructuralFeatures/planningLlm/index.html": {
     "path": "Crew/References/planningLlm",
-    "link-uuid": "6a10f315-ad7f-47cc-9ac1-c27c0a232fd0",
+    "link-uuid": "8d65943b-d420-4063-89a7-27ec3b75c73d",
     "title": "planningLlm",
     "content": "Type Large Language Model Multiplicity 0..1 The language model used by the AgentPlanner in a planning process"
   },
   "references/eClassifiers/Guardrail/inheritance.html": {
     "path": "Guardrail/Inheritance",
-    "link-uuid": "39b7bb60-b791-44bf-9606-50cf79af88b9",
+    "link-uuid": "19c5e125-62e2-4f7f-815a-f9785df84f72",
     "title": "Inheritance",
     "content": "Supertypes "
   },
   "references/eClassifiers/Agent/references/eStructuralFeatures/stepCallback/index.html": {
     "path": "Agent/References/stepCallback",
-    "link-uuid": "1c2bf6fc-8376-44e7-a4a7-70e6ba4ee529",
+    "link-uuid": "b37321ed-78d5-4463-8138-c0a063344ef5",
     "title": "stepCallback",
     "content": "Type Callback Multiplicity 0..1 Function called after each agent step, overrides crew callback."
   },
   "references/eClassifiers/Crew/references/eStructuralFeatures/managerLlm/index.html": {
     "path": "Crew/References/managerLlm",
-    "link-uuid": "4f454ad5-e942-4749-b4e1-62a0fa4f3637",
+    "link-uuid": "5c97fb18-1e28-438b-8858-cb26b63f6950",
     "title": "managerLlm",
     "content": "Type Large Language Model Multiplicity 0..1 The language model used by the manager agent in a hierarchical process."
   },
   "references/eClassifiers/Agent/references/eStructuralFeatures/llm/index.html": {
     "path": "Agent/References/llm",
-    "link-uuid": "35d25ac5-6ddf-44f2-9f2a-a6def450a679",
+    "link-uuid": "4ff1c4a1-0dad-4aa2-8e0c-d84511cda1bd",
     "title": "llm",
     "content": "Type Large Language Model Multiplicity 0..1 Language model that powers the agent."
   },
   "references/eClassifiers/Tool/index.html": {
-    "link-uuid": "40f70e8e-18a7-46e0-b637-d75ac5bd4e7c",
+    "link-uuid": "b96889b3-7fce-4e93-9f52-5ceb85df3330",
     "title": "Tool",
     "content": "A tool is a skill or function that agents can utilize to perform various actions."
   },
   "references/eClassifiers/Crew/references/eStructuralFeatures/tasks/index.html": {
     "path": "Crew/References/tasks",
-    "link-uuid": "6bc3a99d-9838-49ca-9757-9f52437e8299",
+    "link-uuid": "b6f1a1f2-311c-47e5-a57b-97267f7a7bbb",
     "title": "tasks",
     "content": "Type Task Multiplicity 0..* Tasks containment reference."
   },
   "references/eClassifiers/Configurable/index.html": {
-    "link-uuid": "ea48b099-0545-4a05-9001-0e3514ef6da7",
+    "link-uuid": "c4895c0a-3d8e-4d44-a9c8-cd1364717985",
     "title": "Configurable",
     "content": "Base class for Agent and Task which can be configured with YAML."
   },
   "references/eClassifiers/Configurable/references/eStructuralFeatures/configMap/index.html": {
     "path": "Configurable/Attributes/configMap",
-    "link-uuid": "3ba1a0a3-7027-426d-900a-867c7a523ecf",
+    "link-uuid": "e0fe64e2-f321-4e3e-9442-d68d9b9fe865",
     "title": "configMap",
     "content": "Type EMap&lt; EString, EJavaObject&gt; Multiplicity 0..1 Configuration map computed from YAML configuration and other features."
   },
   "references/eClassifiers/Process/index.html": {
-    "link-uuid": "dd84920a-f0a1-4ec1-af63-6868795b4aeb",
+    "link-uuid": "19123944-b73d-4287-8b7a-d157fbf63541",
     "title": "Process",
     "content": "Processes enable individual agents to operate as a cohesive unit, streamlining their efforts to achieve common objectives with efficiency and coherence."
   },
   "references/eClassifiers/Crew/references/eStructuralFeatures/managerAgent/index.html": {
     "path": "Crew/References/managerAgent",
-    "link-uuid": "ff691f6c-ab10-4d8d-86a3-74c44fe67f97",
+    "link-uuid": "5a2ffd09-122b-4827-9518-52b80e6bcd04",
     "title": "managerAgent",
     "content": "Type Agent Multiplicity 0..1 A custom agent managing the crew."
   },
   "references/eClassifiers/Crew/references/eStructuralFeatures/tools/index.html": {
     "path": "Crew/References/tools",
-    "link-uuid": "4e1a1d57-a4f8-4acf-97c7-864567921ecb",
+    "link-uuid": "11fc7543-2567-4b49-a80e-67c7bd79f692",
     "title": "tools",
     "content": "Type Tool Multiplicity 0..* Tools containment reference."
   },
   "references/eClassifiers/Code/references/eStructuralFeatures/imports/index.html": {
     "path": "Code/Attributes/imports",
-    "link-uuid": "3dc5b895-f0f0-432e-9a5a-4b5eee7bea76",
+    "link-uuid": "0ba81bab-01c9-4e5c-8dc4-255273daa318",
     "title": "imports",
     "content": "Type EString Multiplicity 0..1 Imports used by code can be specified as a list of maps or a single map with the keys corresponding to Import attributes."
   },
   "references/eClassifiers/Crew/index.html": {
-    "link-uuid": "72c7122d-b1dd-426b-b9cf-636a8b1c7422",
+    "link-uuid": "f8cbebb3-f199-4a4e-8ddb-21106396e497",
     "title": "Crew",
     "content": "A crew represents a collaborative group of agents working together to accomplish a set of tasks. Each crew defines the strategy for task execution, agent collaboration, and the overall workflow."
   },
   "references/eClassifiers/Crew/references/eStructuralFeatures/languageModels/index.html": {
     "path": "Crew/References/languageModels",
-    "link-uuid": "ac21384e-cf86-481b-94f2-4678caf7b963",
+    "link-uuid": "761025fd-b1ae-4a23-8835-982841e72a76",
     "title": "languageModels",
     "content": "Type Large Language Model Multiplicity 0..* Language models used by the crew and its agents"
   },
   "references/eClassifiers/Code/inheritance.html": {
     "path": "Code/Inheritance",
-    "link-uuid": "b7975bf2-a76d-401a-a655-b2b13cec32d6",
+    "link-uuid": "3289cceb-0f98-4e4c-a5c8-7d91855a74a7",
     "title": "Inheritance",
     "content": "Subtypes "
   },
   "references/eClassifiers/Code/references/eStructuralFeatures/comment/index.html": {
     "path": "Code/Attributes/comment",
-    "link-uuid": "588b7c75-34ab-422d-8a0b-c7905ba597ab",
+    "link-uuid": "b56009e1-a5f8-4eed-b3c2-96e02a01c86c",
     "title": "comment",
     "content": "Type EString Multiplicity 0..1 Comment to add before the code."
   },
   "references/eClassifiers/Callback/index.html": {
-    "link-uuid": "ecefb228-56ce-4b85-b5ff-f313cdb1d668",
+    "link-uuid": "adb949b0-73cc-443b-9fbe-133c454f600e",
     "title": "Callback",
     "content": "Crew Step Callback - A function that is called after each step of every agent. Task Callback - A function that is called after the completion of each task. Useful for monitoring or additional operations post-task execution. Agent Step Callback - Function called after each agent step, overrides crew callback. Task Callback - Function/object to be executed after task completion."
   },
   "references/eClassifiers/Crew/references/eStructuralFeatures/process/index.html": {
     "path": "Crew/Attributes/process",
-    "link-uuid": "66424aca-2168-44bf-a972-4ff55e252a33",
+    "link-uuid": "70290401-497a-4ea4-9359-2aff3befad9b",
     "title": "process",
     "content": "Type Process Multiplicity 0..1"
   },
   "references/eClassifiers/Task/references/eStructuralFeatures/context/index.html": {
     "path": "Task/References/context",
-    "link-uuid": "367a7a93-9496-4012-9fba-fd71158c7c3f",
+    "link-uuid": "ada484fe-4eb6-4125-8ea9-087fb3a5ebc0",
     "title": "context",
     "content": "Type Task Multiplicity 0..*"
   },
   "references/eClassifiers/Tool/references/eStructuralFeatures/declarations/index.html": {
     "path": "Tool/Attributes/declarations",
-    "link-uuid": "eed45550-3fff-45a9-a6c9-607cefff0f8f",
+    "link-uuid": "b9334922-7b48-4b57-8c7e-d58d72c4f3e1",
     "title": "declarations",
     "content": "Type EString Multiplicity 0..1 Declarations used by the tool. Added to the crew class body. For example, a shared search tool can have the following declaration: serper_tool = SeperDevTool()\n In this case the tool code would be serper_tool"
   },
   "references/eClassifiers/Agent/references/eStructuralFeatures/knowledgeSources/index.html": {
     "path": "Agent/References/knowledgeSources",
-    "link-uuid": "237095b4-c10e-491a-acce-daf204f9b885",
+    "link-uuid": "aacd2d72-23db-4f29-b852-393062b6ad23",
     "title": "knowledgeSources",
     "content": "Type Knowledge Source Multiplicity 0..* Knowledge sources available to the agent."
   },
   "references/eClassifiers/Task/references/eStructuralFeatures/guardrail/index.html": {
     "path": "Task/References/guardrail",
-    "link-uuid": "482f7686-0174-49cf-921f-7f742af35d63",
+    "link-uuid": "9f024552-95f6-422f-a15d-2ad32ad46bae",
     "title": "guardrail",
     "content": "Type Guardrail Multiplicity 0..1 Task guardrails provide a way to validate and transform task outputs before they are passed to the next task. This feature helps ensure data quality and provides feedback to agents when their output doesn&rsquo;t meet specific criteria."
   },
   "references/eClassifiers/LargeLanguageModel/index.html": {
-    "link-uuid": "db95c5b2-cce3-46e2-9ad1-ba76921e60d6",
+    "link-uuid": "ea86ec28-2891-443f-9426-c4f727fe7efe",
     "title": "Large Language Model",
     "content": "Large Language Models (LLMs) are the core intelligence behind agents. They enable agents to understand context, make decisions, and generate human-like responses."
   },
   "references/eClassifiers/Agent/references/eStructuralFeatures/tools/index.html": {
     "path": "Agent/References/tools",
-    "link-uuid": "5b379817-5e5f-41bc-8e22-d4566f8c4d22",
+    "link-uuid": "4b215842-6539-479a-b671-643807218e98",
     "title": "tools",
     "content": "Type Tool Multiplicity 0..* Capabilities or functions available to the agent."
   },
   "references/eClassifiers/Configurable/references/eStructuralFeatures/configuration/index.html": {
     "path": "Configurable/Attributes/configuration",
-    "link-uuid": "aa1fe5f7-0811-4ff5-adba-2723edb04ce4",
+    "link-uuid": "6ca36ab4-839c-4d5b-b9ce-7688267a8d06",
     "title": "configuration",
     "content": "Type EString Multiplicity 0..1 YAML configuration."
   },
   "references/eClassifiers/Agent/references/eStructuralFeatures/functionCallingLlm/index.html": {
     "path": "Agent/References/functionCallingLlm",
-    "link-uuid": "0c17e5fe-986b-4765-b094-fd3c83898d56",
+    "link-uuid": "cd542408-d476-43a7-acaa-d14b2ccc853a",
     "title": "functionCallingLlm",
     "content": "Type Large Language Model Multiplicity 0..1 Language model for tool calling, overrides crew&rsquo;s LLM if specified."
   },
   "references/eClassifiers/Task/references/eStructuralFeatures/agent/index.html": {
     "path": "Task/References/agent",
-    "link-uuid": "c69fb171-e94d-4486-9296-5635e9bdb74e",
+    "link-uuid": "8ee539eb-6df2-4475-96a4-7a5d835435e2",
     "title": "agent",
     "content": "Type Agent Multiplicity 0..1 The agent responsible for executing the task."
   },
   "references/eClassifiers/Configurable/inheritance.html": {
     "path": "Configurable/Inheritance",
-    "link-uuid": "803d93f3-4312-4649-af68-ef4622b39d51",
+    "link-uuid": "54b177c5-2171-4c97-a611-461c1628e067",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  "
   },
   "references/eClassifiers/Callback/inheritance.html": {
     "path": "Callback/Inheritance",
-    "link-uuid": "a8ed2b24-33b6-4984-b630-357142ce63ec",
+    "link-uuid": "11f1fc22-99f5-488b-8d61-71045812f157",
     "title": "Inheritance",
     "content": "Supertypes "
   },
   "references/eClassifiers/Crew/inheritance.html": {
     "path": "Crew/Inheritance",
-    "link-uuid": "8337e7fb-75d1-47f8-896a-b91954de58dc",
+    "link-uuid": "32be88c7-cc31-4601-8922-6615faa1bc77",
     "title": "Inheritance",
     "content": "Supertypes "
   },
   "references/eClassifiers/Crew/references/eStructuralFeatures/beforeKickoff/index.html": {
     "path": "Crew/References/beforeKickoff",
-    "link-uuid": "0e5f457b-b03d-4ebb-a714-197b51114de6",
+    "link-uuid": "0221df4a-8441-4101-91b6-b00266f90e47",
     "title": "beforeKickoff",
     "content": "Type Function Multiplicity 0..1 Executes before the crew starts."
   },
   "references/eClassifiers/Tool/references/eStructuralFeatures/tasks/index.html": {
     "path": "Tool/References/tasks",
-    "link-uuid": "9fd89bd8-9caf-45a9-a758-f051fa1b750b",
+    "link-uuid": "0864c064-fd3c-46ca-a93a-5b7033e0bed6",
     "title": "tasks",
     "content": "Type Task Multiplicity 0..* Tasks using this tool."
   },
   "references/eClassifiers/Code/index.html": {
-    "link-uuid": "0d8a2892-3443-4a14-9a27-7b20c80e02e9",
+    "link-uuid": "ac50624b-47f5-4fc0-96da-7216be6b965e",
     "title": "Code",
     "content": "Base class for model element which generate python code."
   }

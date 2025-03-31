@@ -191,7 +191,7 @@ public class TestDocSiteGen {
 		
 		System.out.println("There are " + errorCount + " site errors");
 		
-		if (errorCount != 10) {
+		if (errorCount != 4) {
 			throw new ExecutionException("There are problems with pages: " + errorCount);
 		}				
 	}

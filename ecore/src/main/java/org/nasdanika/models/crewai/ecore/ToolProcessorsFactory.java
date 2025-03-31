@@ -53,6 +53,11 @@ public class ToolProcessorsFactory {
 				return parent.getChildren();
 			}
 			
+			@Override
+			protected EList<? super Action> getMembersCollection(Action membersAction) {
+				return membersAction.getChildren();
+			}
+			
 		};
 	}
 	
