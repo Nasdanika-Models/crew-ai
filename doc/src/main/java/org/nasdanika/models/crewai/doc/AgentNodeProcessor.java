@@ -68,7 +68,7 @@ public class AgentNodeProcessor extends ConfigurableNodeProcessor<Agent> {
 				DynamicTableBuilder<Entry<EReferenceConnection, WidgetFactory>> toolsTableBuilder = new DynamicTableBuilder<>("nsd-table");
 				buildNamedElementColumns(toolsTableBuilder, progressMonitor);
 				
-				org.nasdanika.models.html.Tag agentsTable = toolsTableBuilder.build(
+				org.nasdanika.models.html.Tag toolsTable = toolsTableBuilder.build(
 						referenceOutgoingEndpoints.stream().sorted((a,b) -> {
 							NamedElement ane = (NamedElement) a.getKey().getTarget().get();
 							NamedElement bne = (NamedElement) b.getKey().getTarget().get();
@@ -78,7 +78,7 @@ public class AgentNodeProcessor extends ConfigurableNodeProcessor<Agent> {
 						"tools-table", 
 						progressMonitor);
 				
-				toolsAction.getContent().add(agentsTable);
+				toolsAction.getContent().add(toolsTable);
 			}
 		}
 	}	
@@ -99,20 +99,20 @@ public class AgentNodeProcessor extends ConfigurableNodeProcessor<Agent> {
 				.toList();		
 
 		for (Label label: labels) {
-			Action toolsAction = getRoleActionByName(
+			Action tasksAction = getRoleActionByName(
 					((Action) label).getSections(), 
 					"tasks", 
 					"Tasks", 
 					TASKS_ICON);
 			
 			for (Entry<EReferenceConnection, Collection<Label>> re: sorted) {
-				toolsAction.getChildren().addAll(re.getValue());
+				tasksAction.getChildren().addAll(re.getValue());
 			}
 			if (label instanceof Action) {										
-				DynamicTableBuilder<Entry<EReferenceConnection, WidgetFactory>> toolsTableBuilder = new DynamicTableBuilder<>("nsd-table");
-				buildNamedElementColumns(toolsTableBuilder, progressMonitor);
+				DynamicTableBuilder<Entry<EReferenceConnection, WidgetFactory>> tasksTableBuilder = new DynamicTableBuilder<>("nsd-table");
+				buildNamedElementColumns(tasksTableBuilder, progressMonitor);
 				
-				org.nasdanika.models.html.Tag agentsTable = toolsTableBuilder.build(
+				org.nasdanika.models.html.Tag tasksTable = tasksTableBuilder.build(
 						referenceOutgoingEndpoints
 							.stream()
 							.sorted((a,b) -> a.getKey().getIndex() - b.getKey().getIndex())
@@ -121,7 +121,7 @@ public class AgentNodeProcessor extends ConfigurableNodeProcessor<Agent> {
 						"tasks-table", 
 						progressMonitor);
 				
-				toolsAction.getContent().add(agentsTable);
+				tasksAction.getContent().add(tasksTable);
 			}
 		}
 	}	
