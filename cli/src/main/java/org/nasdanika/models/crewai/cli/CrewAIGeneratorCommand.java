@@ -18,6 +18,7 @@ import org.nasdanika.models.crewai.Crew;
 import org.nasdanika.models.crewai.util.CrewGenerator;
 
 import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.trace.Span;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.ExecutionException;
 import picocli.CommandLine.Mixin;
@@ -53,7 +54,7 @@ public class CrewAIGeneratorCommand extends TelemetryCommand {
 	private ResourceSetMixIn resourceSetMixIn;
 		
 	@Override
-	public Integer execute() throws Exception {
+	public Integer execute(Span commandSpan) throws Exception {
 		if (eObjectSupplier == null) {
 			throw new ExecutionException(spec.commandLine(), "No parent command");
 		}
