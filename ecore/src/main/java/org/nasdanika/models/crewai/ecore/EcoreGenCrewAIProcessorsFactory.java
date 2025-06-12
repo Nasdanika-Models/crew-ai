@@ -70,13 +70,6 @@ public class EcoreGenCrewAIProcessorsFactory {
 		toolProcessorsFactory = new ToolProcessorsFactory(context);		
 	}
 	
-	/**
-	 * Test of different ways to conProcessorsFactory ProcessorsFactory;e action prototype.
-	 * @param config
-	 * @param prototypeProvider
-	 * @param progressMonitor
-	 * @return
-	 */
 	@EPackageNodeProcessorFactory(
 			label = "CrewAI Model",
 			//actionPrototypeRef = "test-package.yml",
