@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="EN">
+  <head>
+    <title>Force Graph 3D Detailed</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css" id="nsd-bootstrap-theme-stylesheet"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Nasdanika-Models/html-app@master/gen/web-resources/css/app.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jstree@3.3.11/dist/themes/default/style.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.1.0/github-markdown.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/styles/default.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-vue@2.21.2/dist/bootstrap-vue.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/html-app@master/gen/web-resources/js/common.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/html-app@master/gen/web-resources/js/dark-head.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jstree@3.3.11/dist/jstree.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-vue@2.21.2/dist/bootstrap-vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/html-app@master/gen/web-resources/js/components/table.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/components/table.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/3d-force-graph"></script><!-- Node text styling -->      
+<style>
+  .node-label {
+        font-size: 12px;
+        padding: 1px 4px;
+        border-radius: 4px;
+        background-color: rgba(0,0,0,0.5);
+        user-select: none;
+      }               
+</style>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9BRJVLK8CC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9BRJVLK8CC');
+</script>    
+
+<!--  Start search configuration -->
+<script src="search-documents.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
+
+<script>
+// Script for full-text search of JsTree
+
+window.nsdJsTreeSearchCallback = function(str, node) { 
+    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
+    if (sf.search(node.text).isMatch) {
+		return true;
+	} 
+    let searchResult = this.search(str); 
+    for (const sr in searchResult) {
+        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
+            return true;
+        } 
+    } 
+    return false; 
+}.bind(lunr(function () {
+			  this.ref('id');
+			  this.field('title');
+			  this.field('content');
+
+			  for (const key in searchDocuments) {
+				  let doc = searchDocuments[key];
+				this.add({
+					id: doc['link-uuid'],
+					title: doc.title,
+					path: doc.path,
+					content: doc.content
+				});  
+			  }
+			}));
+</script>
+<!-- End search configuration  -->
+ 
+</head>
+  <body>
+    <div tabindex="-1" id="nsd_6eu" class="modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">Hover mouse over nodes elements to display tooltips.
+Double-click on nodes to navigate go documentation.
+Left click - rotate.
+Mouse wheel - zoom.
+Right click - pan.
+Drag to rearrange.
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid nsd-app-container">
+      <div class="row">
+        <div class="col nsd-app-header">
+          <a href="https://github.com/Nasdanika-Models" data-nsd-label-uuid="b5d8c2ab-a43a-47dd-b0a9-f2ef6e7618b8" class="nsd-app-header-title">
+            <img src="https://docs.nasdanika.org/images/nasdanika-logo.png" class="nsd-app-label-icon"/>Nasdanika Models</a>
+          <ul class="nav nsd-app-header-navs">
+            <li class="nav-item">
+              <a href="search.html" data-nsd-label-uuid="7fa355f8-2bd4-4639-8d16-7d20576a8101" class="nav-link"><span class="fas fa-search nsd-app-label-icon"></span>Search</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col nsd-app-navbar">
+          <ul class="navbar navbar-light navbar-expand-lg">
+            <a href="index.html" title="A model of a CrewAI concepts for the purposes of modeling and code generation" data-nsd-label-uuid="0173441d-a02a-47e4-96bb-c8bd11138c1c" class="navbar-brand">
+              <img src="https://crew-ai.models.nasdanika.org/images/crewai.svg" class="nsd-app-label-icon"/>CrewAI Model</a>
+            <button type="button" data-toggle="collapse" data-target="#nsd_6cy" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="nsd_6cy" class="collapse navbar-collapse">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a href="classifiers.html" data-nsd-label-uuid="b7562ab5-6187-4222-a0de-044629430675" class="nav-link">Classifiers</a>
+                </li>
+                <li class="nav-item">
+                  <a href="diagram.html" data-nsd-label-uuid="eec8e248-5429-4126-b8c9-6c559456dc76" class="nav-link"><span class="fas fa-project-diagram nsd-app-label-icon"></span>Diagram</a>
+                </li>
+                <li class="nav-item">
+                  <li data-nsd-label-uuid="4cea995a-4e90-49fe-9e61-822326f9f738" class="dropdown">
+                    <a role="button" data-toggle="dropdown" class="nav-link dropdown-toggle">
+                      <img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/16/external-diagram-seo-media-dreamstale-lineal-dreamstale.png" class="nsd-app-label-icon"/>Graphs</a>
+                    <div class="dropdown-menu">
+                      <a href="default-graph.html" data-nsd-label-uuid="74a6ad53-1f86-4614-9d8f-0589c96c1657" class="dropdown-item">Default Graph</a>
+                      <a href="circular-layout-graph.html" data-nsd-label-uuid="46ce70e6-20ed-47e9-95c3-2aff72138dfc" class="dropdown-item">Circular Graph</a>
+                      <a href="force-layout-graph.html" data-nsd-label-uuid="e6de3613-100b-4cfd-af00-0020ed88f0fd" class="dropdown-item">Force Graph</a>
+                      <a href="force-layout-graph-3d.html" data-nsd-label-uuid="ffef831e-bd49-447c-88eb-e8655a8c5339" class="dropdown-item">Force Graph 3D</a><span data-nsd-label-uuid="78a71d50-ec2e-4fef-98bd-448e5eaf9231" class="active dropdown-item">Force Graph 3D Detailed</span>
+                      <div title="With dependencies and sub-packages" class="dropdown-divider"></div>
+                      <a href="default-graph-with-dependencies-and-subpackages.html" data-nsd-label-uuid="7413fdbd-b077-46b7-a8cb-8ba7ba692fc7" class="dropdown-item">Default Graph</a>
+                      <a href="circular-layout-graph-with-dependencies-and-subpackages.html" data-nsd-label-uuid="1f4bfa58-68fb-431d-9309-2fcf46a2cf17" class="dropdown-item">Circular Graph</a>
+                      <a href="force-layout-graph-with-dependencies-and-subpackages.html" data-nsd-label-uuid="705f028c-6dbd-4052-9e43-49b2e9f01fe4" class="dropdown-item">Force Graph</a>
+                      <a href="force-layout-graph-3d-with-dependencies-and-subpackages.html" data-nsd-label-uuid="f6ace175-fb78-4ff7-b885-7a003988b7a1" class="dropdown-item">Force Graph 3D</a>
+                      <a href="force-layout-graph-3d-with-dependencies-and-subpackages-detailed.html" data-nsd-label-uuid="7efacaba-e973-46f7-917e-efaf2c689a1c" class="dropdown-item">Force Graph 3D Detailed</a>
+                    </div>
+                  </li>
+                </li>
+              </ul>
+            </div>
+          </ul>
+        </div>
+      </div>
+      <div class="row nsd-app-content-row">
+        <div class="col nsd-app-navigation-panel">
+          <div class="nsd-collapse-panel bg-light text-center"><span data-toggle="collapse" data-target="#nsd-nav-panel-ba842f2f-8bf4-4cf0-ba33-ee73b8a9a587-collapsible" aria-expanded="true" aria-controls="nsd-nav-panel-ba842f2f-8bf4-4cf0-ba33-ee73b8a9a587-collapsible" title="Toggle panel" id="nsd-nav-panel-ba842f2f-8bf4-4cf0-ba33-ee73b8a9a587-collapsible-trigger" class="nsd-collapsible-trigger"><i aria-hidden="true" class="fa"></i></span>
+          </div>
+          <div id="nsd-nav-panel-ba842f2f-8bf4-4cf0-ba33-ee73b8a9a587-collapsible" style="clear:right" class="nsd-collapsible collapse show">
+            <input type="text" id="c91fe1f6-db0a-4f09-b50d-9a8f5bbea4f0-navigation-panel_searchInput" title="Full-text search. You can use wildcards, e.g. 'foo*' or 'f*o'; title or content fields, e.g. 'title:foo* bar'; boosts, e.g. 'foo^10 bar'; fuzzy matches, e.g. 'foo~1'; and term presence, e.g. '+foo bar -baz'" class="form-control mt-1"/>
+            <div id="c91fe1f6-db0a-4f09-b50d-9a8f5bbea4f0-navigation-panel"></div>
+            <script>$(document).ready( function() {
+$('#c91fe1f6-db0a-4f09-b50d-9a8f5bbea4f0-navigation-panel').jstree(function(tree) { tree.state.filter = function(state) { delete state.core.selected; return state; };  tree.search.search_callback = function(searchStr, node) { if (typeof window.nsdJsTreeSearchCallback === 'function') return window.nsdJsTreeSearchCallback(searchStr, node); var sf = new $.vakata.search(searchStr, true, { caseSensitive : false, fuzzy : false }); return sf.search(node.text).isMatch; }; return tree; }({"core":{"data":[{"a_attr":{"title":"Think of an agent as a specialized team member with specific skills, expertise, and responsibilities","onclick":"window.location='references/eClassifiers/Agent/index.html';"},"children":[{"a_attr":{"onclick":"window.location='references/eClassifiers/Agent/attributes.html';"},"children":[{"a_attr":{"title":"Provides context and personality to the agent","onclick":"window.location='references/eClassifiers/Agent/references/eStructuralFeatures/backstory/index.html';"},"data-nsd-label-uuid":"fee6afc9-989f-46d2-9e95-75e89fd08707","icon":"https://crew-ai.models.nasdanika.org/images/cv.svg","id":"nsd-app-nav-item-951480d1-3486-4bee-bb0b-a875d30fa84b","text":"backstory","type":"leaf"},{"a_attr":{"title":"The individual objective that guides the agent\u2019s decision-making","onclick":"window.location='references/eClassifiers/Agent/references/eStructuralFeatures/goal/index.html';"},"data-nsd-label-uuid":"06a87a93-8673-4b56-88a2-09d453d9c16f","icon":"https://crew-ai.models.nasdanika.org/images/business-plan.svg","id":"nsd-app-nav-item-18a905d3-2db0-4290-ab00-c86a394ba0df","text":"goal","type":"leaf"},{"a_attr":{"title":"Defines the agent\u2019s function and expertise within the crew","onclick":"window.location='references/eClassifiers/Agent/references/eStructuralFeatures/role/index.html';"},"data-nsd-label-uuid":"b1f9654e-63c0-4519-9ae7-12ac4f445ea5","icon":"https://crew-ai.models.nasdanika.org/images/user.svg","id":"nsd-app-nav-item-e37225fe-ce14-4624-9fc8-cd44bc996d20","text":"role","type":"leaf"}],"data-nsd-label-uuid":"69781101-5526-4450-8b39-9fa12e03f395","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EAttribute.gif","id":"nsd-app-nav-item-5aa2a9ea-32ff-40d0-aa9d-eadaf27fa72d","text":"Attributes"},{"a_attr":{"onclick":"window.location='references/eClassifiers/Agent/references.html';"},"children":[{"a_attr":{"title":"Configuration for the embedder used by the agent","onclick":"window.location='references/eClassifiers/Agent/references/eStructuralFeatures/embedder/index.html';"},"data-nsd-label-uuid":"e0b1df3b-c347-4fa9-96d0-53ec29b33ef1","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif","id":"nsd-app-nav-item-e8240e84-1c20-4d12-8fa8-3ca89400f7c0","text":"embedder","type":"leaf"},{"a_attr":{"title":"Language model for tool calling","onclick":"window.location='references/eClassifiers/Agent/references/eStructuralFeatures/functionCallingLlm/index.html';"},"data-nsd-label-uuid":"f4aab56a-c28b-4a73-8d9b-1fb5989bac4a","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif","id":"nsd-app-nav-item-f125bc1a-e6cb-4ab0-85e1-698841283391","text":"functionCallingLlm","type":"leaf"},{"a_attr":{"title":"Knowledge sources available to the agent","onclick":"window.location='references/eClassifiers/Agent/references/eStructuralFeatures/knowledgeSources/index.html';"},"data-nsd-label-uuid":"6438070d-2fec-4e41-9dbe-9c5f47e98130","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif","id":"nsd-app-nav-item-34aa60d6-6ca3-44a0-91c3-574c7a41c899","text":"knowledgeSources","type":"leaf"},{"a_attr":{"title":"Language model that powers the agent","onclick":"window.location='references/eClassifiers/Agent/references/eStructuralFeatures/llm/index.html';"},"data-nsd-label-uuid":"f333fb0b-2d33-4440-b900-bb12234e3542","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif","id":"nsd-app-nav-item-32487221-8da6-41b3-b7fc-60a867625247","text":"llm","type":"leaf"},{"a_attr":{"title":"Function called after each agent step","onclick":"window.location='references/eClassifiers/Agent/references/eStructuralFeatures/stepCallback/index.html';"},"data-nsd-label-uuid":"b1f53e0a-579b-427b-bee1-107b069dabbe","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif","id":"nsd-app-nav-item-24ea1a65-a158-4d6a-8b8f-f8ebd8e13139","text":"stepCallback","type":"leaf"},{"a_attr":{"title":"Tasks assigned to this agent","onclick":"window.location='references/eClassifiers/Agent/references/eStructuralFeatures/tasks/index.html';"},"data-nsd-label-uuid":"11df69ec-28ee-4786-8599-4261128b0e90","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif","id":"nsd-app-nav-item-3c63d6f5-0162-4b8f-9f0a-cc095045999d","text":"tasks","type":"leaf"},{"a_attr":{"title":"Capabilities or functions available to the agent","onclick":"window.location='references/eClassifiers/Agent/references/eStructuralFeatures/tools/index.html';"},"data-nsd-label-uuid":"1d75569a-1b2f-4615-b0f6-33c88841f154","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif","id":"nsd-app-nav-item-f6ea29f0-2e7d-479f-a57b-8fe39cc0a983","text":"tools","type":"leaf"}],"data-nsd-label-uuid":"65fa7fd2-6ac3-4bf9-9d34-cbcd2fe4e4f4","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif","id":"nsd-app-nav-item-21ea148d-3739-497c-b816-82b456db2279","text":"References"}],"data-nsd-label-uuid":"1a046029-db23-4fcd-840a-b0c2d7365588","icon":"https://crew-ai.models.nasdanika.org/images/software-agent.svg","id":"nsd-app-nav-item-4ee5c427-10ba-4a0c-b7ca-f22a2f82f75f","text":"Agent"},{"a_attr":{"title":"A function called after completion of tasks and steps","onclick":"window.location='references/eClassifiers/Callback/index.html';"},"data-nsd-label-uuid":"e0835a87-1b55-4e4b-b89d-a6b6517c64f8","icon":"https://crew-ai.models.nasdanika.org/images/callback.svg","id":"nsd-app-nav-item-4172ad81-4849-4b18-97e1-36510d3fffb1","text":"Callback","type":"leaf"},{"a_attr":{"title":"Base class for producers of python code","onclick":"window.location='references/eClassifiers/Code/index.html';"},"children":[{"a_attr":{"onclick":"window.location='references/eClassifiers/Code/attributes.html';"},"children":[{"a_attr":{"title":"Python code (template)","onclick":"window.location='references/eClassifiers/Code/references/eStructuralFeatures/code/index.html';"},"data-nsd-label-uuid":"d6125123-f42c-4219-934f-b15e48a5ec55","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EAttribute.gif","id":"nsd-app-nav-item-54ab2e10-3a8a-4b04-9d8c-b583e7fc2d6a","text":"code","type":"leaf"},{"a_attr":{"title":"Code comment","onclick":"window.location='references/eClassifiers/Code/references/eStructuralFeatures/comment/index.html';"},"data-nsd-label-uuid":"9b4fa7fe-74d6-4c87-b112-79f56a51ccfe","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EAttribute.gif","id":"nsd-app-nav-item-4c0fbe71-e02c-43ee-9d43-aa337c45efdb","text":"comment","type":"leaf"},{"a_attr":{"title":"A YAML map of imports","onclick":"window.location='references/eClassifiers/Code/references/eStructuralFeatures/imports/index.html';"},"data-nsd-label-uuid":"5db558fd-7e83-47dc-9b1b-14b651f46016","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EAttribute.gif","id":"nsd-app-nav-item-93bbbf64-59fa-496f-8c14-b5bb336b9f4b","text":"imports","type":"leaf"}],"data-nsd-label-uuid":"70e897f6-ea09-4606-906a-11d81762d7e6","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EAttribute.gif","id":"nsd-app-nav-item-cc0c057c-7e90-4ad0-8428-8e21c51fa12c","text":"Attributes"}],"data-nsd-label-uuid":"4b4d42b8-9d57-4bf4-b9d8-aeef5735d047","icon":"https://crew-ai.models.nasdanika.org/images/script.svg","id":"nsd-app-nav-item-29345e87-ed87-4ed8-8ab8-cbbdad987b41","text":"Code"},{"a_attr":{"title":"An element with YAML configuration","onclick":"window.location='references/eClassifiers/Configurable/index.html';"},"children":[{"a_attr":{"onclick":"window.location='references/eClassifiers/Configurable/attributes.html';"},"children":[{"a_attr":{"title":"Computed configuration map","onclick":"window.location='references/eClassifiers/Configurable/references/eStructuralFeatures/configMap/index.html';"},"data-nsd-label-uuid":"312cd069-efd3-4b9a-9031-1b77d8dcd6a5","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EAttribute.gif","id":"nsd-app-nav-item-3d263a8f-eada-4e4d-abb1-30ddf736c7e5","text":"configMap","type":"leaf"},{"a_attr":{"title":"YAML configuration","onclick":"window.location='references/eClassifiers/Configurable/references/eStructuralFeatures/configuration/index.html';"},"data-nsd-label-uuid":"8e86f074-8ffa-4f53-92cc-c8308863ae4e","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EAttribute.gif","id":"nsd-app-nav-item-2d760d15-a9e9-47e3-9246-839891929d0c","text":"configuration","type":"leaf"}],"data-nsd-label-uuid":"7613f2fc-5503-4c4d-8b1e-e530305520e0","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EAttribute.gif","id":"nsd-app-nav-item-7f620fef-393e-4dce-864a-03a56a9010a1","text":"Attributes"}],"data-nsd-label-uuid":"1a1b2617-049e-41cb-bec8-aab0d5f21d7f","icon":"https://crew-ai.models.nasdanika.org/images/web-management.svg","id":"nsd-app-nav-item-7212e2aa-4a30-40e5-a239-ab0a13804522","text":"Configurable"},{"a_attr":{"title":"A collaborative group of agents working together to complete a set of tasks","onclick":"window.location='references/eClassifiers/Crew/index.html';"},"children":[{"a_attr":{"onclick":"window.location='references/eClassifiers/Crew/attributes.html';"},"children":[{"a_attr":{"title":"The process flow","onclick":"window.location='references/eClassifiers/Crew/references/eStructuralFeatures/process/index.html';"},"data-nsd-label-uuid":"02058352-aa7f-45ea-9a7e-0996e7c08478","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EAttribute.gif","id":"nsd-app-nav-item-f842de23-4731-485e-83f3-56be33821597","text":"process","type":"leaf"}],"data-nsd-label-uuid":"7f888324-d16e-48af-800d-f1e6e42a1b52","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EAttribute.gif","id":"nsd-app-nav-item-6afc67c1-7360-4977-9f2e-927adc50dfb1","text":"Attributes"},{"a_attr":{"onclick":"window.location='references/eClassifiers/Crew/references.html';"},"children":[{"a_attr":{"title":"method to be executed after the crew finishes","onclick":"window.location='references/eClassifiers/Crew/references/eStructuralFeatures/afterKickoff/index.html';"},"data-nsd-label-uuid":"1979baf7-43a5-4a4d-81c3-c976ed3669b2","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif","id":"nsd-app-nav-item-f53c346f-c2d4-43ba-8cbc-be874e981501","text":"afterKickoff","type":"leaf"},{"a_attr":{"title":"Crew agents","onclick":"window.location='references/eClassifiers/Crew/references/eStructuralFeatures/agents/index.html';"},"data-nsd-label-uuid":"07ec3af4-1bf7-4143-8e85-b80b095fc783","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif","id":"nsd-app-nav-item-d1d58454-d5b4-4018-89d7-c0a4e007bfb5","text":"agents","type":"leaf"},{"a_attr":{"title":"A function to be executed before the crew starts","onclick":"window.location='references/eClassifiers/Crew/references/eStructuralFeatures/beforeKickoff/index.html';"},"data-nsd-label-uuid":"0ec5fa37-fa82-4453-91b3-4c84b0caf53d","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif","id":"nsd-app-nav-item-5cc1acb3-cdc0-4fd3-93aa-75d3c6f63705","text":"beforeKickoff","type":"leaf"},{"a_attr":{"title":"Configuration for the embedder to be used by the crew","onclick":"window.location='references/eClassifiers/Crew/references/eStructuralFeatures/embedder/index.html';"},"data-nsd-label-uuid":"2ccee997-599e-4786-bf99-579b324d36bd","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif","id":"nsd-app-nav-item-95c808c3-fd67-4afc-9ba7-885f999926ef","text":"embedder","type":"leaf"},{"a_attr":{"title":"Used to do functiona calling for tools for all agents in the crew","onclick":"window.location='references/eClassifiers/Crew/references/eStructuralFeatures/functionCallingLlm/index.html';"},"data-nsd-label-uuid":"ffec6cd8-9307-4b23-9f4d-5a993f98d8c4","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif","id":"nsd-app-nav-item-5536f376-bc05-45a3-84ea-87f63a339e92","text":"functionCallingLlm","type":"leaf"},{"a_attr":{"title":"Knowledge sources used by agents","onclick":"window.location='references/eClassifiers/Crew/references/eStructuralFeatures/knowledgeSources/index.html';"},"data-nsd-label-uuid":"5acf9784-bc0f-4622-824c-153980638acc","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif","id":"nsd-app-nav-item-236e9cef-0187-4489-9109-416c87b121c6","text":"knowledgeSources","type":"leaf"},{"a_attr":{"title":"Language models used by the crew and its agents","onclick":"window.location='references/eClassifiers/Crew/references/eStructuralFeatures/languageModels/index.html';"},"data-nsd-label-uuid":"67d3cb02-7e82-4577-aaae-b26bfb3c3c5a","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif","id":"nsd-app-nav-item-84a6dff9-d9b8-474a-b507-c2fea5fd9336","text":"languageModels","type":"leaf"},{"a_attr":{"title":"A custom agent for managing the crew","onclick":"window.location='references/eClassifiers/Crew/references/eStructuralFeatures/managerAgent/index.html';"},"data-nsd-label-uuid":"37d610f8-6219-423a-9646-a16e3e752042","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif","id":"nsd-app-nav-item-877ccaeb-a024-48c3-a5d7-2727ebe10036","text":"managerAgent","type":"leaf"},{"a_attr":{"title":"The language model used by the manager agent in a hierarchical process","onclick":"window.location='references/eClassifiers/Crew/references/eStructuralFeatures/managerLlm/index.html';"},"data-nsd-label-uuid":"8e150cef-93e4-4a57-bc95-0e83b9a29dda","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif","id":"nsd-app-nav-item-75ff6e67-2a04-4fad-8dfd-3162b6ac72c0","text":"managerLlm","type":"leaf"},{"a_attr":{"title":"The language model used by the AgentPlanner","onclick":"window.location='references/eClassifiers/Crew/references/eStructuralFeatures/planningLlm/index.html';"},"data-nsd-label-uuid":"b7330e84-0f28-4f2b-8364-d79f7c73ae98","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif","id":"nsd-app-nav-item-d7f91ae1-0280-4718-8172-732fc9c3c163","text":"planningLlm","type":"leaf"},{"a_attr":{"title":"A function that is called after each step of every agent","onclick":"window.location='references/eClassifiers/Crew/references/eStructuralFeatures/stepCallback/index.html';"},"data-nsd-label-uuid":"e5720dab-6d02-4f22-9581-cc2ec5fa4d8a","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif","id":"nsd-app-nav-item-e7dc008f-9ea9-4412-9c0a-754bb1cec728","text":"stepCallback","type":"leaf"},{"a_attr":{"title":"A function that is called after the completion of each task","onclick":"window.location='references/eClassifiers/Crew/references/eStructuralFeatures/taskCallback/index.html';"},"data-nsd-label-uuid":"6bdb8a61-d32b-469e-904d-31010d998a32","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif","id":"nsd-app-nav-item-178f5733-c7ff-4ac6-90e7-dc02fbfdf020","text":"taskCallback","type":"leaf"},{"a_attr":{"title":"Tasks","onclick":"window.location='references/eClassifiers/Crew/references/eStructuralFeatures/tasks/index.html';"},"data-nsd-label-uuid":"20d0e5bc-6c0a-4578-be36-9dd476f76d8b","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif","id":"nsd-app-nav-item-12cecf86-6560-485b-90b1-55166f268f26","text":"tasks","type":"leaf"},{"a_attr":{"title":"Tools used by agents and tasks","onclick":"window.location='references/eClassifiers/Crew/references/eStructuralFeatures/tools/index.html';"},"data-nsd-label-uuid":"799a5d6e-ef12-4f3e-aeea-55cb02032f16","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif","id":"nsd-app-nav-item-3f7e8a93-ace8-4196-af73-492b0329bb7a","text":"tools","type":"leaf"}],"data-nsd-label-uuid":"c9cacda7-e1ff-423c-b65a-2292f4631955","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif","id":"nsd-app-nav-item-94b821ed-86d5-4680-aa62-e92082d419c6","text":"References"}],"data-nsd-label-uuid":"980bdc1c-f15d-4bc8-82d8-d1df7169689b","icon":"https://crew-ai.models.nasdanika.org/images/navy.svg","id":"nsd-app-nav-item-cb6faced-d78c-42e5-addd-b7995aa0fa31","text":"Crew"},{"a_attr":{"title":"Generates python function","onclick":"window.location='references/eClassifiers/Function/index.html';"},"children":[{"a_attr":{"onclick":"window.location='references/eClassifiers/Function/attributes.html';"},"children":[{"a_attr":{"title":"Function parameters","onclick":"window.location='references/eClassifiers/Function/references/eStructuralFeatures/parameters/index.html';"},"data-nsd-label-uuid":"8b3413d8-861d-4a51-99ae-1b8265fe4bca","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EAttribute.gif","id":"nsd-app-nav-item-a1c1bf16-1dad-4e26-83b2-81a06b153ae8","text":"parameters","type":"leaf"}],"data-nsd-label-uuid":"e90564b9-b861-4641-a857-89e492cd20dd","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EAttribute.gif","id":"nsd-app-nav-item-d65701fe-8814-4cb9-a491-3eab17300c5d","text":"Attributes"}],"data-nsd-label-uuid":"05ed237b-ce8e-4750-af0c-e9312560c704","icon":"https://crew-ai.models.nasdanika.org/images/settings.svg","id":"nsd-app-nav-item-f3162f08-e9b1-435b-91b9-36c04d9013f7","text":"Function"},{"a_attr":{"title":"A function which validates and transforms task outputs","onclick":"window.location='references/eClassifiers/Guardrail/index.html';"},"data-nsd-label-uuid":"b154a447-ba90-421c-ab11-c43b59e2314f","icon":"https://crew-ai.models.nasdanika.org/images/barrier.svg","id":"nsd-app-nav-item-afbd6735-c3a1-45f3-8ff0-d9709a6b18eb","text":"Guardrail","type":"leaf"},{"a_attr":{"title":"An external source of information","onclick":"window.location='references/eClassifiers/KnowledgeSource/index.html';"},"children":[{"a_attr":{"onclick":"window.location='references/eClassifiers/KnowledgeSource/references.html';"},"children":[{"a_attr":{"title":"Agents using this knowledge source","onclick":"window.location='references/eClassifiers/KnowledgeSource/references/eStructuralFeatures/agents/index.html';"},"data-nsd-label-uuid":"e8936391-3372-4df6-9c31-21c728375039","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif","id":"nsd-app-nav-item-ea92e6f6-d7fa-4f09-b15a-cfc4f1ff0aa9","text":"agents","type":"leaf"}],"data-nsd-label-uuid":"a82c6076-8e30-4756-b640-59fe280bbd9b","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif","id":"nsd-app-nav-item-b1f020a4-00b0-4a1e-8db6-a4a301be9ba7","text":"References"}],"data-nsd-label-uuid":"2473f8a6-f1e3-4c88-9d5f-34d8cdc014cb","icon":"https://crew-ai.models.nasdanika.org/images/book.svg","id":"nsd-app-nav-item-cbdb00eb-448e-4910-b272-b3eab3bf94c2","text":"Knowledge Source"},{"a_attr":{"title":"Family is a group of related people","onclick":"window.location='references/eClassifiers/LargeLanguageModel/index.html';"},"data-nsd-label-uuid":"0c5b984b-37b4-4352-aaf2-55e0de401ace","icon":"https://crew-ai.models.nasdanika.org/images/ai.svg","id":"nsd-app-nav-item-9b61555b-246c-4ccf-9b43-50ba744f5202","text":"Large Language Model","type":"leaf"},{"a_attr":{"title":"Processes orchestrate the execution of tasks by agents","onclick":"window.location='references/eClassifiers/Process/index.html';"},"data-nsd-label-uuid":"e2b4dffb-2a9c-401a-a82d-181055a89093","icon":"https://crew-ai.models.nasdanika.org/images/milestone.svg","id":"nsd-app-nav-item-c7db896d-14f2-4436-81dc-d53b5f3f8967","text":"Process","type":"leaf"},{"a_attr":{"title":"A specific assignment completed by an Agent","onclick":"window.location='references/eClassifiers/Task/index.html';"},"children":[{"a_attr":{"onclick":"window.location='references/eClassifiers/Task/attributes.html';"},"children":[{"a_attr":{"title":"A detailed description of what the task\u2019s completion looks like","onclick":"window.location='references/eClassifiers/Task/references/eStructuralFeatures/expectedOutput/index.html';"},"data-nsd-label-uuid":"4b4f4ff8-81c8-4ba0-8116-92be943cd22d","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EAttribute.gif","id":"nsd-app-nav-item-97012960-2e03-4032-8612-fa72f7fed496","text":"expectedOutput","type":"leaf"},{"a_attr":{"title":"A clear, concise statement of what the task entails","onclick":"window.location='references/eClassifiers/Task/references/eStructuralFeatures/taskDescription/index.html';"},"data-nsd-label-uuid":"fb21322b-f80b-47f7-8624-50f894f7c0bc","icon":"https://crew-ai.models.nasdanika.org/images/instructions.svg","id":"nsd-app-nav-item-c122a010-f007-4223-94ec-bf140f1db642","text":"taskDescription","type":"leaf"}],"data-nsd-label-uuid":"5a5d183f-8aab-45e8-8fb9-9a814ba6d4d1","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EAttribute.gif","id":"nsd-app-nav-item-4e7e280e-3860-44ad-9119-342c17648526","text":"Attributes"},{"a_attr":{"onclick":"window.location='references/eClassifiers/Task/references.html';"},"children":[{"a_attr":{"title":"The agent responsible for executing the task","onclick":"window.location='references/eClassifiers/Task/references/eStructuralFeatures/agent/index.html';"},"data-nsd-label-uuid":"bc0fd202-a6c0-4c29-bc57-ba5e35c90bf2","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif","id":"nsd-app-nav-item-40708d86-fbaa-4603-9b00-ebdf7d18c319","text":"agent","type":"leaf"},{"a_attr":{"title":"Executes after task completion","onclick":"window.location='references/eClassifiers/Task/references/eStructuralFeatures/callback/index.html';"},"data-nsd-label-uuid":"2a5da67f-618a-4f0a-b474-6d323996f342","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif","id":"nsd-app-nav-item-d2608fa5-268d-4532-82e2-70c628064d57","text":"callback","type":"leaf"},{"a_attr":{"title":"Other tasks whose outputs will be used as context for this task","onclick":"window.location='references/eClassifiers/Task/references/eStructuralFeatures/context/index.html';"},"data-nsd-label-uuid":"8b668226-6d7d-47b9-b046-aaa69f04c529","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif","id":"nsd-app-nav-item-cbd14a20-e98c-4dd2-a148-090cff47f915","text":"context","type":"leaf"},{"a_attr":{"title":"Validates and transforms task outputs","onclick":"window.location='references/eClassifiers/Task/references/eStructuralFeatures/guardrail/index.html';"},"data-nsd-label-uuid":"25596026-2250-46ed-8483-6ed0c5341cff","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif","id":"nsd-app-nav-item-fbf6e76d-11e5-4e23-8064-9676623c3eb4","text":"guardrail","type":"leaf"},{"a_attr":{"title":"Tools/resources for this task","onclick":"window.location='references/eClassifiers/Task/references/eStructuralFeatures/tools/index.html';"},"data-nsd-label-uuid":"5fac48a8-ea42-46ff-9cb6-b76982bdbfd4","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif","id":"nsd-app-nav-item-ecb1e2a1-2999-46ca-bec5-190bf89cd345","text":"tools","type":"leaf"}],"data-nsd-label-uuid":"7b8c9bac-8bc6-489a-a4bb-7afa0153f832","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif","id":"nsd-app-nav-item-63045ed4-3473-4c8f-ac4d-06a4b1b0e6ee","text":"References"}],"data-nsd-label-uuid":"069d82ce-f12b-4d33-91aa-9d6cb7100e2b","icon":"https://crew-ai.models.nasdanika.org/images/task.svg","id":"nsd-app-nav-item-8c5f5014-743d-47a7-9414-02f3b0bd14a5","text":"Task"},{"a_attr":{"title":"A skill or function that agents can utilize to perform various actions","onclick":"window.location='references/eClassifiers/Tool/index.html';"},"children":[{"a_attr":{"onclick":"window.location='references/eClassifiers/Tool/attributes.html';"},"children":[{"a_attr":{"title":"Code to add to the crew class body","onclick":"window.location='references/eClassifiers/Tool/references/eStructuralFeatures/declarations/index.html';"},"data-nsd-label-uuid":"f48d9c91-d6e4-40b0-a13a-7bf54cc2e4af","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EAttribute.gif","id":"nsd-app-nav-item-3fee3b17-f0d9-48f5-905d-17b8d17fdd31","text":"declarations","type":"leaf"}],"data-nsd-label-uuid":"252e72ef-f8e2-45d9-85a5-9eedaf22b058","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EAttribute.gif","id":"nsd-app-nav-item-76cf3af7-910d-4ac0-b997-9daf1d65d06c","text":"Attributes"},{"a_attr":{"onclick":"window.location='references/eClassifiers/Tool/references.html';"},"children":[{"a_attr":{"title":"Agents using this tool","onclick":"window.location='references/eClassifiers/Tool/references/eStructuralFeatures/agents/index.html';"},"data-nsd-label-uuid":"e02fa6df-9d51-4668-941f-fef14fad83ef","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif","id":"nsd-app-nav-item-7c1f7508-1ccf-44f4-843e-d1451b019071","text":"agents","type":"leaf"},{"a_attr":{"title":"Tasks using this tool","onclick":"window.location='references/eClassifiers/Tool/references/eStructuralFeatures/tasks/index.html';"},"data-nsd-label-uuid":"e1426f93-dbc9-4715-8893-a4b5de96be3d","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif","id":"nsd-app-nav-item-8bdea4b0-26e1-467c-b872-35f906813ff3","text":"tasks","type":"leaf"}],"data-nsd-label-uuid":"5741c4f8-96f6-4816-88a7-2ea5dc138add","icon":"https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EReference.gif","id":"nsd-app-nav-item-69d7bc21-a620-4d90-b326-5c3e825a9b25","text":"References"}],"data-nsd-label-uuid":"5cb2b4a7-b8cf-4c04-b666-2c4b7566ec34","icon":"https://crew-ai.models.nasdanika.org/images/tool.svg","id":"nsd-app-nav-item-347ae7d3-943d-42cd-a024-1033a7dcc021","text":"Tool"}]},"search":{"show_only_matches":true,"show_only_matches_children":true},"types":{"leaf":{"icon":"jstree-file"}},"plugins":["state","type","search"],"state":{"key":"c91fe1f6-db0a-4f09-b50d-9a8f5bbea4f0-navigation-panel"}}));
+// Tokens: searchInputSelector, timer, treeSelector
+$('#c91fe1f6-db0a-4f09-b50d-9a8f5bbea4f0-navigation-panel_searchInput').keyup(function () {
+    if (window['nsd_jstTreeSearchTimer_nsd_6et']) { 
+		clearTimeout(window['nsd_jstTreeSearchTimer_nsd_6et']); 
+	}
+    window['nsd_jstTreeSearchTimer_nsd_6et'] = setTimeout(function () {
+      var v = $('#c91fe1f6-db0a-4f09-b50d-9a8f5bbea4f0-navigation-panel_searchInput').val();
+      $('#c91fe1f6-db0a-4f09-b50d-9a8f5bbea4f0-navigation-panel').jstree(true).search(v);
+    }, 250);
+  });
+
+});</script>
+          </div>
+        </div>
+        <div data-nsd-label-uuid="78a71d50-ec2e-4fef-98bd-448e5eaf9231" data-nsd-action-uris="uuid:78a71d50-ec2e-4fef-98bd-448e5eaf9231" class="col nsd-app-content-panel">
+          <div class="container-fluid">
+            <div class="row nsd-app-content-panel-breadcrumb-row">
+              <div class="col">
+                <nav aria-label="breadcrumb" class="nsd-app-content-panel-breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><span data-nsd-label-uuid="4cea995a-4e90-49fe-9e61-822326f9f738"><img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/16/external-diagram-seo-media-dreamstale-lineal-dreamstale.png" class="nsd-app-label-icon"/>Graphs</span>
+                    </li>
+                    <li class="breadcrumb-item active"><span data-nsd-label-uuid="78a71d50-ec2e-4fef-98bd-448e5eaf9231">Force Graph 3D Detailed</span>
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+            <div class="row nsd-app-content-panel-title-and-items-row">
+              <div class="col-auto">
+                <H1><span data-nsd-label-uuid="78a71d50-ec2e-4fef-98bd-448e5eaf9231" class="nsd-app-content-panel-title">Force Graph 3D Detailed<a data-toggle="modal" data-target="#nsd_6eu" href="#" title="A live force-layout graph of package classifiers showing detailed relationships between them" style="vertical-align:super;font-size:x-small;margin-left:0.2em"><span class="far fa-question-circle nsd-app-label-icon"></span></a></span>
+                </H1>
+              </div>
+            </div>
+            <div class="row nsd-app-content-panel-content-row">
+              <div class="col">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col"><div id="force-graph-49" class="row" style="height:70vh;width:100%">
+</div>
+<script type="module">
+	import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
+	import SpriteText from "https://cdn.jsdelivr.net/npm/three-spritetext@1.10.0/dist/three-spritetext.mjs";
+
+	        new ForceGraph3D(
+                document.getElementById('force-graph-49'), 
+                {
+                        extraRenderers: [
+                                new CSS2DRenderer()
+                        ]
+                })
+                .graphData({
+          "nodes": [
+            {
+              "image": "https://crew-ai.models.nasdanika.org/images/callback.svg",
+              "size": 3,
+              "name": "Callback",
+              "description": "A function called after completion of tasks and steps",
+              "id": "Callback@ecore://nasdanika.org/models/crew-ai",
+              "value": [{"externalLink": "references/eClassifiers/Callback/index.html"}],
+              "group": "ecore://nasdanika.org/models/crew-ai"
+            },
+            {
+              "image": "https://crew-ai.models.nasdanika.org/images/web-management.svg",
+              "size": 4,
+              "name": "Configurable",
+              "description": "An element with YAML configuration",
+              "id": "Configurable@ecore://nasdanika.org/models/crew-ai",
+              "value": [{"externalLink": "references/eClassifiers/Configurable/index.html"}],
+              "group": "ecore://nasdanika.org/models/crew-ai"
+            },
+            {
+              "image": "https://crew-ai.models.nasdanika.org/images/navy.svg",
+              "size": 3,
+              "name": "Crew",
+              "description": "A collaborative group of agents working together to complete a set of tasks",
+              "id": "Crew@ecore://nasdanika.org/models/crew-ai",
+              "value": [{"externalLink": "references/eClassifiers/Crew/index.html"}],
+              "group": "ecore://nasdanika.org/models/crew-ai"
+            },
+            {
+              "image": "https://crew-ai.models.nasdanika.org/images/task.svg",
+              "size": 4,
+              "name": "Task",
+              "description": "A specific assignment completed by an Agent",
+              "id": "Task@ecore://nasdanika.org/models/crew-ai",
+              "value": [{"externalLink": "references/eClassifiers/Task/index.html"}],
+              "group": "ecore://nasdanika.org/models/crew-ai"
+            },
+            {
+              "image": "https://crew-ai.models.nasdanika.org/images/settings.svg",
+              "size": 3,
+              "name": "Function",
+              "description": "Generates python function",
+              "id": "Function@ecore://nasdanika.org/models/crew-ai",
+              "value": [{"externalLink": "references/eClassifiers/Function/index.html"}],
+              "group": "ecore://nasdanika.org/models/crew-ai"
+            },
+            {
+              "image": "https://crew-ai.models.nasdanika.org/images/ai.svg",
+              "size": 3,
+              "name": "LargeLanguageModel",
+              "description": "Family is a group of related people",
+              "id": "LargeLanguageModel@ecore://nasdanika.org/models/crew-ai",
+              "value": [{"externalLink": "references/eClassifiers/LargeLanguageModel/index.html"}],
+              "group": "ecore://nasdanika.org/models/crew-ai"
+            },
+            {
+              "image": "https://crew-ai.models.nasdanika.org/images/software-agent.svg",
+              "size": 4,
+              "name": "Agent",
+              "description": "Think of an agent as a specialized team member with specific skills, expertise, and responsibilities",
+              "id": "Agent@ecore://nasdanika.org/models/crew-ai",
+              "value": [{"externalLink": "references/eClassifiers/Agent/index.html"}],
+              "group": "ecore://nasdanika.org/models/crew-ai"
+            },
+            {
+              "image": "https://crew-ai.models.nasdanika.org/images/book.svg",
+              "size": 3,
+              "name": "KnowledgeSource",
+              "description": "An external source of information",
+              "id": "KnowledgeSource@ecore://nasdanika.org/models/crew-ai",
+              "value": [{"externalLink": "references/eClassifiers/KnowledgeSource/index.html"}],
+              "group": "ecore://nasdanika.org/models/crew-ai"
+            },
+            {
+              "image": "https://crew-ai.models.nasdanika.org/images/barrier.svg",
+              "size": 3,
+              "name": "Guardrail",
+              "description": "A function which validates and transforms task outputs",
+              "id": "Guardrail@ecore://nasdanika.org/models/crew-ai",
+              "value": [{"externalLink": "references/eClassifiers/Guardrail/index.html"}],
+              "group": "ecore://nasdanika.org/models/crew-ai"
+            },
+            {
+              "image": "https://crew-ai.models.nasdanika.org/images/tool.svg",
+              "size": 3,
+              "name": "Tool",
+              "description": "A skill or function that agents can utilize to perform various actions",
+              "id": "Tool@ecore://nasdanika.org/models/crew-ai",
+              "value": [{"externalLink": "references/eClassifiers/Tool/index.html"}],
+              "group": "ecore://nasdanika.org/models/crew-ai"
+            },
+            {
+              "image": "https://crew-ai.models.nasdanika.org/images/script.svg",
+              "size": 4,
+              "name": "Code",
+              "description": "Base class for producers of python code",
+              "id": "Code@ecore://nasdanika.org/models/crew-ai",
+              "value": [{"externalLink": "references/eClassifiers/Code/index.html"}],
+              "group": "ecore://nasdanika.org/models/crew-ai"
+            },
+            {
+              "image": "https://crew-ai.models.nasdanika.org/images/milestone.svg",
+              "name": "Process",
+              "description": "Processes orchestrate the execution of tasks by agents",
+              "id": "Process@ecore://nasdanika.org/models/crew-ai",
+              "value": [{"externalLink": "references/eClassifiers/Process/index.html"}],
+              "group": "ecore://nasdanika.org/models/crew-ai"
+            }
+          ],
+          "links": [
+            {
+              "rotation": 0,
+              "name": "stepCallback",
+              "source": "Crew@ecore://nasdanika.org/models/crew-ai",
+              "target": "Callback@ecore://nasdanika.org/models/crew-ai",
+              "group": "reference",
+              "curvature": 0.2
+            },
+            {
+              "rotation": 3.141592653589793,
+              "name": "taskCallback",
+              "source": "Crew@ecore://nasdanika.org/models/crew-ai",
+              "target": "Callback@ecore://nasdanika.org/models/crew-ai",
+              "group": "reference",
+              "curvature": 0.2
+            },
+            {
+              "rotation": 0,
+              "source": "Task@ecore://nasdanika.org/models/crew-ai",
+              "target": "Configurable@ecore://nasdanika.org/models/crew-ai",
+              "group": "inheritance",
+              "curvature": 0
+            },
+            {
+              "rotation": 0,
+              "name": "callback",
+              "source": "Task@ecore://nasdanika.org/models/crew-ai",
+              "target": "Callback@ecore://nasdanika.org/models/crew-ai",
+              "group": "reference",
+              "curvature": 0
+            },
+            {
+              "rotation": 0,
+              "name": "tasks",
+              "source": "Crew@ecore://nasdanika.org/models/crew-ai",
+              "target": "Task@ecore://nasdanika.org/models/crew-ai",
+              "group": "reference",
+              "curvature": 0
+            },
+            {
+              "rotation": 0,
+              "name": "beforeKickoff",
+              "source": "Crew@ecore://nasdanika.org/models/crew-ai",
+              "target": "Function@ecore://nasdanika.org/models/crew-ai",
+              "group": "reference",
+              "curvature": 0.2
+            },
+            {
+              "rotation": 3.141592653589793,
+              "name": "afterKickoff",
+              "source": "Crew@ecore://nasdanika.org/models/crew-ai",
+              "target": "Function@ecore://nasdanika.org/models/crew-ai",
+              "group": "reference",
+              "curvature": 0.2
+            },
+            {
+              "rotation": 0,
+              "source": "Callback@ecore://nasdanika.org/models/crew-ai",
+              "target": "Function@ecore://nasdanika.org/models/crew-ai",
+              "group": "inheritance",
+              "curvature": 0
+            },
+            {
+              "rotation": 0,
+              "name": "languageModels",
+              "source": "Crew@ecore://nasdanika.org/models/crew-ai",
+              "target": "LargeLanguageModel@ecore://nasdanika.org/models/crew-ai",
+              "group": "reference",
+              "curvature": 0.2
+            },
+            {
+              "rotation": 1.5707963267948966,
+              "name": "managerLlm",
+              "source": "Crew@ecore://nasdanika.org/models/crew-ai",
+              "target": "LargeLanguageModel@ecore://nasdanika.org/models/crew-ai",
+              "group": "reference",
+              "curvature": 0.2
+            },
+            {
+              "rotation": 3.141592653589793,
+              "name": "functionCallingLlm",
+              "source": "Crew@ecore://nasdanika.org/models/crew-ai",
+              "target": "LargeLanguageModel@ecore://nasdanika.org/models/crew-ai",
+              "group": "reference",
+              "curvature": 0.2
+            },
+            {
+              "rotation": 4.71238898038469,
+              "name": "planningLlm",
+              "source": "Crew@ecore://nasdanika.org/models/crew-ai",
+              "target": "LargeLanguageModel@ecore://nasdanika.org/models/crew-ai",
+              "group": "reference",
+              "curvature": 0.2
+            },
+            {
+              "rotation": 0,
+              "name": "tasks",
+              "source": "Agent@ecore://nasdanika.org/models/crew-ai",
+              "target": "Task@ecore://nasdanika.org/models/crew-ai",
+              "group": "reference",
+              "curvature": 0
+            },
+            {
+              "rotation": 0,
+              "name": "llm",
+              "source": "Agent@ecore://nasdanika.org/models/crew-ai",
+              "target": "LargeLanguageModel@ecore://nasdanika.org/models/crew-ai",
+              "group": "reference",
+              "curvature": 0.2
+            },
+            {
+              "rotation": 3.141592653589793,
+              "name": "functionCallingLlm",
+              "source": "Agent@ecore://nasdanika.org/models/crew-ai",
+              "target": "LargeLanguageModel@ecore://nasdanika.org/models/crew-ai",
+              "group": "reference",
+              "curvature": 0.2
+            },
+            {
+              "rotation": 0,
+              "source": "Agent@ecore://nasdanika.org/models/crew-ai",
+              "target": "Configurable@ecore://nasdanika.org/models/crew-ai",
+              "group": "inheritance",
+              "curvature": 0
+            },
+            {
+              "rotation": 0,
+              "name": "stepCallback",
+              "source": "Agent@ecore://nasdanika.org/models/crew-ai",
+              "target": "Callback@ecore://nasdanika.org/models/crew-ai",
+              "group": "reference",
+              "curvature": 0
+            },
+            {
+              "rotation": 0,
+              "name": "agent",
+              "source": "Task@ecore://nasdanika.org/models/crew-ai",
+              "target": "Agent@ecore://nasdanika.org/models/crew-ai",
+              "group": "reference",
+              "curvature": 0
+            },
+            {
+              "rotation": 0,
+              "name": "agents",
+              "source": "Crew@ecore://nasdanika.org/models/crew-ai",
+              "target": "Agent@ecore://nasdanika.org/models/crew-ai",
+              "group": "reference",
+              "curvature": 0.2
+            },
+            {
+              "rotation": 3.141592653589793,
+              "name": "managerAgent",
+              "source": "Crew@ecore://nasdanika.org/models/crew-ai",
+              "target": "Agent@ecore://nasdanika.org/models/crew-ai",
+              "group": "reference",
+              "curvature": 0.2
+            },
+            {
+              "rotation": 0,
+              "name": "agents",
+              "source": "KnowledgeSource@ecore://nasdanika.org/models/crew-ai",
+              "target": "Agent@ecore://nasdanika.org/models/crew-ai",
+              "group": "reference",
+              "curvature": 0
+            },
+            {
+              "rotation": 0,
+              "name": "knowledgeSources",
+              "source": "Agent@ecore://nasdanika.org/models/crew-ai",
+              "target": "KnowledgeSource@ecore://nasdanika.org/models/crew-ai",
+              "group": "reference",
+              "curvature": 0
+            },
+            {
+              "rotation": 0,
+              "name": "knowledgeSources",
+              "source": "Crew@ecore://nasdanika.org/models/crew-ai",
+              "target": "KnowledgeSource@ecore://nasdanika.org/models/crew-ai",
+              "group": "reference",
+              "curvature": 0
+            },
+            {
+              "rotation": 0,
+              "source": "Guardrail@ecore://nasdanika.org/models/crew-ai",
+              "target": "Function@ecore://nasdanika.org/models/crew-ai",
+              "group": "inheritance",
+              "curvature": 0
+            },
+            {
+              "rotation": 0,
+              "name": "guardrail",
+              "source": "Task@ecore://nasdanika.org/models/crew-ai",
+              "target": "Guardrail@ecore://nasdanika.org/models/crew-ai",
+              "group": "reference",
+              "curvature": 0
+            },
+            {
+              "rotation": 0,
+              "name": "tasks",
+              "source": "Tool@ecore://nasdanika.org/models/crew-ai",
+              "target": "Task@ecore://nasdanika.org/models/crew-ai",
+              "group": "reference",
+              "curvature": 0
+            },
+            {
+              "rotation": 0,
+              "name": "agents",
+              "source": "Tool@ecore://nasdanika.org/models/crew-ai",
+              "target": "Agent@ecore://nasdanika.org/models/crew-ai",
+              "group": "reference",
+              "curvature": 0
+            },
+            {
+              "rotation": 0,
+              "name": "tools",
+              "source": "Agent@ecore://nasdanika.org/models/crew-ai",
+              "target": "Tool@ecore://nasdanika.org/models/crew-ai",
+              "group": "reference",
+              "curvature": 0
+            },
+            {
+              "rotation": 0,
+              "name": "tools",
+              "source": "Task@ecore://nasdanika.org/models/crew-ai",
+              "target": "Tool@ecore://nasdanika.org/models/crew-ai",
+              "group": "reference",
+              "curvature": 0
+            },
+            {
+              "rotation": 0,
+              "name": "tools",
+              "source": "Crew@ecore://nasdanika.org/models/crew-ai",
+              "target": "Tool@ecore://nasdanika.org/models/crew-ai",
+              "group": "reference",
+              "curvature": 0
+            },
+            {
+              "rotation": 0,
+              "source": "Tool@ecore://nasdanika.org/models/crew-ai",
+              "target": "Code@ecore://nasdanika.org/models/crew-ai",
+              "group": "inheritance",
+              "curvature": 0
+            },
+            {
+              "rotation": 0,
+              "name": "embedder",
+              "source": "Agent@ecore://nasdanika.org/models/crew-ai",
+              "target": "Code@ecore://nasdanika.org/models/crew-ai",
+              "group": "reference",
+              "curvature": 0
+            },
+            {
+              "rotation": 0,
+              "source": "Function@ecore://nasdanika.org/models/crew-ai",
+              "target": "Code@ecore://nasdanika.org/models/crew-ai",
+              "group": "inheritance",
+              "curvature": 0
+            },
+            {
+              "rotation": 0,
+              "source": "Crew@ecore://nasdanika.org/models/crew-ai",
+              "target": "Code@ecore://nasdanika.org/models/crew-ai",
+              "group": "inheritance",
+              "curvature": 0.2
+            },
+            {
+              "rotation": 3.141592653589793,
+              "name": "embedder",
+              "source": "Crew@ecore://nasdanika.org/models/crew-ai",
+              "target": "Code@ecore://nasdanika.org/models/crew-ai",
+              "group": "reference",
+              "curvature": 0.2
+            },
+            {
+              "rotation": 0,
+              "source": "Configurable@ecore://nasdanika.org/models/crew-ai",
+              "target": "Code@ecore://nasdanika.org/models/crew-ai",
+              "group": "inheritance",
+              "curvature": 0
+            }
+          ]
+        })
+                .nodeAutoColorBy('group')
+                .nodeVal('size')
+                .linkDirectionalArrowLength(2.5)
+                .linkDirectionalArrowRelPos(1)
+                .linkCurvature('curvature')
+                .linkCurveRotation('rotation')
+                .linkAutoColorBy('group')
+                .onNodeClick((node, event) => {
+       if (node.lastClick) {
+        if (event.timeStamp - node.lastClick < 500) {
+			if (Array.isArray(node.value) && node.value.length > 0) {
+				if (node.value[0].link) {
+					window.open(node.value[0].link, "_self");
+				} else if (node.value[0].externalLink) {
+					window.open(node.value[0].externalLink);
+				}
+			}
+			delete node.lastClick;
+		} else {
+			node.lastClick = event.timeStamp;
+		}
+	} else {
+		node.lastClick = event.timeStamp;
+	}
+   })
+                .nodeThreeObject(node => {
+        const nodeEl = document.createElement('div');
+        nodeEl.textContent = node.name;
+        nodeEl.style.color = node.color;
+        nodeEl.className = 'node-label';
+        return new CSS2DObject(nodeEl);
+      })
+                .nodeThreeObjectExtend(true)
+                .linkThreeObject(link => {
+         // extend link with text sprite
+         if (link.name && !link.curvature) {
+           const sprite = new SpriteText(link.name);
+           sprite.color = 'lightgrey';
+           sprite.textHeight = 1.5;
+           return sprite;
+         }
+       })
+                .linkPositionUpdate((sprite, { start, end }) => {
+		if (sprite) {
+          const pos = Object.assign(...['x', 'y', 'z'].map(c => ({
+            [c]: start[c] + (end[c] - start[c]) / 1.3
+          })));
+
+          // Position sprite
+          Object.assign(sprite.position, pos);
+        }
+       })
+                .linkThreeObjectExtend(true)
+                .onNodeDragEnd(node => {
+          node.fx = node.x;
+          node.fy = node.y;
+          node.fz = node.z;
+        })
+</script>
+</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col nsd-app-footer">
+          <ul class="nav nsd-app-footer-navs">
+            <li class="nav-item">
+              <a href="https://github.com/Nasdanika-Models/crew-ai" data-nsd-label-uuid="a06ce155-d4ab-48d9-9ba6-d399439a73b8" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
