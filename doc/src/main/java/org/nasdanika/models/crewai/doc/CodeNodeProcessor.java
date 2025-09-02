@@ -5,8 +5,8 @@ import java.util.Collections;
 import java.util.Optional;
 
 import org.eclipse.emf.ecore.EObject;
+import org.nasdanika.common.Content;
 import org.nasdanika.common.Context;
-import org.nasdanika.common.Description;
 import org.nasdanika.common.DocumentationFactory;
 import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.common.Util;
@@ -48,7 +48,7 @@ public class CodeNodeProcessor<T extends Code> extends ModelElementNodeProcessor
 			if (!Util.isBlank(code)) {
 				Optional<DocumentationFactory> dfo = documentationFactories
 						.stream()
-						.filter(df -> df.canHandle(Description.MARKDOWN_FORMAT))
+						.filter(df -> df.canHandle(Content.MARKDOWN))
 						.findAny();
 					
 				if (dfo.isPresent()) {
@@ -59,7 +59,7 @@ public class CodeNodeProcessor<T extends Code> extends ModelElementNodeProcessor
 							%s
 							```
 							""".formatted(code), 
-							Description.MARKDOWN_FORMAT, 
+							Content.MARKDOWN, 
 							target.eResource() == null ? null : target.eResource().getURI(),
 							Collections.<String,String>emptyMap()::get,
 							progressMonitor);
@@ -94,7 +94,7 @@ public class CodeNodeProcessor<T extends Code> extends ModelElementNodeProcessor
 			if (!Util.isBlank(imports)) {
 				Optional<DocumentationFactory> dfo = documentationFactories
 						.stream()
-						.filter(df -> df.canHandle(Description.MARKDOWN_FORMAT))
+						.filter(df -> df.canHandle(Content.MARKDOWN))
 						.findAny();
 					
 				if (dfo.isPresent()) {
@@ -105,7 +105,7 @@ public class CodeNodeProcessor<T extends Code> extends ModelElementNodeProcessor
 							%s
 							```
 							""".formatted(imports), 
-							Description.MARKDOWN_FORMAT, 
+							Content.MARKDOWN, 
 							target.eResource() == null ? null : target.eResource().getURI(),
 							Collections.<String,String>emptyMap()::get,
 							progressMonitor);
