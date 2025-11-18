@@ -2,6 +2,7 @@ package org.nasdanika.models.crewai.doc;
 
 import java.util.Collection;
 
+import org.eclipse.emf.ecore.EObject;
 import org.nasdanika.common.Context;
 import org.nasdanika.common.DocumentationFactory;
 import org.nasdanika.common.ProgressMonitor;
@@ -14,7 +15,7 @@ public class FunctionNodeProcessor<T extends org.nasdanika.models.crewai.Functio
 	public FunctionNodeProcessor(
 		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
 		Context context,
-		java.util.function.Function<ProgressMonitor, Action> prototypeProvider,
+		java.util.function.BiFunction<EObject, ProgressMonitor, Action> prototypeProvider,
 		Collection<DocumentationFactory> documentationFactories) {
 		
 		super(config, context, prototypeProvider, documentationFactories);

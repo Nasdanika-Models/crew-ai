@@ -2,6 +2,7 @@ package org.nasdanika.models.crewai.doc;
 
 import java.util.Collection;
 
+import org.eclipse.emf.ecore.EObject;
 import org.nasdanika.common.Context;
 import org.nasdanika.common.DocumentationFactory;
 import org.nasdanika.common.ProgressMonitor;
@@ -15,7 +16,7 @@ public class LargeLanguageModelNodeProcessor extends ModelElementNodeProcessor<L
 	public LargeLanguageModelNodeProcessor(
 		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
 		Context context,
-		java.util.function.Function<ProgressMonitor, Action> prototypeProvider,
+		java.util.function.BiFunction<EObject, ProgressMonitor, Action> prototypeProvider,
 		Collection<DocumentationFactory> documentationFactories) {
 		
 		super(config, context, prototypeProvider, documentationFactories);

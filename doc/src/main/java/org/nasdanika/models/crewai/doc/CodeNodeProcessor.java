@@ -22,7 +22,7 @@ public class CodeNodeProcessor<T extends Code> extends ModelElementNodeProcessor
 	public CodeNodeProcessor(
 		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
 		Context context,
-		java.util.function.Function<ProgressMonitor, Action> prototypeProvider,
+		java.util.function.BiFunction<EObject, ProgressMonitor, Action> prototypeProvider,
 		Collection<DocumentationFactory> documentationFactories) {
 		
 		super(config, context, prototypeProvider, documentationFactories);

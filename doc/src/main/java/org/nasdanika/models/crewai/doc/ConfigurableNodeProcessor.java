@@ -15,14 +15,13 @@ import org.nasdanika.models.app.Action;
 import org.nasdanika.models.app.Label;
 import org.nasdanika.models.app.graph.WidgetFactory;
 import org.nasdanika.models.crewai.Configurable;
-import org.yaml.snakeyaml.Yaml;
 
 public class ConfigurableNodeProcessor<T extends Configurable> extends CodeNodeProcessor<T> {
 
 	public ConfigurableNodeProcessor(
 		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
 		Context context,
-		java.util.function.Function<ProgressMonitor, Action> prototypeProvider,
+		java.util.function.BiFunction<EObject, ProgressMonitor, Action> prototypeProvider,
 		Collection<DocumentationFactory> documentationFactories) {
 		
 		super(config, context, prototypeProvider, documentationFactories);
