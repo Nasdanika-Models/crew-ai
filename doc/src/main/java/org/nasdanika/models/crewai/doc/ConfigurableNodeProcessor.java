@@ -19,7 +19,7 @@ import org.nasdanika.models.crewai.Configurable;
 public class ConfigurableNodeProcessor<T extends Configurable> extends CodeNodeProcessor<T> {
 
 	public ConfigurableNodeProcessor(
-		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+		NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 		Context context,
 		java.util.function.BiFunction<EObject, ProgressMonitor, Action> prototypeProvider,
 		Collection<DocumentationFactory> documentationFactories) {

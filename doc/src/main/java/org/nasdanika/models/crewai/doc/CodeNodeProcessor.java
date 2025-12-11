@@ -20,7 +20,7 @@ import org.nasdanika.models.crewai.Code;
 public class CodeNodeProcessor<T extends Code> extends ModelElementNodeProcessor<T> {
 
 	public CodeNodeProcessor(
-		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+		NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 		Context context,
 		java.util.function.BiFunction<EObject, ProgressMonitor, Action> prototypeProvider,
 		Collection<DocumentationFactory> documentationFactories) {

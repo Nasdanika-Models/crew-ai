@@ -13,7 +13,7 @@ import org.nasdanika.models.app.graph.WidgetFactory;
 public class FunctionNodeProcessor<T extends org.nasdanika.models.crewai.Function> extends CodeNodeProcessor<T> {
 
 	public FunctionNodeProcessor(
-		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+		NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 		Context context,
 		java.util.function.BiFunction<EObject, ProgressMonitor, Action> prototypeProvider,
 		Collection<DocumentationFactory> documentationFactories) {

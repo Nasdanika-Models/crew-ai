@@ -24,7 +24,7 @@ import org.nasdanika.ncore.NamedElement;
 public class KnowledgeSourceNodeProcessor extends ModelElementNodeProcessor<KnowledgeSource> {
 
 	public KnowledgeSourceNodeProcessor(
-		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+		NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 		Context context,
 		java.util.function.BiFunction<EObject, ProgressMonitor, Action> prototypeProvider,
 		Collection<DocumentationFactory> documentationFactories) {

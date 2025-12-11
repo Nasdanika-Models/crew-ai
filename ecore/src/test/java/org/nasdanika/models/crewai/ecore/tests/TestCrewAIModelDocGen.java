@@ -82,7 +82,7 @@ public class TestCrewAIModelDocGen {
 				
 		String rootActionResource = "actions.yml";
 		URI rootActionURI = URI.createFileURI(new File(rootActionResource).getAbsolutePath());//.appendFragment("/");
-		URI pageTeplateURI = URI.createFileURI(new File("page-template.yml").getAbsolutePath());//.appendFragment("/");
+		URI pageTemplateURI = URI.createFileURI(new File("page-template.yml").getAbsolutePath());//.appendFragment("/");
 		String siteMapDomain = "https://crew-ai.models.nasdanika.org";		
 		AppSiteGenerator actionSiteGenerator = new AppSiteGenerator() {
 			
@@ -94,7 +94,7 @@ public class TestCrewAIModelDocGen {
 		
 		Map<String, Collection<String>> errors = actionSiteGenerator.generate(
 				rootActionURI, 
-				pageTeplateURI, // Theme.Cerulean.pageTemplateCdnURI, 
+				pageTemplateURI, // Theme.Cerulean.pageTemplateCdnURI, 
 				siteMapDomain, 
 				new File("../docs"), 
 				new File("target/doc-site-work-dir"), 

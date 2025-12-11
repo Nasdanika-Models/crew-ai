@@ -26,7 +26,7 @@ import org.nasdanika.ncore.NamedElement;
 public class AgentNodeProcessor extends ConfigurableNodeProcessor<Agent> {
 
 	public AgentNodeProcessor(
-		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+		NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 		Context context,
 		java.util.function.BiFunction<EObject, ProgressMonitor, Action> prototypeProvider,
 		Collection<DocumentationFactory> documentationFactories) {

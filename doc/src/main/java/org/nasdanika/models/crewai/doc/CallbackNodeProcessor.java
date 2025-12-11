@@ -14,7 +14,7 @@ import org.nasdanika.models.crewai.Callback;
 public class CallbackNodeProcessor extends FunctionNodeProcessor<Callback> {
 
 	public CallbackNodeProcessor(
-		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+		NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 		Context context,
 		java.util.function.BiFunction<EObject, ProgressMonitor, Action> prototypeProvider,
 		Collection<DocumentationFactory> documentationFactories) {

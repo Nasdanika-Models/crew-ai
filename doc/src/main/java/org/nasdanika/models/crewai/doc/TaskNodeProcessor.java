@@ -28,7 +28,7 @@ import org.nasdanika.ncore.NamedElement;
 public class TaskNodeProcessor extends ConfigurableNodeProcessor<Task> {
 
 	public TaskNodeProcessor(
-		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+		NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 		Context context,
 		java.util.function.BiFunction<EObject, ProgressMonitor, Action> prototypeProvider,
 		Collection<DocumentationFactory> documentationFactories) {

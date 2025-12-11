@@ -14,7 +14,7 @@ import org.nasdanika.models.crewai.Guardrail;
 public class GuardrailNodeProcessor extends FunctionNodeProcessor<Guardrail> {
 	
 	public GuardrailNodeProcessor(
-		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+		NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 		Context context,
 		java.util.function.BiFunction<EObject, ProgressMonitor, Action> prototypeProvider,
 		Collection<DocumentationFactory> documentationFactories) {

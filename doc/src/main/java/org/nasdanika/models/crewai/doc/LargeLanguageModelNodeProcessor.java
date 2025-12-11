@@ -14,7 +14,7 @@ import org.nasdanika.models.crewai.LargeLanguageModel;
 public class LargeLanguageModelNodeProcessor extends ModelElementNodeProcessor<LargeLanguageModel> {
 
 	public LargeLanguageModelNodeProcessor(
-		NodeProcessorConfig<WidgetFactory, WidgetFactory> config, 
+		NodeProcessorConfig<WidgetFactory, WidgetFactory, Object> config, 
 		Context context,
 		java.util.function.BiFunction<EObject, ProgressMonitor, Action> prototypeProvider,
 		Collection<DocumentationFactory> documentationFactories) {
