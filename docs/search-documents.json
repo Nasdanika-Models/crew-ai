@@ -1,451 +1,451 @@
 {
   "references/eClassifiers/Task/references/eStructuralFeatures/callback/index.html": {
     "path": "Task/References/callback",
-    "link-uuid": "8e65154d-ab11-4e9e-9fe5-5cba2eb9fe2d",
+    "link-uuid": "5860de96-b534-49aa-ad6e-b68ff116ab1c",
     "title": "callback",
     "content": "Type Callback Multiplicity 0..1 Function to be executed after task completion.",
-    "timestamp": 1765442861236
+    "timestamp": 1772632983710
   },
   "references/eClassifiers/Task/inheritance.html": {
     "path": "Task/Inheritance",
-    "link-uuid": "ae66ddd1-eb13-4dc4-a1a5-c93a8d1ea489",
+    "link-uuid": "28d5ba5b-4280-4e00-9a3d-1aa5f27362d9",
     "title": "Inheritance",
     "content": "Supertypes ",
-    "timestamp": 1765442861230
+    "timestamp": 1772632983703
   },
   "references/eClassifiers/KnowledgeSource/inheritance.html": {
     "path": "Knowledge Source/Inheritance",
-    "link-uuid": "7095f5a3-3736-4026-9b43-d61aba4eb282",
+    "link-uuid": "07d7c7eb-0495-482f-996f-0a5f05a6b35b",
     "title": "Inheritance",
     "content": "Supertypes ",
-    "timestamp": 1765442861170
+    "timestamp": 1772632983645
   },
   "references/eClassifiers/Function/index.html": {
-    "link-uuid": "a55c377c-d376-450d-9208-24fc4ec543b2",
+    "link-uuid": "4d6b76b2-06bb-4df7-8a46-f8695c97566e",
     "title": "Function",
     "content": "Generates a python function.",
-    "timestamp": 1765442861119
+    "timestamp": 1772632983584
   },
   "references/eClassifiers/Crew/references/eStructuralFeatures/embedder/index.html": {
     "path": "Crew/References/embedder",
-    "link-uuid": "63eb9df6-dd15-465d-a668-88aaec3953f2",
+    "link-uuid": "7a23ab2c-fa7e-4579-a161-8edf678b1553",
     "title": "embedder",
     "content": "Type Code Multiplicity 0..1 Configuration for the embedder to be used by the crew.",
-    "timestamp": 1765442861073
+    "timestamp": 1772632983539
   },
   "references/eClassifiers/Crew/references/eStructuralFeatures/stepCallback/index.html": {
     "path": "Crew/References/stepCallback",
-    "link-uuid": "b36c9a5f-8c56-4b82-8f73-d5b2c5c210f5",
+    "link-uuid": "ca408271-7dd7-4f77-a250-9d7b2bd18af5",
     "title": "stepCallback",
     "content": "Type Callback Multiplicity 0..1 A function that is called after each step of every agent. This can be used to log the agent&rsquo;s actions or to perform other operations; it won&rsquo;t override the agent-specific step callback.",
-    "timestamp": 1765442861091
+    "timestamp": 1772632983557
   },
   "references/eClassifiers/Task/index.html": {
-    "link-uuid": "6cb56313-7c61-4b96-827d-0876aa543cc9",
+    "link-uuid": "49617106-2e83-4a35-9d86-23d1ea4807b5",
     "title": "Task",
     "content": "A Task is a specific assignment completed by an Agent. Tasks provide all necessary details for execution, such as a description, the agent responsible, required tools, and more, facilitating a wide range of action complexities. Tasks can be collaborative, requiring multiple agents to work together.",
-    "timestamp": 1765442861228
+    "timestamp": 1772632983701
   },
   "references/eClassifiers/Tool/inheritance.html": {
     "path": "Tool/Inheritance",
-    "link-uuid": "1f65ffc0-d149-4662-b50c-dddf10eefdbe",
+    "link-uuid": "15a49fcb-74ce-42fa-b095-0e42caf8ef12",
     "title": "Inheritance",
     "content": "Supertypes ",
-    "timestamp": 1765442861267
+    "timestamp": 1772632983750
   },
   "references/eClassifiers/Code/references/eStructuralFeatures/code/index.html": {
     "path": "Code/Attributes/code",
-    "link-uuid": "de7f557d-706f-47e3-903a-477dbe55a4fa",
+    "link-uuid": "a63579d0-bd06-4816-9b9a-524cb13fee3d",
     "title": "code",
     "content": "Type EString Multiplicity 0..1 How code attribute is used is subclass-specific: Crew - code is added to the top of the generated crew class after configuration fields and before any other declarations. Agent and Task - code is used as agent/task method body template. Function - code is used to produce function body. Tool - what is added to the tools array. E.g. SerperDevTool(). Code can contain interpolation tokens for adding imports. Example: my_var = ${spel:addItemImport('my_module', 'my_item').item}\n spel: is a prefix for Spring Expression Language tokens. addItemImport('my_module', 'my_item').item - calls org.nasdanika.models.python.Source.addImport() method and then getItem() value of the result. Import methods: addItemImport(module, item) - the method used above addItemImport(module, item, name) - in this case use .name addModuleImport(module) - in this case use add dot and imported item after the token. e.g. ${spel:addModuleImport('my_module').module}.my_item addModuleImport(module, alias) - in this case use add dot and imported item after the token. e.g. ${spel:addModuleImport('my_module', 'mi_modulo').alias}.my_item",
-    "timestamp": 1765442861002
+    "timestamp": 1772632983462
   },
   "references/eClassifiers/Crew/references/eStructuralFeatures/afterKickoff/index.html": {
     "path": "Crew/References/afterKickoff",
-    "link-uuid": "1f88681b-2385-4d55-99ef-188afb6a4e1b",
+    "link-uuid": "8eac85da-ba5c-40f0-bda5-4b4ea9bf6eda",
     "title": "afterKickoff",
     "content": "Type Function Multiplicity 0..1 Executes after the crew finishes.",
-    "timestamp": 1765442861067
+    "timestamp": 1772632983532
   },
   "references/eClassifiers/Task/references/eStructuralFeatures/taskDescription/index.html": {
     "path": "Task/Attributes/taskDescription",
-    "link-uuid": "2728d9e2-7e88-4a44-8712-b490d7a1954a",
+    "link-uuid": "02dead66-16e5-40d6-b4f0-5e3864c6bc0b",
     "title": "taskDescription",
     "content": "Type EString Multiplicity 0..1 A clear, concise statement of what the task entails.",
-    "timestamp": 1765442861244
+    "timestamp": 1772632983718
   },
   "references/eClassifiers/Task/references/eStructuralFeatures/tools/index.html": {
     "path": "Task/References/tools",
-    "link-uuid": "c6cfa833-beae-4575-8aad-f4c81205220c",
+    "link-uuid": "8d7d55e7-5e56-477f-bf08-e377560eaa25",
     "title": "tools",
     "content": "Type Tool Multiplicity 0..* The tools/resources the agent is limited to use for this task.",
-    "timestamp": 1765442861245
+    "timestamp": 1772632983720
   },
   "references/eClassifiers/Guardrail/index.html": {
-    "link-uuid": "adac6361-cfcf-4f2e-94c7-e9acaf4c6e64",
+    "link-uuid": "f97c1994-845e-444b-9830-9a961ddbc64c",
     "title": "Guardrail",
     "content": "Task guardrails provide a powerful way to validate, transform, or filter task outputs before they are passed to the next task. Guardrails are optional functions that execute before the next task starts, allowing you to ensure that task outputs meet specific requirements or formats.",
-    "timestamp": 1765442861145
+    "timestamp": 1772632983612
   },
   "references/eClassifiers/KnowledgeSource/references/eStructuralFeatures/agents/index.html": {
     "path": "Knowledge Source/References/agents",
-    "link-uuid": "7b665175-95f1-4c84-a0c6-d7236309f50a",
+    "link-uuid": "e245fded-88c6-47bf-8caf-ff7a0cd4f332",
     "title": "agents",
     "content": "Type Agent Multiplicity 0..* Agents using this knowledge source.",
-    "timestamp": 1765442861174
+    "timestamp": 1772632983650
   },
   "references/eClassifiers/KnowledgeSource/index.html": {
-    "link-uuid": "b4df4ec6-911b-4e81-a6e5-8daf7a88a400",
+    "link-uuid": "ad2bc7da-f6be-4b7f-a51a-b2489c2dc5be",
     "title": "Knowledge Source",
     "content": "Knowledge allows agents to access and utilize external information sources during their tasks. Think of it as giving your agents a reference library they can consult while working.",
-    "timestamp": 1765442861168
+    "timestamp": 1772632983643
   },
   "references/eClassifiers/Crew/references/eStructuralFeatures/functionCallingLlm/index.html": {
     "path": "Crew/References/functionCallingLlm",
-    "link-uuid": "62bf4a71-c160-40da-ad14-0a0f2703c430",
+    "link-uuid": "581f1447-a0c4-4688-b095-f01b6d85a9d9",
     "title": "functionCallingLlm",
     "content": "Type Large Language Model Multiplicity 0..1 If passed, the crew will use this LLM to do function calling for tools for all agents in the crew. Each agent can have its own LLM, which overrides the crew&rsquo;s LLM for function calling.",
-    "timestamp": 1765442861076
+    "timestamp": 1772632983541
   },
   "index.html": {
-    "link-uuid": "9e6186ee-a015-400d-bf65-d23cc1bb1fab",
+    "link-uuid": "68ac5e0d-03d9-4e31-a57c-7ecdedba214b",
     "title": "CrewAI Model",
     "content": "The CrewAI model can be used as a reference guide complementary to the official documentation1. Hover the mouse over the diagram elements above for short descriptions (tooltips), click to navigate to element pages with more details. The above diagram is conceptual - it shows only the most important classes and relationships. The generated UML class diagram provides more details. Hover the mouse over diagram elements for tooltips, click to navigate to class/feature pages. You can also use the default graph and other graphs to quickly grasp relationships of the model elements. Hover the mouse over graph nodes for tooltips and to highlight their reated classes. Drag to rearrange, double-click to navigate to class pages. It can also be used as a starting point for an organization-specific documentation - make a copy or fork, modify descriptions of model elements. For example, add links to catalogs of internal knowledge sources or approved/available LLMs and their configurations. Similarly, you may have a catalog of reusable agents or guardrails. You may also have organization-specific development guidelines with references to shared libraries and internal productivity tools such as code generators, wizards, IDE plugins, training resources, &hellip; You can also create a custom model by extending classes in this model and add classes and features specific to your organization. For example, catalogs, ownership and reponsibilities, alignment to organizational structure, development efforts, etc. However, the main objective of the model is to serve as an intermediary for code and documentation generation. The model can be populated from diagrams and other data sources. Then it produces a python model and, finally, Python sources and supporting artifacts. The model can be created from Drawio diagrams using exeutable diagrams or semantic mapping. You can find an example of programmatic population of a model here. The below code snippet shows how to generate a python source file and configuration files using CrewGenerator: CapabilityLoader capabilityLoader = new CapabilityLoader();\nProgressMonitor progressMonitor = new PrintStreamProgressMonitor();\nRequirement&lt;ResourceSetRequirement, ResourceSet&gt; requirement = ServiceCapabilityFactory.createRequirement(ResourceSet.class);\nResourceSet resourceSet = capabilityLoader.loadOne(requirement, progressMonitor);\n\nFile crewSourceFile = new File(&quot;target/latest-ai-developments/src/crew.py&quot;).getCanonicalFile();\nURI crewSourceURI = URI.createFileURI(crewSourceFile.getAbsolutePath());\nCrewGenerator crewGenerator = new CrewGenerator();\ncrewGenerator.generate(\n\t\tcreateCrew(),\n\t\tcrewSourceURI,\n\t\tresourceSet,\n\t\tprogressMonitor);\n You can override CrewGenerator methods to customize the generation process. Documentation in this model is copied verbatim or almost verbatim from the reference documentation for the purpose of consistency. ↩ Step callback Agent You can think of an agent as a specialized team member with specific skills, expertise, and responsibilities. Task A specific assignment completed by an Agent Tool A skill or function that agents can utilize to perform various actions Guardrail Validates and transforms task outputs A crew may use multiple LLMs: * Function calling LLM * Manager LLM * Planning LLM Step and taks callbacks Crew A group of agents working together to complete a set of tasks Large Language Model (LLM) LLMs enable agents to understand context, make decisions, and generate human-like responses Knowledge Source An external source of information which agents use to work on tasks Callback A function called after completion of tasks and steps Context Crew AI",
-    "timestamp": 1765442860881
+    "timestamp": 1772632983329
   },
   "references/eClassifiers/Agent/references/eStructuralFeatures/role/index.html": {
     "path": "Agent/Attributes/role",
-    "link-uuid": "956c387c-f2e8-4b89-9cad-e7eca8ebd819",
+    "link-uuid": "94403b06-ab58-40ae-a299-ca1aba8a8756",
     "title": "role",
     "content": "Type EString Multiplicity 0..1 Defines the agent&rsquo;s function and expertise within the crew.",
-    "timestamp": 1765442860932
+    "timestamp": 1772632983383
   },
   "references/eClassifiers/Crew/references/eStructuralFeatures/agents/index.html": {
     "path": "Crew/References/agents",
-    "link-uuid": "c9e88e91-890e-4f95-8069-5d9bc5262696",
+    "link-uuid": "3f02318c-31eb-4d92-b9f6-b23a02e44432",
     "title": "agents",
     "content": "Type Agent Multiplicity 0..* Agents in this crew.",
-    "timestamp": 1765442861069
+    "timestamp": 1772632983534
   },
   "references/eClassifiers/Function/inheritance.html": {
     "path": "Function/Inheritance",
-    "link-uuid": "979d676b-411b-4c73-9471-a3bbd889a020",
+    "link-uuid": "ebdf4813-f49e-4b16-9ab7-7405e931ef03",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  ",
-    "timestamp": 1765442861121
+    "timestamp": 1772632983586
   },
   "references/eClassifiers/Agent/index.html": {
-    "link-uuid": "b6efceb2-4462-4f12-a6a5-a5088b0086f4",
+    "link-uuid": "32a5b4a2-7a63-4ece-bb7b-5d4591abed80",
     "title": "Agent",
     "content": "An Agent is an autonomous unit that can: Perform specific tasks Make decisions based on its role and goal Use tools to accomplish objectives Communicate and collaborate with other agents Maintain memory of interactions Delegate tasks when allowed",
-    "timestamp": 1765442860909
+    "timestamp": 1772632983359
   },
   "references/eClassifiers/Agent/inheritance.html": {
     "path": "Agent/Inheritance",
-    "link-uuid": "49e0fdf0-1b06-40ac-a767-b8698299ffeb",
+    "link-uuid": "b5cac05e-f024-4d19-8e12-4c8413897e4b",
     "title": "Inheritance",
     "content": "Supertypes ",
-    "timestamp": 1765442860912
+    "timestamp": 1772632983363
   },
   "references/eClassifiers/Agent/references/eStructuralFeatures/embedder/index.html": {
     "path": "Agent/References/embedder",
-    "link-uuid": "5ad83eef-315f-4224-a61a-f524ae948269",
+    "link-uuid": "0a1ee900-de51-4a47-b67c-1722182fdb23",
     "title": "embedder",
     "content": "Type Code Multiplicity 0..1 Configuration for the embedder used by the agent.",
-    "timestamp": 1765442860919
+    "timestamp": 1772632983371
   },
   "references/eClassifiers/Crew/references/eStructuralFeatures/taskCallback/index.html": {
     "path": "Crew/References/taskCallback",
-    "link-uuid": "192b6552-5805-42f7-9412-603bb7f9ea27",
+    "link-uuid": "42b32a07-8510-4248-bdcc-ecb94e1339db",
     "title": "taskCallback",
     "content": "Type Callback Multiplicity 0..1 A function that is called after the completion of each task. Useful for monitoring or additional operations post-task execution.",
-    "timestamp": 1765442861094
+    "timestamp": 1772632983559
   },
   "references/eClassifiers/LargeLanguageModel/inheritance.html": {
     "path": "Large Language Model/Inheritance",
-    "link-uuid": "2ee7c657-37b4-4c7d-b05c-ef241e5b874d",
+    "link-uuid": "2c7726ae-2b67-41c5-8b3b-b29d87a443d4",
     "title": "Inheritance",
     "content": "Supertypes ",
-    "timestamp": 1765442861202
+    "timestamp": 1772632983673
   },
   "references/eClassifiers/Agent/references/eStructuralFeatures/tasks/index.html": {
     "path": "Agent/References/tasks",
-    "link-uuid": "86e8c53b-636d-409a-912a-c5567df9ed38",
+    "link-uuid": "afa696b2-d9b6-4968-9534-9c67839178d8",
     "title": "tasks",
     "content": "Type Task Multiplicity 0..* Tasks assigned to this agent.",
-    "timestamp": 1765442860937
+    "timestamp": 1772632983388
   },
   "references/eClassifiers/Agent/references/eStructuralFeatures/backstory/index.html": {
     "path": "Agent/Attributes/backstory",
-    "link-uuid": "058b4d8b-bd45-4da0-900e-f314c6ac2efe",
+    "link-uuid": "61679542-4d7c-4f98-8129-24a29d4cc430",
     "title": "backstory",
     "content": "Type EString Multiplicity 0..1 Provides context and personality to the agent, enriching interactions.",
-    "timestamp": 1765442860917
+    "timestamp": 1772632983369
   },
   "references/eClassifiers/Function/references/eStructuralFeatures/parameters/index.html": {
     "path": "Function/Attributes/parameters",
-    "link-uuid": "66f11dbe-dd79-49dc-954c-651504190d95",
+    "link-uuid": "fb0d7f07-698f-4bd3-a943-d4b5d8a16a67",
     "title": "parameters",
     "content": "Type EString Multiplicity 0..* A list of function parameters.",
-    "timestamp": 1765442861125
+    "timestamp": 1772632983591
   },
   "references/eClassifiers/Task/references/eStructuralFeatures/expectedOutput/index.html": {
     "path": "Task/Attributes/expectedOutput",
-    "link-uuid": "18640d0b-76b3-41f9-8d2a-ff40c1c665dc",
+    "link-uuid": "7e564ada-a6dd-4585-a8cc-9fbdf5906245",
     "title": "expectedOutput",
     "content": "Type EString Multiplicity 0..1 A detailed description of what the task&rsquo;s completion looks like.",
-    "timestamp": 1765442861239
+    "timestamp": 1772632983714
   },
   "references/eClassifiers/Tool/references/eStructuralFeatures/agents/index.html": {
     "path": "Tool/References/agents",
-    "link-uuid": "d0fdac1e-fe63-478d-8879-bff3b4829733",
+    "link-uuid": "09059045-dd72-4450-a60e-e699c47456b9",
     "title": "agents",
     "content": "Type Agent Multiplicity 0..* Agents using this tool.",
-    "timestamp": 1765442861271
+    "timestamp": 1772632983758
   },
   "references/eClassifiers/Agent/references/eStructuralFeatures/goal/index.html": {
     "path": "Agent/Attributes/goal",
-    "link-uuid": "13806596-94f8-49d7-88bc-5139e52177fc",
+    "link-uuid": "d6ef8c6b-be2f-4b10-b4af-0bb43432e5b5",
     "title": "goal",
     "content": "Type EString Multiplicity 0..1 The individual objective that guides the agent&rsquo;s decision-making.",
-    "timestamp": 1765442860925
+    "timestamp": 1772632983376
   },
   "references/eClassifiers/Crew/references/eStructuralFeatures/knowledgeSources/index.html": {
     "path": "Crew/References/knowledgeSources",
-    "link-uuid": "9324aec1-5c9c-4bb0-b414-49d9de5907bb",
+    "link-uuid": "4fd4af9f-9dcc-4d55-b763-6f53138a9b12",
     "title": "knowledgeSources",
     "content": "Type Knowledge Source Multiplicity 0..* Knowledge sources used by agents",
-    "timestamp": 1765442861078
+    "timestamp": 1772632983543
   },
   "references/eClassifiers/Crew/references/eStructuralFeatures/planningLlm/index.html": {
     "path": "Crew/References/planningLlm",
-    "link-uuid": "f71c9bfb-47fb-4d0c-aecf-9b218b0b85d5",
+    "link-uuid": "4e430ddb-9dc6-4b9c-ad15-41d74714464c",
     "title": "planningLlm",
     "content": "Type Large Language Model Multiplicity 0..1 The language model used by the AgentPlanner in a planning process",
-    "timestamp": 1765442861086
+    "timestamp": 1772632983552
   },
   "references/eClassifiers/Guardrail/inheritance.html": {
     "path": "Guardrail/Inheritance",
-    "link-uuid": "39ef8944-601a-4305-85c9-2c14a6b14a4e",
+    "link-uuid": "4920f779-af0d-4f9e-9ee6-5076239f3c63",
     "title": "Inheritance",
     "content": "Supertypes ",
-    "timestamp": 1765442861147
+    "timestamp": 1772632983615
   },
   "references/eClassifiers/Agent/references/eStructuralFeatures/stepCallback/index.html": {
     "path": "Agent/References/stepCallback",
-    "link-uuid": "fa3ce009-1828-4bde-8c6b-cbc02ea6a107",
+    "link-uuid": "20c88612-f71b-427e-ab92-47b7be137d66",
     "title": "stepCallback",
     "content": "Type Callback Multiplicity 0..1 Function called after each agent step, overrides crew callback.",
-    "timestamp": 1765442860935
+    "timestamp": 1772632983386
   },
   "references/eClassifiers/Crew/references/eStructuralFeatures/managerLlm/index.html": {
     "path": "Crew/References/managerLlm",
-    "link-uuid": "ef3c2871-e36d-46a0-a8eb-66fedbc7be1e",
+    "link-uuid": "d9d21607-ede1-41df-a664-f35049e54e42",
     "title": "managerLlm",
     "content": "Type Large Language Model Multiplicity 0..1 The language model used by the manager agent in a hierarchical process.",
-    "timestamp": 1765442861084
+    "timestamp": 1772632983550
   },
   "references/eClassifiers/Agent/references/eStructuralFeatures/llm/index.html": {
     "path": "Agent/References/llm",
-    "link-uuid": "d440290f-5114-4d38-8fff-28bd35e3e435",
+    "link-uuid": "250c17e2-73a5-40cf-ad3f-325b03676963",
     "title": "llm",
     "content": "Type Large Language Model Multiplicity 0..1 Language model that powers the agent.",
-    "timestamp": 1765442860930
+    "timestamp": 1772632983381
   },
   "references/eClassifiers/Tool/index.html": {
-    "link-uuid": "4396c3b2-7b5a-40b8-aa07-2f706b7422ea",
+    "link-uuid": "08189a74-fc8a-41b9-aa9a-7bfba838f97d",
     "title": "Tool",
     "content": "A tool is a skill or function that agents can utilize to perform various actions.",
-    "timestamp": 1765442861265
+    "timestamp": 1772632983747
   },
   "references/eClassifiers/Crew/references/eStructuralFeatures/tasks/index.html": {
     "path": "Crew/References/tasks",
-    "link-uuid": "0665a714-4883-490d-9917-aec0fe4902d4",
+    "link-uuid": "49802a95-1a1f-49a3-823c-5103d3085e35",
     "title": "tasks",
     "content": "Type Task Multiplicity 0..* Tasks containment reference.",
-    "timestamp": 1765442861096
+    "timestamp": 1772632983561
   },
   "references/eClassifiers/Configurable/index.html": {
-    "link-uuid": "0b7f2909-22df-49cd-b8f4-ec230bf40914",
+    "link-uuid": "c934cfb3-972f-4ed9-9348-e3c76ce7a940",
     "title": "Configurable",
     "content": "Base class for Agent and Task which can be configured with YAML.",
-    "timestamp": 1765442861023
+    "timestamp": 1772632983487
   },
   "references/eClassifiers/Configurable/references/eStructuralFeatures/configMap/index.html": {
     "path": "Configurable/Attributes/configMap",
-    "link-uuid": "e4b38673-4fde-4e00-a9a7-b54dd4f736d1",
+    "link-uuid": "fa024a38-ef8f-4ba9-a936-c7681967aaa5",
     "title": "configMap",
     "content": "Type EMap&lt; EString, EJavaObject&gt; Multiplicity 0..1 Configuration map computed from YAML configuration and other features.",
-    "timestamp": 1765442861031
+    "timestamp": 1772632983494
   },
   "references/eClassifiers/Process/index.html": {
-    "link-uuid": "935dd279-7828-4d30-bc6a-e49f29148929",
+    "link-uuid": "54ed66df-ed45-4fdb-9687-72054055cb0d",
     "title": "Process",
     "content": "Processes enable individual agents to operate as a cohesive unit, streamlining their efforts to achieve common objectives with efficiency and coherence.",
-    "timestamp": 1765442861209
+    "timestamp": 1772632983681
   },
   "references/eClassifiers/Crew/references/eStructuralFeatures/managerAgent/index.html": {
     "path": "Crew/References/managerAgent",
-    "link-uuid": "0a28e9dd-03b8-4676-999d-0448e8b8d823",
+    "link-uuid": "d2feb0ad-6420-4584-bd7e-903010c9cb71",
     "title": "managerAgent",
     "content": "Type Agent Multiplicity 0..1 A custom agent managing the crew.",
-    "timestamp": 1765442861082
+    "timestamp": 1772632983548
   },
   "references/eClassifiers/Crew/references/eStructuralFeatures/tools/index.html": {
     "path": "Crew/References/tools",
-    "link-uuid": "d9ec0dc8-a8fe-4973-93de-71f621f481ec",
+    "link-uuid": "eb492195-0d46-4a13-bae6-3ced9a765ce5",
     "title": "tools",
     "content": "Type Tool Multiplicity 0..* Tools containment reference.",
-    "timestamp": 1765442861098
+    "timestamp": 1772632983563
   },
   "references/eClassifiers/Code/references/eStructuralFeatures/imports/index.html": {
     "path": "Code/Attributes/imports",
-    "link-uuid": "e976bd1f-a257-45a9-8d08-864822081490",
+    "link-uuid": "5b7713a4-2dfe-4597-943b-1d3d0cd9f369",
     "title": "imports",
     "content": "Type EString Multiplicity 0..1 Imports used by code can be specified as a list of maps or a single map with the keys corresponding to Import attributes.",
-    "timestamp": 1765442861006
+    "timestamp": 1772632983468
   },
   "references/eClassifiers/Crew/index.html": {
-    "link-uuid": "2247e816-4161-4b81-8562-01827634741a",
+    "link-uuid": "af4bed58-52e9-4de8-8ded-f89a3a4fe80d",
     "title": "Crew",
     "content": "A crew represents a collaborative group of agents working together to accomplish a set of tasks. Each crew defines the strategy for task execution, agent collaboration, and the overall workflow.",
-    "timestamp": 1765442861060
+    "timestamp": 1772632983525
   },
   "references/eClassifiers/Crew/references/eStructuralFeatures/languageModels/index.html": {
     "path": "Crew/References/languageModels",
-    "link-uuid": "88151bb2-b6b8-4f74-a064-b27ba1501c39",
+    "link-uuid": "9fdf126f-0ef5-473d-89fb-2608951d2328",
     "title": "languageModels",
     "content": "Type Large Language Model Multiplicity 0..* Language models used by the crew and its agents",
-    "timestamp": 1765442861080
+    "timestamp": 1772632983546
   },
   "references/eClassifiers/Code/inheritance.html": {
     "path": "Code/Inheritance",
-    "link-uuid": "6470ace3-76ca-4ef0-9fb5-aea7786bbb75",
+    "link-uuid": "3c5ec286-acfc-4df5-ace5-817316ca5b22",
     "title": "Inheritance",
     "content": "Subtypes ",
-    "timestamp": 1765442860994
+    "timestamp": 1772632983447
   },
   "references/eClassifiers/Code/references/eStructuralFeatures/comment/index.html": {
     "path": "Code/Attributes/comment",
-    "link-uuid": "a5fde2c0-672b-4f38-b0cd-4b99fc2b76f2",
+    "link-uuid": "78593040-cc74-4eb2-8b68-af033df30425",
     "title": "comment",
     "content": "Type EString Multiplicity 0..1 Comment to add before the code.",
-    "timestamp": 1765442861004
+    "timestamp": 1772632983465
   },
   "references/eClassifiers/Callback/index.html": {
-    "link-uuid": "67746119-6ef9-49e0-8227-431daa644542",
+    "link-uuid": "561a5a1a-3a85-4243-9a1d-26ba187c8c93",
     "title": "Callback",
     "content": "Crew Step Callback - A function that is called after each step of every agent. Task Callback - A function that is called after the completion of each task. Useful for monitoring or additional operations post-task execution. Agent Step Callback - Function called after each agent step, overrides crew callback. Task Callback - Function/object to be executed after task completion.",
-    "timestamp": 1765442860964
+    "timestamp": 1772632983416
   },
   "references/eClassifiers/Crew/references/eStructuralFeatures/process/index.html": {
     "path": "Crew/Attributes/process",
-    "link-uuid": "5e4506b7-59a7-4776-be9f-f30b9818772d",
+    "link-uuid": "d793b399-2638-4957-9181-fa54752bc260",
     "title": "process",
     "content": "Type Process Multiplicity 0..1",
-    "timestamp": 1765442861088
+    "timestamp": 1772632983554
   },
   "references/eClassifiers/Task/references/eStructuralFeatures/context/index.html": {
     "path": "Task/References/context",
-    "link-uuid": "575afd0b-cc52-41f6-82f6-891c8b819a72",
+    "link-uuid": "ed1ae1a3-c88b-4754-bb54-a6c1bb462078",
     "title": "context",
     "content": "Type Task Multiplicity 0..*",
-    "timestamp": 1765442861238
+    "timestamp": 1772632983712
   },
   "references/eClassifiers/Tool/references/eStructuralFeatures/declarations/index.html": {
     "path": "Tool/Attributes/declarations",
-    "link-uuid": "4467d28a-0322-4351-b7c2-3b981aecd844",
+    "link-uuid": "c2ad2393-bcfd-43ba-b889-7ed2314fa092",
     "title": "declarations",
     "content": "Type EString Multiplicity 0..1 Declarations used by the tool. Added to the crew class body. For example, a shared search tool can have the following declaration: serper_tool = SeperDevTool()\n In this case the tool code would be serper_tool",
-    "timestamp": 1765442861273
+    "timestamp": 1772632983761
   },
   "references/eClassifiers/Agent/references/eStructuralFeatures/knowledgeSources/index.html": {
     "path": "Agent/References/knowledgeSources",
-    "link-uuid": "9fc36832-533c-43af-8b00-ec01c5ca4947",
+    "link-uuid": "9ac6a210-f1a6-4788-ab58-672837a694fe",
     "title": "knowledgeSources",
     "content": "Type Knowledge Source Multiplicity 0..* Knowledge sources available to the agent.",
-    "timestamp": 1765442860928
+    "timestamp": 1772632983378
   },
   "references/eClassifiers/Task/references/eStructuralFeatures/guardrail/index.html": {
     "path": "Task/References/guardrail",
-    "link-uuid": "dc54569f-8d9b-423e-920a-dd1e2f1f33aa",
+    "link-uuid": "e2789d03-708b-4786-a771-53f943360a5c",
     "title": "guardrail",
     "content": "Type Guardrail Multiplicity 0..1 Task guardrails provide a way to validate and transform task outputs before they are passed to the next task. This feature helps ensure data quality and provides feedback to agents when their output doesn&rsquo;t meet specific criteria.",
-    "timestamp": 1765442861241
+    "timestamp": 1772632983716
   },
   "references/eClassifiers/LargeLanguageModel/index.html": {
-    "link-uuid": "7aaa6903-56be-4d7d-906f-cbd96a3c8fbc",
+    "link-uuid": "0e8f9d3c-0534-471f-a977-c54e19209f40",
     "title": "Large Language Model",
     "content": "Large Language Models (LLMs) are the core intelligence behind agents. They enable agents to understand context, make decisions, and generate human-like responses.",
-    "timestamp": 1765442861199
+    "timestamp": 1772632983672
   },
   "references/eClassifiers/Agent/references/eStructuralFeatures/tools/index.html": {
     "path": "Agent/References/tools",
-    "link-uuid": "ea2fafa6-4fd3-4f2b-ba4d-46ec8109e11b",
+    "link-uuid": "0a426abf-d39b-4737-8601-5cb9bb1ebeb8",
     "title": "tools",
     "content": "Type Tool Multiplicity 0..* Capabilities or functions available to the agent.",
-    "timestamp": 1765442860940
+    "timestamp": 1772632983391
   },
   "references/eClassifiers/Configurable/references/eStructuralFeatures/configuration/index.html": {
     "path": "Configurable/Attributes/configuration",
-    "link-uuid": "1a7af418-9f78-41b1-af75-218b57593562",
+    "link-uuid": "a7bcb58d-d794-4f95-a110-44ff57c5b32b",
     "title": "configuration",
     "content": "Type EString Multiplicity 0..1 YAML configuration.",
-    "timestamp": 1765442861033
+    "timestamp": 1772632983496
   },
   "references/eClassifiers/Agent/references/eStructuralFeatures/functionCallingLlm/index.html": {
     "path": "Agent/References/functionCallingLlm",
-    "link-uuid": "47bc4936-e5d6-45aa-a69d-80169d18d7a4",
+    "link-uuid": "2f77870e-26f4-492d-ad35-c86bdd6adc80",
     "title": "functionCallingLlm",
     "content": "Type Large Language Model Multiplicity 0..1 Language model for tool calling, overrides crew&rsquo;s LLM if specified.",
-    "timestamp": 1765442860922
+    "timestamp": 1772632983374
   },
   "references/eClassifiers/Task/references/eStructuralFeatures/agent/index.html": {
     "path": "Task/References/agent",
-    "link-uuid": "2bb1349d-552d-4ae5-8922-7c0c5115be3f",
+    "link-uuid": "35dd9c37-36b4-4a61-a00a-4a0d2c17aa8b",
     "title": "agent",
     "content": "Type Agent Multiplicity 0..1 The agent responsible for executing the task.",
-    "timestamp": 1765442861235
+    "timestamp": 1772632983707
   },
   "references/eClassifiers/Configurable/inheritance.html": {
     "path": "Configurable/Inheritance",
-    "link-uuid": "daca40b1-f79e-4a5f-aeff-47f27c6aa436",
+    "link-uuid": "6de827af-d311-4ab2-88ec-1c16273b8656",
     "title": "Inheritance",
     "content": "Supertypes Subtypes  ",
-    "timestamp": 1765442861026
+    "timestamp": 1772632983489
   },
   "references/eClassifiers/Callback/inheritance.html": {
     "path": "Callback/Inheritance",
-    "link-uuid": "2c0521b1-81b6-49a5-abda-33904757cd03",
+    "link-uuid": "cb5349a5-a7b6-43b2-87d0-a61c3b18d827",
     "title": "Inheritance",
     "content": "Supertypes ",
-    "timestamp": 1765442860966
+    "timestamp": 1772632983419
   },
   "references/eClassifiers/Crew/inheritance.html": {
     "path": "Crew/Inheritance",
-    "link-uuid": "920f7017-e693-446e-a318-adadfb827134",
+    "link-uuid": "b68dbafb-2435-422a-a2c9-67c9bd226c04",
     "title": "Inheritance",
     "content": "Supertypes ",
-    "timestamp": 1765442861062
+    "timestamp": 1772632983527
   },
   "references/eClassifiers/Crew/references/eStructuralFeatures/beforeKickoff/index.html": {
     "path": "Crew/References/beforeKickoff",
-    "link-uuid": "cfb86761-2b7e-491b-b8ec-bcfc9eee909b",
+    "link-uuid": "c7836638-3f17-4392-b565-4318c7fe71ba",
     "title": "beforeKickoff",
     "content": "Type Function Multiplicity 0..1 Executes before the crew starts.",
-    "timestamp": 1765442861071
+    "timestamp": 1772632983536
   },
   "references/eClassifiers/Tool/references/eStructuralFeatures/tasks/index.html": {
     "path": "Tool/References/tasks",
-    "link-uuid": "d33c1529-77b9-47eb-a29c-301ddf5bd78f",
+    "link-uuid": "1da894ef-8080-4ecb-8fd9-8b67a7955bc5",
     "title": "tasks",
     "content": "Type Task Multiplicity 0..* Tasks using this tool.",
-    "timestamp": 1765442861275
+    "timestamp": 1772632983765
   },
   "references/eClassifiers/Code/index.html": {
-    "link-uuid": "100769dd-fc90-4320-a654-454c639bd208",
+    "link-uuid": "37527f2e-f0b3-4613-8503-afdb554b1bcf",
     "title": "Code",
     "content": "Base class for model element which generate python code.",
-    "timestamp": 1765442860992
+    "timestamp": 1772632983444
   }
 }
