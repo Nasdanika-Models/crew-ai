@@ -123,6 +123,5 @@ public class CodeNodeProcessor<T extends Code> extends ModelElementNodeProcessor
 			}
 		}
 	}
-	
-	
+		
 }
